@@ -5,10 +5,10 @@ public struct Token<Tiles> {
 }
 
 /// 面子
-public typealias Set = Token<(Tile, Tile, Tile)>
+public typealias SetToken = Token<(Tile, Tile, Tile)>
 
 /// 対子
-public typealias Pair = Token<(Tile, Tile)>
+public typealias PairToken = Token<(Tile, Tile)>
 
 public extension Token where Tiles == (Tile, Tile) {
     /// 雀頭
@@ -36,5 +36,21 @@ public extension Token where Tiles == (Tile, Tile, Tile) {
         default:
             return false
         }
+    }
+}
+
+internal extension Token where Tiles == (Tile, Tile) {
+    var asArray: [Tile] {
+        return [tiles.0, tiles.1].sorted()
+    }
+}
+
+internal extension Token where Tiles == (Tile, Tile, Tile) {
+    var asArray: [Tile] {
+        return [tiles.0, tiles.1, tiles.2].sorted()
+    }
+    
+    func consistOnly(of filter: (Tile) -> Bool) -> Bool {
+        return asArray.filter(filter).count == asArray.count
     }
 }

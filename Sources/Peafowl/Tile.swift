@@ -1,6 +1,6 @@
 import Foundation
 
-public enum Tile: Equatable, Comparable {
+public enum Tile: Equatable, Comparable, Hashable {
     public static func < (lhs: Tile, rhs: Tile) -> Bool {
         return lhs.index < rhs.index
     }
