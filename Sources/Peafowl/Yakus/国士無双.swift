@@ -1,13 +1,24 @@
 import Foundation
 
 public struct 国士無双: ThirteenOrphansFormedYaku {
-    public let openedHan: Int = 2
-    public let closedHan: Int? = nil
+    public var closedHan: Int {
+        if isWaitingHead {
+            return 26
+        } else {
+            return 13
+        }
+    }
+    public let openedHan: Int? = nil
+    public let isWaitingHead: Bool
     
-    public func validate(with hand: Hand, drawed: Tile) -> Bool {
+    private init(isWaitingHead: Bool) {
+        self.isWaitingHead = isWaitingHead
+    }
+    
+    public static func make(with hand: Hand, drawed: Tile) -> 国士無双? {
         let uniquedArray = Set<Tile>(hand.allTiles)
         if uniquedArray.count != 13 {
-            return false
+            return nil
         }
         let expectedTiles: [Tile] = [.character(1), .character(9),
                                      .bamboo(1), .bamboo(9),
@@ -16,9 +27,9 @@ public struct 国士無双: ThirteenOrphansFormedYaku {
                                      .blank, .fortune, .center]
         for expectedTile in expectedTiles {
             if !uniquedArray.contains(expectedTile) {
-                return false
+                return nil
             }
         }
-        return true
+        return 国士無双(isWaitingHead: true)
     }
 }

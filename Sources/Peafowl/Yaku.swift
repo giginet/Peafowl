@@ -4,14 +4,21 @@ import Foundation
 public protocol Yaku {
     associatedtype Form
     
-    var openedHan: Int { get }
-    var closedHan: Int? { get }
-    func validate(with tiles: Form, drawed: Tile) -> Bool
+    /// 翻
+    var closedHan: Int { get }
+    /// 喰い下がり翻
+    var openedHan: Int? { get }
+    var isYakuman: Bool { get }
+    static func make(with tiles: Form, drawed: Tile) -> Self?
 }
 
 public extension Yaku {
-    var closedHan: Int? {
+    var openedHan: Int? {
         return 0
+    }
+    
+    var isYakuman: Bool {
+        return closedHan >= 13
     }
 }
 
@@ -19,7 +26,7 @@ public extension Yaku {
 public protocol OrdinaryFormedYaku: Yaku where Form == (PairToken, SetToken, SetToken, SetToken, SetToken) { }
 
 /// 七対子形
-public protocol SevenPairFormedYaku: Yaku where Form == (PairToken, PairToken, PairToken, PairToken, PairToken, PairToken, PairToken) { }
+public protocol SevenPairsFormedYaku: Yaku where Form == (PairToken, PairToken, PairToken, PairToken, PairToken, PairToken, PairToken) { }
 
 /// 国士無双形
 public protocol ThirteenOrphansFormedYaku: Yaku where Form == Hand { }
