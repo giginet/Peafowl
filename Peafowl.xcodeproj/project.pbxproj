@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		07ED2F1D20E2AC0F00EF677F /* Peafowl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07ED2F1320E2AC0F00EF677F /* Peafowl.framework */; };
-		07ED2F2F20E2AC6D00EF677F /* Peafowl.h in Headers */ = {isa = PBXBuildFile; fileRef = 07ED2F2D20E2AC6D00EF677F /* Peafowl.h */; };
+		07ED2F2F20E2AC6D00EF677F /* Peafowl.h in Headers */ = {isa = PBXBuildFile; fileRef = 07ED2F2D20E2AC6D00EF677F /* Peafowl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07ED2F3320E2AC7C00EF677F /* PeafowlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED2F3120E2AC7C00EF677F /* PeafowlTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,7 +74,8 @@
 				07ED2F2E20E2AC6D00EF677F /* Info.plist */,
 				07ED2F2D20E2AC6D00EF677F /* Peafowl.h */,
 			);
-			path = Peafowl;
+			name = Peafowl;
+			path = Sources/Peafowl;
 			sourceTree = "<group>";
 		};
 		07ED2F2020E2AC0F00EF677F /* PeafowlTests */ = {
@@ -83,7 +84,8 @@
 				07ED2F3220E2AC7C00EF677F /* Info.plist */,
 				07ED2F3120E2AC7C00EF677F /* PeafowlTests.swift */,
 			);
-			path = PeafowlTests;
+			name = PeafowlTests;
+			path = Tests/PeafowlTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
