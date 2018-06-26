@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		079A8E3B20E2ADEE0009EA6D /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3A20E2ADEE0009EA6D /* Tile.swift */; };
+		079A8E3D20E2AE9A0009EA6D /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3C20E2AE9A0009EA6D /* Int+Extensions.swift */; };
 		07ED2F1D20E2AC0F00EF677F /* Peafowl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07ED2F1320E2AC0F00EF677F /* Peafowl.framework */; };
 		07ED2F2F20E2AC6D00EF677F /* Peafowl.h in Headers */ = {isa = PBXBuildFile; fileRef = 07ED2F2D20E2AC6D00EF677F /* Peafowl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07ED2F3320E2AC7C00EF677F /* PeafowlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED2F3120E2AC7C00EF677F /* PeafowlTests.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		079A8E3A20E2ADEE0009EA6D /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		079A8E3C20E2AE9A0009EA6D /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		07ED2F1320E2AC0F00EF677F /* Peafowl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peafowl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07ED2F1C20E2AC0F00EF677F /* PeafowlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeafowlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07ED2F2D20E2AC6D00EF677F /* Peafowl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Peafowl.h; path = Sources/Peafowl/Peafowl.h; sourceTree = SOURCE_ROOT; };
@@ -73,6 +77,8 @@
 			children = (
 				07ED2F2E20E2AC6D00EF677F /* Info.plist */,
 				07ED2F2D20E2AC6D00EF677F /* Peafowl.h */,
+				079A8E3A20E2ADEE0009EA6D /* Tile.swift */,
+				079A8E3C20E2AE9A0009EA6D /* Int+Extensions.swift */,
 			);
 			name = Peafowl;
 			path = Sources/Peafowl;
@@ -150,6 +156,7 @@
 				TargetAttributes = {
 					07ED2F1220E2AC0F00EF677F = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 					07ED2F1B20E2AC0F00EF677F = {
 						CreatedOnToolsVersion = 10.0;
@@ -196,6 +203,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079A8E3D20E2AE9A0009EA6D /* Int+Extensions.swift in Sources */,
+				079A8E3B20E2ADEE0009EA6D /* Tile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +350,7 @@
 		07ED2F2820E2AC1000EF677F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -358,6 +368,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.Peafowl;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +377,7 @@
 		07ED2F2920E2AC1000EF677F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -391,6 +403,7 @@
 		07ED2F2B20E2AC1000EF677F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2AWR7Z4WYE;
 				INFOPLIST_FILE = Tests/PeafowlTests/Info.plist;
@@ -409,6 +422,7 @@
 		07ED2F2C20E2AC1000EF677F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2AWR7Z4WYE;
 				INFOPLIST_FILE = Tests/PeafowlTests/Info.plist;
