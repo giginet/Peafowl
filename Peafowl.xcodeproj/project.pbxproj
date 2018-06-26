@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		079A8E3B20E2ADEE0009EA6D /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3A20E2ADEE0009EA6D /* Tile.swift */; };
 		079A8E3D20E2AE9A0009EA6D /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3C20E2AE9A0009EA6D /* Int+Extensions.swift */; };
+		079A8E3F20E2B4F10009EA6D /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3E20E2B4F10009EA6D /* Hand.swift */; };
 		07ED2F1D20E2AC0F00EF677F /* Peafowl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07ED2F1320E2AC0F00EF677F /* Peafowl.framework */; };
 		07ED2F2F20E2AC6D00EF677F /* Peafowl.h in Headers */ = {isa = PBXBuildFile; fileRef = 07ED2F2D20E2AC6D00EF677F /* Peafowl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07ED2F3320E2AC7C00EF677F /* PeafowlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED2F3120E2AC7C00EF677F /* PeafowlTests.swift */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		079A8E3A20E2ADEE0009EA6D /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		079A8E3C20E2AE9A0009EA6D /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		079A8E3E20E2B4F10009EA6D /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		07ED2F1320E2AC0F00EF677F /* Peafowl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peafowl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07ED2F1C20E2AC0F00EF677F /* PeafowlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeafowlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07ED2F2D20E2AC6D00EF677F /* Peafowl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Peafowl.h; path = Sources/Peafowl/Peafowl.h; sourceTree = SOURCE_ROOT; };
@@ -79,6 +81,7 @@
 				07ED2F2D20E2AC6D00EF677F /* Peafowl.h */,
 				079A8E3A20E2ADEE0009EA6D /* Tile.swift */,
 				079A8E3C20E2AE9A0009EA6D /* Int+Extensions.swift */,
+				079A8E3E20E2B4F10009EA6D /* Hand.swift */,
 			);
 			name = Peafowl;
 			path = Sources/Peafowl;
@@ -205,6 +208,7 @@
 			files = (
 				079A8E3D20E2AE9A0009EA6D /* Int+Extensions.swift in Sources */,
 				079A8E3B20E2ADEE0009EA6D /* Tile.swift in Sources */,
+				079A8E3F20E2B4F10009EA6D /* Hand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
