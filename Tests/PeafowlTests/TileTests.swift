@@ -19,8 +19,8 @@ final class TileTests: XCTestCase {
         }
     }
     
-    func testSuit() {
-        assertTiles([true, true, true, false, false, false, false]) { $0.isSuit }
+    func testSimple() {
+        assertTiles([true, true, true, false, false, false, false]) { $0.isSimple }
     }
     
     func testHonor() {

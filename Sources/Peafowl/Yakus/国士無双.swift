@@ -20,9 +20,9 @@ public struct 国士無双: ThirteenOrphansFormedYaku {
         if uniquedArray.count != 13 {
             return nil
         }
-        let expectedTiles: [Tile] = [.character(1), .character(9),
-                                     .bamboo(1), .bamboo(9),
-                                     .dots(1), .dots(9),
+        let expectedTiles: [Tile] = [.character(1)!, .character(9)!,
+                                     .bamboo(1)!, .bamboo(9)!,
+                                     .dots(1)!, .dots(9)!,
                                      .east, .south, .west, .north,
                                      .blank, .fortune, .center]
         for expectedTile in expectedTiles {

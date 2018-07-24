@@ -2,14 +2,14 @@ import Foundation
 
 public extension Int {
     public var 萬: Tile? {
-        return .character(self)
+        return Tile(.character(self))
     }
     
     public var 筒: Tile? {
-        return .dots(self)
+        return Tile(.dots(self))
     }
     
     public var 索: Tile? {
-        return .bamboo(self)
+        return Tile(.bamboo(self))
     }
 }

@@ -1,12 +1,88 @@
 import Foundation
 
-public enum Tile: Equatable, Comparable, Hashable {
+public struct Tile: Equatable, Comparable, Hashable {
+    public static func character(_ number: Int) -> Tile? {
+        return Tile(.character(number))
+    }
+    public static func bamboo(_ number: Int) -> Tile? {
+        return Tile(.bamboo(number))
+    }
+    public static func dots(_ number: Int) -> Tile? {
+        return Tile(.dots(number))
+    }
+    public static let east = Tile(.east)!
+    public static let west = Tile(.west)!
+    public static let south = Tile(.south)!
+    public static let north = Tile(.north)!
+    public static let blank = Tile(.blank)!
+    public static let fortune = Tile(.fortune)!
+    public static let center = Tile(.center)!
+    
+    public static func == (lhs: Tile, rhs: Tile) -> Bool {
+        switch (lhs.suit, rhs.suit) {
+        case (.character(let n), .character(let m)),
+             (.bamboo(let n), .bamboo(let m)),
+             (.dots(let n), .dots(let m)):
+            return n == m
+        case (.east, .east),
+             (.west, .west),
+             (.south, .south),
+             (.north, .north),
+             (.blank, .blank),
+             (.fortune, .fortune),
+             (.center, .center):
+            return true
+        default:
+            return false
+        }
+    }
+    
+    public var hashValue: Int {
+        return index
+    }
+    
+    public let suit: Suit
+    
+    public enum Suit {
+        /// 萬子
+        case character(Int)
+        /// 索子
+        case bamboo(Int)
+        /// 筒子
+        case dots(Int)
+        /// 東
+        case east
+        /// 南
+        case south
+        /// 西
+        case west
+        /// 北
+        case north
+        /// 白
+        case blank
+        /// 撥
+        case fortune
+        /// 中
+        case center
+    }
+    
+    public init?(_ suit: Suit) {
+        switch suit {
+        case .character(let n), .bamboo(let n), .dots(let n):
+            if n <= 0 || n > 9 {
+                return nil
+            }
+        default: break
+        }
+        self.suit = suit
+    }
+    
     public static func < (lhs: Tile, rhs: Tile) -> Bool {
         return lhs.index < rhs.index
     }
     
     private var index: Int {
-        switch self {
+        switch suit {
         case .character(let n): return n + 9 * 0
         case .bamboo(let n): return n + 9 * 1
         case .dots(let n): return n + 9 * 2
@@ -20,30 +96,9 @@ public enum Tile: Equatable, Comparable, Hashable {
         }
     }
     
-    /// 萬子
-    case character(Int)
-    /// 索子
-    case bamboo(Int)
-    /// 筒子
-    case dots(Int)
-    /// 東
-    case east
-    /// 南
-    case south
-    /// 西
-    case west
-    /// 北
-    case north
-    /// 白
-    case blank
-    /// 撥
-    case fortune
-    /// 中
-    case center
-    
     /// 数牌
-    public var isSuit: Bool {
-        switch self {
+    public var isSimple: Bool {
+        switch suit {
         case .character, .dots, .bamboo:
             return true
         default:
@@ -53,12 +108,12 @@ public enum Tile: Equatable, Comparable, Hashable {
     
     /// 字牌
     public var isHonor: Bool {
-        return !isSuit
+        return !isSimple
     }
     
     /// 風牌
     public var isWind: Bool {
-        switch self {
+        switch suit {
         case .east, .south, .west, .north:
             return true
         default:
@@ -68,7 +123,7 @@ public enum Tile: Equatable, Comparable, Hashable {
     
     /// 三元牌
     public var isDragon: Bool {
-        switch self {
+        switch suit {
         case .blank, .fortune, .center:
             return true
         default:
@@ -78,7 +133,7 @@ public enum Tile: Equatable, Comparable, Hashable {
     
     /// 端牌
     public var isTerminal: Bool {
-        switch self {
+        switch suit {
         case .dots(let n), .character(let n), .bamboo(let n):
             return n == 1 || n == 9
         default:

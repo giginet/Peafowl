@@ -28,7 +28,7 @@ public extension Token where Tiles == (Tile, Tile, Tile) {
     /// 順子
     public var isChow: Bool {
         let sorted = [tiles.0, tiles.1, tiles.2].sorted()
-        switch (sorted[0], sorted[1], sorted[2]) {
+        switch (sorted[0].suit, sorted[1].suit, sorted[2].suit) {
         case (.character(let a), .character(let b), .character(let c)),
              (.bamboo(let a), .bamboo(let b), .bamboo(let c)),
              (.dots(let a), .dots(let b), .dots(let c)):
