@@ -12,14 +12,14 @@ public typealias PairToken = Token<(Tile, Tile)>
 
 public extension Token where Tiles == (Tile, Tile) {
     /// 雀頭
-    public var isHead: Bool {
+    public var isEyes: Bool {
         return tiles.0 == tiles.1
     }
 }
 
 public extension Token where Tiles == (Tile, Tile, Tile) {
     /// 刻子
-    public var isPung: Bool {
+    public var isMelds: Bool {
         return tiles.0 == tiles.1
             && tiles.1 == tiles.2
             && tiles.2 == tiles.0

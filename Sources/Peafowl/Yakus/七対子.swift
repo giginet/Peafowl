@@ -5,13 +5,13 @@ public struct 七対子: SevenPairsFormedYaku {
     public let closedHan: Int = 2
     
     public static func make(with tiles: (PairToken, PairToken, PairToken, PairToken, PairToken, PairToken, PairToken), drawed: Tile) -> 七対子? {
-        if tiles.0.isHead
-            && tiles.1.isHead
-            && tiles.2.isHead
-            && tiles.3.isHead
-            && tiles.4.isHead
-            && tiles.5.isHead
-            && tiles.6.isHead {
+        if tiles.0.isEyes
+            && tiles.1.isEyes
+            && tiles.2.isEyes
+            && tiles.3.isEyes
+            && tiles.4.isEyes
+            && tiles.5.isEyes
+            && tiles.6.isEyes {
             return 七対子()
         }
         return nil

@@ -5,7 +5,7 @@ public struct 断ヤオ九: OrdinaryFormedYaku {
     public let closedHan: Int = 1
     
     public static func make(with tiles: (PairToken, SetToken, SetToken, SetToken, SetToken), drawed: Tile) -> 断ヤオ九? {
-        if !tiles.0.isHead {
+        if !tiles.0.isEyes {
             return nil
         }
         func isNotYaochu(tile: Tile) -> Bool {
