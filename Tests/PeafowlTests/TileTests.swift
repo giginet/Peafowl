@@ -19,6 +19,14 @@ final class TileTests: XCTestCase {
         }
     }
     
+    func testInitializer() {
+        XCTAssertNil(Tile.character(-1))
+        XCTAssertNil(Tile.character(0))
+        XCTAssertNotNil(Tile.character(1))
+        XCTAssertNotNil(Tile.character(9))
+        XCTAssertNil(Tile.character(10))
+    }
+    
     func testSimple() {
         assertTiles([true, true, true, false, false, false, false]) { $0.isSimple }
     }
