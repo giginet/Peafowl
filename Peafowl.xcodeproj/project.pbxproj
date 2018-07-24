@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074FC55121076DBB007DADDE /* TileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074FC54E21076CA9007DADDE /* TileTests.swift */; };
 		079A8E3B20E2ADEE0009EA6D /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3A20E2ADEE0009EA6D /* Tile.swift */; };
 		079A8E3D20E2AE9A0009EA6D /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3C20E2AE9A0009EA6D /* Int+Extensions.swift */; };
 		079A8E3F20E2B4F10009EA6D /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3E20E2B4F10009EA6D /* Hand.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		074FC54E21076CA9007DADDE /* TileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileTests.swift; sourceTree = "<group>"; };
 		079A8E3A20E2ADEE0009EA6D /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		079A8E3C20E2AE9A0009EA6D /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		079A8E3E20E2B4F10009EA6D /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				07ED2F3220E2AC7C00EF677F /* Info.plist */,
 				07ED2F3120E2AC7C00EF677F /* PeafowlTests.swift */,
+				074FC54E21076CA9007DADDE /* TileTests.swift */,
 			);
 			name = PeafowlTests;
 			path = Tests/PeafowlTests;
@@ -245,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07ED2F3320E2AC7C00EF677F /* PeafowlTests.swift in Sources */,
+				074FC55121076DBB007DADDE /* TileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
