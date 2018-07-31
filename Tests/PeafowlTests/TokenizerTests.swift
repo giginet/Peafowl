@@ -12,12 +12,7 @@ final class TokenizerTests: XCTestCase {
     
     func testFilterEyesTests() {
         XCTAssertEqual(makeTokenizer([
-            1.筒!,
-            2.筒!,
-            1.筒!,
-            2.筒!,
-            1.筒!,
-            2.筒!,
+            🀇, 🀈, 🀇, 🀈, 🀇, 🀈,
             ]).filterEyes().count, 2)
         XCTAssertEqual(makeTokenizer([
             1.筒!,
