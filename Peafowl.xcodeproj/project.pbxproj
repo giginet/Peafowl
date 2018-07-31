@@ -21,6 +21,8 @@
 		07ED2F1D20E2AC0F00EF677F /* Peafowl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07ED2F1320E2AC0F00EF677F /* Peafowl.framework */; };
 		07ED2F2F20E2AC6D00EF677F /* Peafowl.h in Headers */ = {isa = PBXBuildFile; fileRef = 07ED2F2D20E2AC6D00EF677F /* Peafowl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07ED2F3320E2AC7C00EF677F /* PeafowlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED2F3120E2AC7C00EF677F /* PeafowlTests.swift */; };
+		07ED343E2110B6FD00D02AFA /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED343D2110B6FD00D02AFA /* Sequence+Extensions.swift */; };
+		07ED34402110BDD900D02AFA /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED343F2110BDD900D02AFA /* TokenizerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		07ED2F2E20E2AC6D00EF677F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Peafowl/Info.plist; sourceTree = SOURCE_ROOT; };
 		07ED2F3120E2AC7C00EF677F /* PeafowlTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeafowlTests.swift; path = Tests/PeafowlTests/PeafowlTests.swift; sourceTree = SOURCE_ROOT; };
 		07ED2F3220E2AC7C00EF677F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/PeafowlTests/Info.plist; sourceTree = SOURCE_ROOT; };
+		07ED343D2110B6FD00D02AFA /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
+		07ED343F2110BDD900D02AFA /* TokenizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 				079A8E4220E2B68C0009EA6D /* Token.swift */,
 				07212FA8210F6B10003F4E75 /* Tokenizer.swift */,
 				07212FAA210F7586003F4E75 /* Form.swift */,
+				07ED343D2110B6FD00D02AFA /* Sequence+Extensions.swift */,
 			);
 			name = Peafowl;
 			path = Sources/Peafowl;
@@ -124,6 +129,7 @@
 				07ED2F3220E2AC7C00EF677F /* Info.plist */,
 				07ED2F3120E2AC7C00EF677F /* PeafowlTests.swift */,
 				074FC54E21076CA9007DADDE /* TileTests.swift */,
+				07ED343F2110BDD900D02AFA /* TokenizerTests.swift */,
 			);
 			name = PeafowlTests;
 			path = Tests/PeafowlTests;
@@ -241,6 +247,7 @@
 				079A8E3D20E2AE9A0009EA6D /* Int+Extensions.swift in Sources */,
 				079A8E4820E2BE110009EA6D /* 七対子.swift in Sources */,
 				079A8E4A20E2BEE90009EA6D /* 国士無双.swift in Sources */,
+				07ED343E2110B6FD00D02AFA /* Sequence+Extensions.swift in Sources */,
 				079A8E4620E2BB470009EA6D /* 断ヤオ九.swift in Sources */,
 				079A8E4320E2B68C0009EA6D /* Token.swift in Sources */,
 				079A8E3B20E2ADEE0009EA6D /* Tile.swift in Sources */,
@@ -255,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07ED34402110BDD900D02AFA /* TokenizerTests.swift in Sources */,
 				07ED2F3320E2AC7C00EF677F /* PeafowlTests.swift in Sources */,
 				074FC55121076DBB007DADDE /* TileTests.swift in Sources */,
 			);
