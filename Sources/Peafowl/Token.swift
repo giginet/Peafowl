@@ -1,23 +1,64 @@
 import Foundation
 
-public struct Token<Tiles> {
-    var tiles: Tiles
+public protocol Token: Hashable {
+    associatedtype Tiles
+    var tiles: Tiles { get }
+    init?(tiles: Tiles)
+    var asArray: [Tile] { get }
 }
 
-/// 面子
-public typealias SetToken = Token<(Tile, Tile, Tile)>
+public struct PairToken: Token {
+    public static func == (lhs: PairToken, rhs: PairToken) -> Bool {
+        return lhs.tiles.0 == rhs.tiles.0 && lhs.tiles.1 == rhs.tiles.1
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(tiles.0)
+        hasher.combine(tiles.1)
+    }
+    
+    public let tiles: Tiles
+    
+    public typealias Tiles = (Tile, Tile)
 
-/// 対子
-public typealias PairToken = Token<(Tile, Tile)>
-
-public extension Token where Tiles == (Tile, Tile) {
+    public init?(tiles: Tiles) {
+        self.tiles = tiles
+    }
+    
     /// 雀頭
     public var isEyes: Bool {
         return tiles.0 == tiles.1
     }
+    
+    public var asArray: [Tile] {
+        return [tiles.0, tiles.1].sorted()
+    }
 }
 
-public extension Token where Tiles == (Tile, Tile, Tile) {
+public struct SetToken: Token {
+    public static func == (lhs: SetToken, rhs: SetToken) -> Bool {
+        return lhs.tiles.0 == rhs.tiles.0 && lhs.tiles.1 == rhs.tiles.1 && lhs.tiles.2 == rhs.tiles.2
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(tiles.0)
+        hasher.combine(tiles.1)
+        hasher.combine(tiles.2)
+    }
+    
+    public let tiles: Tiles
+    
+    public typealias Tiles = (Tile, Tile, Tile)
+    
+    public init?(tiles: Tiles) {
+        self.tiles = tiles
+    }
+    
+    /// 雀頭
+    public var isEyes: Bool {
+        return tiles.0 == tiles.1
+    }
+    
     /// 刻子
     public var isMelds: Bool {
         return tiles.0 == tiles.1
@@ -37,16 +78,8 @@ public extension Token where Tiles == (Tile, Tile, Tile) {
             return false
         }
     }
-}
-
-internal extension Token where Tiles == (Tile, Tile) {
-    var asArray: [Tile] {
-        return [tiles.0, tiles.1].sorted()
-    }
-}
-
-internal extension Token where Tiles == (Tile, Tile, Tile) {
-    var asArray: [Tile] {
+    
+    public var asArray: [Tile] {
         return [tiles.0, tiles.1, tiles.2].sorted()
     }
     
