@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07212FA9210F6B10003F4E75 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07212FA8210F6B10003F4E75 /* Tokenizer.swift */; };
+		07212FAB210F7586003F4E75 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07212FAA210F7586003F4E75 /* Form.swift */; };
 		074FC55121076DBB007DADDE /* TileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074FC54E21076CA9007DADDE /* TileTests.swift */; };
 		079A8E3B20E2ADEE0009EA6D /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3A20E2ADEE0009EA6D /* Tile.swift */; };
 		079A8E3D20E2AE9A0009EA6D /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3C20E2AE9A0009EA6D /* Int+Extensions.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07212FA8210F6B10003F4E75 /* Tokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
+		07212FAA210F7586003F4E75 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 		074FC54E21076CA9007DADDE /* TileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileTests.swift; sourceTree = "<group>"; };
 		079A8E3A20E2ADEE0009EA6D /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		079A8E3C20E2AE9A0009EA6D /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 				079A8E3E20E2B4F10009EA6D /* Hand.swift */,
 				079A8E4020E2B5960009EA6D /* Yaku.swift */,
 				079A8E4220E2B68C0009EA6D /* Token.swift */,
+				07212FA8210F6B10003F4E75 /* Tokenizer.swift */,
+				07212FAA210F7586003F4E75 /* Form.swift */,
 			);
 			name = Peafowl;
 			path = Sources/Peafowl;
@@ -239,6 +245,8 @@
 				079A8E4320E2B68C0009EA6D /* Token.swift in Sources */,
 				079A8E3B20E2ADEE0009EA6D /* Tile.swift in Sources */,
 				079A8E3F20E2B4F10009EA6D /* Hand.swift in Sources */,
+				07212FAB210F7586003F4E75 /* Form.swift in Sources */,
+				07212FA9210F6B10003F4E75 /* Tokenizer.swift in Sources */,
 				079A8E4120E2B5960009EA6D /* Yaku.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
