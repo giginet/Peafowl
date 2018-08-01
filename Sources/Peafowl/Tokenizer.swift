@@ -8,6 +8,11 @@ internal final class Tokenizer {
     }
     
     func tokenize() {
+        let eyes = Set(filterEyes())
+        for eye in eyes {
+            var mutableTiles = self.hand.allTiles
+            mutableTiles.removeToken(eye)
+        }
     }
     
     func filterEyes() -> [PairToken] {

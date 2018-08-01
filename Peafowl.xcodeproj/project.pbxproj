@@ -18,6 +18,8 @@
 		079A8E4620E2BB470009EA6D /* 断ヤオ九.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4520E2BB470009EA6D /* 断ヤオ九.swift */; };
 		079A8E4820E2BE110009EA6D /* 七対子.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4720E2BE110009EA6D /* 七対子.swift */; };
 		079A8E4A20E2BEE90009EA6D /* 国士無双.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4920E2BEE90009EA6D /* 国士無双.swift */; };
+		07C6398421120CB900725AFB /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C6398321120CB900725AFB /* Array+Extensions.swift */; };
+		07C6398721120F1000725AFB /* Array+Tiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C6398621120F1000725AFB /* Array+Tiles.swift */; };
 		07ED2F1D20E2AC0F00EF677F /* Peafowl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07ED2F1320E2AC0F00EF677F /* Peafowl.framework */; };
 		07ED2F2F20E2AC6D00EF677F /* Peafowl.h in Headers */ = {isa = PBXBuildFile; fileRef = 07ED2F2D20E2AC6D00EF677F /* Peafowl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07ED2F3320E2AC7C00EF677F /* PeafowlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED2F3120E2AC7C00EF677F /* PeafowlTests.swift */; };
@@ -48,6 +50,8 @@
 		079A8E4520E2BB470009EA6D /* 断ヤオ九.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "断ヤオ九.swift"; sourceTree = "<group>"; };
 		079A8E4720E2BE110009EA6D /* 七対子.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "七対子.swift"; sourceTree = "<group>"; };
 		079A8E4920E2BEE90009EA6D /* 国士無双.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "国士無双.swift"; sourceTree = "<group>"; };
+		07C6398321120CB900725AFB /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		07C6398621120F1000725AFB /* Array+Tiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Tiles.swift"; sourceTree = "<group>"; };
 		07ED2F1320E2AC0F00EF677F /* Peafowl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peafowl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07ED2F1C20E2AC0F00EF677F /* PeafowlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeafowlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07ED2F2D20E2AC6D00EF677F /* Peafowl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Peafowl.h; path = Sources/Peafowl/Peafowl.h; sourceTree = SOURCE_ROOT; };
@@ -88,6 +92,17 @@
 			path = Yakus;
 			sourceTree = "<group>";
 		};
+		07C6398521120EEE00725AFB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				079A8E3C20E2AE9A0009EA6D /* Int+Extensions.swift */,
+				07C6398321120CB900725AFB /* Array+Extensions.swift */,
+				07ED343D2110B6FD00D02AFA /* Sequence+Extensions.swift */,
+				07C6398621120F1000725AFB /* Array+Tiles.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		07ED2F0920E2AC0F00EF677F = {
 			isa = PBXGroup;
 			children = (
@@ -109,17 +124,16 @@
 		07ED2F1520E2AC0F00EF677F /* Peafowl */ = {
 			isa = PBXGroup;
 			children = (
+				07C6398521120EEE00725AFB /* Extensions */,
 				079A8E4420E2BB370009EA6D /* Yakus */,
 				07ED2F2E20E2AC6D00EF677F /* Info.plist */,
 				07ED2F2D20E2AC6D00EF677F /* Peafowl.h */,
 				079A8E3A20E2ADEE0009EA6D /* Tile.swift */,
-				079A8E3C20E2AE9A0009EA6D /* Int+Extensions.swift */,
 				079A8E3E20E2B4F10009EA6D /* Hand.swift */,
 				079A8E4020E2B5960009EA6D /* Yaku.swift */,
 				079A8E4220E2B68C0009EA6D /* Token.swift */,
 				07212FA8210F6B10003F4E75 /* Tokenizer.swift */,
 				07212FAA210F7586003F4E75 /* Form.swift */,
-				07ED343D2110B6FD00D02AFA /* Sequence+Extensions.swift */,
 				07ED34412110C1E300D02AFA /* Tile+Aliases.swift */,
 			);
 			name = Peafowl;
@@ -254,8 +268,10 @@
 				07ED343E2110B6FD00D02AFA /* Sequence+Extensions.swift in Sources */,
 				079A8E4620E2BB470009EA6D /* 断ヤオ九.swift in Sources */,
 				079A8E4320E2B68C0009EA6D /* Token.swift in Sources */,
+				07C6398721120F1000725AFB /* Array+Tiles.swift in Sources */,
 				079A8E3B20E2ADEE0009EA6D /* Tile.swift in Sources */,
 				079A8E3F20E2B4F10009EA6D /* Hand.swift in Sources */,
+				07C6398421120CB900725AFB /* Array+Extensions.swift in Sources */,
 				07212FAB210F7586003F4E75 /* Form.swift in Sources */,
 				07212FA9210F6B10003F4E75 /* Tokenizer.swift in Sources */,
 				079A8E4120E2B5960009EA6D /* Yaku.swift in Sources */,
