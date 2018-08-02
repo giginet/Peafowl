@@ -56,7 +56,7 @@ final class TokenizerTests: XCTestCase {
             .east,
             .east,
             .east,
-        ]).count, 2)
+            ]).count, 2)
         XCTAssertEqual(findMelds(from: [
             1.筒!,
             1.萬!,
@@ -64,6 +64,56 @@ final class TokenizerTests: XCTestCase {
             .east,
             .center,
             .east,
+            ]).count, 0)
+    }
+    
+    func testFindChows() {
+        XCTAssertEqual(findChows(from: [
+            1.筒!,
+            2.筒!,
+            3.筒!,
+            ]).count, 1)
+        XCTAssertEqual(findChows(from: [
+            1.筒!,
+            2.萬!,
+            3.筒!,
+            ]).count, 0)
+        XCTAssertEqual(findChows(from: [
+            1.筒!,
+            2.筒!,
+            3.筒!,
+            4.筒!,
+            ]).count, 2)
+        XCTAssertEqual(findChows(from: [
+            1.筒!,
+            2.筒!,
+            3.筒!,
+            4.筒!,
+            5.筒!,
+            ]).count, 3)
+        XCTAssertEqual(findChows(from: [
+            8.筒!,
+            9.筒!,
+            1.筒!,
+            ]).count, 0)
+        XCTAssertEqual(findChows(from: [
+            1.筒!,
+            2.筒!,
+            3.筒!,
+            1.筒!,
+            2.筒!,
+            3.筒!,
+            ]).count, 2)
+        XCTAssertEqual(findChows(from: [
+            .blank,
+            .fortune,
+            .center
+            ]).count, 0)
+        XCTAssertEqual(findChows(from: [
+            .east,
+            .west,
+            .south,
+            .north
             ]).count, 0)
     }
 }
