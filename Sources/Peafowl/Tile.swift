@@ -150,24 +150,24 @@ public struct Tile: Equatable, Comparable, Hashable {
         }
     }
     
-    internal func advanced(by n: Int) -> Tile? {
+    internal func advanced(by successor: Int) -> Tile? {
         switch suit {
         case .dots(let n):
-            return Tile(.dots(n + 1))
+            return Tile(.dots(n + successor))
         case .character(let n):
-            return Tile(.character(n + 1))
+            return Tile(.character(n + successor))
         case .bamboo(let n):
-            return Tile(.dots(n + 1))
+            return Tile(.dots(n + successor))
         default:
             return nil
         }
     }
     
-    internal var next: Tile? {
+    public var next: Tile? {
         return advanced(by: 1)
     }
     
-    internal var previous: Tile? {
+    public var previous: Tile? {
         return advanced(by: -1)
     }
 }

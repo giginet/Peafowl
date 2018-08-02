@@ -46,4 +46,18 @@ final class TileTests: XCTestCase {
     func testTerminal() {
         assertTiles([true, false, true, false, false, false, false]) { $0.isTerminal }
     }
+    
+    func testNext() {
+        XCTAssertEqual(1.萬!.next!, 2.萬!)
+        XCTAssertNil(9.萬!.next)
+        XCTAssertNil(Tile.east.next)
+        XCTAssertNil(Tile.center.next)
+    }
+    
+    func testPrevious() {
+        XCTAssertNil(1.萬!.previous)
+        XCTAssertEqual(9.萬!.previous, 8.萬!)
+        XCTAssertNil(Tile.east.previous)
+        XCTAssertNil(Tile.center.previous)
+    }
 }
