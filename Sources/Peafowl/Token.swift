@@ -1,12 +1,13 @@
 import Foundation
 
-public protocol Token: Hashable {
+public protocol Token: Hashable, CustomStringConvertible {
     associatedtype Tiles
     var tiles: Tiles { get }
     init?(_ tiles: Tiles)
     var asArray: [Tile] { get }
 }
 
+/// 雀頭
 public struct EyesToken: Token {
     public static func == (lhs: EyesToken, rhs: EyesToken) -> Bool {
         return lhs.tiles.0 == rhs.tiles.0 && lhs.tiles.1 == rhs.tiles.1
@@ -31,8 +32,13 @@ public struct EyesToken: Token {
     public var asArray: [Tile] {
         return [tiles.0, tiles.1].sorted()
     }
+    
+    public var description: String {
+        return "雀頭 (\(tiles.0), \(tiles.1))"
+    }
 }
 
+/// 面子
 public struct MeldToken: Token {
     public static func == (lhs: MeldToken, rhs: MeldToken) -> Bool {
         return lhs.tiles.0 == rhs.tiles.0 && lhs.tiles.1 == rhs.tiles.1 && lhs.tiles.2 == rhs.tiles.2
@@ -81,5 +87,13 @@ public struct MeldToken: Token {
     
     func consistOnly(of filter: (Tile) -> Bool) -> Bool {
         return asArray.filter(filter).count == asArray.count
+    }
+    
+    public var description: String {
+        if isTriplets {
+            return "刻子 (\(tiles.0), \(tiles.1), \(tiles.2)"
+        } else {
+            return "順子 (\(tiles.0), \(tiles.1), \(tiles.2)"
+        }
     }
 }

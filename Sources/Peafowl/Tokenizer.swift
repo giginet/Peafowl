@@ -22,10 +22,7 @@ internal func findChows(from tiles: [Tile]) -> Set<MeldToken> {
         guard let nextTile = tile.next, tiles.contains(nextTile) else {
             return nil
         }
-        guard let newChow = MeldToken((previousTile, tile, nextTile)) else {
-            return nil
-        }
-        return newChow
+        return MeldToken((previousTile, tile, nextTile))
     })
 }
 

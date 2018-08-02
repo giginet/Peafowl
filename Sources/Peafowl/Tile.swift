@@ -171,3 +171,23 @@ public struct Tile: Equatable, Comparable, Hashable {
         return advanced(by: -1)
     }
 }
+
+extension Tile: CustomStringConvertible {
+    public var description: String {
+        switch suit {
+        case .character(let n):
+            return "\(n)萬"
+        case .bamboo(let n):
+            return "\(n)索"
+        case .dots(let n):
+            return "\(n)筒"
+        case .east: return "東"
+        case .south: return "西"
+        case .west: return "南"
+        case .north: return "北"
+        case .blank: return "白"
+        case .fortune: return "撥"
+        case .center: return "中"
+        }
+    }
+}
