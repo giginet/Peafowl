@@ -37,8 +37,8 @@ public struct Tile: Equatable, Comparable, Hashable {
         }
     }
     
-    public var hashValue: Int {
-        return index
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(index)
     }
     
     public let suit: Suit
@@ -150,7 +150,7 @@ public struct Tile: Equatable, Comparable, Hashable {
         }
     }
     
-    internal func advanced(by successor: Int) -> Tile? {
+    private func advanced(by successor: Int) -> Tile? {
         switch suit {
         case .dots(let n):
             return Tile(.dots(n + successor))

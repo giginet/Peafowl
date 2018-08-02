@@ -7,8 +7,8 @@ public protocol Token: Hashable {
     var asArray: [Tile] { get }
 }
 
-public struct PairToken: Token {
-    public static func == (lhs: PairToken, rhs: PairToken) -> Bool {
+public struct EyesToken: Token {
+    public static func == (lhs: EyesToken, rhs: EyesToken) -> Bool {
         return lhs.tiles.0 == rhs.tiles.0 && lhs.tiles.1 == rhs.tiles.1
     }
     
@@ -23,14 +23,9 @@ public struct PairToken: Token {
 
     public init?(tiles: Tiles) {
         self.tiles = tiles
-        guard isEyes else {
+        guard tiles.0 == tiles.1 else {
             return nil
         }
-    }
-    
-    /// 雀頭
-    public var isEyes: Bool {
-        return tiles.0 == tiles.1
     }
     
     public var asArray: [Tile] {
@@ -38,8 +33,8 @@ public struct PairToken: Token {
     }
 }
 
-public struct SetToken: Token {
-    public static func == (lhs: SetToken, rhs: SetToken) -> Bool {
+public struct MeldToken: Token {
+    public static func == (lhs: MeldToken, rhs: MeldToken) -> Bool {
         return lhs.tiles.0 == rhs.tiles.0 && lhs.tiles.1 == rhs.tiles.1 && lhs.tiles.2 == rhs.tiles.2
     }
     
@@ -55,20 +50,20 @@ public struct SetToken: Token {
     
     public init?(tiles: Tiles) {
         self.tiles = tiles
-        guard isMelds || isChow else {
+        guard isTriplets || isSequential else {
             return nil
         }
     }
     
     /// 刻子
-    public var isMelds: Bool {
+    public var isTriplets: Bool {
         return tiles.0 == tiles.1
             && tiles.1 == tiles.2
             && tiles.2 == tiles.0
     }
     
     /// 順子
-    public var isChow: Bool {
+    public var isSequential: Bool {
         let sorted = [tiles.0, tiles.1, tiles.2].sorted()
         switch (sorted[0].suit, sorted[1].suit, sorted[2].suit) {
         case (.character(let a), .character(let b), .character(let c)),
