@@ -13,7 +13,7 @@ final class TokenizerTests: XCTestCase {
     func testFilterEyesTests() {
         XCTAssertEqual(makeTokenizer([
             🀇, 🀈, 🀇, 🀈, 🀇, 🀈,
-            ]).filterEyes().count, 2)
+            ]).findEyes().count, 2)
         XCTAssertEqual(makeTokenizer([
             1.筒!,
             2.筒!,
@@ -21,7 +21,7 @@ final class TokenizerTests: XCTestCase {
             4.筒!,
             5.筒!,
             5.筒!,
-            ]).filterEyes().count, 1)
+            ]).findEyes().count, 1)
         XCTAssertEqual(makeTokenizer([
             1.筒!,
             2.筒!,
@@ -29,6 +29,6 @@ final class TokenizerTests: XCTestCase {
             2.筒!,
             5.筒!,
             5.筒!,
-            ]).filterEyes().count, 3)
+            ]).findEyes().count, 3)
     }
 }
