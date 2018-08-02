@@ -23,6 +23,9 @@ public struct PairToken: Token {
 
     public init?(tiles: Tiles) {
         self.tiles = tiles
+        guard isEyes else {
+            return nil
+        }
     }
     
     /// 雀頭
@@ -52,11 +55,9 @@ public struct SetToken: Token {
     
     public init?(tiles: Tiles) {
         self.tiles = tiles
-    }
-    
-    /// 雀頭
-    public var isEyes: Bool {
-        return tiles.0 == tiles.1
+        guard isMelds || isChow else {
+            return nil
+        }
     }
     
     /// 刻子

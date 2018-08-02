@@ -7,3 +7,9 @@ extension Array where Element: Equatable {
         return remove(at: index)
     }
 }
+
+extension Array where Element: Hashable {
+    func unique() -> [Element] {
+        return Array(Set<Element>(self))
+    }
+}
