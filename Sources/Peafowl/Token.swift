@@ -3,7 +3,7 @@ import Foundation
 public protocol Token: Hashable {
     associatedtype Tiles
     var tiles: Tiles { get }
-    init?(tiles: Tiles)
+    init?(_ tiles: Tiles)
     var asArray: [Tile] { get }
 }
 
@@ -21,7 +21,7 @@ public struct EyesToken: Token {
     
     public typealias Tiles = (Tile, Tile)
 
-    public init?(tiles: Tiles) {
+    public init?(_ tiles: Tiles) {
         self.tiles = tiles
         guard tiles.0 == tiles.1 else {
             return nil
@@ -48,7 +48,7 @@ public struct MeldToken: Token {
     
     public typealias Tiles = (Tile, Tile, Tile)
     
-    public init?(tiles: Tiles) {
+    public init?(_ tiles: Tiles) {
         self.tiles = tiles
         guard isTriplets || isSequential else {
             return nil

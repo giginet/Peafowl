@@ -18,11 +18,11 @@
 		079A8E4620E2BB470009EA6D /* 断ヤオ九.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4520E2BB470009EA6D /* 断ヤオ九.swift */; };
 		079A8E4820E2BE110009EA6D /* 七対子.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4720E2BE110009EA6D /* 七対子.swift */; };
 		079A8E4A20E2BEE90009EA6D /* 国士無双.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4920E2BEE90009EA6D /* 国士無双.swift */; };
+		07A22F812113BC720098F546 /* TokenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A22F802113BC720098F546 /* TokenTests.swift */; };
 		07C6398421120CB900725AFB /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C6398321120CB900725AFB /* Array+Extensions.swift */; };
 		07C6398721120F1000725AFB /* Array+Tiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C6398621120F1000725AFB /* Array+Tiles.swift */; };
 		07ED2F1D20E2AC0F00EF677F /* Peafowl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07ED2F1320E2AC0F00EF677F /* Peafowl.framework */; };
 		07ED2F2F20E2AC6D00EF677F /* Peafowl.h in Headers */ = {isa = PBXBuildFile; fileRef = 07ED2F2D20E2AC6D00EF677F /* Peafowl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07ED2F3320E2AC7C00EF677F /* PeafowlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED2F3120E2AC7C00EF677F /* PeafowlTests.swift */; };
 		07ED343E2110B6FD00D02AFA /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED343D2110B6FD00D02AFA /* Sequence+Extensions.swift */; };
 		07ED34402110BDD900D02AFA /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED343F2110BDD900D02AFA /* TokenizerTests.swift */; };
 		07ED34422110C1E300D02AFA /* Tile+Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED34412110C1E300D02AFA /* Tile+Aliases.swift */; };
@@ -50,13 +50,13 @@
 		079A8E4520E2BB470009EA6D /* 断ヤオ九.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "断ヤオ九.swift"; sourceTree = "<group>"; };
 		079A8E4720E2BE110009EA6D /* 七対子.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "七対子.swift"; sourceTree = "<group>"; };
 		079A8E4920E2BEE90009EA6D /* 国士無双.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "国士無双.swift"; sourceTree = "<group>"; };
+		07A22F802113BC720098F546 /* TokenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenTests.swift; sourceTree = "<group>"; };
 		07C6398321120CB900725AFB /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		07C6398621120F1000725AFB /* Array+Tiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Tiles.swift"; sourceTree = "<group>"; };
 		07ED2F1320E2AC0F00EF677F /* Peafowl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peafowl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07ED2F1C20E2AC0F00EF677F /* PeafowlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeafowlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07ED2F2D20E2AC6D00EF677F /* Peafowl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Peafowl.h; path = Sources/Peafowl/Peafowl.h; sourceTree = SOURCE_ROOT; };
 		07ED2F2E20E2AC6D00EF677F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Peafowl/Info.plist; sourceTree = SOURCE_ROOT; };
-		07ED2F3120E2AC7C00EF677F /* PeafowlTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeafowlTests.swift; path = Tests/PeafowlTests/PeafowlTests.swift; sourceTree = SOURCE_ROOT; };
 		07ED2F3220E2AC7C00EF677F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/PeafowlTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		07ED343D2110B6FD00D02AFA /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
 		07ED343F2110BDD900D02AFA /* TokenizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerTests.swift; sourceTree = "<group>"; };
@@ -144,9 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				07ED2F3220E2AC7C00EF677F /* Info.plist */,
-				07ED2F3120E2AC7C00EF677F /* PeafowlTests.swift */,
 				074FC54E21076CA9007DADDE /* TileTests.swift */,
 				07ED343F2110BDD900D02AFA /* TokenizerTests.swift */,
+				07A22F802113BC720098F546 /* TokenTests.swift */,
 			);
 			name = PeafowlTests;
 			path = Tests/PeafowlTests;
@@ -282,8 +282,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07A22F812113BC720098F546 /* TokenTests.swift in Sources */,
 				07ED34402110BDD900D02AFA /* TokenizerTests.swift in Sources */,
-				07ED2F3320E2AC7C00EF677F /* PeafowlTests.swift in Sources */,
 				074FC55121076DBB007DADDE /* TileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

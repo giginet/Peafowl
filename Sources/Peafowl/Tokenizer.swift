@@ -8,7 +8,7 @@ private func move<T: Token>(_ token: T, from tiles: inout [Tile], to tokens: ino
 internal func findMelds(from tiles: [Tile]) -> Set<MeldToken> {
     return Set(tiles.compactMap { tile in
         if tiles.count(tile) >= 3 {
-            return MeldToken(tiles: (tile, tile, tile))
+            return MeldToken((tile, tile, tile))
         }
         return nil
     })
@@ -22,7 +22,7 @@ internal func findChows(from tiles: [Tile]) -> Set<MeldToken> {
         guard let nextTile = tile.next, tiles.contains(nextTile) else {
             return nil
         }
-        guard let newChow = MeldToken(tiles: (previousTile, tile, nextTile)) else {
+        guard let newChow = MeldToken((previousTile, tile, nextTile)) else {
             return nil
         }
         return newChow
@@ -57,7 +57,7 @@ internal final class Tokenizer {
         var results: [EyesToken] = []
         for tile in tiles {
             if mutableTiles.count(tile) >= 2 {
-                guard let newPair = EyesToken(tiles: (tile, tile)) else { continue }
+                guard let newPair = EyesToken((tile, tile)) else { continue }
                 move(newPair, from: &mutableTiles, to: &results)
             }
         }
