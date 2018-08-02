@@ -15,12 +15,12 @@ final class TokenizerTests: XCTestCase {
             🀇, 🀈, 🀇, 🀈, 🀇, 🀈,
             ]).findEyes().count, 2)
         XCTAssertEqual(makeTokenizer([
-            1.筒!,
-            2.筒!,
-            3.筒!,
-            4.筒!,
-            5.筒!,
-            5.筒!,
+            一筒,
+            二筒,
+            三筒,
+            四筒,
+            五筒,
+            五筒,
             ]).findEyes().count, 1)
         XCTAssertEqual(makeTokenizer([
             1.筒!,
@@ -123,16 +123,7 @@ final class TokenizerTests: XCTestCase {
             5.萬!,
             6.萬!,
             ]).count, 2)
-        XCTAssertEqual(findChows(from: [
-            .blank,
-            .fortune,
-            .center
-            ]).count, 0)
-        XCTAssertEqual(findChows(from: [
-            .east,
-            .west,
-            .south,
-            .north
-            ]).count, 0)
+        XCTAssertEqual(findChows(from: [白, 撥, 中]).count, 0)
+        XCTAssertEqual(findChows(from: [東, 西, 南, 北]).count, 0)
     }
 }
