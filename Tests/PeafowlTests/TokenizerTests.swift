@@ -92,6 +92,17 @@ final class TokenizerTests: XCTestCase {
             5.筒!,
             ]).count, 3)
         XCTAssertEqual(findChows(from: [
+            1.筒!,
+            2.筒!,
+            3.筒!,
+            4.筒!,
+            5.筒!,
+            6.筒!,
+            7.筒!,
+            8.筒!,
+            9.筒!,
+            ]).count, 7)
+        XCTAssertEqual(findChows(from: [
             8.筒!,
             9.筒!,
             1.筒!,
@@ -103,6 +114,14 @@ final class TokenizerTests: XCTestCase {
             1.筒!,
             2.筒!,
             3.筒!,
+            ]).count, 1)
+        XCTAssertEqual(findChows(from: [
+            1.筒!,
+            2.筒!,
+            3.筒!,
+            4.萬!,
+            5.萬!,
+            6.萬!,
             ]).count, 2)
         XCTAssertEqual(findChows(from: [
             .blank,
