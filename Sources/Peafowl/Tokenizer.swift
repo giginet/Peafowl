@@ -8,7 +8,7 @@ private func move<T: Token>(_ token: T, from tiles: inout [Tile], to tokens: ino
 internal func findMelds(from tiles: [Tile]) -> [SetToken] {
     var result: [SetToken] = []
     var currentTiles = tiles
-    for tile in tiles.unique() {
+    for tile in tiles {
         if currentTiles.count(tile) >= 3 {
             guard let newMeld = SetToken(tiles: (tile, tile, tile)) else { continue }
             move(newMeld, from: &currentTiles, to: &result)
@@ -20,7 +20,7 @@ internal func findMelds(from tiles: [Tile]) -> [SetToken] {
 internal func findChows(from tiles: [Tile]) -> [SetToken] {
     var result: [SetToken] = []
     var currentTiles = tiles
-    for tile in tiles.unique() {
+    for tile in tiles {
         guard let previousTile = tile.previous, currentTiles.contains(previousTile) else {
             continue
         }
@@ -61,15 +61,10 @@ internal final class Tokenizer {
     func findEyes(_ tiles: [Tile]) -> [PairToken] {
         var mutableTiles = tiles
         var results: [PairToken] = []
-        for tile in Set(mutableTiles) {
-            if tiles.count(tile) >= 2 {
-                for _ in 0..<2 {
-                    if let index = mutableTiles.firstIndex(of: tile) {
-                        mutableTiles.remove(at: index)
-                    }
-                }
-                guard let pair = PairToken(tiles: (tile, tile)) else { continue }
-                results.append(pair)
+        for tile in tiles {
+            if mutableTiles.count(tile) >= 2 {
+                guard let newPair = PairToken(tiles: (tile, tile)) else { continue }
+                move(newPair, from: &mutableTiles, to: &results)
             }
         }
         return results

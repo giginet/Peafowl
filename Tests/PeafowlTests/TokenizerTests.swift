@@ -10,7 +10,7 @@ final class TokenizerTests: XCTestCase {
         return Tokenizer(hand: hand)
     }
     
-    func testFilterEyesTests() {
+    func testFindEyesTests() {
         XCTAssertEqual(makeTokenizer([
             🀇, 🀈, 🀇, 🀈, 🀇, 🀈,
             ]).findEyes().count, 2)
@@ -30,5 +30,40 @@ final class TokenizerTests: XCTestCase {
             5.筒!,
             5.筒!,
             ]).findEyes().count, 3)
+        XCTAssertEqual(makeTokenizer([
+            1.筒!,
+            1.筒!,
+            1.筒!,
+            2.筒!,
+            2.筒!,
+            1.筒!,
+            ]).findEyes().count, 3)
+    }
+    
+    func testFindMelds() {
+        XCTAssertEqual(findMelds(from: [
+            1.筒!,
+            1.筒!,
+            1.筒!,
+            1.筒!,
+            .east,
+            .east,
+            ]).count, 1)
+        XCTAssertEqual(findMelds(from: [
+            1.筒!,
+            1.筒!,
+            1.筒!,
+            .east,
+            .east,
+            .east,
+        ]).count, 2)
+        XCTAssertEqual(findMelds(from: [
+            1.筒!,
+            1.萬!,
+            1.筒!,
+            .east,
+            .center,
+            .east,
+            ]).count, 0)
     }
 }
