@@ -40,7 +40,7 @@ final class TokenizerTests: XCTestCase {
             ]).findEyes().count, 3)
     }
     
-    func testFindMelds() {
+    func testFindTripletMelds() {
         XCTAssertEqual(findTripletMelds(from: [
             1.筒!,
             1.筒!,
@@ -67,7 +67,7 @@ final class TokenizerTests: XCTestCase {
             ]).count, 0)
     }
     
-    func testFindChows() {
+    func testFindSequentialMelds() {
         XCTAssertEqual(findSequentialMelds(from: [
             1.筒!,
             2.筒!,

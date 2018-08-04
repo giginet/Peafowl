@@ -35,31 +35,42 @@ internal final class Tokenizer {
     
     func tokenize() -> [OrdinaryForm] {
         let eyes = Set(findEyes(from: hand.allTiles))
-        var forms: [OrdinaryForm] = []
-        for eye in eyes {
+        let forms: [OrdinaryForm] = eyes.map { eye in
             var currentTiles = self.hand.allTiles
             currentTiles.removeToken(eye)
-            let searchedMelds = searchMelds(remainingTiles: currentTiles, searchedMelds: Set())
+            let searchedMelds = searchMelds(remainingTiles: currentTiles,
+                                            context: [],
+                                            searchedMelds: Set())
             for melds in searchedMelds {
                 if melds.count == 4 {
                     let form: OrdinaryForm = (eye, melds[0], melds[1], melds[2], melds[3])
-                    forms.append(form)
+                    return form
                 }
             }
-        }
+            return nil
+            }.compactMap { $0 }
         return forms
     }
     
     private func searchMelds(remainingTiles: [Tile],
+                             context: [MeldToken],
                              searchedMelds: Set<[MeldToken]>) -> Set<[MeldToken]> {
         let melds = findMelds(from: remainingTiles)
         var newSearchedMelds = searchedMelds
+        // TODO Use reduce
         for meld in melds {
             var mutableRemainingTiles = remainingTiles
             mutableRemainingTiles.removeToken(meld)
-            let recursiveSearchedMelds = searchMelds(remainingTiles: mutableRemainingTiles,
-                                                     searchedMelds: searchedMelds)
-            newSearchedMelds = newSearchedMelds.union(recursiveSearchedMelds)
+            let newContext = context + [meld]
+            if mutableRemainingTiles.isEmpty {
+                newSearchedMelds.insert(newContext)
+                return newSearchedMelds
+            } else {
+                let recursiveSearchedMelds = searchMelds(remainingTiles: mutableRemainingTiles,
+                                                         context: newContext ,
+                                                         searchedMelds: newSearchedMelds)
+                newSearchedMelds = newSearchedMelds.union(recursiveSearchedMelds)
+            }
         }
         return newSearchedMelds
     }
