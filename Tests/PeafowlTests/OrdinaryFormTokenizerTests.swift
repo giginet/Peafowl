@@ -2,7 +2,7 @@ import Foundation
 import XCTest
 @testable import Peafowl
 
-final class TokenizeOrdinaryFormTests: XCTestCase {
+final class OrdinaryFormTokenizerTests: XCTestCase {
     func testTokenize() {
         let hand0 = [撥, 撥, 中, 中, 中, 白, 白, 白, 一萬, 一萬, 二萬, 二萬, 三萬, 三萬]
         XCTAssertEqual(OrdinaryFormTokenizer().tokenize(from: hand0).count, 1)
