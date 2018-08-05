@@ -3,45 +3,43 @@ import XCTest
 @testable import Peafowl
 
 final class TokenizerTests: XCTestCase {
-    func makeTokenizer(_ tiles: [Tile]) -> Tokenizer {
-        var mutableTiles = tiles
-        let drawed = mutableTiles.remove(at: 0)
-        let hand = Hand(drawed: drawed, tiles: mutableTiles)
-        return Tokenizer(hand: hand)
-    }
+    let tokenizer: OrdinaryFormTokenizer = {
+        let hand = Hand(drawed: nil, tiles: [])
+        return OrdinaryFormTokenizer(hand: hand)
+    }()
     
     func testFindEyesTests() {
-        XCTAssertEqual(makeTokenizer([
+        XCTAssertEqual(tokenizer.findEyes(from: [
             🀇, 🀈, 🀇, 🀈, 🀇, 🀈,
-            ]).findEyes().count, 2)
-        XCTAssertEqual(makeTokenizer([
+            ]).count, 2)
+        XCTAssertEqual(tokenizer.findEyes(from: [
             一筒,
             二筒,
             三筒,
             四筒,
             五筒,
             五筒,
-            ]).findEyes().count, 1)
-        XCTAssertEqual(makeTokenizer([
+            ]).count, 1)
+        XCTAssertEqual(tokenizer.findEyes(from: [
             1.筒!,
             2.筒!,
             1.筒!,
             2.筒!,
             5.筒!,
             5.筒!,
-            ]).findEyes().count, 3)
-        XCTAssertEqual(makeTokenizer([
+            ]).count, 3)
+        XCTAssertEqual(tokenizer.findEyes(from: [
             1.筒!,
             1.筒!,
             1.筒!,
             2.筒!,
             2.筒!,
             1.筒!,
-            ]).findEyes().count, 3)
+            ]).count, 3)
     }
     
     func testFindTripletMelds() {
-        XCTAssertEqual(findTripletMelds(from: [
+        XCTAssertEqual(tokenizer.findTripletMelds(from: [
             1.筒!,
             1.筒!,
             1.筒!,
@@ -49,7 +47,7 @@ final class TokenizerTests: XCTestCase {
             .east,
             .east,
             ]).count, 1)
-        XCTAssertEqual(findTripletMelds(from: [
+        XCTAssertEqual(tokenizer.findTripletMelds(from: [
             1.筒!,
             1.筒!,
             1.筒!,
@@ -57,7 +55,7 @@ final class TokenizerTests: XCTestCase {
             .east,
             .east,
             ]).count, 2)
-        XCTAssertEqual(findTripletMelds(from: [
+        XCTAssertEqual(tokenizer.findTripletMelds(from: [
             1.筒!,
             1.萬!,
             1.筒!,
@@ -68,30 +66,30 @@ final class TokenizerTests: XCTestCase {
     }
     
     func testFindSequentialMelds() {
-        XCTAssertEqual(findSequentialMelds(from: [
+        XCTAssertEqual(tokenizer.findSequentialMelds(from: [
             1.筒!,
             2.筒!,
             3.筒!,
             ]).count, 1)
-        XCTAssertEqual(findSequentialMelds(from: [
+        XCTAssertEqual(tokenizer.findSequentialMelds(from: [
             1.筒!,
             2.萬!,
             3.筒!,
             ]).count, 0)
-        XCTAssertEqual(findSequentialMelds(from: [
+        XCTAssertEqual(tokenizer.findSequentialMelds(from: [
             1.筒!,
             2.筒!,
             3.筒!,
             4.筒!,
             ]).count, 2)
-        XCTAssertEqual(findSequentialMelds(from: [
+        XCTAssertEqual(tokenizer.findSequentialMelds(from: [
             1.筒!,
             2.筒!,
             3.筒!,
             4.筒!,
             5.筒!,
             ]).count, 3)
-        XCTAssertEqual(findSequentialMelds(from: [
+        XCTAssertEqual(tokenizer.findSequentialMelds(from: [
             1.筒!,
             2.筒!,
             3.筒!,
@@ -102,12 +100,12 @@ final class TokenizerTests: XCTestCase {
             8.筒!,
             9.筒!,
             ]).count, 7)
-        XCTAssertEqual(findSequentialMelds(from: [
+        XCTAssertEqual(tokenizer.findSequentialMelds(from: [
             8.筒!,
             9.筒!,
             1.筒!,
             ]).count, 0)
-        XCTAssertEqual(findSequentialMelds(from: [
+        XCTAssertEqual(tokenizer.findSequentialMelds(from: [
             1.筒!,
             2.筒!,
             3.筒!,
@@ -115,7 +113,7 @@ final class TokenizerTests: XCTestCase {
             2.筒!,
             3.筒!,
             ]).count, 1)
-        XCTAssertEqual(findSequentialMelds(from: [
+        XCTAssertEqual(tokenizer.findSequentialMelds(from: [
             1.筒!,
             2.筒!,
             3.筒!,
@@ -123,12 +121,12 @@ final class TokenizerTests: XCTestCase {
             5.萬!,
             6.萬!,
             ]).count, 2)
-        XCTAssertEqual(findSequentialMelds(from: [
+        XCTAssertEqual(tokenizer.findSequentialMelds(from: [
             2.筒!,
             3.筒!,
             4.筒!,
             ]).count, 1)
-        XCTAssertEqual(findSequentialMelds(from: [白, 撥, 中]).count, 0)
-        XCTAssertEqual(findSequentialMelds(from: [東, 西, 南, 北]).count, 0)
+        XCTAssertEqual(tokenizer.findSequentialMelds(from: [白, 撥, 中]).count, 0)
+        XCTAssertEqual(tokenizer.findSequentialMelds(from: [東, 西, 南, 北]).count, 0)
     }
 }
