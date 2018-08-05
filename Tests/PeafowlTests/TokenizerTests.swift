@@ -4,8 +4,7 @@ import XCTest
 
 final class TokenizerTests: XCTestCase {
     let tokenizer: OrdinaryFormTokenizer = {
-        let hand = Hand(drawed: nil, tiles: [])
-        return OrdinaryFormTokenizer(hand: hand)
+        return OrdinaryFormTokenizer()
     }()
     
     func testFindEyesTests() {

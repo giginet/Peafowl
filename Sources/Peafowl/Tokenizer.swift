@@ -7,9 +7,8 @@ private func move<T: Token>(_ token: T, from tiles: inout [Tile], to tokens: ino
 
 internal protocol Tokenizer {
     associatedtype Form
-    var hand: Hand { get }
-    init(hand: Hand)
-    func tokenize() -> [Form]
+    init()
+    func tokenize(from tiles: [Tile]) -> [Form]
 }
 
 extension Tokenizer {
@@ -49,20 +48,15 @@ extension Tokenizer {
 
 internal struct OrdinaryFormTokenizer: Tokenizer {
     typealias Form = OrdinaryForm
-    let hand: Hand
-    
-    init(hand: Hand) {
-        self.hand = hand
-    }
     
     func findMelds(from tiles: [Tile]) -> Set<MeldToken> {
         return findSequentialMelds(from: tiles).union(findTripletMelds(from: tiles))
     }
     
-    func tokenize() -> [Form] {
-        let eyes = Set(findEyes(from: hand.allTiles))
+    func tokenize(from tiles: [Tile]) -> [Form] {
+        let eyes = Set(findEyes(from: tiles))
         let forms: [OrdinaryForm] = eyes.map { eye in
-            let currentTiles = self.hand.allTiles.removed(eye)
+            let currentTiles = tiles.removed(eye)
             let searchedMelds = searchMelds(remainingTiles: currentTiles)
             for melds in searchedMelds {
                 if melds.count == 4 {
@@ -96,14 +90,9 @@ internal struct OrdinaryFormTokenizer: Tokenizer {
 
 internal struct SevenPairsFormTokenizer: Tokenizer {
     typealias Form = SevenPairsForm
-    let hand: Hand
     
-    init(hand: Hand) {
-        self.hand = hand
-    }
-    
-    func tokenize() -> [SevenPairsForm] {
-        let melds = findEyes(from: hand.allTiles)
+    func tokenize(from tiles: [Tile]) -> [SevenPairsForm] {
+        let melds = findEyes(from: tiles)
         if melds.count == 7 {
             let form = SevenPairsForm((melds[0], melds[1], melds[2], melds[3], melds[4], melds[5], melds[6]))
             return [form]
