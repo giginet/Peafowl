@@ -11,8 +11,9 @@
 		07212FAB210F7586003F4E75 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07212FAA210F7586003F4E75 /* Form.swift */; };
 		074FC55121076DBB007DADDE /* TileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074FC54E21076CA9007DADDE /* TileTests.swift */; };
 		0762D3502115F07000CC66D5 /* TokenizeOrdinaryFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762D34F2115F07000CC66D5 /* TokenizeOrdinaryFormTests.swift */; };
+		0762D3522116D11500CC66D5 /* Set+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762D3512116D11500CC66D5 /* Set+Extensions.swift */; };
 		079A8E3B20E2ADEE0009EA6D /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3A20E2ADEE0009EA6D /* Tile.swift */; };
-		079A8E3D20E2AE9A0009EA6D /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3C20E2AE9A0009EA6D /* Int+Extensions.swift */; };
+		079A8E3D20E2AE9A0009EA6D /* Int+Tiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3C20E2AE9A0009EA6D /* Int+Tiles.swift */; };
 		079A8E3F20E2B4F10009EA6D /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3E20E2B4F10009EA6D /* Hand.swift */; };
 		079A8E4120E2B5960009EA6D /* Yaku.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4020E2B5960009EA6D /* Yaku.swift */; };
 		079A8E4320E2B68C0009EA6D /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4220E2B68C0009EA6D /* Token.swift */; };
@@ -44,8 +45,9 @@
 		07212FAA210F7586003F4E75 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 		074FC54E21076CA9007DADDE /* TileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileTests.swift; sourceTree = "<group>"; };
 		0762D34F2115F07000CC66D5 /* TokenizeOrdinaryFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizeOrdinaryFormTests.swift; sourceTree = "<group>"; };
+		0762D3512116D11500CC66D5 /* Set+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Extensions.swift"; sourceTree = "<group>"; };
 		079A8E3A20E2ADEE0009EA6D /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
-		079A8E3C20E2AE9A0009EA6D /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		079A8E3C20E2AE9A0009EA6D /* Int+Tiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Tiles.swift"; sourceTree = "<group>"; };
 		079A8E3E20E2B4F10009EA6D /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		079A8E4020E2B5960009EA6D /* Yaku.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yaku.swift; sourceTree = "<group>"; };
 		079A8E4220E2B68C0009EA6D /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -97,10 +99,11 @@
 		07C6398521120EEE00725AFB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				079A8E3C20E2AE9A0009EA6D /* Int+Extensions.swift */,
+				079A8E3C20E2AE9A0009EA6D /* Int+Tiles.swift */,
 				07C6398321120CB900725AFB /* Array+Extensions.swift */,
 				07ED343D2110B6FD00D02AFA /* Sequence+Extensions.swift */,
 				07C6398621120F1000725AFB /* Array+Tiles.swift */,
+				0762D3512116D11500CC66D5 /* Set+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -264,9 +267,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				079A8E3D20E2AE9A0009EA6D /* Int+Extensions.swift in Sources */,
+				079A8E3D20E2AE9A0009EA6D /* Int+Tiles.swift in Sources */,
 				079A8E4820E2BE110009EA6D /* 七対子.swift in Sources */,
 				079A8E4A20E2BEE90009EA6D /* 国士無双.swift in Sources */,
+				0762D3522116D11500CC66D5 /* Set+Extensions.swift in Sources */,
 				07ED34422110C1E300D02AFA /* Tile+Aliases.swift in Sources */,
 				07ED343E2110B6FD00D02AFA /* Sequence+Extensions.swift in Sources */,
 				079A8E4620E2BB470009EA6D /* 断ヤオ九.swift in Sources */,

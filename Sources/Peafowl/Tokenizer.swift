@@ -1,7 +1,7 @@
 import Foundation
 
 private func move<T: Token>(_ token: T, from tiles: inout [Tile], to tokens: inout [T]) {
-    tiles.removeToken(token)
+    tiles.remove(token)
     tokens.append(token)
 }
 
@@ -36,11 +36,8 @@ internal final class Tokenizer {
     func tokenize() -> [OrdinaryForm] {
         let eyes = Set(findEyes(from: hand.allTiles))
         let forms: [OrdinaryForm] = eyes.map { eye in
-            var currentTiles = self.hand.allTiles
-            currentTiles.removeToken(eye)
-            let searchedMelds = searchMelds(remainingTiles: currentTiles,
-                                            context: [],
-                                            searchedMelds: Set())
+            let currentTiles = self.hand.allTiles.removed(eye)
+            let searchedMelds = searchMelds(remainingTiles: currentTiles)
             for melds in searchedMelds {
                 if melds.count == 4 {
                     let form: OrdinaryForm = (eye, melds[0], melds[1], melds[2], melds[3])
@@ -53,26 +50,21 @@ internal final class Tokenizer {
     }
     
     private func searchMelds(remainingTiles: [Tile],
-                             context: [MeldToken],
-                             searchedMelds: Set<[MeldToken]>) -> Set<[MeldToken]> {
+                             context: [MeldToken] = [],
+                             searchedMelds: Set<[MeldToken]> = Set()) -> Set<[MeldToken]> {
         let melds = findMelds(from: remainingTiles)
-        var newSearchedMelds = searchedMelds
-        // TODO Use reduce
-        for meld in melds {
-            var mutableRemainingTiles = remainingTiles
-            mutableRemainingTiles.removeToken(meld)
+        return melds.reduce(into: Set<[MeldToken]>()) { searchedMelds, meld in
+            let newRemainingTiles = remainingTiles.removed(meld)
             let newContext = context + [meld]
             if newContext.count == 4 {
-                newSearchedMelds.insert(newContext)
-                return newSearchedMelds
+                searchedMelds.insert(newContext)
             } else {
-                let recursiveSearchedMelds = searchMelds(remainingTiles: mutableRemainingTiles,
+                let recursiveSearchedMelds = searchMelds(remainingTiles: newRemainingTiles,
                                                          context: newContext ,
-                                                         searchedMelds: newSearchedMelds)
-                newSearchedMelds = newSearchedMelds.union(recursiveSearchedMelds)
+                                                         searchedMelds: searchedMelds)
+                searchedMelds.formUnion(recursiveSearchedMelds)
             }
         }
-        return newSearchedMelds
     }
     
     func findMelds(from tiles: [Tile]) -> Set<MeldToken> {
