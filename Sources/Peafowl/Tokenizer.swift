@@ -62,7 +62,7 @@ internal final class Tokenizer {
             var mutableRemainingTiles = remainingTiles
             mutableRemainingTiles.removeToken(meld)
             let newContext = context + [meld]
-            if mutableRemainingTiles.isEmpty {
+            if newContext.count == 4 {
                 newSearchedMelds.insert(newContext)
                 return newSearchedMelds
             } else {

@@ -123,6 +123,11 @@ final class TokenizerTests: XCTestCase {
             5.萬!,
             6.萬!,
             ]).count, 2)
+        XCTAssertEqual(findSequentialMelds(from: [
+            2.筒!,
+            3.筒!,
+            4.筒!,
+            ]).count, 1)
         XCTAssertEqual(findSequentialMelds(from: [白, 撥, 中]).count, 0)
         XCTAssertEqual(findSequentialMelds(from: [東, 西, 南, 北]).count, 0)
     }

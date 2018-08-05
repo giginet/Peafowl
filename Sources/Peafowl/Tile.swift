@@ -157,7 +157,7 @@ public struct Tile: Equatable, Comparable, Hashable {
         case .character(let n):
             return Tile(.character(n + successor))
         case .bamboo(let n):
-            return Tile(.dots(n + successor))
+            return Tile(.bamboo(n + successor))
         default:
             return nil
         }
