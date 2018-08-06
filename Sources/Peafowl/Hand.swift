@@ -1,8 +1,8 @@
 import Foundation
 
 public struct Hand: Equatable {
-    var drawed: Tile?
     var tiles: [Tile]
+    var drawed: Tile?
     
     public var allTiles: [Tile] {
         if let drawed = drawed {

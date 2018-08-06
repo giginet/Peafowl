@@ -7,6 +7,20 @@ public protocol Token: Hashable, CustomStringConvertible {
     var asArray: [Tile] { get }
 }
 
+public enum WaitingForm {
+    /// 両面待ち
+    case bothSides
+    /// 嵌張待ち
+    case middleTile
+    /// 辺張待ち
+    case singleSide
+    /// 単騎待ち
+    case singleTile
+    /// 双碰待ち
+    case eitherOfMelds
+}
+
+
 /// 雀頭
 public struct EyesToken: Token {
     public static func == (lhs: EyesToken, rhs: EyesToken) -> Bool {
