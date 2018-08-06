@@ -1,9 +1,10 @@
 import Foundation
 
 /// 役
-public protocol Yaku {
+public protocol YakuProtocol: Hashable {
     associatedtype Form
     
+    var name: String { get }
     /// 翻
     var closedHan: Int { get }
     /// 喰い下がり翻
@@ -12,12 +13,86 @@ public protocol Yaku {
     static func make(with tiles: Form, drawed: Tile) -> Self?
 }
 
-public extension Yaku {
+public extension YakuProtocol {
     var openedHan: Int? {
         return 0
     }
     
     var isYakuman: Bool {
         return closedHan >= 13
+    }
+}
+
+private class BoxBase: YakuProtocol {
+    static func == (lhs: BoxBase, rhs: BoxBase) -> Bool {
+        return lhs.name == rhs.name
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        fatalError("Not implemented")
+    }
+    
+    var closedHan: Int {
+        fatalError("Not implemented")
+    }
+    
+    var openedHan: Int? {
+        fatalError("Not implemented")
+    }
+    
+    var name: String {
+        fatalError("Not implemented")
+    }
+    
+    static func make(with tiles: Void, drawed: Tile) -> Self? {
+        fatalError("Not implemented")
+    }
+    
+    typealias Form = Void
+}
+
+public struct AnyYaku: YakuProtocol {
+    public static func make(with tiles: Void, drawed: Tile) -> AnyYaku? {
+        fatalError("Could not make AnyYaku")
+    }
+    
+    public typealias Form = Void
+    private let box: BoxBase
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(box.name)
+    }
+    
+    internal init<Yaku>(_ yaku: Yaku) where Yaku: YakuProtocol {
+        self.box = Box(yaku)
+    }
+    
+    public var name: String {
+        return box.name
+    }
+    
+    public var closedHan: Int {
+        return box.closedHan
+    }
+    
+    private class Box<Yaku>: BoxBase where Yaku: YakuProtocol {
+        typealias Form = Void
+        
+        private let internalYaku: Yaku
+        init(_ yaku: Yaku) {
+            self.internalYaku = yaku
+        }
+        
+        override var closedHan: Int {
+            return internalYaku.closedHan
+        }
+        
+        override var openedHan: Int? {
+            return internalYaku.openedHan
+        }
+        
+        override var name: String {
+            return internalYaku.name
+        }
     }
 }

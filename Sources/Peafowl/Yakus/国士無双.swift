@@ -8,10 +8,11 @@ public struct 国士無双: ThirteenOrphansFormedYaku {
             return 13
         }
     }
+    public let name = "国士無双"
     public let openedHan: Int? = nil
     public let isWaitingHead: Bool
     
-    private init(isWaitingHead: Bool) {
+    internal init(isWaitingHead: Bool) {
         self.isWaitingHead = isWaitingHead
     }
     
