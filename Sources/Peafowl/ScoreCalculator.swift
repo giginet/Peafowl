@@ -16,10 +16,14 @@ public struct GameContext {
     let isDealer: Bool
 }
 
+public struct CalculationSetting {
+    var ignoreLimits: Bool
+}
+
 public struct Score {
     var han: Int
     var fu: Int
-    // yaku
+    var yaku: Set<AnyYaku>
     var score: Int
 }
 
