@@ -182,8 +182,8 @@ extension Tile: CustomStringConvertible {
         case .dots(let n):
             return "\(n)筒"
         case .east: return "東"
-        case .south: return "西"
-        case .west: return "南"
+        case .south: return "南"
+        case .west: return "西"
         case .north: return "北"
         case .blank: return "白"
         case .fortune: return "撥"
