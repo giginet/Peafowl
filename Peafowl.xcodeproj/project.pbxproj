@@ -10,9 +10,8 @@
 		07212FA9210F6B10003F4E75 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07212FA8210F6B10003F4E75 /* Tokenizer.swift */; };
 		07212FAB210F7586003F4E75 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07212FAA210F7586003F4E75 /* Form.swift */; };
 		074FC55121076DBB007DADDE /* TileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074FC54E21076CA9007DADDE /* TileTests.swift */; };
-		0762D3502115F07000CC66D5 /* OrdinaryFormTokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762D34F2115F07000CC66D5 /* OrdinaryFormTokenizerTests.swift */; };
+		0762D3502115F07000CC66D5 /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762D34F2115F07000CC66D5 /* TokenizerTests.swift */; };
 		0762D3522116D11500CC66D5 /* Set+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762D3512116D11500CC66D5 /* Set+Extensions.swift */; };
-		0762D3542116E6D400CC66D5 /* SevenPairsFormTokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762D3532116E6D400CC66D5 /* SevenPairsFormTokenizerTests.swift */; };
 		0778DC4B2118AD0200B8B841 /* ScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0778DC4A2118AD0200B8B841 /* ScoreCalculator.swift */; };
 		0778DC502118B45900B8B841 /* AnyYakuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0778DC4F2118B45900B8B841 /* AnyYakuTests.swift */; };
 		079A8E3B20E2ADEE0009EA6D /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3A20E2ADEE0009EA6D /* Tile.swift */; };
@@ -29,7 +28,6 @@
 		07ED2F1D20E2AC0F00EF677F /* Peafowl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07ED2F1320E2AC0F00EF677F /* Peafowl.framework */; };
 		07ED2F2F20E2AC6D00EF677F /* Peafowl.h in Headers */ = {isa = PBXBuildFile; fileRef = 07ED2F2D20E2AC6D00EF677F /* Peafowl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07ED343E2110B6FD00D02AFA /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED343D2110B6FD00D02AFA /* Sequence+Extensions.swift */; };
-		07ED34402110BDD900D02AFA /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED343F2110BDD900D02AFA /* TokenizerTests.swift */; };
 		07ED34422110C1E300D02AFA /* Tile+Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED34412110C1E300D02AFA /* Tile+Aliases.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,9 +45,8 @@
 		07212FA8210F6B10003F4E75 /* Tokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
 		07212FAA210F7586003F4E75 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 		074FC54E21076CA9007DADDE /* TileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileTests.swift; sourceTree = "<group>"; };
-		0762D34F2115F07000CC66D5 /* OrdinaryFormTokenizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdinaryFormTokenizerTests.swift; sourceTree = "<group>"; };
+		0762D34F2115F07000CC66D5 /* TokenizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerTests.swift; sourceTree = "<group>"; };
 		0762D3512116D11500CC66D5 /* Set+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Extensions.swift"; sourceTree = "<group>"; };
-		0762D3532116E6D400CC66D5 /* SevenPairsFormTokenizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenPairsFormTokenizerTests.swift; sourceTree = "<group>"; };
 		0778DC4A2118AD0200B8B841 /* ScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCalculator.swift; sourceTree = "<group>"; };
 		0778DC4F2118B45900B8B841 /* AnyYakuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyYakuTests.swift; sourceTree = "<group>"; };
 		079A8E3A20E2ADEE0009EA6D /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
@@ -69,7 +66,6 @@
 		07ED2F2E20E2AC6D00EF677F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Peafowl/Info.plist; sourceTree = SOURCE_ROOT; };
 		07ED2F3220E2AC7C00EF677F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/PeafowlTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		07ED343D2110B6FD00D02AFA /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
-		07ED343F2110BDD900D02AFA /* TokenizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerTests.swift; sourceTree = "<group>"; };
 		07ED34412110C1E300D02AFA /* Tile+Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tile+Aliases.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,10 +153,8 @@
 			children = (
 				07ED2F3220E2AC7C00EF677F /* Info.plist */,
 				074FC54E21076CA9007DADDE /* TileTests.swift */,
-				07ED343F2110BDD900D02AFA /* TokenizerTests.swift */,
 				07A22F802113BC720098F546 /* TokenTests.swift */,
-				0762D34F2115F07000CC66D5 /* OrdinaryFormTokenizerTests.swift */,
-				0762D3532116E6D400CC66D5 /* SevenPairsFormTokenizerTests.swift */,
+				0762D34F2115F07000CC66D5 /* TokenizerTests.swift */,
 				0778DC4F2118B45900B8B841 /* AnyYakuTests.swift */,
 			);
 			name = PeafowlTests;
@@ -300,10 +294,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				07A22F812113BC720098F546 /* TokenTests.swift in Sources */,
-				0762D3542116E6D400CC66D5 /* SevenPairsFormTokenizerTests.swift in Sources */,
 				0778DC502118B45900B8B841 /* AnyYakuTests.swift in Sources */,
-				07ED34402110BDD900D02AFA /* TokenizerTests.swift in Sources */,
-				0762D3502115F07000CC66D5 /* OrdinaryFormTokenizerTests.swift in Sources */,
+				0762D3502115F07000CC66D5 /* TokenizerTests.swift in Sources */,
 				074FC55121076DBB007DADDE /* TileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
