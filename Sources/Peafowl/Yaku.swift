@@ -64,7 +64,7 @@ public struct AnyYaku: YakuProtocol {
     
     private class BaseBox: YakuProtocol {
         static func == (lhs: BaseBox, rhs: BaseBox) -> Bool {
-            fatalError("Not implemented")
+            return lhs.yakuClass == rhs.yakuClass
         }
         
         func hash(into hasher: inout Hasher) {
@@ -83,6 +83,10 @@ public struct AnyYaku: YakuProtocol {
             fatalError("Not implemented")
         }
         
+        fileprivate var yakuClass: Any.Type? {
+            fatalError("Not implemeted")
+        }
+        
         static func make(with tiles: [Tile], form: WinningForm?, drawed: Tile) -> Self? {
             fatalError("Not implemented")
         }
@@ -95,8 +99,8 @@ public struct AnyYaku: YakuProtocol {
             self.internalYaku = yaku
         }
         
-        static func == (lhs: Box, rhs: Box) -> Bool {
-            return type(of: lhs.internalYaku) == type(of: rhs.internalYaku)
+        override var yakuClass: Any.Type? {
+            return type(of: internalYaku)
         }
         
         override var closedHan: Int {
