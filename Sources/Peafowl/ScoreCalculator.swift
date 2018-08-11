@@ -80,6 +80,10 @@ private func calculateScore(from fu: Int, and han: Int) -> Double {
     return Double(fu) * Double(pow(2, Double(2 + han)))
 }
 
+private let availableYakuTypes = [
+    AnyYakuType(断ヤオ九.self),
+]
+
 public class ScoreCalculator {
     private let calculationOptions: CalculationOptions
     
@@ -91,32 +95,42 @@ public class ScoreCalculator {
     
     func calculate(with hand: Hand, context: GameContext) -> [Score]? {
         guard let drawed = hand.drawed else {
-            return []
+            return nil
         }
         guard hand.allTiles.count == 14 else {
-            return []
+            return nil
         }
         
         guard let forms = winningDetector.detectForms(hand.allTiles) else {
             return nil
         }
-        return forms.reduce([]) { scores, form in
-            var winningYaku: Set<AnyYaku> = []
+        return forms.reduce([]) { (scores, form) -> [Score] in
             switch form {
             case .ordinary(let ordinaryForms):
-                break
+                let scores: [Score] = ordinaryForms.map { ordinaryForm in
+                    let winningYaku: Set<AnyYaku> = Set(availableYakuTypes.map { type in
+                        return type.make(with: hand.allTiles, form: nil, drawed: drawed)
+                        }.compactMap { $0 })
+                    return Score(yaku: winningYaku, fu: 0, options: calculationOptions)
+                }
+                return scores
             case .sevenPairs:
+                let winningYaku: Set<AnyYaku>
                 if let yaku = 七対子.make(with: hand.allTiles, form: nil, drawed: drawed) {
-                    winningYaku.insert(AnyYaku(yaku))
+                    winningYaku = [AnyYaku(yaku)]
+                } else {
+                    winningYaku = []
                 }
-                return [Score(yaku: winningYaku, fu: 25, options: calculationOptions)]
+                return scores + [Score(yaku: winningYaku, fu: 25, options: calculationOptions)]
             case .thirteenOrphans:
+                let winningYaku: Set<AnyYaku>
                 if let yaku = 国士無双.make(with: hand.allTiles, form: nil, drawed: drawed) {
-                    winningYaku.insert(AnyYaku(yaku))
+                    winningYaku = [AnyYaku(yaku)]
+                } else {
+                    winningYaku = []
                 }
-                return [Score(yaku: winningYaku, fu: 25, options: calculationOptions)]
+                return scores + [Score(yaku: winningYaku, fu: 25, options: calculationOptions)]
             }
-            return nil
         }
     }
 }
