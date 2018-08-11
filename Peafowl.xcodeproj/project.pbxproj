@@ -15,6 +15,9 @@
 		0778DC4B2118AD0200B8B841 /* ScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0778DC4A2118AD0200B8B841 /* ScoreCalculator.swift */; };
 		0778DC502118B45900B8B841 /* AnyYakuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0778DC4F2118B45900B8B841 /* AnyYakuTests.swift */; };
 		07811BEF211F432A0052DCB2 /* WinningDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07811BEE211F432A0052DCB2 /* WinningDetector.swift */; };
+		07811BF1211F6D980052DCB2 /* ScoreCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07811BF0211F6D980052DCB2 /* ScoreCalculatorTests.swift */; };
+		07811BF3211F70F90052DCB2 /* YakuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07811BF2211F70F90052DCB2 /* YakuTests.swift */; };
+		07811BF5211F71B40052DCB2 /* GameContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07811BF4211F71B40052DCB2 /* GameContext.swift */; };
 		079A8E3B20E2ADEE0009EA6D /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3A20E2ADEE0009EA6D /* Tile.swift */; };
 		079A8E3D20E2AE9A0009EA6D /* Int+Tiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3C20E2AE9A0009EA6D /* Int+Tiles.swift */; };
 		079A8E3F20E2B4F10009EA6D /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3E20E2B4F10009EA6D /* Hand.swift */; };
@@ -51,6 +54,9 @@
 		0778DC4A2118AD0200B8B841 /* ScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCalculator.swift; sourceTree = "<group>"; };
 		0778DC4F2118B45900B8B841 /* AnyYakuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyYakuTests.swift; sourceTree = "<group>"; };
 		07811BEE211F432A0052DCB2 /* WinningDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningDetector.swift; sourceTree = "<group>"; };
+		07811BF0211F6D980052DCB2 /* ScoreCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCalculatorTests.swift; sourceTree = "<group>"; };
+		07811BF2211F70F90052DCB2 /* YakuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YakuTests.swift; sourceTree = "<group>"; };
+		07811BF4211F71B40052DCB2 /* GameContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContext.swift; sourceTree = "<group>"; };
 		079A8E3A20E2ADEE0009EA6D /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		079A8E3C20E2AE9A0009EA6D /* Int+Tiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Tiles.swift"; sourceTree = "<group>"; };
 		079A8E3E20E2B4F10009EA6D /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
@@ -146,6 +152,7 @@
 				07212FAA210F7586003F4E75 /* Form.swift */,
 				07ED34412110C1E300D02AFA /* Tile+Aliases.swift */,
 				07811BEE211F432A0052DCB2 /* WinningDetector.swift */,
+				07811BF4211F71B40052DCB2 /* GameContext.swift */,
 			);
 			name = Peafowl;
 			path = Sources/Peafowl;
@@ -159,6 +166,8 @@
 				07A22F802113BC720098F546 /* TokenTests.swift */,
 				0762D34F2115F07000CC66D5 /* TokenizerTests.swift */,
 				0778DC4F2118B45900B8B841 /* AnyYakuTests.swift */,
+				07811BF0211F6D980052DCB2 /* ScoreCalculatorTests.swift */,
+				07811BF2211F70F90052DCB2 /* YakuTests.swift */,
 			);
 			name = PeafowlTests;
 			path = Tests/PeafowlTests;
@@ -284,6 +293,7 @@
 				079A8E4620E2BB470009EA6D /* 断ヤオ九.swift in Sources */,
 				079A8E4320E2B68C0009EA6D /* Token.swift in Sources */,
 				07C6398721120F1000725AFB /* Array+Tiles.swift in Sources */,
+				07811BF5211F71B40052DCB2 /* GameContext.swift in Sources */,
 				079A8E3B20E2ADEE0009EA6D /* Tile.swift in Sources */,
 				079A8E3F20E2B4F10009EA6D /* Hand.swift in Sources */,
 				07C6398421120CB900725AFB /* Array+Extensions.swift in Sources */,
@@ -298,7 +308,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				07A22F812113BC720098F546 /* TokenTests.swift in Sources */,
+				07811BF3211F70F90052DCB2 /* YakuTests.swift in Sources */,
 				0778DC502118B45900B8B841 /* AnyYakuTests.swift in Sources */,
+				07811BF1211F6D980052DCB2 /* ScoreCalculatorTests.swift in Sources */,
 				0762D3502115F07000CC66D5 /* TokenizerTests.swift in Sources */,
 				074FC55121076DBB007DADDE /* TileTests.swift in Sources */,
 			);

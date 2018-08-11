@@ -19,32 +19,11 @@ public enum WaitingForm {
     case eitherOfMelds
 }
 
-public struct GameContext {
-    public enum WinningType {
-        /// 自摸
-        case selfPick
-        /// ロン
-        case rob
-    }
-    public enum PickedSource {
-        /// 山
-        case wall
-        /// 海底、河底
-        case lastTile
-        /// 嶺上牌
-        case deadWall
-    }
-    let winningType: WinningType
-    let pickedSource: PickedSource
-    /// 一発
-    let isOneShot: Bool
-    /// 親
-    let isDealer: Bool
-}
-
 public struct CalculationOptions {
     /// 青天井
     var ignoreLimits: Bool
+    
+    static let `default`: CalculationOptions = .init(ignoreLimits: false)
 }
 
 public struct Score: Comparable {
@@ -138,7 +117,8 @@ public class ScoreCalculator {
                 let winningForm: WinningForm? = tokenizedResult.flatMap { convertToWinningForm(from: $0) }
                 return type.make(with: hand.allTiles,
                                  form: winningForm,
-                                 drawed: drawed)
+                                 drawed: drawed,
+                                 context: context)
                 }.compactMap { $0 })
             return winningYaku
         }
@@ -153,7 +133,7 @@ public class ScoreCalculator {
                 return scores
             case .sevenPairs:
                 let winningYaku: Set<AnyYaku>
-                if let yaku = 七対子.make(with: hand.allTiles, form: nil, drawed: drawed) {
+                if let yaku = 七対子.make(with: hand.allTiles, form: nil, drawed: drawed, context: context) {
                     winningYaku = [AnyYaku(yaku)]
                 } else {
                     winningYaku = []
@@ -162,7 +142,7 @@ public class ScoreCalculator {
                 return scores + [Score(yaku: winningYaku.union(otherYaku), fu: 25)]
             case .thirteenOrphans:
                 let winningYaku: Set<AnyYaku>
-                if let yaku = 国士無双.make(with: hand.allTiles, form: nil, drawed: drawed) {
+                if let yaku = 国士無双.make(with: hand.allTiles, form: nil, drawed: drawed, context: context) {
                     winningYaku = [AnyYaku(yaku)]
                 } else {
                     winningYaku = []
