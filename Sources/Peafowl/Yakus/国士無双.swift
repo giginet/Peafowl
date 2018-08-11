@@ -1,6 +1,6 @@
 import Foundation
 
-public struct 国士無双: ThirteenOrphansFormedYaku {
+public struct 国士無双: YakuProtocol {
     public var closedHan: Int {
         if isWaitingHead {
             return 26
@@ -16,8 +16,8 @@ public struct 国士無双: ThirteenOrphansFormedYaku {
         self.isWaitingHead = isWaitingHead
     }
     
-    public static func make(with hand: Hand, drawed: Tile) -> 国士無双? {
-        let uniquedArray = Set<Tile>(hand.allTiles)
+    public static func make(with tiles: [Tile], form: WinningForm?, drawed: Tile) -> 国士無双? {
+        let uniquedArray = Set<Tile>(tiles)
         if uniquedArray.count != 13 {
             return nil
         }

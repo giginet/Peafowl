@@ -2,15 +2,13 @@ import Foundation
 
 /// 役
 public protocol YakuProtocol: Hashable {
-    associatedtype Form
-    
     var name: String { get }
     /// 翻
     var closedHan: Int { get }
     /// 喰い下がり翻
     var openedHan: Int? { get }
     var isYakuman: Bool { get }
-    static func make(with tiles: Form, drawed: Tile) -> Self?
+    static func make(with tiles: [Tile], form: WinningForm?, drawed: Tile) -> Self?
 }
 
 public extension YakuProtocol {
@@ -44,15 +42,13 @@ private class BoxBase: YakuProtocol {
         fatalError("Not implemented")
     }
     
-    static func make(with tiles: Void, drawed: Tile) -> Self? {
+    static func make(with tiles: [Tile], form: WinningForm?, drawed: Tile) -> Self? {
         fatalError("Not implemented")
     }
-    
-    typealias Form = Void
 }
 
 public struct AnyYaku: YakuProtocol {
-    public static func make(with tiles: Void, drawed: Tile) -> AnyYaku? {
+    public static func make(with tiles: [Tile], form: WinningForm?, drawed: Tile) -> AnyYaku? {
         fatalError("Could not make AnyYaku")
     }
     
@@ -76,8 +72,6 @@ public struct AnyYaku: YakuProtocol {
     }
     
     private class Box<Yaku>: BoxBase where Yaku: YakuProtocol {
-        typealias Form = Void
-        
         private let internalYaku: Yaku
         init(_ yaku: Yaku) {
             self.internalYaku = yaku

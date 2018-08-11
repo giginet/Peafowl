@@ -96,13 +96,13 @@ public class ScoreCalculator {
         guard hand.allTiles.count == 14 else {
             return []
         }
-        let sevenPairsTokenizer = SevenPairsFormTokenizer()
-        if let form = sevenPairsTokenizer.tokenize(from: hand.allTiles).first {
-            if let yaku = 七対子.make(with: form, drawed: drawed) {
-                winningYaku.insert(AnyYaku(yaku))
-            }
-            return [Score(yaku: winningYaku, fu: 25, options: calculationOptions)]
-        }
+//        let sevenPairsTokenizer = SevenPairsFormTokenizer()
+//        if !sevenPairsTokenizer.tokenize(from: hand.allTiles).isEmpty {
+//            if let yaku = 七対子.make(with: hand.allTiles, form: nil, drawed: drawed) {
+//                winningYaku.insert(AnyYaku(yaku))
+//            }
+//            return [Score(yaku: winningYaku, fu: 25, options: calculationOptions)]
+//        }
         return []
     }
 }

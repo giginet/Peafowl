@@ -47,7 +47,7 @@ extension Tokenizer {
 }
 
 internal struct OrdinaryFormTokenizer: Tokenizer {
-    typealias Form = OrdinaryForm
+    typealias Form = WinningForm
     
     func findMelds(from tiles: [Tile]) -> Set<MeldToken> {
         return findSequentialMelds(from: tiles).union(findTripletMelds(from: tiles))
@@ -55,12 +55,12 @@ internal struct OrdinaryFormTokenizer: Tokenizer {
     
     func tokenize(from tiles: [Tile]) -> [Form] {
         let eyes = Set(findEyes(from: tiles))
-        let forms: [OrdinaryForm] = eyes.map { eye in
+        let forms: [WinningForm] = eyes.map { eye in
             let currentTiles = tiles.removed(eye)
             let searchedMelds = searchMelds(remainingTiles: currentTiles)
             for melds in searchedMelds {
                 if melds.count == 4 {
-                    let form: OrdinaryForm = (eye, melds[0], melds[1], melds[2], melds[3])
+                    let form: WinningForm = (eye, melds[0], melds[1], melds[2], melds[3])
                     return form
                 }
             }
@@ -85,18 +85,5 @@ internal struct OrdinaryFormTokenizer: Tokenizer {
                 searchedMelds.formUnion(recursiveSearchedMelds)
             }
         }
-    }
-}
-
-internal struct SevenPairsFormTokenizer: Tokenizer {
-    typealias Form = SevenPairsForm
-    
-    func tokenize(from tiles: [Tile]) -> [SevenPairsForm] {
-        let melds = findEyes(from: tiles)
-        if melds.count == 7 {
-            let form = SevenPairsForm((melds[0], melds[1], melds[2], melds[3], melds[4], melds[5], melds[6]))
-            return [form]
-        }
-        return []
     }
 }

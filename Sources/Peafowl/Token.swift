@@ -7,6 +7,23 @@ public protocol Token: Hashable, CustomStringConvertible {
     var asArray: [Tile] { get }
 }
 
+public struct AnyToken: Token {
+    public let tiles: [Tile]
+    public typealias Tiles = [Tile]
+    
+    public init?(_ tiles: [Tile]) {
+        self.tiles = tiles
+    }
+    
+    public var asArray: [Tile] {
+        return tiles
+    }
+    
+    public var description: String {
+        return String(describing: tiles)
+    }
+}
+
 /// 対子、塔子
 public struct PairToken: Token {
     public typealias Tiles = (Tile, Tile)
