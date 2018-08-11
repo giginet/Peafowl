@@ -48,23 +48,44 @@ public struct CalculationOptions {
 }
 
 public struct Score: Comparable {
+    public static func == (lhs: Score, rhs: Score) -> Bool {
+        // FIXME
+        return lhs.basicScore == rhs.basicScore
+    }
+    
     public static func < (lhs: Score, rhs: Score) -> Bool {
         return lhs.basicScore < rhs.basicScore
     }
     
-    var han: Int {
-        return yaku.reduce(0) { $0 + $1.closedHan }
-    }
+    var han: Int
     var fu: Int
     var yaku: Set<AnyYaku>
     var basicScore: Double
     var score: Int
     
-    init(yaku: Set<AnyYaku>, fu: Int, options: CalculationOptions) {
+    init(yaku: Set<AnyYaku>, fu: Int) {
         self.fu = fu
         self.yaku = yaku
-        self.basicScore = calculateScore(from: fu, and: yaku.closedHan)
+        self.han = yaku.closedHan
+        self.basicScore = calculateScore(from: fu, and: han)
         self.score = Int(basicScore) // TODO
+    }
+    
+    var rank: Rank? {
+        switch han {
+        case 0..<5:
+            return nil
+        case 5:
+            return .mangan
+        case 6...7:
+            return .haneman
+        case 8...10:
+            return .baiman
+        case 10...12:
+            return .sanbaiman
+        default:
+            return .yakuman(Int(floorf(Float(han) / 13.0)))
+        }
     }
 }
 
@@ -122,7 +143,7 @@ public class ScoreCalculator {
                                          form: convertToWinningForm(from: tokenizeResult),
                                          drawed: drawed)
                         }.compactMap { $0 })
-                    return Score(yaku: winningYaku, fu: 0, options: calculationOptions)
+                    return Score(yaku: winningYaku, fu: 0)
                 }
                 return scores
             case .sevenPairs:
@@ -132,7 +153,7 @@ public class ScoreCalculator {
                 } else {
                     winningYaku = []
                 }
-                return scores + [Score(yaku: winningYaku, fu: 25, options: calculationOptions)]
+                return scores + [Score(yaku: winningYaku, fu: 25)]
             case .thirteenOrphans:
                 let winningYaku: Set<AnyYaku>
                 if let yaku = 国士無双.make(with: hand.allTiles, form: nil, drawed: drawed) {
@@ -140,7 +161,7 @@ public class ScoreCalculator {
                 } else {
                     winningYaku = []
                 }
-                return scores + [Score(yaku: winningYaku, fu: 25, options: calculationOptions)]
+                return scores + [Score(yaku: winningYaku, fu: 25)]
             }
         }
     }
