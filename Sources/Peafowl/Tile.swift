@@ -17,7 +17,7 @@ public struct Tile: Equatable, Comparable, Hashable {
     public static let blank = Tile(.blank)!
     public static let fortune = Tile(.fortune)!
     public static let center = Tile(.center)!
-    
+
     public static func == (lhs: Tile, rhs: Tile) -> Bool {
         switch (lhs.suit, rhs.suit) {
         case (.character(let n), .character(let m)),
@@ -36,13 +36,13 @@ public struct Tile: Equatable, Comparable, Hashable {
             return false
         }
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(index)
     }
-    
+
     public let suit: Suit
-    
+
     public enum Suit {
         /// 萬子
         case character(Int)
@@ -65,7 +65,7 @@ public struct Tile: Equatable, Comparable, Hashable {
         /// 中
         case center
     }
-    
+
     public init?(_ suit: Suit) {
         switch suit {
         case .character(let n), .bamboo(let n), .dots(let n):
@@ -76,11 +76,11 @@ public struct Tile: Equatable, Comparable, Hashable {
         }
         self.suit = suit
     }
-    
+
     public static func < (lhs: Tile, rhs: Tile) -> Bool {
         return lhs.index < rhs.index
     }
-    
+
     private var index: Int {
         switch suit {
         case .character(let n): return n + 9 * 0
@@ -95,7 +95,7 @@ public struct Tile: Equatable, Comparable, Hashable {
         case .center: return 34
         }
     }
-    
+
     /// 数牌
     public var isSimple: Bool {
         switch suit {
@@ -105,12 +105,12 @@ public struct Tile: Equatable, Comparable, Hashable {
             return false
         }
     }
-    
+
     /// 字牌
     public var isHonor: Bool {
         return !isSimple
     }
-    
+
     /// 風牌
     public var isWind: Bool {
         switch suit {
@@ -120,7 +120,7 @@ public struct Tile: Equatable, Comparable, Hashable {
             return false
         }
     }
-    
+
     /// 三元牌
     public var isDragon: Bool {
         switch suit {
@@ -130,7 +130,7 @@ public struct Tile: Equatable, Comparable, Hashable {
             return false
         }
     }
-    
+
     /// 端牌
     public var isTerminal: Bool {
         switch suit {
@@ -140,7 +140,7 @@ public struct Tile: Equatable, Comparable, Hashable {
             return false
         }
     }
-    
+
     public var number: Int? {
         switch suit {
         case .dots(let n), .character(let n), .bamboo(let n):
@@ -149,7 +149,7 @@ public struct Tile: Equatable, Comparable, Hashable {
             return nil
         }
     }
-    
+
     private func advanced(by successor: Int) -> Tile? {
         switch suit {
         case .dots(let n):
@@ -162,11 +162,11 @@ public struct Tile: Equatable, Comparable, Hashable {
             return nil
         }
     }
-    
+
     public var next: Tile? {
         return advanced(by: 1)
     }
-    
+
     public var previous: Tile? {
         return advanced(by: -1)
     }

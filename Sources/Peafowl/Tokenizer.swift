@@ -8,16 +8,14 @@ internal struct Tokenizer {
         let forms: [TokenizedResult] = eyes.map { eye in
             let currentTiles = tiles.removed(eye)
             let searchedMelds = searchMelds(remainingTiles: currentTiles)
-            for melds in searchedMelds {
-                if melds.count == 4 {
-                    return (eye, melds)
-                }
+            for melds in searchedMelds where melds.count == 4 {
+                return (eye, melds)
             }
             return nil
             }.compactMap { $0 }
         return forms
     }
-    
+
     private func searchMelds(remainingTiles: [Tile],
                              context: [MeldToken] = [],
                              searchedMelds: Set<[MeldToken]> = Set()) -> Set<[MeldToken]> {
@@ -35,12 +33,12 @@ internal struct Tokenizer {
             }
         }
     }
-    
+
     private static func move<T: Token>(_ token: T, from tiles: inout [Tile], to tokens: inout [T]) {
         tiles.remove(token)
         tokens.append(token)
     }
-    
+
     internal static func findEyes(from tiles: [Tile]) -> [PairToken] {
         var mutableTiles = tiles
         var results: [PairToken] = []
@@ -52,7 +50,7 @@ internal struct Tokenizer {
         }
         return results
     }
-    
+
     internal static func findTripletMelds(from tiles: [Tile]) -> Set<MeldToken> {
         return Set(tiles.compactMap { tile in
             if tiles.count(tile) >= 3 {
@@ -61,7 +59,7 @@ internal struct Tokenizer {
             return nil
         })
     }
-    
+
     internal static func findSequentialMelds(from tiles: [Tile]) -> Set<MeldToken> {
         return Set(tiles.compactMap { tile in
             guard let previousTile = tile.previous, tiles.contains(previousTile) else {
@@ -73,7 +71,7 @@ internal struct Tokenizer {
             return MeldToken((previousTile, tile, nextTile))
         })
     }
-    
+
     internal static func findMelds(from tiles: [Tile]) -> Set<MeldToken> {
         return findSequentialMelds(from: tiles).union(findTripletMelds(from: tiles))
     }

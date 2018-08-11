@@ -11,7 +11,7 @@ extension Array where Element == Tile {
         }
         return removedTiles
     }
-    
+
     func removed<T: Token>(_ token: T) -> [Element] {
         var mutableSelf = self
         mutableSelf.remove(token)

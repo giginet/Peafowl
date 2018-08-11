@@ -22,7 +22,7 @@ public enum WaitingForm {
 public struct CalculationOptions {
     /// 青天井
     var ignoreLimits: Bool
-    
+
     static let `default`: CalculationOptions = .init(ignoreLimits: false)
 }
 
@@ -30,17 +30,17 @@ public struct Score: Comparable {
     public static func == (lhs: Score, rhs: Score) -> Bool {
         return lhs.yaku == rhs.yaku
     }
-    
+
     public static func < (lhs: Score, rhs: Score) -> Bool {
         return lhs.basicScore < rhs.basicScore
     }
-    
+
     var han: Int
     var fu: Int
     var yaku: Set<AnyYaku>
     var basicScore: Double
     var score: Int
-    
+
     init(yaku: Set<AnyYaku>, fu: Int) {
         self.fu = fu
         self.yaku = yaku
@@ -48,7 +48,7 @@ public struct Score: Comparable {
         self.basicScore = calculateScore(from: fu, and: han)
         self.score = Int(basicScore) // TODO
     }
-    
+
     var rank: Rank? {
         switch han {
         case 0..<5:
@@ -92,26 +92,26 @@ private func convertToWinningForm(from tokenizeResult: TokenizedResult) -> Winni
 
 public class ScoreCalculator {
     private let calculationOptions: CalculationOptions
-    
+
     init(options: CalculationOptions) {
         calculationOptions = options
     }
-    
+
     private let winningDetector = WinningDetector()
-    
+
     func calculate(with hand: Hand, context: GameContext) -> [Score]? {
         guard let drawed = hand.drawed else {
             return nil
         }
-        
+
         guard hand.allTiles.count == 14 else {
             return nil
         }
-        
+
         guard let forms = winningDetector.detectForms(hand.allTiles) else {
             return nil
         }
-        
+
         func checkFormedYaku(hand: Hand, tokenizedResult: TokenizedResult?, drawed: Tile) -> Set<AnyYaku> {
             let winningYaku: Set<AnyYaku> = Set(availableFormedYakuTypes.map { type in
                 let winningForm: WinningForm? = tokenizedResult.flatMap { convertToWinningForm(from: $0) }
@@ -122,7 +122,7 @@ public class ScoreCalculator {
                 }.compactMap { $0 })
             return winningYaku
         }
-        
+
         return forms.reduce([]) { (scores, form) -> [Score] in
             switch form {
             case .ordinary(let tokenizedResults):

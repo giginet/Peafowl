@@ -1,0 +1,6 @@
+disabled_rules:
+  - identifier_name
+  - function_body_length
+  - comma
+trailing_comma:
+  mandatory_comma: true

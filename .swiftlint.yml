@@ -1,0 +1,5 @@
+disabled_rules:
+  - identifier_name
+  - comma
+trailing_comma:
+  mandatory_comma: true

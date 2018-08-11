@@ -6,14 +6,14 @@ final class TokenizerTests: XCTestCase {
     func testTokenize() {
         let hand0 = [撥, 撥, 中, 中, 中, 白, 白, 白, 一萬, 一萬, 二萬, 二萬, 三萬, 三萬]
         XCTAssertEqual(Tokenizer().tokenize(from: hand0).count, 1)
-        
+
         let hand1 = [二萬, 二萬, 三萬, 三萬, 三萬, 四萬, 四萬, 四萬, 五萬, 二索, 三索, 四索, 五筒, 五筒]
         XCTAssertEqual(Tokenizer().tokenize(from: hand1).count, 1)
-        
+
         let hand2 = [二萬, 二萬, 三萬, 三萬, 四萬, 四萬, 五萬, 五萬, 二索, 三索, 四索, 二筒, 三筒, 四筒]
         XCTAssertEqual(Tokenizer().tokenize(from: hand2).count, 2)
     }
-    
+
     func testFindEyesTests() {
         XCTAssertEqual(Tokenizer.findEyes(from: [
             🀇, 🀈, 🀇, 🀈, 🀇, 🀈,
@@ -43,7 +43,7 @@ final class TokenizerTests: XCTestCase {
             1.筒!,
             ]).count, 3)
     }
-    
+
     func testFindTripletMelds() {
         XCTAssertEqual(Tokenizer.findTripletMelds(from: [
             1.筒!,
@@ -70,7 +70,7 @@ final class TokenizerTests: XCTestCase {
             .east,
             ]).count, 0)
     }
-    
+
     func testFindSequentialMelds() {
         XCTAssertEqual(Tokenizer.findSequentialMelds(from: [
             1.筒!,

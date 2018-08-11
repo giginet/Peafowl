@@ -10,15 +10,15 @@ public protocol Token: Hashable, CustomStringConvertible {
 public struct AnyToken: Token {
     public let tiles: [Tile]
     public typealias Tiles = [Tile]
-    
+
     public init?(_ tiles: [Tile]) {
         self.tiles = tiles
     }
-    
+
     public var asArray: [Tile] {
         return tiles
     }
-    
+
     public var description: String {
         return String(describing: tiles)
     }
@@ -28,14 +28,14 @@ public struct AnyToken: Token {
 public struct PairToken: Token {
     public typealias Tiles = (Tile, Tile)
     public let tiles: Tiles
-    
+
     public init?(_ tiles: Tiles) {
         self.tiles = tiles
         if waitingTilesForMeld() == nil {
             return nil
         }
     }
-    
+
     public var description: String {
         if isEyes {
             return "雀頭 (\(tiles.0), \(tiles.1))"
@@ -43,25 +43,25 @@ public struct PairToken: Token {
             return "塔子 (\(tiles.0), \(tiles.1))"
         }
     }
-    
+
     public static func == (lhs: PairToken, rhs: PairToken) -> Bool {
         return lhs.tiles.0 == rhs.tiles.0 && lhs.tiles.1 == rhs.tiles.1
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(tiles.0)
         hasher.combine(tiles.1)
     }
-    
+
     public var asArray: [Tile] {
         return [tiles.0, tiles.1].sorted()
     }
-    
+
     /// 対子
     public var isEyes: Bool {
         return tiles.0 == tiles.1
     }
-    
+
     public func waitingTilesForMeld() -> Set<Tile>? {
         guard let firstTile = asArray.first, let secondTile = asArray.last else {
             return nil
@@ -81,7 +81,7 @@ public struct PairToken: Token {
         default:
             return nil
         }
-        
+
         return nil
     }
 }
@@ -91,31 +91,31 @@ public struct MeldToken: Token {
     public static func == (lhs: MeldToken, rhs: MeldToken) -> Bool {
         return lhs.tiles.0 == rhs.tiles.0 && lhs.tiles.1 == rhs.tiles.1 && lhs.tiles.2 == rhs.tiles.2
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(tiles.0)
         hasher.combine(tiles.1)
         hasher.combine(tiles.2)
     }
-    
+
     public let tiles: Tiles
-    
+
     public typealias Tiles = (Tile, Tile, Tile)
-    
+
     public init?(_ tiles: Tiles) {
         self.tiles = tiles
         guard isTriplets || isSequential else {
             return nil
         }
     }
-    
+
     /// 刻子
     public var isTriplets: Bool {
         return tiles.0 == tiles.1
             && tiles.1 == tiles.2
             && tiles.2 == tiles.0
     }
-    
+
     /// 順子
     public var isSequential: Bool {
         let sorted = [tiles.0, tiles.1, tiles.2].sorted()
@@ -128,15 +128,15 @@ public struct MeldToken: Token {
             return false
         }
     }
-    
+
     public var asArray: [Tile] {
         return [tiles.0, tiles.1, tiles.2].sorted()
     }
-    
+
     func consistOnly(of filter: (Tile) -> Bool) -> Bool {
         return asArray.filter(filter).count == asArray.count
     }
-    
+
     public var description: String {
         if isTriplets {
             return "刻子 (\(tiles.0), \(tiles.1), \(tiles.2)"
