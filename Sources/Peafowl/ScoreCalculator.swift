@@ -49,8 +49,7 @@ public struct CalculationOptions {
 
 public struct Score: Comparable {
     public static func == (lhs: Score, rhs: Score) -> Bool {
-        // FIXME
-        return lhs.basicScore == rhs.basicScore
+        return lhs.yaku == rhs.yaku
     }
     
     public static func < (lhs: Score, rhs: Score) -> Bool {
