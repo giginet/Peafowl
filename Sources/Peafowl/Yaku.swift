@@ -47,7 +47,7 @@ public struct AnyYaku: YakuProtocol {
     private let box: BaseBox
     
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(box.name)
+        hasher.combine(String(describing: box.yakuClass))
     }
     
     internal init<Yaku>(_ yaku: Yaku) where Yaku: YakuProtocol {
