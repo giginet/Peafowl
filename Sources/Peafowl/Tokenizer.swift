@@ -12,12 +12,12 @@ internal protocol Tokenizer {
 }
 
 extension Tokenizer {
-    internal func findEyes(from tiles: [Tile]) -> [EyesToken] {
+    internal func findEyes(from tiles: [Tile]) -> [PairToken] {
         var mutableTiles = tiles
-        var results: [EyesToken] = []
+        var results: [PairToken] = []
         for tile in tiles {
             if mutableTiles.count(tile) >= 2 {
-                guard let newPair = EyesToken((tile, tile)) else { continue }
+                guard let newPair = PairToken((tile, tile)) else { continue }
                 move(newPair, from: &mutableTiles, to: &results)
             }
         }

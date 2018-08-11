@@ -2,10 +2,10 @@ import Foundation
 import XCTest
 import Peafowl
 
-final class EyesTokenTests: XCTestCase {
+final class PairTokenTests: XCTestCase {
     func testInitialize() {
-        XCTAssertNotNil(EyesToken((東, 東)))
-        XCTAssertNil(EyesToken((一萬, 西)))
+        XCTAssertNotNil(PairToken((東, 東)))
+        XCTAssertNil(PairToken((一萬, 西)))
     }
 }
 

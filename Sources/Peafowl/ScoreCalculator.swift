@@ -6,6 +6,19 @@ private extension Set where Element: YakuProtocol {
     }
 }
 
+public enum WaitingForm {
+    /// 両面待ち
+    case bothSides
+    /// 嵌張待ち
+    case middleTile
+    /// 辺張待ち
+    case singleSide
+    /// 単騎待ち
+    case singleTile
+    /// 双碰待ち
+    case eitherOfMelds
+}
+
 public struct GameContext {
     public enum WinningType {
         /// 自摸

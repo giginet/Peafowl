@@ -7,23 +7,23 @@ public protocol Token: Hashable, CustomStringConvertible {
     var asArray: [Tile] { get }
 }
 
-public enum WaitingForm {
-    /// 両面待ち
-    case bothSides
-    /// 嵌張待ち
-    case middleTile
-    /// 辺張待ち
-    case singleSide
-    /// 単騎待ち
-    case singleTile
-    /// 双碰待ち
-    case eitherOfMelds
-}
-
-
-/// 雀頭
-public struct EyesToken: Token {
-    public static func == (lhs: EyesToken, rhs: EyesToken) -> Bool {
+/// 対子、塔子
+public struct PairToken: Token {
+    public typealias Tiles = (Tile, Tile)
+    public let tiles: Tiles
+    
+    public init?(_ tiles: Tiles) {
+        self.tiles = tiles
+        guard tiles.0 == tiles.1 else {
+            return nil
+        }
+    }
+    
+    public var description: String {
+        return "雀頭 (\(tiles.0), \(tiles.1))"
+    }
+    
+    public static func == (lhs: PairToken, rhs: PairToken) -> Bool {
         return lhs.tiles.0 == rhs.tiles.0 && lhs.tiles.1 == rhs.tiles.1
     }
     
@@ -32,23 +32,36 @@ public struct EyesToken: Token {
         hasher.combine(tiles.1)
     }
     
-    public let tiles: Tiles
-    
-    public typealias Tiles = (Tile, Tile)
-
-    public init?(_ tiles: Tiles) {
-        self.tiles = tiles
-        guard tiles.0 == tiles.1 else {
-            return nil
-        }
-    }
-    
     public var asArray: [Tile] {
         return [tiles.0, tiles.1].sorted()
     }
     
-    public var description: String {
-        return "雀頭 (\(tiles.0), \(tiles.1))"
+    /// 対子
+    public var isEyes: Bool {
+        return tiles.0 == tiles.1
+    }
+    
+    public func waitingTilesForMelds() -> [Tile]? {
+        guard let firstTile = asArray.first, let secondTile = asArray.last else {
+            return nil
+        }
+        if isEyes {
+            return [firstTile]
+        }
+        switch (firstTile.suit, secondTile.suit) {
+        case (.character(let n), .character(let m)),
+             (.bamboo(let n), .bamboo(let m)),
+             (.dots(let n), .dots(let m)):
+            if m - n == 1 {
+                return [firstTile.previous, secondTile.next].compactMap { $0 }
+            } else if m - n == 2 {
+                return [firstTile.next].compactMap { $0 }
+            }
+        default:
+            return nil
+        }
+        
+        return nil
     }
 }
 
