@@ -8,6 +8,10 @@ internal struct WinningDetector {
     }
     
     func detectForms(_ tiles: [Tile]) -> [WinningForm]? {
+        guard tiles.count == 14 else {
+            return nil
+        }
+        
         if isThirteenOrphansForm(tiles) {
             return [.thirteenOrphans]
         }

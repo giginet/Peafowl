@@ -69,7 +69,6 @@ public struct Score: Comparable {
 }
 
 public enum Rank {
-    case noRank(Int)
     case mangan
     case haneman
     case baiman
@@ -88,21 +87,36 @@ public class ScoreCalculator {
         calculationOptions = options
     }
     
-    func calculate(with hand: Hand, context: GameContext) -> [Score] {
-        var winningYaku: Set<AnyYaku> = []
+    private let winningDetector = WinningDetector()
+    
+    func calculate(with hand: Hand, context: GameContext) -> [Score]? {
         guard let drawed = hand.drawed else {
             return []
         }
         guard hand.allTiles.count == 14 else {
             return []
         }
-//        let sevenPairsTokenizer = SevenPairsFormTokenizer()
-//        if !sevenPairsTokenizer.tokenize(from: hand.allTiles).isEmpty {
-//            if let yaku = 七対子.make(with: hand.allTiles, form: nil, drawed: drawed) {
-//                winningYaku.insert(AnyYaku(yaku))
-//            }
-//            return [Score(yaku: winningYaku, fu: 25, options: calculationOptions)]
-//        }
-        return []
+        
+        guard let forms = winningDetector.detectForms(hand.allTiles) else {
+            return nil
+        }
+        return forms.reduce([]) { scores, form in
+            var winningYaku: Set<AnyYaku> = []
+            switch form {
+            case .ordinary(let ordinaryForms):
+                break
+            case .sevenPairs:
+                if let yaku = 七対子.make(with: hand.allTiles, form: nil, drawed: drawed) {
+                    winningYaku.insert(AnyYaku(yaku))
+                }
+                return [Score(yaku: winningYaku, fu: 25, options: calculationOptions)]
+            case .thirteenOrphans:
+                if let yaku = 国士無双.make(with: hand.allTiles, form: nil, drawed: drawed) {
+                    winningYaku.insert(AnyYaku(yaku))
+                }
+                return [Score(yaku: winningYaku, fu: 25, options: calculationOptions)]
+            }
+            return nil
+        }
     }
 }
