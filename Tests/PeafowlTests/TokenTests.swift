@@ -5,7 +5,22 @@ import Peafowl
 final class PairTokenTests: XCTestCase {
     func testInitialize() {
         XCTAssertNotNil(PairToken((東, 東)))
+        XCTAssertNotNil(PairToken((一萬, 二萬)))
+        XCTAssertNotNil(PairToken((一萬, 三萬)))
+        XCTAssertNotNil(PairToken((五萬, 六萬)))
+        
+        XCTAssertNil(PairToken((一萬, 二筒)))
         XCTAssertNil(PairToken((一萬, 西)))
+    }
+    
+    func testWaitingTilesForMeld() {
+        XCTAssertEqual(PairToken((一萬, 二萬))?.waitingTilesForMeld(), [三萬])
+        XCTAssertEqual(PairToken((一萬, 三萬))?.waitingTilesForMeld(), [二萬])
+        XCTAssertEqual(PairToken((二萬, 三萬))?.waitingTilesForMeld(), [一萬, 四萬])
+        XCTAssertEqual(PairToken((八索, 九索))?.waitingTilesForMeld(), [七索])
+        XCTAssertEqual(PairToken((七筒, 九筒))?.waitingTilesForMeld(), [八筒])
+        XCTAssertEqual(PairToken((三索, 三索))?.waitingTilesForMeld(), [三索])
+        XCTAssertEqual(PairToken((南, 南))?.waitingTilesForMeld(), [南])
     }
 }
 

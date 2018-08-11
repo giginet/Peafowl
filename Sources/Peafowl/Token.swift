@@ -14,13 +14,17 @@ public struct PairToken: Token {
     
     public init?(_ tiles: Tiles) {
         self.tiles = tiles
-        guard tiles.0 == tiles.1 else {
+        if waitingTilesForMeld() == nil {
             return nil
         }
     }
     
     public var description: String {
-        return "雀頭 (\(tiles.0), \(tiles.1))"
+        if isEyes {
+            return "雀頭 (\(tiles.0), \(tiles.1))"
+        } else {
+            return "塔子 (\(tiles.0), \(tiles.1))"
+        }
     }
     
     public static func == (lhs: PairToken, rhs: PairToken) -> Bool {
@@ -41,7 +45,7 @@ public struct PairToken: Token {
         return tiles.0 == tiles.1
     }
     
-    public func waitingTilesForMelds() -> [Tile]? {
+    public func waitingTilesForMeld() -> Set<Tile>? {
         guard let firstTile = asArray.first, let secondTile = asArray.last else {
             return nil
         }
@@ -53,9 +57,9 @@ public struct PairToken: Token {
              (.bamboo(let n), .bamboo(let m)),
              (.dots(let n), .dots(let m)):
             if m - n == 1 {
-                return [firstTile.previous, secondTile.next].compactMap { $0 }
+                return Set([firstTile.previous, secondTile.next].compactMap { $0 })
             } else if m - n == 2 {
-                return [firstTile.next].compactMap { $0 }
+                return Set([firstTile.next].compactMap { $0 })
             }
         default:
             return nil
