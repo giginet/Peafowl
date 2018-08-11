@@ -84,6 +84,13 @@ private let availableYakuTypes = [
     AnyYakuType(断ヤオ九.self),
 ]
 
+private func convertToWinningForm(from tokenizeResult: TokenizedResult) -> WinningForm? {
+    if tokenizeResult.1.count == 4 {
+        return (tokenizeResult.0, tokenizeResult.1[0], tokenizeResult.1[1], tokenizeResult.1[2], tokenizeResult.1[3])
+    }
+    return nil
+}
+
 public class ScoreCalculator {
     private let calculationOptions: CalculationOptions
     
@@ -97,6 +104,7 @@ public class ScoreCalculator {
         guard let drawed = hand.drawed else {
             return nil
         }
+        
         guard hand.allTiles.count == 14 else {
             return nil
         }
@@ -104,12 +112,15 @@ public class ScoreCalculator {
         guard let forms = winningDetector.detectForms(hand.allTiles) else {
             return nil
         }
+        
         return forms.reduce([]) { (scores, form) -> [Score] in
             switch form {
-            case .ordinary(let ordinaryForms):
-                let scores: [Score] = ordinaryForms.map { ordinaryForm in
+            case .ordinary(let tokenizedResults):
+                let scores: [Score] = tokenizedResults.map { tokenizeResult in
                     let winningYaku: Set<AnyYaku> = Set(availableYakuTypes.map { type in
-                        return type.make(with: hand.allTiles, form: nil, drawed: drawed)
+                        return type.make(with: hand.allTiles,
+                                         form: convertToWinningForm(from: tokenizeResult),
+                                         drawed: drawed)
                         }.compactMap { $0 })
                     return Score(yaku: winningYaku, fu: 0, options: calculationOptions)
                 }
