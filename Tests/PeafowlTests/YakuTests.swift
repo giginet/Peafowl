@@ -30,6 +30,20 @@ final class OrdinaryFormedYakuTests: XCTestCase {
         assert([二筒, 二筒, 三索, 四索, 五索, 三筒, 四筒, 五筒, 三萬, 四萬, 五萬, 六索, 七索, 八索], shouldBe: 断ヤオ九.self)
         assert([一筒, 一筒, 三索, 四索, 五索, 三筒, 四筒, 五筒, 三萬, 四萬, 五萬, 六索, 七索, 八索], shouldNotBe: 断ヤオ九.self)
     }
+    
+    func test一盃口() {
+        assert([二筒, 二筒, 三索, 四索, 五索, 三索, 四索, 五索, 三萬, 四萬, 五萬, 三萬, 四萬, 五萬], shouldNotBe: 一盃口.self)
+        assert([二筒, 二筒, 三索, 四索, 五索, 三索, 四索, 五索, 三萬, 四萬, 五萬, 六索, 七索, 八索], shouldBe: 一盃口.self)
+        assert([二筒, 二筒, 三索, 四索, 五索, 四索, 五索, 六索, 三萬, 四萬, 五萬, 六索, 七索, 八索], shouldNotBe: 一盃口.self)
+        assert([二筒, 二筒, 三索, 四索, 五索, 三索, 四索, 五索, 三索, 四索, 五索, 六索, 七索, 八索], shouldNotBe: 一盃口.self)
+    }
+    
+    func test二盃口() {
+        assert([二筒, 二筒, 三索, 四索, 五索, 三索, 四索, 五索, 三萬, 四萬, 五萬, 三萬, 四萬, 五萬], shouldBe: 二盃口.self)
+        assert([二筒, 二筒, 三索, 四索, 五索, 三索, 四索, 五索, 三萬, 四萬, 五萬, 六索, 七索, 八索], shouldNotBe: 二盃口.self)
+        assert([二筒, 二筒, 三索, 四索, 五索, 四索, 五索, 六索, 三萬, 四萬, 五萬, 六索, 七索, 八索], shouldNotBe: 二盃口.self)
+        assert([二筒, 二筒, 三索, 四索, 五索, 三索, 四索, 五索, 三索, 四索, 五索, 六索, 七索, 八索], shouldNotBe: 二盃口.self)
+    }
 }
 
 final class SevenPairsFormedYakuTestx: XCTest {

@@ -17,6 +17,12 @@ public struct 国士無双: YakuProtocol {
     }
 
     public static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> 国士無双? {
+        switch form {
+        case .thirteenOrphans: break
+        default:
+            return nil
+        }
+        
         let uniquedArray = Set<Tile>(tiles)
         if uniquedArray.count != 13 {
             return nil
