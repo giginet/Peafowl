@@ -4,6 +4,6 @@ import XCTest
 
 final class YakuTests: XCTestCase {
     func test断ヤオ() {
-
+        
     }
 }

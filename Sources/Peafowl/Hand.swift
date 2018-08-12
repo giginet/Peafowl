@@ -2,16 +2,16 @@ import Foundation
 
 public struct Hand: Equatable {
     var tiles: [Tile]
-    var drawed: Tile?
+    var picked: Tile?
 
     public var allTiles: [Tile] {
-        if let drawed = drawed {
-            return tiles + [drawed]
+        if let picked = picked {
+            return tiles + [picked]
         }
         return tiles
     }
 
     public var isValid: Bool {
-        return drawed != nil && tiles.count == 13
+        return picked != nil && tiles.count == 13
     }
 }

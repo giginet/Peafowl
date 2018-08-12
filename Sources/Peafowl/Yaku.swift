@@ -4,16 +4,16 @@ public struct AnyYakuType {
     private let makeBlock: ([Tile], WinningForm?, Tile, GameContext) -> AnyYaku?
 
     init<Yaku>(_: Yaku.Type) where Yaku: YakuProtocol {
-        makeBlock = { tiles, form, drawed, context in
-            guard let innerYaku = Yaku.make(with: tiles, form: form, drawed: drawed, context: context) else {
+        makeBlock = { tiles, form, picked, context in
+            guard let innerYaku = Yaku.make(with: tiles, form: form, picked: picked, context: context) else {
                 return nil
             }
             return AnyYaku(innerYaku)
         }
     }
 
-    func make(with tiles: [Tile], form: WinningForm?, drawed: Tile, context: GameContext) -> AnyYaku? {
-        return makeBlock(tiles, form, drawed, context)
+    func make(with tiles: [Tile], form: WinningForm?, picked: Tile, context: GameContext) -> AnyYaku? {
+        return makeBlock(tiles, form, picked, context)
     }
 }
 
@@ -25,7 +25,7 @@ public protocol YakuProtocol: Hashable {
     /// 喰い下がり翻
     var openedHan: Int? { get }
     var isYakuman: Bool { get }
-    static func make(with tiles: [Tile], form: WinningForm?, drawed: Tile, context: GameContext) -> Self?
+    static func make(with tiles: [Tile], form: WinningForm?, picked: Tile, context: GameContext) -> Self?
 }
 
 public extension YakuProtocol {
@@ -39,7 +39,7 @@ public extension YakuProtocol {
 }
 
 public struct AnyYaku: YakuProtocol {
-    public static func make(with tiles: [Tile], form: WinningForm?, drawed: Tile, context: GameContext) -> AnyYaku? {
+    public static func make(with tiles: [Tile], form: WinningForm?, picked: Tile, context: GameContext) -> AnyYaku? {
         fatalError("Could not make AnyYaku")
     }
 
@@ -87,7 +87,7 @@ public struct AnyYaku: YakuProtocol {
             fatalError("Not implemeted")
         }
 
-        static func make(with tiles: [Tile], form: WinningForm?, drawed: Tile, context: GameContext) -> Self? {
+        static func make(with tiles: [Tile], form: WinningForm?, picked: Tile, context: GameContext) -> Self? {
             fatalError("Not implemented")
         }
     }
