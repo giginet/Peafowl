@@ -83,13 +83,6 @@ private let availableFormedYakuTypes = [
     AnyYakuType(断ヤオ九.self),
 ]
 
-private func convertToWinningForm(from tokenizeResult: TokenizedResult) -> WinningForm? {
-    if tokenizeResult.1.count == 4 {
-        return (tokenizeResult.0, tokenizeResult.1[0], tokenizeResult.1[1], tokenizeResult.1[2], tokenizeResult.1[3])
-    }
-    return nil
-}
-
 public class ScoreCalculator {
     private let calculationOptions: CalculationOptions
 
@@ -100,10 +93,6 @@ public class ScoreCalculator {
     private let winningDetector = WinningDetector()
 
     func calculate(with hand: Hand, context: GameContext) -> [Score]? {
-        guard let picked = hand.picked else {
-            return nil
-        }
-
         guard hand.allTiles.count == 14 else {
             return nil
         }
@@ -114,7 +103,7 @@ public class ScoreCalculator {
 
         func checkFormedYaku(hand: Hand, tokenizedResult: TokenizedResult?, picked: Tile) -> Set<AnyYaku> {
             let winningYaku: Set<AnyYaku> = Set(availableFormedYakuTypes.map { type in
-                let winningForm: WinningForm? = tokenizedResult.flatMap { convertToWinningForm(from: $0) }
+                let winningForm: WinningForm? = tokenizedResult.flatMap { Tokenizer.convertToWinningForm(from: $0) }
                 return type.make(with: hand.allTiles,
                                  form: winningForm,
                                  picked: picked,
@@ -127,22 +116,22 @@ public class ScoreCalculator {
             switch form {
             case .ordinary(let tokenizedResults):
                 let scores: [Score] = tokenizedResults.map { tokenizeResult in
-                    let winningYaku = checkFormedYaku(hand: hand, tokenizedResult: tokenizeResult, picked: picked)
+                    let winningYaku = checkFormedYaku(hand: hand, tokenizedResult: tokenizeResult, picked: hand.picked)
                     return Score(yaku: winningYaku, fu: 0)
                 }
                 return scores
             case .sevenPairs:
                 let winningYaku: Set<AnyYaku>
-                if let yaku = 七対子.make(with: hand.allTiles, form: nil, picked: picked, context: context) {
+                if let yaku = 七対子.make(with: hand.allTiles, form: nil, picked: hand.picked, context: context) {
                     winningYaku = [AnyYaku(yaku)]
                 } else {
                     winningYaku = []
                 }
-                let otherYaku = checkFormedYaku(hand: hand, tokenizedResult: nil, picked: picked)
+                let otherYaku = checkFormedYaku(hand: hand, tokenizedResult: nil, picked: hand.picked)
                 return scores + [Score(yaku: winningYaku.union(otherYaku), fu: 25)]
             case .thirteenOrphans:
                 let winningYaku: Set<AnyYaku>
-                if let yaku = 国士無双.make(with: hand.allTiles, form: nil, picked: picked, context: context) {
+                if let yaku = 国士無双.make(with: hand.allTiles, form: nil, picked: hand.picked, context: context) {
                     winningYaku = [AnyYaku(yaku)]
                 } else {
                     winningYaku = []

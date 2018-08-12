@@ -9,13 +9,10 @@ public struct 断ヤオ九: YakuProtocol {
         func isNotYaochu(tile: Tile) -> Bool {
             return !tile.isHonor && !tile.isTerminal
         }
-        guard let form = form else {
+        if form == nil {
             return nil
         }
-        if form.1.consistOnly(of: isNotYaochu)
-            && form.2.consistOnly(of: isNotYaochu)
-            && form.3.consistOnly(of: isNotYaochu)
-            && form.4.consistOnly(of: isNotYaochu) {
+        if tiles.consistOnly(of: isNotYaochu) {
             return 断ヤオ九()
         }
         return nil

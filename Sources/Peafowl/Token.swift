@@ -133,10 +133,6 @@ public struct MeldToken: Token {
         return [tiles.0, tiles.1, tiles.2].sorted()
     }
 
-    func consistOnly(of filter: (Tile) -> Bool) -> Bool {
-        return asArray.filter(filter).count == asArray.count
-    }
-
     public var description: String {
         if isTriplets {
             return "刻子 (\(tiles.0), \(tiles.1), \(tiles.2)"
