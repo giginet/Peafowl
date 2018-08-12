@@ -13,6 +13,7 @@ extension Hand: ExpressibleByArrayLiteral {
 func makeContext() -> GameContext {
     return GameContext(winningType: .selfPick,
                        pickedSource: .wall,
+                       isRiichi: false,
                        isOneShot: false,
                        isDealer: false,
                        isClosed: true)

@@ -5,24 +5,24 @@ import XCTest
 final class OrdinaryFormedYakuTests: XCTestCase {
     private let tokenizer = Tokenizer()
     
-    private func searchWinningYaku<Yaku: YakuProtocol>(_ yaku: Yaku.Type, hand: Hand) -> [Yaku] {
+    private func searchWinningYaku<Yaku: YakuProtocol>(_ yaku: Yaku.Type, hand: Hand, context: GameContext) -> [Yaku] {
         let tokenizedResults = tokenizer.tokenize(from: hand.allTiles)
         let yakuList = tokenizedResults.map { tokenizedResult in
             return Yaku.make(with: hand.allTiles,
                              form: Tokenizer.convertToWinningForm(from: tokenizedResult),
                              picked: hand.picked,
-                             context: makeContext())
+                             context: context)
             }.compactMap { $0 }
         return yakuList
     }
     
-    private func assert<Yaku: YakuProtocol>(_ hand: Hand, shouldBe yaku: Yaku.Type) {
-        let yakuList = searchWinningYaku(yaku, hand: hand)
+    private func assert<Yaku: YakuProtocol>(_ hand: Hand, shouldBe yaku: Yaku.Type, context: GameContext? = nil) {
+        let yakuList = searchWinningYaku(yaku, hand: hand, context: context ?? makeContext())
         XCTAssertFalse(yakuList.isEmpty)
     }
     
-    private func assert<Yaku: YakuProtocol>(_ hand: Hand, shouldNotBe yaku: Yaku.Type) {
-        let yakuList = searchWinningYaku(yaku, hand: hand)
+    private func assert<Yaku: YakuProtocol>(_ hand: Hand, shouldNotBe yaku: Yaku.Type, context: GameContext? = nil) {
+        let yakuList = searchWinningYaku(yaku, hand: hand, context: context ?? makeContext())
         XCTAssertTrue(yakuList.isEmpty)
     }
     

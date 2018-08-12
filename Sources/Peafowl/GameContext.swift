@@ -17,6 +17,8 @@ public struct GameContext {
     }
     let winningType: WinningType
     let pickedSource: PickedSource
+    /// 立直
+    let isRiichi: Bool
     /// 一発
     let isOneShot: Bool
     /// 親
