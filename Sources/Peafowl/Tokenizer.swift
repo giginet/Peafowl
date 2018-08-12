@@ -76,7 +76,7 @@ internal struct Tokenizer {
         return findSequentialMelds(from: tiles).union(findTripletMelds(from: tiles))
     }
     
-    internal static func convertToWinningForm(from tokenizeResult: TokenizedResult) -> WinningForm? {
+    internal static func convertToWinningForm(from tokenizeResult: TokenizedResult) -> OrdinaryWinningForm? {
         if tokenizeResult.1.count == 4 {
             return (tokenizeResult.0, tokenizeResult.1[0], tokenizeResult.1[1], tokenizeResult.1[2], tokenizeResult.1[3])
         }

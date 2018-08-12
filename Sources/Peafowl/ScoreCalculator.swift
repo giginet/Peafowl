@@ -101,9 +101,8 @@ public class ScoreCalculator {
             return nil
         }
 
-        func checkFormedYaku(hand: Hand, tokenizedResult: TokenizedResult?, picked: Tile) -> Set<AnyYaku> {
+        func checkFormedYaku(hand: Hand, winningForm: OrdinaryWinningForm?, picked: Tile) -> Set<AnyYaku> {
             let winningYaku: Set<AnyYaku> = Set(availableFormedYakuTypes.map { type in
-                let winningForm: WinningForm? = tokenizedResult.flatMap { Tokenizer.convertToWinningForm(from: $0) }
                 return type.make(with: hand.allTiles,
                                  form: winningForm,
                                  picked: picked,
@@ -114,12 +113,9 @@ public class ScoreCalculator {
 
         return forms.reduce([]) { (scores, form) -> [Score] in
             switch form {
-            case .ordinary(let tokenizedResults):
-                let scores: [Score] = tokenizedResults.map { tokenizeResult in
-                    let winningYaku = checkFormedYaku(hand: hand, tokenizedResult: tokenizeResult, picked: hand.picked)
-                    return Score(yaku: winningYaku, fu: 0)
-                }
-                return scores
+            case .ordinary(let winningForm):
+                let winningYaku = checkFormedYaku(hand: hand, winningForm: winningForm, picked: hand.picked)
+                return [Score(yaku: winningYaku, fu: 0)]
             case .sevenPairs:
                 let winningYaku: Set<AnyYaku>
                 if let yaku = 七対子.make(with: hand.allTiles, form: nil, picked: hand.picked, context: context) {
@@ -127,7 +123,7 @@ public class ScoreCalculator {
                 } else {
                     winningYaku = []
                 }
-                let otherYaku = checkFormedYaku(hand: hand, tokenizedResult: nil, picked: hand.picked)
+                let otherYaku = checkFormedYaku(hand: hand, winningForm: nil, picked: hand.picked)
                 return scores + [Score(yaku: winningYaku.union(otherYaku), fu: 25)]
             case .thirteenOrphans:
                 let winningYaku: Set<AnyYaku>

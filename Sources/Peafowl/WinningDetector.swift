@@ -2,7 +2,7 @@ import Foundation
 
 internal struct WinningDetector {
     internal enum WinningForm {
-        case ordinary([TokenizedResult])
+        case ordinary(OrdinaryWinningForm)
         case sevenPairs
         case thirteenOrphans
     }
@@ -23,9 +23,13 @@ internal struct WinningDetector {
 
         let tokenizer = Tokenizer()
         let tokenizedResults = tokenizer.tokenize(from: tiles)
-        if !tokenizedResults.isEmpty {
-            results.append(.ordinary(tokenizedResults))
+        let ordinaryForms = tokenizedResults.compactMap { (tokenizedResult) -> WinningForm? in
+            if let ordinaryWinningForm = Tokenizer.convertToWinningForm(from: tokenizedResult) {
+                return .ordinary(ordinaryWinningForm)
+            }
+            return nil
         }
+        results = results + ordinaryForms
         if results.isEmpty {
             return nil
         }
