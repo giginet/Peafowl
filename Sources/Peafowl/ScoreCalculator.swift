@@ -101,7 +101,7 @@ public class ScoreCalculator {
             return nil
         }
 
-        func checkFormedYaku(hand: Hand, winningForm: OrdinaryWinningForm?, picked: Tile) -> Set<AnyYaku> {
+        func checkFormedYaku(hand: Hand, winningForm: WinningForm, picked: Tile) -> Set<AnyYaku> {
             let winningYaku: Set<AnyYaku> = Set(availableFormedYakuTypes.map { type in
                 return type.make(with: hand.allTiles,
                                  form: winningForm,
@@ -114,20 +114,20 @@ public class ScoreCalculator {
         return forms.reduce([]) { (scores, form) -> [Score] in
             switch form {
             case .ordinary(let winningForm):
-                let winningYaku = checkFormedYaku(hand: hand, winningForm: winningForm, picked: hand.picked)
+                let winningYaku = checkFormedYaku(hand: hand, winningForm: .ordinary(winningForm), picked: hand.picked)
                 return [Score(yaku: winningYaku, fu: 0)]
             case .sevenPairs:
                 let winningYaku: Set<AnyYaku>
-                if let yaku = 七対子.make(with: hand.allTiles, form: nil, picked: hand.picked, context: context) {
+                if let yaku = 七対子.make(with: hand.allTiles, form: .sevenPairs, picked: hand.picked, context: context) {
                     winningYaku = [AnyYaku(yaku)]
                 } else {
                     winningYaku = []
                 }
-                let otherYaku = checkFormedYaku(hand: hand, winningForm: nil, picked: hand.picked)
+                let otherYaku = checkFormedYaku(hand: hand, winningForm: .sevenPairs, picked: hand.picked)
                 return scores + [Score(yaku: winningYaku.union(otherYaku), fu: 25)]
             case .thirteenOrphans:
                 let winningYaku: Set<AnyYaku>
-                if let yaku = 国士無双.make(with: hand.allTiles, form: nil, picked: hand.picked, context: context) {
+                if let yaku = 国士無双.make(with: hand.allTiles, form: .thirteenOrphans, picked: hand.picked, context: context) {
                     winningYaku = [AnyYaku(yaku)]
                 } else {
                     winningYaku = []

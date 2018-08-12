@@ -16,7 +16,7 @@ public struct 国士無双: YakuProtocol {
         self.isWaitingHead = isWaitingHead
     }
 
-    public static func make(with tiles: [Tile], form: OrdinaryWinningForm?, picked: Tile, context: GameContext) -> 国士無双? {
+    public static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> 国士無双? {
         let uniquedArray = Set<Tile>(tiles)
         if uniquedArray.count != 13 {
             return nil

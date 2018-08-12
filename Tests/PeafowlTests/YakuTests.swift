@@ -9,7 +9,7 @@ final class OrdinaryFormedYakuTests: XCTestCase {
         let tokenizedResults = tokenizer.tokenize(from: hand.allTiles)
         let yakuList = tokenizedResults.map { tokenizedResult in
             return Yaku.make(with: hand.allTiles,
-                             form: Tokenizer.convertToWinningForm(from: tokenizedResult),
+                             form: .ordinary(Tokenizer.convertToWinningForm(from: tokenizedResult)!),
                              picked: hand.picked,
                              context: context)
             }.compactMap { $0 }
@@ -36,9 +36,9 @@ final class SevenPairsFormedYakuTestx: XCTest {
     func test七対子() {
         let context = makeContext()
         let hand0: Hand = [東, 東, 南, 南, 西, 西, 北, 北, 白, 白, 撥, 撥, 中, 中]
-        XCTAssertNotNil(七対子.make(with: hand0.allTiles, form: nil, picked: hand0.picked, context: context))
+        XCTAssertNotNil(七対子.make(with: hand0.allTiles, form: .sevenPairs, picked: hand0.picked, context: context))
         
         let hand1: Hand = [東, 東, 東, 東, 西, 西, 北, 北, 白, 白, 撥, 撥, 中, 中]
-        XCTAssertNotNil(七対子.make(with: hand1.allTiles, form: nil, picked: hand1.picked, context: context))
+        XCTAssertNotNil(七対子.make(with: hand1.allTiles, form: .sevenPairs, picked: hand1.picked, context: context))
     }
 }

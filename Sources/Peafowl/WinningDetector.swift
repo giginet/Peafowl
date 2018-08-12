@@ -1,12 +1,12 @@
 import Foundation
 
-internal struct WinningDetector {
-    internal enum WinningForm {
-        case ordinary(OrdinaryWinningForm)
-        case sevenPairs
-        case thirteenOrphans
-    }
+public enum WinningForm {
+    case ordinary(OrdinaryWinningForm)
+    case sevenPairs
+    case thirteenOrphans
+}
 
+internal struct WinningDetector {
     func detectForms(_ tiles: [Tile]) -> [WinningForm]? {
         guard tiles.count == 14 else {
             return nil
