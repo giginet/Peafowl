@@ -1,10 +1,16 @@
 import Foundation
 
-public protocol Token: Hashable, CustomStringConvertible {
+public protocol Token: Hashable, CustomStringConvertible, TileCollection {
     associatedtype Tiles
     var tiles: Tiles { get }
     init?(_ tiles: Tiles)
     var asArray: [Tile] { get }
+}
+
+extension Token {
+    public func consistOnly(of condition: (Tile) -> Bool) -> Bool {
+        return asArray.filter(condition).count == asArray.count
+    }
 }
 
 public struct AnyToken: Token {
