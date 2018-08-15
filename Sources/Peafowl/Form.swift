@@ -1,4 +1,4 @@
 import Foundation
 
 /// 和了形
-public typealias OrdinaryWinningForm = (PairToken, MeldToken, MeldToken, MeldToken, MeldToken)
+public typealias MeldedWinningForm = (PairToken, MeldToken, MeldToken, MeldToken, MeldToken)

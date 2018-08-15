@@ -6,7 +6,7 @@ public struct 純全帯么九: YakuProtocol {
     
     public let name = "純チャン"
     public static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> 純全帯么九? {
-        guard case .ordinary(let tokens) = form else {
+        guard case .melded(let tokens) = form else {
             return nil
         }
         

@@ -6,7 +6,7 @@ public struct 一盃口: YakuProtocol {
     
     public let name = "一盃口"
     public static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> 一盃口? {
-        guard case .ordinary(let tokens) = form else {
+        guard case .melded(let tokens) = form else {
             return nil
         }
         let melds = [tokens.1, tokens.2, tokens.3, tokens.4]

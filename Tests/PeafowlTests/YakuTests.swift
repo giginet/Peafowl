@@ -2,14 +2,14 @@ import Foundation
 import XCTest
 @testable import Peafowl
 
-final class OrdinaryFormedYakuTests: XCTestCase {
+final class meldedFormedYakuTests: XCTestCase {
     private let tokenizer = Tokenizer()
     
     private func searchWinningYaku<Yaku: YakuProtocol>(_ yaku: Yaku.Type, hand: Hand, context: GameContext) -> [Yaku] {
         let tokenizedResults = tokenizer.tokenize(from: hand.allTiles)
         let yakuList = tokenizedResults.map { tokenizedResult in
             return Yaku.make(with: hand.allTiles,
-                             form: .ordinary(Tokenizer.convertToWinningForm(from: tokenizedResult)!),
+                             form: .melded(Tokenizer.convertToWinningForm(from: tokenizedResult)!),
                              picked: hand.picked,
                              context: context)
             }.compactMap { $0 }

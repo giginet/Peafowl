@@ -113,8 +113,8 @@ public class ScoreCalculator {
 
         return forms.reduce([]) { (scores, form) -> [Score] in
             switch form {
-            case .ordinary(let winningForm):
-                let winningYaku = checkFormedYaku(hand: hand, winningForm: .ordinary(winningForm), picked: hand.picked)
+            case .melded(let winningForm):
+                let winningYaku = checkFormedYaku(hand: hand, winningForm: .melded(winningForm), picked: hand.picked)
                 return [Score(yaku: winningYaku, fu: 0)]
             case .sevenPairs:
                 let winningYaku: Set<AnyYaku>
