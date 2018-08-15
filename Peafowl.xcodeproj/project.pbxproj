@@ -28,6 +28,7 @@
 		079A8E4A20E2BEE90009EA6D /* 国士無双.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4920E2BEE90009EA6D /* 国士無双.swift */; };
 		07A22F812113BC720098F546 /* TokenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A22F802113BC720098F546 /* TokenTests.swift */; };
 		07B2BBE021247B1200993F46 /* 三色同順.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2BBDF21247B1200993F46 /* 三色同順.swift */; };
+		07B2BBE2212481E800993F46 /* 三色同刻.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2BBE1212481E800993F46 /* 三色同刻.swift */; };
 		07B6475321207D3400216DE5 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B6475221207D3400216DE5 /* Helper.swift */; };
 		07B64755212080FE00216DE5 /* TileCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B64754212080FE00216DE5 /* TileCollection.swift */; };
 		07B64757212088C900216DE5 /* 立直.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B64756212088C900216DE5 /* 立直.swift */; };
@@ -73,6 +74,7 @@
 		079A8E4920E2BEE90009EA6D /* 国士無双.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "国士無双.swift"; sourceTree = "<group>"; };
 		07A22F802113BC720098F546 /* TokenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenTests.swift; sourceTree = "<group>"; };
 		07B2BBDF21247B1200993F46 /* 三色同順.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "三色同順.swift"; sourceTree = "<group>"; };
+		07B2BBE1212481E800993F46 /* 三色同刻.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "三色同刻.swift"; sourceTree = "<group>"; };
 		07B6475221207D3400216DE5 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		07B64754212080FE00216DE5 /* TileCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCollection.swift; sourceTree = "<group>"; };
 		07B64756212088C900216DE5 /* 立直.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "立直.swift"; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				07B6475821208EE500216DE5 /* 一盃口.swift */,
 				07B6475A212090F800216DE5 /* 二盃口.swift */,
 				07B2BBDF21247B1200993F46 /* 三色同順.swift */,
+				07B2BBE1212481E800993F46 /* 三色同刻.swift */,
 			);
 			path = Yakus;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				0762D3522116D11500CC66D5 /* Set+Extensions.swift in Sources */,
 				07ED34422110C1E300D02AFA /* Tile+Aliases.swift in Sources */,
 				07ED343E2110B6FD00D02AFA /* Sequence+Extensions.swift in Sources */,
+				07B2BBE2212481E800993F46 /* 三色同刻.swift in Sources */,
 				07B64757212088C900216DE5 /* 立直.swift in Sources */,
 				0778DC4B2118AD0200B8B841 /* ScoreCalculator.swift in Sources */,
 				07811BEF211F432A0052DCB2 /* WinningDetector.swift in Sources */,
