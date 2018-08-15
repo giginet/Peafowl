@@ -11,10 +11,11 @@ public struct 三色同順: YakuProtocol {
         }
         let melds = [tokens.1, tokens.2, tokens.3, tokens.4]
         let sequentialMelds = melds.filter { $0.isSequential }
-        let hasCharacter = sequentialMelds.first { $0.isCharacter() } != nil
-        let hasBamboo = sequentialMelds.first { $0.isBamboo() } != nil
-        let hasDots = sequentialMelds.first { $0.isDots() } != nil
-        if hasCharacter && hasBamboo && hasDots {
+        let character = sequentialMelds.first { $0.isCharacter }
+        let bamboo = sequentialMelds.first { $0.isBamboo }
+        let dots = sequentialMelds.first { $0.isDots }
+        if character?.asArray.first?.number == bamboo?.asArray.first?.number
+            && dots?.asArray.first?.number == bamboo?.asArray.first?.number {
             return 三色同順()
         }
         return nil

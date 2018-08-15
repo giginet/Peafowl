@@ -11,10 +11,11 @@ public struct 三色同刻: YakuProtocol {
         }
         let melds = [tokens.1, tokens.2, tokens.3, tokens.4]
         let tripletsMelds = melds.filter { $0.isTriplets }
-        let hasCharacter = tripletsMelds.first { $0.isCharacter() } != nil
-        let hasBamboo = tripletsMelds.first { $0.isBamboo() } != nil
-        let hasDots = tripletsMelds.first { $0.isDots() } != nil
-        if hasCharacter && hasBamboo && hasDots {
+        guard let character = tripletsMelds.first(where: { $0.isCharacter }) else { return nil }
+        guard let bamboo = tripletsMelds.first(where: { $0.isBamboo }) else { return nil }
+        guard let dots = tripletsMelds.first(where: { $0.isDots }) else { return nil }
+        if character.asArray.first?.number == bamboo.asArray.first?.number
+            && dots.asArray.first?.number == bamboo.asArray.first?.number {
             return 三色同刻()
         }
         return nil

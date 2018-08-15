@@ -171,21 +171,21 @@ public struct Tile: Equatable, Comparable, Hashable {
         return advanced(by: -1)
     }
     
-    public func isCharacter() -> Bool {
+    public var isCharacter: Bool {
         if case .character = suit {
             return true
         }
         return false
     }
     
-    public func isBamboo() -> Bool {
+    public var isBamboo: Bool {
         if case .bamboo = suit {
             return true
         }
         return false
     }
     
-    public func isDots() -> Bool {
+    public var isDots: Bool {
         if case .dots = suit {
             return true
         }

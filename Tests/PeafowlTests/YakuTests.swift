@@ -66,6 +66,18 @@ final class OrdinaryFormedYakuTests: XCTestCase {
         assert((二筒, 二筒), (三索, 四索, 五索), (四索, 五索, 六索), (三萬, 四萬, 五萬), (六索, 七索, 八索), shouldNotBe: 二盃口.self)
         assert((二筒, 二筒), (三索, 四索, 五索), (三索, 四索, 五索), (三索, 四索, 五索), (六索, 七索, 八索), shouldNotBe: 二盃口.self)
     }
+    
+    func test三色同順() {
+        assert((二筒, 二筒), (三索, 四索, 五索), (三筒, 四筒, 五筒), (三萬, 四萬, 五萬), (東, 東, 東), shouldBe: 三色同順.self)
+        assert((二筒, 二筒), (三索, 四索, 五索), (四筒, 五筒, 六筒), (三萬, 四萬, 五萬), (東, 東, 東), shouldNotBe: 三色同順.self)
+    }
+    
+    func test三色同刻() {
+        assert((二筒, 二筒), (三索, 三索, 三索), (三筒, 三筒, 三筒), (三萬, 三萬, 三萬), (東, 東, 東), shouldBe: 三色同刻.self)
+        assert((二筒, 二筒), (三索, 四索, 五索), (三筒, 四筒, 五筒), (三萬, 四萬, 五萬), (東, 東, 東), shouldNotBe: 三色同刻.self)
+        assert((二筒, 二筒), (三索, 四索, 五索), (四筒, 五筒, 六筒), (三萬, 四萬, 五萬), (東, 東, 東), shouldNotBe: 三色同刻.self)
+        assert((二筒, 二筒), (東, 東, 東), (南, 南, 南), (西, 西, 西), (北, 北, 北), shouldNotBe: 三色同刻.self)
+    }
 }
 
 final class SevenPairsFormedYakuTests: XCTestCase {
