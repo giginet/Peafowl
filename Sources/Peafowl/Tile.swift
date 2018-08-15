@@ -170,6 +170,27 @@ public struct Tile: Equatable, Comparable, Hashable {
     public var previous: Tile? {
         return advanced(by: -1)
     }
+    
+    public func isCharacter() -> Bool {
+        if case .character = suit {
+            return true
+        }
+        return false
+    }
+    
+    public func isBamboo() -> Bool {
+        if case .bamboo = suit {
+            return true
+        }
+        return false
+    }
+    
+    public func isDots() -> Bool {
+        if case .dots = suit {
+            return true
+        }
+        return false
+    }
 }
 
 extension Tile: CustomStringConvertible {

@@ -140,4 +140,16 @@ public struct MeldToken: Token {
             return "順子 (\(tiles.0), \(tiles.1), \(tiles.2)"
         }
     }
+    
+    internal func isCharacter() -> Bool {
+        return tiles.0.isCharacter() && tiles.1.isCharacter() && tiles.2.isCharacter()
+    }
+    
+    internal func isBamboo() -> Bool {
+        return tiles.0.isBamboo() && tiles.1.isBamboo() && tiles.2.isBamboo()
+    }
+    
+    internal func isDots() -> Bool {
+        return tiles.0.isDots() && tiles.1.isDots() && tiles.2.isDots()
+    }
 }
