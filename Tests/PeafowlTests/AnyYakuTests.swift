@@ -8,7 +8,7 @@ final class AnyYakuTests: XCTestCase {
                                 AnyYaku(国士無双(isWaitingHead: true)),
                                 AnyYaku(七対子()),]
         XCTAssertEqual(yakus.count, 3)
-        XCTAssertEqual(yakus.map { $0.name }, ["断ヤオ九", "国士無双", "七対子"])
+        XCTAssertEqual(yakus.map { $0.name }, ["断ヤオ", "国士無双", "七対子"])
     }
 
     func testEquatable() {

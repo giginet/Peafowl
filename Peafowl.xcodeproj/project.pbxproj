@@ -42,6 +42,7 @@
 		07ED34422110C1E300D02AFA /* Tile+Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED34412110C1E300D02AFA /* Tile+Aliases.swift */; };
 		07F4195B21248F1000DB09EF /* 混老頭.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4195A21248F1000DB09EF /* 混老頭.swift */; };
 		07F4195D21248FEE00DB09EF /* 混全帯么九.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4195C21248FEE00DB09EF /* 混全帯么九.swift */; };
+		07F4195F2124929500DB09EF /* 純全帯么九.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4195E2124929500DB09EF /* 純全帯么九.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		07ED34412110C1E300D02AFA /* Tile+Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tile+Aliases.swift"; sourceTree = "<group>"; };
 		07F4195A21248F1000DB09EF /* 混老頭.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "混老頭.swift"; sourceTree = "<group>"; };
 		07F4195C21248FEE00DB09EF /* 混全帯么九.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "混全帯么九.swift"; sourceTree = "<group>"; };
+		07F4195E2124929500DB09EF /* 純全帯么九.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "純全帯么九.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				07B2BBE1212481E800993F46 /* 三色同刻.swift */,
 				07F4195A21248F1000DB09EF /* 混老頭.swift */,
 				07F4195C21248FEE00DB09EF /* 混全帯么九.swift */,
+				07F4195E2124929500DB09EF /* 純全帯么九.swift */,
 			);
 			path = Yakus;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				07B64755212080FE00216DE5 /* TileCollection.swift in Sources */,
 				07C6398721120F1000725AFB /* Array+Tiles.swift in Sources */,
 				07811BF5211F71B40052DCB2 /* GameContext.swift in Sources */,
+				07F4195F2124929500DB09EF /* 純全帯么九.swift in Sources */,
 				07B2BBE021247B1200993F46 /* 三色同順.swift in Sources */,
 				079A8E3B20E2ADEE0009EA6D /* Tile.swift in Sources */,
 				079A8E3F20E2B4F10009EA6D /* Hand.swift in Sources */,

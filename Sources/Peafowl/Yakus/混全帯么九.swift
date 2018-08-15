@@ -19,6 +19,10 @@ public struct 混全帯么九: YakuProtocol {
             && tokens.2.asArray.contains(where: isYaochu)
             && tokens.3.asArray.contains(where: isYaochu)
             && tokens.4.asArray.contains(where: isYaochu) {
+            // If there are no honor tiles, it will be 純チャン.
+            if tiles.contains(where: { $0.isHonor }) == false {
+                return nil
+            }
             return 混全帯么九()
         }
         return nil
