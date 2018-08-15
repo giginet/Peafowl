@@ -9,7 +9,7 @@ public struct 七対子: YakuProtocol {
         switch form {
         case .sevenPairs:
             let eyes = Tokenizer.findEyes(from: tiles)
-            if eyes.count == 7 {
+            if eyes.unique().count == 7 {
                 return 七対子()
             }
         default:
