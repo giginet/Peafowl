@@ -2,7 +2,7 @@ import Foundation
 
 public struct 二盃口: YakuProtocol {
     public let openedHan: Int? = nil
-    public let closedHan: Int = 1
+    public let closedHan: Int = 3
     
     public let name = "二盃口"
     public static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> 二盃口? {
