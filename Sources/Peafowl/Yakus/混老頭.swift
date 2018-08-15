@@ -1,0 +1,14 @@
+import Foundation
+
+public struct 混老頭: YakuProtocol {
+    public let openedHan: Int? = 2
+    public let closedHan: Int = 2
+    
+    public let name = "混老頭"
+    public static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> 混老頭? {
+        if tiles.consistOnly(of: { $0.isTerminal || $0.isHonor }) {
+            return 混老頭()
+        }
+        return nil
+    }
+}

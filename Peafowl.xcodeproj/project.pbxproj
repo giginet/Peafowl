@@ -40,6 +40,7 @@
 		07ED2F2F20E2AC6D00EF677F /* Peafowl.h in Headers */ = {isa = PBXBuildFile; fileRef = 07ED2F2D20E2AC6D00EF677F /* Peafowl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07ED343E2110B6FD00D02AFA /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED343D2110B6FD00D02AFA /* Sequence+Extensions.swift */; };
 		07ED34422110C1E300D02AFA /* Tile+Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED34412110C1E300D02AFA /* Tile+Aliases.swift */; };
+		07F4195B21248F1000DB09EF /* 混老頭.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4195A21248F1000DB09EF /* 混老頭.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		07ED2F3220E2AC7C00EF677F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/PeafowlTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		07ED343D2110B6FD00D02AFA /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
 		07ED34412110C1E300D02AFA /* Tile+Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tile+Aliases.swift"; sourceTree = "<group>"; };
+		07F4195A21248F1000DB09EF /* 混老頭.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "混老頭.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				07B6475A212090F800216DE5 /* 二盃口.swift */,
 				07B2BBDF21247B1200993F46 /* 三色同順.swift */,
 				07B2BBE1212481E800993F46 /* 三色同刻.swift */,
+				07F4195A21248F1000DB09EF /* 混老頭.swift */,
 			);
 			path = Yakus;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				079A8E3F20E2B4F10009EA6D /* Hand.swift in Sources */,
 				07C6398421120CB900725AFB /* Array+Extensions.swift in Sources */,
 				07212FAB210F7586003F4E75 /* Form.swift in Sources */,
+				07F4195B21248F1000DB09EF /* 混老頭.swift in Sources */,
 				07212FA9210F6B10003F4E75 /* Tokenizer.swift in Sources */,
 				07B6475B212090F800216DE5 /* 二盃口.swift in Sources */,
 				079A8E4120E2B5960009EA6D /* Yaku.swift in Sources */,
