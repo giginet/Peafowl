@@ -14,7 +14,7 @@ public struct 混全帯么九: YakuProtocol {
             return tile.isTerminal || tile.isHonor
         }
         
-        if tokens.0.consistOnly(of: isYaochu)
+        if tokens.0.allSatisfy(isYaochu)
             && tokens.1.asArray.contains(where: isYaochu)
             && tokens.2.asArray.contains(where: isYaochu)
             && tokens.3.asArray.contains(where: isYaochu)

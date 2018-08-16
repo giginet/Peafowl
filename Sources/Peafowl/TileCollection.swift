@@ -1,11 +1,8 @@
 import Foundation
 
 public protocol TileCollection {
-    func consistOnly(of filter: (Tile) -> Bool) -> Bool
+    func allSatisfy(_ predicate: (Tile) throws -> Bool) rethrows -> Bool
 }
 
 extension Array: TileCollection where Element == Tile {
-    public func consistOnly(of condition: (Tile) -> Bool) -> Bool {
-        return filter(condition).count == count
-    }
 }

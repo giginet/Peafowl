@@ -14,7 +14,7 @@ public struct 純全帯么九: YakuProtocol {
             return tile.isTerminal
         }
         
-        if tokens.0.consistOnly(of: isTerminal)
+        if tokens.0.allSatisfy(isTerminal)
             && tokens.1.asArray.contains(where: isTerminal)
             && tokens.2.asArray.contains(where: isTerminal)
             && tokens.3.asArray.contains(where: isTerminal)

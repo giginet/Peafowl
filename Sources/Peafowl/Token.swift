@@ -8,8 +8,8 @@ public protocol Token: Hashable, CustomStringConvertible, TileCollection {
 }
 
 extension Token {
-    public func consistOnly(of condition: (Tile) -> Bool) -> Bool {
-        return asArray.filter(condition).count == asArray.count
+    public func allSatisfy(_ predicate: (Tile) throws -> Bool) rethrows -> Bool {
+        return try asArray.allSatisfy(predicate)
     }
 }
 

@@ -9,7 +9,7 @@ public struct 断ヤオ九: YakuProtocol {
         func isNotYaochu(tile: Tile) -> Bool {
             return !tile.isHonor && !tile.isTerminal
         }
-        if tiles.consistOnly(of: isNotYaochu) {
+        if tiles.allSatisfy(isNotYaochu) {
             return 断ヤオ九()
         }
         return nil
