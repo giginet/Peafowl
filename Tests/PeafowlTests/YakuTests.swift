@@ -148,6 +148,18 @@ final class meldedFormedYakuTests: XCTestCase {
         assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (七索, 八索, 九索), shouldNotBe: 対々和.self)
         assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (九索, 九索, 九索), shouldBe: 対々和.self)
     }
+    
+    func test字一色() {
+        assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (七索, 八索, 九索), shouldNotBe: 字一色.self)
+        assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (九索, 九索, 九索), shouldNotBe: 字一色.self)
+        assert((東, 東), (南, 南, 南), (西, 西, 西), (中, 中, 中), (撥, 撥, 撥), shouldBe: 字一色.self)
+    }
+    
+    func test緑一色() {
+        assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (七索, 八索, 九索), shouldNotBe: 緑一色.self)
+        assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (九索, 九索, 九索), shouldNotBe: 緑一色.self)
+        assert((撥, 撥), (二索, 三索, 四索), (六索, 六索, 六索), (八索, 八索, 八索), (二索, 三索, 四索), shouldBe: 緑一色.self)
+    }
 }
 
 final class SevenPairsFormedYakuTests: XCTestCase {

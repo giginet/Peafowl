@@ -140,6 +140,17 @@ public struct Tile: Equatable, Comparable, Hashable {
             return false
         }
     }
+    
+    public var isGreen: Bool {
+        switch suit {
+        case .bamboo(let n) where [2, 3, 4, 6, 8].contains { $0 == n }:
+            return true
+        case .fortune:
+            return true
+        default:
+            return false
+        }
+    }
 
     public var number: Int? {
         switch suit {

@@ -13,6 +13,8 @@
 		07315D322125DB9D00733FDC /* 嶺上開花.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D312125DB9D00733FDC /* 嶺上開花.swift */; };
 		07315D342125DC0900733FDC /* 海底摸月.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D332125DC0900733FDC /* 海底摸月.swift */; };
 		07315D362125DC7200733FDC /* 河底撈魚.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D352125DC7200733FDC /* 河底撈魚.swift */; };
+		07315D3A2125E05100733FDC /* 字一色.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D392125E05100733FDC /* 字一色.swift */; };
+		07315D3C2125E0A000733FDC /* 緑一色.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D3B2125E0A000733FDC /* 緑一色.swift */; };
 		074FC55121076DBB007DADDE /* TileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074FC54E21076CA9007DADDE /* TileTests.swift */; };
 		0762D3502115F07000CC66D5 /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762D34F2115F07000CC66D5 /* TokenizerTests.swift */; };
 		0762D3522116D11500CC66D5 /* Set+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762D3512116D11500CC66D5 /* Set+Extensions.swift */; };
@@ -75,6 +77,8 @@
 		07315D312125DB9D00733FDC /* 嶺上開花.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "嶺上開花.swift"; sourceTree = "<group>"; };
 		07315D332125DC0900733FDC /* 海底摸月.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "海底摸月.swift"; sourceTree = "<group>"; };
 		07315D352125DC7200733FDC /* 河底撈魚.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "河底撈魚.swift"; sourceTree = "<group>"; };
+		07315D392125E05100733FDC /* 字一色.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "字一色.swift"; sourceTree = "<group>"; };
+		07315D3B2125E0A000733FDC /* 緑一色.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "緑一色.swift"; sourceTree = "<group>"; };
 		074FC54E21076CA9007DADDE /* TileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileTests.swift; sourceTree = "<group>"; };
 		0762D34F2115F07000CC66D5 /* TokenizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerTests.swift; sourceTree = "<group>"; };
 		0762D3512116D11500CC66D5 /* Set+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Extensions.swift"; sourceTree = "<group>"; };
@@ -142,12 +146,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07315D372125E03700733FDC /* Yakuman */ = {
+			isa = PBXGroup;
+			children = (
+				079A8E4920E2BEE90009EA6D /* 国士無双.swift */,
+				07F4196D2125D6C400DB09EF /* 四暗刻.swift */,
+				07315D392125E05100733FDC /* 字一色.swift */,
+				07315D3B2125E0A000733FDC /* 緑一色.swift */,
+			);
+			path = Yakuman;
+			sourceTree = "<group>";
+		};
 		079A8E4420E2BB370009EA6D /* Yakus */ = {
 			isa = PBXGroup;
 			children = (
+				07315D372125E03700733FDC /* Yakuman */,
 				079A8E4520E2BB470009EA6D /* 断ヤオ九.swift */,
 				079A8E4720E2BE110009EA6D /* 七対子.swift */,
-				079A8E4920E2BEE90009EA6D /* 国士無双.swift */,
 				07B64756212088C900216DE5 /* 立直.swift */,
 				07F419712125D8B700DB09EF /* 一発.swift */,
 				07315D2F2125DB1E00733FDC /* 門前清自摸和.swift */,
@@ -166,7 +181,6 @@
 				07F419662125D20700DB09EF /* 混一色.swift */,
 				07F419682125D2CA00DB09EF /* 清一色.swift */,
 				07F4196A2125D56C00DB09EF /* 三暗刻.swift */,
-				07F4196D2125D6C400DB09EF /* 四暗刻.swift */,
 				07F4196F2125D6FD00DB09EF /* 対々和.swift */,
 			);
 			path = Yakus;
@@ -371,6 +385,7 @@
 				07F419672125D20700DB09EF /* 混一色.swift in Sources */,
 				07F419612125C96200DB09EF /* 一気通貫.swift in Sources */,
 				07B64755212080FE00216DE5 /* TileCollection.swift in Sources */,
+				07315D3A2125E05100733FDC /* 字一色.swift in Sources */,
 				07C6398721120F1000725AFB /* Array+Tiles.swift in Sources */,
 				07315D342125DC0900733FDC /* 海底摸月.swift in Sources */,
 				07F419722125D8B700DB09EF /* 一発.swift in Sources */,
@@ -389,6 +404,7 @@
 				07315D322125DB9D00733FDC /* 嶺上開花.swift in Sources */,
 				07F4195B21248F1000DB09EF /* 混老頭.swift in Sources */,
 				07212FA9210F6B10003F4E75 /* Tokenizer.swift in Sources */,
+				07315D3C2125E0A000733FDC /* 緑一色.swift in Sources */,
 				07B6475B212090F800216DE5 /* 二盃口.swift in Sources */,
 				079A8E4120E2B5960009EA6D /* Yaku.swift in Sources */,
 			);
