@@ -113,6 +113,26 @@ final class meldedFormedYakuTests: XCTestCase {
         assert((中, 中), (白, 白, 白), (撥, 撥, 撥), (七索, 八索, 九索), (七筒, 八筒, 九筒), shouldBe: 小三元.self)
         assert((一筒, 一筒), (白, 白, 白), (撥, 撥, 撥), (中, 中, 中), (七筒, 八筒, 九筒), shouldNotBe: 小三元.self)
     }
+    
+    func test混一色() {
+        assert((一筒, 一筒), (一索, 二索, 三索), (四索, 五索, 六索), (七索, 八索, 九索), (東, 東, 東), shouldNotBe: 混一色.self)
+        assert((一索, 一索), (一索, 二索, 三索), (四索, 五索, 六索), (七索, 八索, 九索), (東, 東, 東), shouldBe: 混一色.self)
+        assert((一萬, 一萬), (一萬, 二萬, 三萬), (四萬, 五萬, 六萬), (七萬, 八萬, 九萬), (東, 東, 東), shouldBe: 混一色.self)
+        assert((一筒, 一筒), (一筒, 二筒, 三筒), (四筒, 五筒, 六筒), (七筒, 八筒, 九筒), (東, 東, 東), shouldBe: 混一色.self)
+        assert((一索, 一索), (一索, 二索, 三索), (四索, 五索, 六索), (七索, 八索, 九索), (八索, 八索, 八索), shouldNotBe: 混一色.self)
+        assert((一萬, 一萬), (一萬, 二萬, 三萬), (四萬, 五萬, 六萬), (七萬, 八萬, 九萬), (八萬, 八萬, 八萬), shouldNotBe: 混一色.self)
+        assert((一筒, 一筒), (一筒, 二筒, 三筒), (四筒, 五筒, 六筒), (七筒, 八筒, 九筒), (八筒, 八筒, 八筒), shouldNotBe: 混一色.self)
+    }
+    
+    func test清一色() {
+        assert((一筒, 一筒), (一索, 二索, 三索), (四索, 五索, 六索), (七索, 八索, 九索), (東, 東, 東), shouldNotBe: 清一色.self)
+        assert((一索, 一索), (一索, 二索, 三索), (四索, 五索, 六索), (七索, 八索, 九索), (東, 東, 東), shouldNotBe: 清一色.self)
+        assert((一萬, 一萬), (一萬, 二萬, 三萬), (四萬, 五萬, 六萬), (七萬, 八萬, 九萬), (東, 東, 東), shouldNotBe: 清一色.self)
+        assert((一筒, 一筒), (一筒, 二筒, 三筒), (四筒, 五筒, 六筒), (七筒, 八筒, 九筒), (東, 東, 東), shouldNotBe: 清一色.self)
+        assert((一索, 一索), (一索, 二索, 三索), (四索, 五索, 六索), (七索, 八索, 九索), (八索, 八索, 八索), shouldBe: 清一色.self)
+        assert((一萬, 一萬), (一萬, 二萬, 三萬), (四萬, 五萬, 六萬), (七萬, 八萬, 九萬), (八萬, 八萬, 八萬), shouldBe: 清一色.self)
+        assert((一筒, 一筒), (一筒, 二筒, 三筒), (四筒, 五筒, 六筒), (七筒, 八筒, 九筒), (八筒, 八筒, 八筒), shouldBe: 清一色.self)
+    }
 }
 
 final class SevenPairsFormedYakuTests: XCTestCase {
