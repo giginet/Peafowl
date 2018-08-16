@@ -90,6 +90,14 @@ public struct PairToken: Token {
 
         return nil
     }
+    
+    internal var first: Tile {
+        return asArray[0]
+    }
+    
+    internal var second: Tile {
+        return asArray[1]
+    }
 }
 
 /// 面子

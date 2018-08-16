@@ -45,6 +45,7 @@
 		07F4195F2124929500DB09EF /* 純全帯么九.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4195E2124929500DB09EF /* 純全帯么九.swift */; };
 		07F419612125C96200DB09EF /* 一気通貫.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419602125C96200DB09EF /* 一気通貫.swift */; };
 		07F419632125CA3400DB09EF /* Yaku+Utilitiy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419622125CA3400DB09EF /* Yaku+Utilitiy.swift */; };
+		07F419652125CD6000DB09EF /* 小三元.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419642125CD6000DB09EF /* 小三元.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		07F4195E2124929500DB09EF /* 純全帯么九.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "純全帯么九.swift"; sourceTree = "<group>"; };
 		07F419602125C96200DB09EF /* 一気通貫.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "一気通貫.swift"; sourceTree = "<group>"; };
 		07F419622125CA3400DB09EF /* Yaku+Utilitiy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Yaku+Utilitiy.swift"; sourceTree = "<group>"; };
+		07F419642125CD6000DB09EF /* 小三元.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "小三元.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				07F4195C21248FEE00DB09EF /* 混全帯么九.swift */,
 				07F4195E2124929500DB09EF /* 純全帯么九.swift */,
 				07F419602125C96200DB09EF /* 一気通貫.swift */,
+				07F419642125CD6000DB09EF /* 小三元.swift */,
 			);
 			path = Yakus;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				07B64757212088C900216DE5 /* 立直.swift in Sources */,
 				0778DC4B2118AD0200B8B841 /* ScoreCalculator.swift in Sources */,
 				07811BEF211F432A0052DCB2 /* WinningDetector.swift in Sources */,
+				07F419652125CD6000DB09EF /* 小三元.swift in Sources */,
 				079A8E4620E2BB470009EA6D /* 断ヤオ九.swift in Sources */,
 				079A8E4320E2B68C0009EA6D /* Token.swift in Sources */,
 				07F419612125C96200DB09EF /* 一気通貫.swift in Sources */,
