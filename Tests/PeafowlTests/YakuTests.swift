@@ -133,6 +133,21 @@ final class meldedFormedYakuTests: XCTestCase {
         assert((一萬, 一萬), (一萬, 二萬, 三萬), (四萬, 五萬, 六萬), (七萬, 八萬, 九萬), (八萬, 八萬, 八萬), shouldBe: 清一色.self)
         assert((一筒, 一筒), (一筒, 二筒, 三筒), (四筒, 五筒, 六筒), (七筒, 八筒, 九筒), (八筒, 八筒, 八筒), shouldBe: 清一色.self)
     }
+    
+    func test三暗刻() {
+        assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (七索, 八索, 九索), shouldBe: 三暗刻.self)
+        assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (九索, 九索, 九索), shouldNotBe: 三暗刻.self)
+    }
+    
+    func test四暗刻() {
+        assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (七索, 八索, 九索), shouldNotBe: 四暗刻.self)
+        assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (九索, 九索, 九索), shouldBe: 四暗刻.self)
+    }
+    
+    func test対々和() {
+        assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (七索, 八索, 九索), shouldNotBe: 対々和.self)
+        assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (九索, 九索, 九索), shouldBe: 対々和.self)
+    }
 }
 
 final class SevenPairsFormedYakuTests: XCTestCase {

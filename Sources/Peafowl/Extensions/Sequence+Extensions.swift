@@ -1,11 +1,11 @@
 import Foundation
 
 extension Sequence where Element: Equatable {
-    func count(_ isMatched: (Element) -> Bool) -> Int {
-        return filter(isMatched).count
+    func countIf(_ predicate: (Element) -> Bool) -> Int {
+        return filter(predicate).count
     }
 
-    func count(_ element: Element) -> Int {
-        return count { return $0 == element }
+    func countIf(_ element: Element) -> Int {
+        return countIf { return $0 == element }
     }
 }

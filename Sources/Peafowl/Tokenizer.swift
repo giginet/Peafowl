@@ -43,7 +43,7 @@ internal struct Tokenizer {
         var mutableTiles = tiles
         var results: [PairToken] = []
         for tile in tiles {
-            if mutableTiles.count(tile) >= 2 {
+            if mutableTiles.countIf(tile) >= 2 {
                 guard let newPair = PairToken((tile, tile)) else { continue }
                 move(newPair, from: &mutableTiles, to: &results)
             }
@@ -53,7 +53,7 @@ internal struct Tokenizer {
 
     internal static func findTripletMelds(from tiles: [Tile]) -> Set<MeldToken> {
         return Set(tiles.compactMap { tile in
-            if tiles.count(tile) >= 3 {
+            if tiles.countIf(tile) >= 3 {
                 return MeldToken((tile, tile, tile))
             }
             return nil

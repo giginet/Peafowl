@@ -11,7 +11,7 @@ public struct 一盃口: YakuProtocol {
         }
         let melds = [tokens.1, tokens.2, tokens.3, tokens.4]
         let duplicatedSequentialMelds = Set(melds.compactMap { meld -> MeldToken? in
-            if meld.isSequential && melds.count(meld) == 2 {
+            if meld.isSequential && melds.countIf(meld) == 2 {
                 return meld
             }
             return nil

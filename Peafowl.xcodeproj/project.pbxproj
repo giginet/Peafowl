@@ -48,6 +48,9 @@
 		07F419652125CD6000DB09EF /* 小三元.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419642125CD6000DB09EF /* 小三元.swift */; };
 		07F419672125D20700DB09EF /* 混一色.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419662125D20700DB09EF /* 混一色.swift */; };
 		07F419692125D2CA00DB09EF /* 清一色.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419682125D2CA00DB09EF /* 清一色.swift */; };
+		07F4196B2125D56C00DB09EF /* 三暗刻.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4196A2125D56C00DB09EF /* 三暗刻.swift */; };
+		07F4196E2125D6C400DB09EF /* 四暗刻.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4196D2125D6C400DB09EF /* 四暗刻.swift */; };
+		07F419702125D6FD00DB09EF /* 対々和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4196F2125D6FD00DB09EF /* 対々和.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,9 @@
 		07F419642125CD6000DB09EF /* 小三元.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "小三元.swift"; sourceTree = "<group>"; };
 		07F419662125D20700DB09EF /* 混一色.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "混一色.swift"; sourceTree = "<group>"; };
 		07F419682125D2CA00DB09EF /* 清一色.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "清一色.swift"; sourceTree = "<group>"; };
+		07F4196A2125D56C00DB09EF /* 三暗刻.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "三暗刻.swift"; sourceTree = "<group>"; };
+		07F4196D2125D6C400DB09EF /* 四暗刻.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "四暗刻.swift"; sourceTree = "<group>"; };
+		07F4196F2125D6FD00DB09EF /* 対々和.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "対々和.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +150,9 @@
 				07F419642125CD6000DB09EF /* 小三元.swift */,
 				07F419662125D20700DB09EF /* 混一色.swift */,
 				07F419682125D2CA00DB09EF /* 清一色.swift */,
+				07F4196A2125D56C00DB09EF /* 三暗刻.swift */,
+				07F4196D2125D6C400DB09EF /* 四暗刻.swift */,
+				07F4196F2125D6FD00DB09EF /* 対々和.swift */,
 			);
 			path = Yakus;
 			sourceTree = "<group>";
@@ -334,9 +343,12 @@
 				0762D3522116D11500CC66D5 /* Set+Extensions.swift in Sources */,
 				07ED34422110C1E300D02AFA /* Tile+Aliases.swift in Sources */,
 				07ED343E2110B6FD00D02AFA /* Sequence+Extensions.swift in Sources */,
+				07F4196B2125D56C00DB09EF /* 三暗刻.swift in Sources */,
 				07B2BBE2212481E800993F46 /* 三色同刻.swift in Sources */,
 				07B64757212088C900216DE5 /* 立直.swift in Sources */,
+				07F419702125D6FD00DB09EF /* 対々和.swift in Sources */,
 				0778DC4B2118AD0200B8B841 /* ScoreCalculator.swift in Sources */,
+				07F4196E2125D6C400DB09EF /* 四暗刻.swift in Sources */,
 				07811BEF211F432A0052DCB2 /* WinningDetector.swift in Sources */,
 				07F419652125CD6000DB09EF /* 小三元.swift in Sources */,
 				079A8E4620E2BB470009EA6D /* 断ヤオ九.swift in Sources */,

@@ -113,6 +113,7 @@ public struct MeldToken: Token {
     }
 
     public let tiles: Tiles
+    public var isClosed = true
 
     public typealias Tiles = (Tile, Tile, Tile)
 
