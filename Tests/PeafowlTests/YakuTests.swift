@@ -160,6 +160,13 @@ final class meldedFormedYakuTests: XCTestCase {
         assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (九索, 九索, 九索), shouldNotBe: 緑一色.self)
         assert((撥, 撥), (二索, 三索, 四索), (六索, 六索, 六索), (八索, 八索, 八索), (二索, 三索, 四索), shouldBe: 緑一色.self)
     }
+    
+    func test大三元() {
+        assert((白, 白), (撥, 撥, 撥), (中, 中, 中), (七索, 八索, 九索), (七筒, 八筒, 九筒), shouldNotBe: 大三元.self)
+        assert((撥, 撥), (白, 白, 白), (中, 中, 中), (七索, 八索, 九索), (七筒, 八筒, 九筒), shouldNotBe: 大三元.self)
+        assert((中, 中), (白, 白, 白), (撥, 撥, 撥), (七索, 八索, 九索), (七筒, 八筒, 九筒), shouldNotBe: 大三元.self)
+        assert((一筒, 一筒), (白, 白, 白), (撥, 撥, 撥), (中, 中, 中), (七筒, 八筒, 九筒), shouldBe: 大三元.self)
+    }
 }
 
 final class SevenPairsFormedYakuTests: XCTestCase {

@@ -15,6 +15,7 @@
 		07315D362125DC7200733FDC /* 河底撈魚.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D352125DC7200733FDC /* 河底撈魚.swift */; };
 		07315D3A2125E05100733FDC /* 字一色.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D392125E05100733FDC /* 字一色.swift */; };
 		07315D3C2125E0A000733FDC /* 緑一色.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D3B2125E0A000733FDC /* 緑一色.swift */; };
+		07315D3E2125E50B00733FDC /* 大三元.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D3D2125E50B00733FDC /* 大三元.swift */; };
 		074FC55121076DBB007DADDE /* TileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074FC54E21076CA9007DADDE /* TileTests.swift */; };
 		0762D3502115F07000CC66D5 /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762D34F2115F07000CC66D5 /* TokenizerTests.swift */; };
 		0762D3522116D11500CC66D5 /* Set+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762D3512116D11500CC66D5 /* Set+Extensions.swift */; };
@@ -79,6 +80,7 @@
 		07315D352125DC7200733FDC /* 河底撈魚.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "河底撈魚.swift"; sourceTree = "<group>"; };
 		07315D392125E05100733FDC /* 字一色.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "字一色.swift"; sourceTree = "<group>"; };
 		07315D3B2125E0A000733FDC /* 緑一色.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "緑一色.swift"; sourceTree = "<group>"; };
+		07315D3D2125E50B00733FDC /* 大三元.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "大三元.swift"; sourceTree = "<group>"; };
 		074FC54E21076CA9007DADDE /* TileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileTests.swift; sourceTree = "<group>"; };
 		0762D34F2115F07000CC66D5 /* TokenizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerTests.swift; sourceTree = "<group>"; };
 		0762D3512116D11500CC66D5 /* Set+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Extensions.swift"; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				07F4196D2125D6C400DB09EF /* 四暗刻.swift */,
 				07315D392125E05100733FDC /* 字一色.swift */,
 				07315D3B2125E0A000733FDC /* 緑一色.swift */,
+				07315D3D2125E50B00733FDC /* 大三元.swift */,
 			);
 			path = Yakuman;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				07F4195D21248FEE00DB09EF /* 混全帯么九.swift in Sources */,
 				07C6398421120CB900725AFB /* Array+Extensions.swift in Sources */,
 				07212FAB210F7586003F4E75 /* Form.swift in Sources */,
+				07315D3E2125E50B00733FDC /* 大三元.swift in Sources */,
 				07315D302125DB1E00733FDC /* 門前清自摸和.swift in Sources */,
 				07F419692125D2CA00DB09EF /* 清一色.swift in Sources */,
 				07315D322125DB9D00733FDC /* 嶺上開花.swift in Sources */,
