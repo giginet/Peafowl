@@ -43,6 +43,8 @@
 		07F4195B21248F1000DB09EF /* 混老頭.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4195A21248F1000DB09EF /* 混老頭.swift */; };
 		07F4195D21248FEE00DB09EF /* 混全帯么九.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4195C21248FEE00DB09EF /* 混全帯么九.swift */; };
 		07F4195F2124929500DB09EF /* 純全帯么九.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4195E2124929500DB09EF /* 純全帯么九.swift */; };
+		07F419612125C96200DB09EF /* 一気通貫.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419602125C96200DB09EF /* 一気通貫.swift */; };
+		07F419632125CA3400DB09EF /* Yaku+Utilitiy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419622125CA3400DB09EF /* Yaku+Utilitiy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		07F4195A21248F1000DB09EF /* 混老頭.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "混老頭.swift"; sourceTree = "<group>"; };
 		07F4195C21248FEE00DB09EF /* 混全帯么九.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "混全帯么九.swift"; sourceTree = "<group>"; };
 		07F4195E2124929500DB09EF /* 純全帯么九.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "純全帯么九.swift"; sourceTree = "<group>"; };
+		07F419602125C96200DB09EF /* 一気通貫.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "一気通貫.swift"; sourceTree = "<group>"; };
+		07F419622125CA3400DB09EF /* Yaku+Utilitiy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Yaku+Utilitiy.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,7 @@
 				07F4195A21248F1000DB09EF /* 混老頭.swift */,
 				07F4195C21248FEE00DB09EF /* 混全帯么九.swift */,
 				07F4195E2124929500DB09EF /* 純全帯么九.swift */,
+				07F419602125C96200DB09EF /* 一気通貫.swift */,
 			);
 			path = Yakus;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 				07ED343D2110B6FD00D02AFA /* Sequence+Extensions.swift */,
 				07C6398621120F1000725AFB /* Array+Tiles.swift */,
 				0762D3512116D11500CC66D5 /* Set+Extensions.swift */,
+				07F419622125CA3400DB09EF /* Yaku+Utilitiy.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -325,9 +331,11 @@
 				07811BEF211F432A0052DCB2 /* WinningDetector.swift in Sources */,
 				079A8E4620E2BB470009EA6D /* 断ヤオ九.swift in Sources */,
 				079A8E4320E2B68C0009EA6D /* Token.swift in Sources */,
+				07F419612125C96200DB09EF /* 一気通貫.swift in Sources */,
 				07B64755212080FE00216DE5 /* TileCollection.swift in Sources */,
 				07C6398721120F1000725AFB /* Array+Tiles.swift in Sources */,
 				07811BF5211F71B40052DCB2 /* GameContext.swift in Sources */,
+				07F419632125CA3400DB09EF /* Yaku+Utilitiy.swift in Sources */,
 				07F4195F2124929500DB09EF /* 純全帯么九.swift in Sources */,
 				07B2BBE021247B1200993F46 /* 三色同順.swift in Sources */,
 				079A8E3B20E2ADEE0009EA6D /* Tile.swift in Sources */,

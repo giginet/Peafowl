@@ -158,4 +158,16 @@ public struct MeldToken: Token {
     internal var isDots: Bool {
         return tiles.0.isDots && tiles.1.isDots && tiles.2.isDots
     }
+    
+    internal var first: Tile {
+        return asArray[0]
+    }
+    
+    internal var second: Tile {
+        return asArray[1]
+    }
+    
+    internal var thrid: Tile {
+        return asArray[2]
+    }
 }

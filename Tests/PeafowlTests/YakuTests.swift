@@ -97,6 +97,15 @@ final class meldedFormedYakuTests: XCTestCase {
         assert((二筒, 二筒), (一索, 二索, 三索), (七筒, 八筒, 九筒), (一萬, 二萬, 三萬), (三索, 三索, 三索), shouldNotBe: 純全帯么九.self)
         assert((一筒, 一筒), (一索, 二索, 三索), (七筒, 八筒, 九筒), (一萬, 二萬, 三萬), (九索, 九索, 九索), shouldBe: 純全帯么九.self)
     }
+    
+    func test一気通貫() {
+        assert((一筒, 一筒), (一索, 二索, 三索), (四索, 五索, 六索), (七索, 八索, 九索), (東, 東, 東), shouldBe: 一気通貫.self)
+        assert((一筒, 一筒), (一筒, 二筒, 三筒), (四筒, 五筒, 六筒), (七筒, 八筒, 九筒), (東, 東, 東), shouldBe: 一気通貫.self)
+        assert((一筒, 一筒), (一ｑ萬, 二萬, 三萬), (四萬, 五萬, 六萬), (七萬, 八萬, 九萬), (東, 東, 東), shouldBe: 一気通貫.self)
+        assert((一筒, 一筒), (一索, 二索, 三索), (四索, 五索, 六索), (七索, 八索, 九索), (七索, 八索, 九索), shouldBe: 一気通貫.self)
+        assert((一筒, 一筒), (一筒, 二筒, 三筒), (四索, 五索, 六索), (七索, 八索, 九索), (七索, 八索, 九索), shouldNotBe: 一気通貫.self)
+        assert((一筒, 一筒), (一筒, 二筒, 三筒), (三索, 四索, 五索), (五索, 六索, 七索), (七索, 八索, 九索), shouldNotBe: 一気通貫.self)
+    }
 }
 
 final class SevenPairsFormedYakuTests: XCTestCase {
