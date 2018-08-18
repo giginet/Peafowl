@@ -9,7 +9,7 @@ private extension Set where Element: YakuProtocol {
 public struct CalculationOptions {
     /// 青天井
     var ignoreLimits: Bool
-
+    
     static let `default`: CalculationOptions = .init(ignoreLimits: false)
 }
 
@@ -17,7 +17,7 @@ public struct Score: Comparable {
     public static func == (lhs: Score, rhs: Score) -> Bool {
         return lhs.yaku == rhs.yaku
     }
-
+    
     public static func < (lhs: Score, rhs: Score) -> Bool {
         return lhs.basicScore < rhs.basicScore
     }
@@ -29,13 +29,13 @@ public struct Score: Comparable {
         case sanbaiman
         case yakuman(Int)
     }
-
+    
     var han: Int
     var fu: Int
     var yaku: Set<AnyYaku>
     var basicScore: Double
     var score: Int
-
+    
     init(yaku: Set<AnyYaku>, fu: Int) {
         self.fu = fu
         self.yaku = yaku
@@ -43,7 +43,7 @@ public struct Score: Comparable {
         self.basicScore = calculateScore(from: fu, and: han)
         self.score = Int(basicScore) // TODO
     }
-
+    
     var rank: Rank? {
         switch han {
         case 0..<5:
@@ -121,27 +121,62 @@ internal struct PointCulculator {
 }
 
 private let availableFormedYakuTypes = [
+    AnyYakuType(海底摸月.self),
+    AnyYakuType(清一色.self),
+    AnyYakuType(対々和.self),
+    AnyYakuType(ダブル立直.self),
+    AnyYakuType(一気通貫.self),
+    AnyYakuType(三暗刻.self),
+    AnyYakuType(ドラ.self),
+    AnyYakuType(一盃口.self),
+    AnyYakuType(混全帯么九.self),
+    AnyYakuType(嶺上開花.self),
+    AnyYakuType(純全帯么九.self),
+    AnyYakuType(門前清自摸和.self),
+    AnyYakuType(立直.self),
     AnyYakuType(断ヤオ九.self),
+    AnyYakuType(河底撈魚.self),
+    AnyYakuType(三色同順.self),
+    AnyYakuType(混老頭.self),
+    AnyYakuType(役牌.self),
+    AnyYakuType(一発.self),
+    AnyYakuType(小三元.self),
+    AnyYakuType(三色同刻.self),
+    AnyYakuType(七対子.self),
+    AnyYakuType(二盃口.self),
+    AnyYakuType(平和.self),
+    AnyYakuType(混一色.self),
+    AnyYakuType(大四喜.self),
+    AnyYakuType(清老頭.self),
+    AnyYakuType(国士無双.self),
+    AnyYakuType(字一色.self),
+    AnyYakuType(緑一色.self),
+    AnyYakuType(大三元.self),
+    AnyYakuType(小四喜.self),
+    AnyYakuType(四暗刻.self),
+    AnyYakuType(九連宝燈.self),
+    AnyYakuType(地和.self),
+    AnyYakuType(天和.self),
 ]
 
 public class ScoreCalculator {
     private let calculationOptions: CalculationOptions
-
+    
     init(options: CalculationOptions) {
         calculationOptions = options
     }
-
+    
     private let winningDetector = WinningDetector()
-
+    
     func calculate(with hand: Hand, context: GameContext) -> [Score]? {
         guard hand.allTiles.count == 14 else {
             return nil
         }
-
+        
         guard let forms = winningDetector.detectForms(hand.allTiles) else {
             return nil
         }
-
+        
         func checkFormedYaku(hand: Hand, winningForm: WinningForm, picked: Tile) -> Set<AnyYaku> {
             let winningYaku: Set<AnyYaku> = Set(availableFormedYakuTypes.map { type in
                 return type.make(with: hand.allTiles,
@@ -151,7 +186,7 @@ public class ScoreCalculator {
                 }.compactMap { $0 })
             return winningYaku
         }
-
+        
         return forms.reduce([]) { (scores, form) -> [Score] in
             switch form {
             case .melded(let winningForm):

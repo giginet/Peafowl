@@ -18,7 +18,7 @@ public struct AnyYakuType {
 }
 
 /// 役
-public protocol YakuProtocol: Hashable {
+public protocol YakuProtocol: Hashable, CustomStringConvertible {
     var name: String { get }
     /// 翻
     var concealedHan: Int { get }
@@ -36,9 +36,13 @@ public extension YakuProtocol {
     var isYakuman: Bool {
         return concealedHan >= 13
     }
+    
+    var description: String {
+        return name
+    }
 }
 
-public struct AnyYaku: YakuProtocol {
+public struct AnyYaku: YakuProtocol, CustomStringConvertible {
     public static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> AnyYaku? {
         fatalError("Could not make AnyYaku")
     }
