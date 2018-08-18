@@ -8,6 +8,7 @@ public struct GameContext {
         case rob
     }
     public enum PickedSource {
+        case firstTile
         /// 山
         case wall
         /// 海底、河底
@@ -15,14 +16,24 @@ public struct GameContext {
         /// 嶺上牌
         case deadWall
     }
+    public enum RiichiStyle {
+        case single
+        case double
+    }
     let winningType: WinningType
     let pickedSource: PickedSource
     /// 立直
-    let isRiichi: Bool
+    let riichiStyle: RiichiStyle?
     /// 一発
     let isOneShot: Bool
     /// 親
     let isDealer: Bool
     /// 門前
     let isClosed: Bool
+    /// 場風
+    let prevalentWind: Tile
+    /// 自風
+    let seatWind: Tile
+    /// ドラ
+    let dora: [Tile]
 }

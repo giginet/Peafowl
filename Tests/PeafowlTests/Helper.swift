@@ -13,10 +13,13 @@ extension Hand: ExpressibleByArrayLiteral {
 func makeContext() -> GameContext {
     return GameContext(winningType: .selfPick,
                        pickedSource: .wall,
-                       isRiichi: false,
+                       riichiStyle: nil,
                        isOneShot: false,
                        isDealer: false,
-                       isClosed: true)
+                       isClosed: true,
+                       prevalentWind: 東,
+                       seatWind: 東,
+                       dora: [東])
 }
 
 func makeHand(_ eye: (Tile, Tile),
