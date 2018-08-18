@@ -10,16 +10,24 @@ extension Hand: ExpressibleByArrayLiteral {
     }
 }
 
-func makeContext() -> GameContext {
-    return GameContext(winningType: .selfPick,
-                       pickedSource: .wall,
-                       riichiStyle: nil,
-                       isOneShot: false,
-                       isDealer: false,
-                       isClosed: true,
-                       prevalentWind: 東,
-                       seatWind: 東,
-                       dora: [東])
+func makeContext(winningType: GameContext.WinningType = .selfPick,
+                 pickedSource: GameContext.PickedSource = .wall,
+                 riichiStyle: GameContext.RiichiStyle? = nil,
+                 isOneShot: Bool = false,
+                 isDealer: Bool = false,
+                 isClosed: Bool = false,
+                 prevalantWind: Tile = 東,
+                 seatWind: Tile = 東,
+                 dora: [Tile] = []) -> GameContext {
+    return GameContext(winningType: winningType,
+                       pickedSource: pickedSource,
+                       riichiStyle: riichiStyle,
+                       isOneShot: isOneShot,
+                       isDealer: isDealer,
+                       isClosed: isClosed,
+                       prevalentWind: prevalantWind,
+                       seatWind: seatWind,
+                       dora: dora)
 }
 
 func makeHand(_ eye: (Tile, Tile),

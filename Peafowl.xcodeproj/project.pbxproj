@@ -13,6 +13,7 @@
 		072DD2BE2127A81F00F86C39 /* 大四喜.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2BD2127A81F00F86C39 /* 大四喜.swift */; };
 		072DD2C02127B5AC00F86C39 /* 清老頭.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2BF2127B5AC00F86C39 /* 清老頭.swift */; };
 		072DD2C32127B71700F86C39 /* 九連宝燈.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2C22127B71700F86C39 /* 九連宝燈.swift */; };
+		072DD2C52127C09300F86C39 /* 役牌.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2C42127C09300F86C39 /* 役牌.swift */; };
 		07315D302125DB1E00733FDC /* 門前清自摸和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D2F2125DB1E00733FDC /* 門前清自摸和.swift */; };
 		07315D322125DB9D00733FDC /* 嶺上開花.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D312125DB9D00733FDC /* 嶺上開花.swift */; };
 		07315D342125DC0900733FDC /* 海底摸月.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D332125DC0900733FDC /* 海底摸月.swift */; };
@@ -82,6 +83,7 @@
 		072DD2BD2127A81F00F86C39 /* 大四喜.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "大四喜.swift"; sourceTree = "<group>"; };
 		072DD2BF2127B5AC00F86C39 /* 清老頭.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "清老頭.swift"; sourceTree = "<group>"; };
 		072DD2C22127B71700F86C39 /* 九連宝燈.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "九連宝燈.swift"; sourceTree = "<group>"; };
+		072DD2C42127C09300F86C39 /* 役牌.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "役牌.swift"; sourceTree = "<group>"; };
 		07315D2F2125DB1E00733FDC /* 門前清自摸和.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "門前清自摸和.swift"; sourceTree = "<group>"; };
 		07315D312125DB9D00733FDC /* 嶺上開花.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "嶺上開花.swift"; sourceTree = "<group>"; };
 		07315D332125DC0900733FDC /* 海底摸月.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "海底摸月.swift"; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				07F419682125D2CA00DB09EF /* 清一色.swift */,
 				07F4196A2125D56C00DB09EF /* 三暗刻.swift */,
 				07F4196F2125D6FD00DB09EF /* 対々和.swift */,
+				072DD2C42127C09300F86C39 /* 役牌.swift */,
 			);
 			path = Yakus;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				07ED34422110C1E300D02AFA /* Tile+Aliases.swift in Sources */,
 				07ED343E2110B6FD00D02AFA /* Sequence+Extensions.swift in Sources */,
 				07F4196B2125D56C00DB09EF /* 三暗刻.swift in Sources */,
+				072DD2C52127C09300F86C39 /* 役牌.swift in Sources */,
 				07B2BBE2212481E800993F46 /* 三色同刻.swift in Sources */,
 				07B64757212088C900216DE5 /* 立直.swift in Sources */,
 				07F419702125D6FD00DB09EF /* 対々和.swift in Sources */,
