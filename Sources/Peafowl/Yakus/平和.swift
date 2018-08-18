@@ -17,7 +17,7 @@ public struct 平和: YakuProtocol {
         if TileUtility.isValueHonor(eye.first, by: context) {
             return nil
         }
-        for meld in melds where meld.first == picked || meld.thrid == picked {
+        for meld in melds where meld.detectWaitingForm(with: picked) == .bothSides {
             return 平和()
         }
         return nil

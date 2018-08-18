@@ -6,19 +6,6 @@ private extension Set where Element: YakuProtocol {
     }
 }
 
-public enum WaitingForm {
-    /// 両面待ち
-    case bothSides
-    /// 嵌張待ち
-    case middleTile
-    /// 辺張待ち
-    case singleSide
-    /// 単騎待ち
-    case singleTile
-    /// 双碰待ち
-    case eitherOfMelds
-}
-
 public struct CalculationOptions {
     /// 青天井
     var ignoreLimits: Bool
@@ -80,9 +67,11 @@ private func calculateScore(from fu: Int, and han: Int) -> Double {
 }
 
 internal struct PointCulculator {
-    private func ceilToNearestTen(_ value: Int) -> Int {
-        return Int(ceilf(Float(value) / 10) * 10)
+    private func ceilToNearest(_ base: Int, _ value: Int) -> Int {
+        return Int(ceilf(Float(value) / Float(base)) * Float(base))
     }
+    
+    var enableCeiling: Bool
     
     func calculateMiniPoint(_ hand: Hand,
                             winningForm: WinningForm,
@@ -101,9 +90,9 @@ internal struct PointCulculator {
                     baseMeldBonusPoint = 2
                 }
                 if meld.first.isYaochu {
-                    return baseMeldBonusPoint * 2
+                    return previousPoint + baseMeldBonusPoint * 2
                 } else {
-                    return baseMeldBonusPoint
+                    return previousPoint + baseMeldBonusPoint
                 }
             }
             let eyeBonusPoint = TileUtility.isValueHonor(eye.first, by: context) ? 2 : 0
@@ -118,7 +107,11 @@ internal struct PointCulculator {
             let concealedAndRobbedBonus = TileUtility.isConcealed(winningForm) && context.winningType == .rob ? 10 : 0
             let selfPickedBonus = context.winningType == .selfPick ? 2 : 0
             let rawPoint = basePoint + meldBonusPoints + eyeBonusPoint + waitingBonusPoint + concealedAndRobbedBonus + selfPickedBonus
-            return ceilToNearestTen(rawPoint)
+            if enableCeiling {
+                return ceilToNearest(10, rawPoint)
+            } else {
+                return rawPoint
+            }
         case .sevenPairs:
             return 25
         case .thirteenOrphans:

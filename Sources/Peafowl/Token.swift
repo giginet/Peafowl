@@ -11,6 +11,10 @@ extension Token {
     public func allSatisfy(_ predicate: (Tile) throws -> Bool) rethrows -> Bool {
         return try asArray.allSatisfy(predicate)
     }
+    
+    public func contains(_ tile: Tile) -> Bool {
+        return asArray.contains(tile)
+    }
 }
 
 public struct AnyToken: Token {
@@ -118,7 +122,12 @@ public struct MeldToken: Token {
     public typealias Tiles = (Tile, Tile, Tile)
 
     public init?(_ tiles: Tiles) {
+        self.init(tiles, isConcealed: true)
+    }
+    
+    public init?(_ tiles: Tiles, isConcealed: Bool) {
         self.tiles = tiles
+        self.isConcealed = isConcealed
         guard isTriplets || isSequential else {
             return nil
         }
@@ -144,7 +153,21 @@ public struct MeldToken: Token {
         }
     }
     
-    
+    public func detectWaitingForm(with picked: Tile) -> WaitingForm? {
+        if isTriplets && contains(picked) {
+            return .eitherOfMelds
+        } else if isSequential && contains(picked) {
+            if (first.number == 1 && picked.number == 3) || (third.number == 3 && picked.number == 1)
+                || (first.number == 7 && picked.number == 9) || (third.number == 9 && picked.number == 7) {
+                return .singleSide
+            } else if second == picked {
+                return .middleTile
+            } else if first == picked || third == picked {
+                return .bothSides
+            }
+        }
+        return nil
+    }
 
     public var asArray: [Tile] {
         return [tiles.0, tiles.1, tiles.2].sorted()
@@ -178,7 +201,7 @@ public struct MeldToken: Token {
         return asArray[1]
     }
     
-    internal var thrid: Tile {
+    internal var third: Tile {
         return asArray[2]
     }
 }
