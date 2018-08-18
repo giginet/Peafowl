@@ -9,3 +9,14 @@ extension Sequence where Element: Equatable {
         return countIf { return $0 == element }
     }
 }
+
+extension Sequence where Element: Comparable {
+    func max() -> Element? {
+        guard let initialResult = first(where: { _ in true }) else {
+            return nil
+        }
+        return reduce(initialResult) { previous, next in
+            return previous < next ? next : previous
+        }
+    }
+}

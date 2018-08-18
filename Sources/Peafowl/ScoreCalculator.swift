@@ -28,20 +28,31 @@ public struct Score: Comparable {
         case baiman
         case sanbaiman
         case yakuman(Int)
+        
+        var score: Int {
+            switch self {
+            case .mangan: return 8000
+            case .haneman: return 12000
+            case .baiman: return 16000
+            case .sanbaiman: return 24000
+            case .yakuman(let n): return 32000 * n
+            }
+        }
     }
     
     var han: Int
     var miniPoint: Int
     var yaku: Set<AnyYaku>
     var basicScore: Double
-    var score: Int
+    var score: Int {
+        return rank?.score ?? Int(basicScore)
+    }
     
     init(yaku: Set<AnyYaku>, miniPoint: Int) {
         self.miniPoint = miniPoint
         self.yaku = yaku
         self.han = yaku.concealedHan
         self.basicScore = calculateScore(from: miniPoint, and: han)
-        self.score = Int(basicScore) // TODO
     }
     
     var rank: Rank? {
@@ -160,6 +171,7 @@ private let availableYakuTypes = [
 ]
 
 public class ScoreCalculator {
+    // TODO Currently not working 😛
     private let calculationOptions: CalculationOptions
     
     init(options: CalculationOptions) {
@@ -169,11 +181,15 @@ public class ScoreCalculator {
     private let winningDetector = WinningDetector()
     
     public func calculate(with hand: Hand, context: GameContext) -> Score? {
-        return nil
+        let scores = calculateAllAvailableScores(with: hand, context: context)
+        guard let canonicalizedScores = scores?.compactMap(canonicalizeScore(_:)) else {
+            return nil
+        }
+        return canonicalizedScores.max()
     }
     
     private func canonicalizeScore(_ score: Score) -> Score? {
-        // Score only contains Dora is not allowed
+        // A score only contains Dora is not allowed
         if let onlyYaku = score.yaku.first, score.yaku.count == 1 && onlyYaku.type(of: ドラ.self) {
             return nil
         }
