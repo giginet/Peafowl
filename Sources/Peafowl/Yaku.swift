@@ -68,7 +68,7 @@ public struct AnyYaku: YakuProtocol, CustomStringConvertible {
 
     private class BaseBox: YakuProtocol {
         static func == (lhs: BaseBox, rhs: BaseBox) -> Bool {
-            return lhs.yakuClass == rhs.yakuClass
+            return lhs.hashValue == rhs.hashValue
         }
 
         func hash(into hasher: inout Hasher) {
@@ -117,6 +117,10 @@ public struct AnyYaku: YakuProtocol, CustomStringConvertible {
 
         override var name: String {
             return internalYaku.name
+        }
+        
+        override func hash(into hasher: inout Hasher) {
+            internalYaku.hash(into: &hasher)
         }
     }
     

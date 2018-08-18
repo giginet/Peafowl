@@ -15,7 +15,11 @@ public struct 国士無双: YakuProtocol {
     internal init(isWaitingEye: Bool) {
         self.isWaitingEye = isWaitingEye
     }
-
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(self)
+        hasher.combine(isWaitingEye)
+    }
     public static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> 国士無双? {
         switch form {
         case .thirteenOrphans: break

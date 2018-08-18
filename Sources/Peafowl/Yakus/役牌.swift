@@ -9,6 +9,13 @@ public struct 役牌: YakuProtocol {
         return count
     }
     
+    internal init(_ count: Int) {
+        self.count = count
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(count)
+    }
     public let name = "役牌"
     public static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> 役牌? {
         guard case .melded(let tokens) = form else {
@@ -30,6 +37,6 @@ public struct 役牌: YakuProtocol {
         } else {
             hanCount = valueHonors.count
         }
-        return 役牌(count: hanCount)
+        return 役牌(hanCount)
     }
 }
