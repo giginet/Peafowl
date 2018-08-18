@@ -48,11 +48,11 @@ public struct Score: Comparable {
         return rank?.score ?? Int(basicScore)
     }
     
-    init(yaku: Set<AnyYaku>, miniPoint: Int) {
+    init(yaku: Set<AnyYaku>, miniPoint: Int, isDealer: Bool) {
         self.miniPoint = miniPoint
         self.yaku = yaku
         self.fan = yaku.concealedFan
-        self.basicScore = calculateScore(from: miniPoint, and: fan)
+        self.basicScore = calculateScore(from: miniPoint, and: fan, isDealer: isDealer)
     }
     
     var rank: Rank? {
@@ -73,8 +73,10 @@ public struct Score: Comparable {
     }
 }
 
-private func calculateScore(from miniPoint: Int, and fan: Int) -> Double {
-    return Double(miniPoint) * 4 * Double(pow(2, Double(2 + fan)))
+private func calculateScore(from miniPoint: Int, and fan: Int, isDealer: Bool) -> Double {
+    let baseScore = Double(miniPoint) * 4 * Double(pow(2, Double(2 + fan)))
+    let multiplier = isDealer ? 1.5 : 1.0
+    return baseScore * multiplier
 }
 
 internal struct PointCulculator {
@@ -184,13 +186,13 @@ public class ScoreCalculator {
     
     public func calculate(with hand: Hand, context: GameContext) -> Score? {
         let scores = calculateAllAvailableScores(with: hand, context: context)
-        guard let canonicalizedScores = scores?.compactMap(canonicalizeScore(_:)) else {
+        guard let canonicalizedScores = scores?.compactMap({ canonicalizeScore($0, context: context) }) else {
             return nil
         }
         return canonicalizedScores.maxElement()
     }
     
-    private func canonicalizeScore(_ score: Score) -> Score? {
+    private func canonicalizeScore(_ score: Score, context: GameContext) -> Score? {
         // A score only contains Dora is not allowed
         if let onlyYaku = score.yaku.first, score.yaku.count == 1 && onlyYaku.type(of: ドラ.self) {
             return nil
@@ -199,7 +201,7 @@ public class ScoreCalculator {
         let containsYakuman = score.yaku.contains { $0.isYakuman }
         if containsYakuman {
             let newYaku = score.yaku.filter { $0.isYakuman }
-            let newScore = Score(yaku: newYaku, miniPoint: score.miniPoint)
+            let newScore = Score(yaku: newYaku, miniPoint: score.miniPoint, isDealer: context.isDealer)
             return newScore
         }
         // TODO When a hand is opened, Reject all concealed only yaku.
@@ -235,7 +237,7 @@ public class ScoreCalculator {
                                                                    winningForm: winningForm,
                                                                    waitingForm: waitingForm,
                                                                    context: context)
-                return [Score(yaku: winningYaku, miniPoint: miniPoint)]
+                return [Score(yaku: winningYaku, miniPoint: miniPoint, isDealer: context.isDealer)]
             case .sevenPairs:
                 let winningYaku: Set<AnyYaku>
                 if let yaku = 七対子.make(with: hand.allTiles, form: .sevenPairs, picked: hand.picked, context: context) {
@@ -244,7 +246,7 @@ public class ScoreCalculator {
                     winningYaku = []
                 }
                 let otherYaku = checkFormedYaku(hand: hand, winningForm: .sevenPairs, picked: hand.picked)
-                return scores + [Score(yaku: winningYaku.union(otherYaku), miniPoint: 25)]
+                return scores + [Score(yaku: winningYaku.union(otherYaku), miniPoint: 25, isDealer: context.isDealer)]
             case .thirteenOrphans:
                 let winningYaku: Set<AnyYaku>
                 if let yaku = 国士無双.make(with: hand.allTiles, form: .thirteenOrphans, picked: hand.picked, context: context) {
@@ -252,7 +254,7 @@ public class ScoreCalculator {
                 } else {
                     winningYaku = []
                 }
-                return scores + [Score(yaku: winningYaku, miniPoint: 25)]
+                return scores + [Score(yaku: winningYaku, miniPoint: 25, isDealer: context.isDealer)]
             }
         }
     }
