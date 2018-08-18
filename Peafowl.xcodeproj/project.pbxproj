@@ -12,6 +12,7 @@
 		072DD2BC2127A80900F86C39 /* 小四喜.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2BB2127A80900F86C39 /* 小四喜.swift */; };
 		072DD2BE2127A81F00F86C39 /* 大四喜.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2BD2127A81F00F86C39 /* 大四喜.swift */; };
 		072DD2C02127B5AC00F86C39 /* 清老頭.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2BF2127B5AC00F86C39 /* 清老頭.swift */; };
+		072DD2C32127B71700F86C39 /* 九連宝燈.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2C22127B71700F86C39 /* 九連宝燈.swift */; };
 		07315D302125DB1E00733FDC /* 門前清自摸和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D2F2125DB1E00733FDC /* 門前清自摸和.swift */; };
 		07315D322125DB9D00733FDC /* 嶺上開花.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D312125DB9D00733FDC /* 嶺上開花.swift */; };
 		07315D342125DC0900733FDC /* 海底摸月.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D332125DC0900733FDC /* 海底摸月.swift */; };
@@ -80,6 +81,7 @@
 		072DD2BB2127A80900F86C39 /* 小四喜.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "小四喜.swift"; sourceTree = "<group>"; };
 		072DD2BD2127A81F00F86C39 /* 大四喜.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "大四喜.swift"; sourceTree = "<group>"; };
 		072DD2BF2127B5AC00F86C39 /* 清老頭.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "清老頭.swift"; sourceTree = "<group>"; };
+		072DD2C22127B71700F86C39 /* 九連宝燈.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "九連宝燈.swift"; sourceTree = "<group>"; };
 		07315D2F2125DB1E00733FDC /* 門前清自摸和.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "門前清自摸和.swift"; sourceTree = "<group>"; };
 		07315D312125DB9D00733FDC /* 嶺上開花.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "嶺上開花.swift"; sourceTree = "<group>"; };
 		07315D332125DC0900733FDC /* 海底摸月.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "海底摸月.swift"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				072DD2BB2127A80900F86C39 /* 小四喜.swift */,
 				072DD2BD2127A81F00F86C39 /* 大四喜.swift */,
 				072DD2BF2127B5AC00F86C39 /* 清老頭.swift */,
+				072DD2C22127B71700F86C39 /* 九連宝燈.swift */,
 			);
 			path = Yakuman;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				07F419702125D6FD00DB09EF /* 対々和.swift in Sources */,
 				0778DC4B2118AD0200B8B841 /* ScoreCalculator.swift in Sources */,
 				07F4196E2125D6C400DB09EF /* 四暗刻.swift in Sources */,
+				072DD2C32127B71700F86C39 /* 九連宝燈.swift in Sources */,
 				07811BEF211F432A0052DCB2 /* WinningDetector.swift in Sources */,
 				07F419652125CD6000DB09EF /* 小三元.swift in Sources */,
 				079A8E4620E2BB470009EA6D /* 断ヤオ九.swift in Sources */,

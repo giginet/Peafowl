@@ -186,6 +186,12 @@ final class meldedFormedYakuTests: XCTestCase {
         assert((一筒, 一筒), (一索, 一索, 一索), (東, 東, 東), (一萬, 一萬, 一萬), (九索, 九索, 九索), shouldNotBe: 清老頭.self)
         assert((二筒, 二筒), (一索, 二索, 三索), (七筒, 八筒, 九筒), (一萬, 二萬, 三萬), (九索, 九索, 九索), shouldNotBe: 清老頭.self)
     }
+    
+    func test九連宝燈() {
+        assert((八萬, 八萬), (一萬, 一萬, 一萬), (二萬, 三萬, 四萬), (五萬, 六萬, 七萬), (九萬, 九萬, 九萬), shouldBe: 九連宝燈.self)
+        assert((一萬, 一萬), (一萬, 二萬, 三萬), (三萬, 四萬, 五萬), (六萬, 七萬, 八萬), (九萬, 九萬, 九萬), shouldBe: 九連宝燈.self)
+        assert((九萬, 九萬), (一萬, 一萬, 一萬), (二萬, 三萬, 四萬), (五萬, 六萬, 七萬), (七萬, 八萬, 九萬), shouldBe: 九連宝燈.self)
+    }
 }
 
 final class SevenPairsFormedYakuTests: XCTestCase {
