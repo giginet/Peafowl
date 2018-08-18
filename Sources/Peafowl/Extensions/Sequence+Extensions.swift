@@ -11,7 +11,7 @@ extension Sequence where Element: Equatable {
 }
 
 extension Sequence where Element: Comparable {
-    func max() -> Element? {
+    func maxElement() -> Element? {
         guard let initialResult = first(where: { _ in true }) else {
             return nil
         }

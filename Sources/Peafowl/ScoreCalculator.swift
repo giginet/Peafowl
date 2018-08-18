@@ -87,7 +87,7 @@ internal struct PointCulculator {
     func calculateMiniPoint(_ hand: Hand,
                             winningForm: WinningForm,
                             waitingForm: WaitingForm,
-                            context: GameContext) -> Int? {
+                            context: GameContext) -> Int {
         switch winningForm {
         case .melded(let tokens):
             let basePoint = 20
@@ -179,13 +179,15 @@ public class ScoreCalculator {
     }
     
     private let winningDetector = WinningDetector()
+    private let waitingFormDetector = WaitingFormDetector()
+    private let pointCalculator = PointCulculator(enableCeiling: true)
     
     public func calculate(with hand: Hand, context: GameContext) -> Score? {
         let scores = calculateAllAvailableScores(with: hand, context: context)
         guard let canonicalizedScores = scores?.compactMap(canonicalizeScore(_:)) else {
             return nil
         }
-        return canonicalizedScores.max()
+        return canonicalizedScores.maxElement()
     }
     
     private func canonicalizeScore(_ score: Score) -> Score? {
@@ -225,9 +227,15 @@ public class ScoreCalculator {
         
         return forms.reduce([]) { (scores, form) -> [Score] in
             switch form {
-            case .melded(let winningForm):
-                let winningYaku = checkFormedYaku(hand: hand, winningForm: .melded(winningForm), picked: hand.picked)
-                return [Score(yaku: winningYaku, miniPoint: 0)]
+            case .melded(let tokens):
+                let winningForm: WinningForm = .melded(tokens)
+                let winningYaku = checkFormedYaku(hand: hand, winningForm: winningForm, picked: hand.picked)
+                let waitingForm = waitingFormDetector.detect(from: winningForm, picked: hand.picked)
+                let miniPoint = pointCalculator.calculateMiniPoint(hand,
+                                                                   winningForm: winningForm,
+                                                                   waitingForm: waitingForm,
+                                                                   context: context)
+                return [Score(yaku: winningYaku, miniPoint: miniPoint)]
             case .sevenPairs:
                 let winningYaku: Set<AnyYaku>
                 if let yaku = 七対子.make(with: hand.allTiles, form: .sevenPairs, picked: hand.picked, context: context) {
