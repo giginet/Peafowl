@@ -281,3 +281,31 @@ final class SevenPairsFormedYakuTests: XCTestCase {
         assert((一筒, 一筒), (九索, 九索), (東, 東), (西, 西), (九筒, 九筒), (撥, 撥), (中, 中), shouldBe: 混老頭.self)
     }
 }
+
+final class ThirteenOrphanFormTestCase: XCTestCase {
+    private func assert<Yaku: YakuProtocol>(_ hand: Hand,
+                                            shouldBe yaku: Yaku.Type,
+                                            _ han: Int) {
+        let yaku = Yaku.make(with: hand.allTiles,
+                             form: .thirteenOrphans,
+                             picked: hand.picked,
+                             context: makeContext())
+        XCTAssertNotNil(yaku)
+        XCTAssertEqual(yaku?.closedHan, han)
+    }
+    
+    private func assert<Yaku: YakuProtocol>(_ hand: Hand,
+                                            shouldNotBe yaku: Yaku.Type) {
+        let yaku = Yaku.make(with: hand.allTiles,
+                             form: .thirteenOrphans,
+                             picked: hand.picked,
+                             context: makeContext())
+        XCTAssertNil(yaku)
+    }
+    
+    func test国士無双() {
+        assert([一萬, 九萬, 一筒, 九筒, 一索, 九索, 東, 西, 南, 北, 白, 撥, 中, 中], shouldBe: 国士無双.self, 26)
+        assert([一萬, 九萬, 一筒, 九筒, 一索, 九索, 東, 西, 南, 北, 白, 撥, 撥, 中], shouldBe: 国士無双.self, 13)
+        assert([一萬, 九萬, 一筒, 九筒, 一索, 八索, 東, 西, 南, 北, 白, 撥, 撥, 中], shouldNotBe: 国士無双.self)
+    }
+}

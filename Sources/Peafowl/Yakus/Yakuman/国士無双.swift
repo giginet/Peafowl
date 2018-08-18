@@ -2,7 +2,7 @@ import Foundation
 
 public struct 国士無双: YakuProtocol {
     public var closedHan: Int {
-        if isWaitingHead {
+        if isWaitingEye {
             return 26
         } else {
             return 13
@@ -10,10 +10,10 @@ public struct 国士無双: YakuProtocol {
     }
     public let name = "国士無双"
     public let openedHan: Int? = nil
-    public let isWaitingHead: Bool
+    public let isWaitingEye: Bool
 
-    internal init(isWaitingHead: Bool) {
-        self.isWaitingHead = isWaitingHead
+    internal init(isWaitingEye: Bool) {
+        self.isWaitingEye = isWaitingEye
     }
 
     public static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> 国士無双? {
@@ -23,20 +23,11 @@ public struct 国士無双: YakuProtocol {
             return nil
         }
         
-        let uniquedArray = Set<Tile>(tiles)
-        if uniquedArray.count != 13 {
-            return nil
+        let validTiles: Set<Tile> = Set(tiles.compactMap { ($0.isHonor || $0.isTerminal) ? $0 : nil })
+        if validTiles.count == 13 {
+            let isWaitingEye = tiles.countIf(picked) == 2
+            return 国士無双(isWaitingEye: isWaitingEye)
         }
-        let expectedTiles: [Tile] = [.character(1)!, .character(9)!,
-                                     .bamboo(1)!, .bamboo(9)!,
-                                     .dots(1)!, .dots(9)!,
-                                     .east, .south, .west, .north,
-                                     .blank, .fortune, .center,]
-        for expectedTile in expectedTiles {
-            if !uniquedArray.contains(expectedTile) {
-                return nil
-            }
-        }
-        return 国士無双(isWaitingHead: true)
+        return nil
     }
 }
