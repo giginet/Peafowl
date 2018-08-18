@@ -201,6 +201,14 @@ final class MeldedFormedYakuTests: XCTestCase {
         assert((九萬, 九萬), (一萬, 一萬, 一萬), (二萬, 三萬, 四萬), (五萬, 六萬, 七萬), (七萬, 八萬, 九萬), shouldBe: 九連宝燈.self)
     }
     
+    func test平和() {
+        // last tile should be picked tile
+        assert((八萬, 八萬), (一萬, 一萬, 一萬), (二萬, 三萬, 四萬), (五萬, 六萬, 七萬), (九萬, 九萬, 九萬), shouldNotBe: 平和.self) // Contains triplet meld
+        assert((撥, 撥), (一萬, 二萬, 三萬), (三萬, 四萬, 五萬), (六萬, 七萬, 八萬), (三索, 四索, 五索), shouldNotBe: 平和.self) // Contains valued honors in eye
+        assert((九萬, 九萬), (一萬, 二萬, 三萬), (三萬, 四萬, 五萬), (六萬, 七萬, 八萬), (三索, 五索, 四索), shouldNotBe: 平和.self) // Not both sided waiting form
+        assert((九萬, 九萬), (一萬, 二萬, 三萬), (三萬, 四萬, 五萬), (六萬, 七萬, 八萬), (三索, 四索, 五索), shouldBe: 平和.self)
+    }
+    
     func test役牌() {
         assert((東, 東), (一索, 二索, 三索), (四索, 五索, 六索), (七索, 八索, 九索), (二萬, 二萬, 二萬), shouldNotBe: 役牌.self)
         assert((一筒, 一筒), (一索, 二索, 三索), (四索, 五索, 六索), (七索, 八索, 九索), (東, 東, 東),
