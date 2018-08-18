@@ -2,7 +2,7 @@ import Foundation
 import XCTest
 @testable import Peafowl
 
-final class meldedFormedYakuTests: XCTestCase {
+final class MeldedFormedYakuTests: XCTestCase {
     private let tokenizer = Tokenizer()
     
     private func searchWinningYaku<Yaku: YakuProtocol>(_ yaku: Yaku.Type, hand: Hand, context: GameContext) -> [Yaku] {

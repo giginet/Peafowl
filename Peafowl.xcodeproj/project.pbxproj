@@ -15,6 +15,9 @@
 		072DD2C32127B71700F86C39 /* 九連宝燈.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2C22127B71700F86C39 /* 九連宝燈.swift */; };
 		072DD2C52127C09300F86C39 /* 役牌.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2C42127C09300F86C39 /* 役牌.swift */; };
 		072DD2C72127C77B00F86C39 /* ドラ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2C62127C77B00F86C39 /* ドラ.swift */; };
+		072DD2C92127CACB00F86C39 /* ダブル立直.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2C82127CACB00F86C39 /* ダブル立直.swift */; };
+		072DD2CB2127CB6000F86C39 /* 天和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2CA2127CB6000F86C39 /* 天和.swift */; };
+		072DD2CD2127CB9E00F86C39 /* 地和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2CC2127CB9E00F86C39 /* 地和.swift */; };
 		07315D302125DB1E00733FDC /* 門前清自摸和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D2F2125DB1E00733FDC /* 門前清自摸和.swift */; };
 		07315D322125DB9D00733FDC /* 嶺上開花.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D312125DB9D00733FDC /* 嶺上開花.swift */; };
 		07315D342125DC0900733FDC /* 海底摸月.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D332125DC0900733FDC /* 海底摸月.swift */; };
@@ -86,6 +89,9 @@
 		072DD2C22127B71700F86C39 /* 九連宝燈.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "九連宝燈.swift"; sourceTree = "<group>"; };
 		072DD2C42127C09300F86C39 /* 役牌.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "役牌.swift"; sourceTree = "<group>"; };
 		072DD2C62127C77B00F86C39 /* ドラ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ドラ.swift"; sourceTree = "<group>"; };
+		072DD2C82127CACB00F86C39 /* ダブル立直.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ダブル立直.swift"; sourceTree = "<group>"; };
+		072DD2CA2127CB6000F86C39 /* 天和.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "天和.swift"; sourceTree = "<group>"; };
+		072DD2CC2127CB9E00F86C39 /* 地和.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "地和.swift"; sourceTree = "<group>"; };
 		07315D2F2125DB1E00733FDC /* 門前清自摸和.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "門前清自摸和.swift"; sourceTree = "<group>"; };
 		07315D312125DB9D00733FDC /* 嶺上開花.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "嶺上開花.swift"; sourceTree = "<group>"; };
 		07315D332125DC0900733FDC /* 海底摸月.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "海底摸月.swift"; sourceTree = "<group>"; };
@@ -172,6 +178,8 @@
 				072DD2BD2127A81F00F86C39 /* 大四喜.swift */,
 				072DD2BF2127B5AC00F86C39 /* 清老頭.swift */,
 				072DD2C22127B71700F86C39 /* 九連宝燈.swift */,
+				072DD2CA2127CB6000F86C39 /* 天和.swift */,
+				072DD2CC2127CB9E00F86C39 /* 地和.swift */,
 			);
 			path = Yakuman;
 			sourceTree = "<group>";
@@ -183,6 +191,7 @@
 				079A8E4520E2BB470009EA6D /* 断ヤオ九.swift */,
 				079A8E4720E2BE110009EA6D /* 七対子.swift */,
 				07B64756212088C900216DE5 /* 立直.swift */,
+				072DD2C82127CACB00F86C39 /* ダブル立直.swift */,
 				07F419712125D8B700DB09EF /* 一発.swift */,
 				07315D2F2125DB1E00733FDC /* 門前清自摸和.swift */,
 				07315D312125DB9D00733FDC /* 嶺上開花.swift */,
@@ -406,13 +415,16 @@
 				07F419652125CD6000DB09EF /* 小三元.swift in Sources */,
 				079A8E4620E2BB470009EA6D /* 断ヤオ九.swift in Sources */,
 				079A8E4320E2B68C0009EA6D /* Token.swift in Sources */,
+				072DD2C92127CACB00F86C39 /* ダブル立直.swift in Sources */,
 				07F419672125D20700DB09EF /* 混一色.swift in Sources */,
 				072DD2BC2127A80900F86C39 /* 小四喜.swift in Sources */,
+				072DD2CD2127CB9E00F86C39 /* 地和.swift in Sources */,
 				07F419612125C96200DB09EF /* 一気通貫.swift in Sources */,
 				07B64755212080FE00216DE5 /* TileCollection.swift in Sources */,
 				07315D3A2125E05100733FDC /* 字一色.swift in Sources */,
 				07C6398721120F1000725AFB /* Array+Tiles.swift in Sources */,
 				07315D342125DC0900733FDC /* 海底摸月.swift in Sources */,
+				072DD2CB2127CB6000F86C39 /* 天和.swift in Sources */,
 				07F419722125D8B700DB09EF /* 一発.swift in Sources */,
 				072DD2BE2127A81F00F86C39 /* 大四喜.swift in Sources */,
 				07315D362125DC7200733FDC /* 河底撈魚.swift in Sources */,
