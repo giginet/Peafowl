@@ -21,20 +21,20 @@ public struct AnyYakuType {
 public protocol YakuProtocol: Hashable, CustomStringConvertible {
     var name: String { get }
     /// 翻
-    var concealedHan: Int { get }
+    var concealedFan: Int { get }
     /// 喰い下がり翻
-    var openedHan: Int? { get }
+    var openedFan: Int? { get }
     var isYakuman: Bool { get }
     static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> Self?
 }
 
 public extension YakuProtocol {
-    var openedHan: Int? {
+    var openedFan: Int? {
         return 0
     }
 
     var isYakuman: Bool {
-        return concealedHan >= 13
+        return concealedFan >= 13
     }
     
     var description: String {
@@ -62,8 +62,8 @@ public struct AnyYaku: YakuProtocol, CustomStringConvertible {
         return box.name
     }
 
-    public var concealedHan: Int {
-        return box.concealedHan
+    public var concealedFan: Int {
+        return box.concealedFan
     }
 
     private class BaseBox: YakuProtocol {
@@ -75,11 +75,11 @@ public struct AnyYaku: YakuProtocol, CustomStringConvertible {
             fatalError("Not implemented")
         }
 
-        var concealedHan: Int {
+        var concealedFan: Int {
             fatalError("Not implemented")
         }
 
-        var openedHan: Int? {
+        var openedFan: Int? {
             fatalError("Not implemented")
         }
 
@@ -107,12 +107,12 @@ public struct AnyYaku: YakuProtocol, CustomStringConvertible {
             return Swift.type(of: internalYaku)
         }
 
-        override var concealedHan: Int {
-            return internalYaku.concealedHan
+        override var concealedFan: Int {
+            return internalYaku.concealedFan
         }
 
-        override var openedHan: Int? {
-            return internalYaku.openedHan
+        override var openedFan: Int? {
+            return internalYaku.openedFan
         }
 
         override var name: String {

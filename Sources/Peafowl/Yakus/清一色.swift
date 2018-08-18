@@ -1,8 +1,8 @@
 import Foundation
 
 public struct 清一色: YakuProtocol {
-    public let openedHan: Int? = 5
-    public let concealedHan: Int = 6
+    public let openedFan: Int? = 5
+    public let concealedFan: Int = 6
     
     public let name = "清一色"
     public static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> 清一色? {

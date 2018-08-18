@@ -1,7 +1,7 @@
 import Foundation
 
 public struct 国士無双: YakuProtocol {
-    public var concealedHan: Int {
+    public var concealedFan: Int {
         if isWaitingEye {
             return 26
         } else {
@@ -9,7 +9,7 @@ public struct 国士無双: YakuProtocol {
         }
     }
     public let name = "国士無双"
-    public let openedHan: Int? = nil
+    public let openedFan: Int? = nil
     public let isWaitingEye: Bool
 
     internal init(isWaitingEye: Bool) {

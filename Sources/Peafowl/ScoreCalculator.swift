@@ -1,8 +1,8 @@
 import Foundation
 
 private extension Set where Element: YakuProtocol {
-    var concealedHan: Int {
-        return reduce(0) { $0 + $1.concealedHan }
+    var concealedFan: Int {
+        return reduce(0) { $0 + $1.concealedFan }
     }
 }
 
@@ -40,7 +40,7 @@ public struct Score: Comparable {
         }
     }
     
-    var han: Int
+    var fan: Int
     var miniPoint: Int
     var yaku: Set<AnyYaku>
     var basicScore: Double
@@ -51,12 +51,12 @@ public struct Score: Comparable {
     init(yaku: Set<AnyYaku>, miniPoint: Int) {
         self.miniPoint = miniPoint
         self.yaku = yaku
-        self.han = yaku.concealedHan
-        self.basicScore = calculateScore(from: miniPoint, and: han)
+        self.fan = yaku.concealedFan
+        self.basicScore = calculateScore(from: miniPoint, and: fan)
     }
     
     var rank: Rank? {
-        switch han {
+        switch fan {
         case 0..<5:
             return nil
         case 5:
@@ -68,13 +68,13 @@ public struct Score: Comparable {
         case 10...12:
             return .sanbaiman
         default:
-            return .yakuman(Int(floorf(Float(han) / 13.0)))
+            return .yakuman(Int(floorf(Float(fan) / 13.0)))
         }
     }
 }
 
-private func calculateScore(from miniPoint: Int, and han: Int) -> Double {
-    return Double(miniPoint) * 4 * Double(pow(2, Double(2 + han)))
+private func calculateScore(from miniPoint: Int, and fan: Int) -> Double {
+    return Double(miniPoint) * 4 * Double(pow(2, Double(2 + fan)))
 }
 
 internal struct PointCulculator {

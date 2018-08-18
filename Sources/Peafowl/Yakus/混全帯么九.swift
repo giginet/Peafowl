@@ -1,8 +1,8 @@
 import Foundation
 
 public struct 混全帯么九: YakuProtocol {
-    public let openedHan: Int? = 1
-    public let concealedHan: Int = 2
+    public let openedFan: Int? = 1
+    public let concealedFan: Int = 2
     
     public let name = "チャンタ"
     public static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> 混全帯么九? {

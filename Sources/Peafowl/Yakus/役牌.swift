@@ -2,10 +2,10 @@ import Foundation
 
 public struct 役牌: YakuProtocol {
     private let count: Int
-    public var openedHan: Int? {
+    public var openedFan: Int? {
         return count
     }
-    public var concealedHan: Int {
+    public var concealedFan: Int {
         return count
     }
     
@@ -31,12 +31,12 @@ public struct 役牌: YakuProtocol {
         if valueHonors.isEmpty {
             return nil
         }
-        let hanCount: Int
+        let fanCount: Int
         if valueHonors.contains(context.prevalentWind) && context.prevalentWind == context.seatWind {
-            hanCount = valueHonors.count + 1
+            fanCount = valueHonors.count + 1
         } else {
-            hanCount = valueHonors.count
+            fanCount = valueHonors.count
         }
-        return 役牌(hanCount)
+        return 役牌(fanCount)
     }
 }

@@ -2,10 +2,10 @@ import Foundation
 
 public struct ドラ: YakuProtocol {
     private let count: Int
-    public var openedHan: Int? {
+    public var openedFan: Int? {
         return count
     }
-    public var concealedHan: Int {
+    public var concealedFan: Int {
         return count
     }
     

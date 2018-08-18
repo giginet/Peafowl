@@ -46,16 +46,16 @@ final class ScoreCalculatorTests: XCTestCase {
                                      AnyYaku(ドラ(3)),
                                      AnyYaku(門前清自摸和()),
                                      AnyYaku(三暗刻())])
-        XCTAssertEqual(score?.han, 14)
+        XCTAssertEqual(score?.fan, 14)
         XCTAssertEqual(score?.miniPoint, 50)
         XCTAssertEqual(score?.score, 32000)
-        XCTAssertEqual(score!.rank!, Score.Rank.yakuman(1))
+        XCTAssertEqual(score!.rank!, .yakuman(1))
     }
     
     func testSevenPairs() {
         let hand: Hand = [二萬, 二萬, 三索, 三索, 五萬, 五萬, 四筒, 四筒, 六萬, 六萬, 八索, 八索, 七筒, 七筒]
         let score = scoreCalculator.calculate(with: hand, context: context)
-        XCTAssertEqual(score?.han, 4)
+        XCTAssertEqual(score?.fan, 4)
         XCTAssertEqual(score?.miniPoint, 25)
         XCTAssertEqual(score?.score, 6400)
         XCTAssertNil(score?.rank)

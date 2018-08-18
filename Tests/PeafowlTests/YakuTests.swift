@@ -16,19 +16,19 @@ final class MeldedFormedYakuTests: XCTestCase {
         return yakuList
     }
     
-    private func assert<Yaku: YakuProtocol>(_ hand: Hand, shouldBe yaku: Yaku.Type, _ han: Int? = nil, context: GameContext? = nil) {
+    private func assert<Yaku: YakuProtocol>(_ hand: Hand, shouldBe yaku: Yaku.Type, _ fan: Int? = nil, context: GameContext? = nil) {
         let yakuList = searchWinningYaku(yaku, hand: hand, context: context ?? makeContext())
         XCTAssertFalse(yakuList.isEmpty)
-        if han != nil {
-            XCTAssertEqual(yakuList.first!.concealedHan, han)
+        if fan != nil {
+            XCTAssertEqual(yakuList.first!.concealedFan, fan)
         }
     }
     
-    private func assert<Yaku: YakuProtocol>(_ hand: Hand, shouldNotBe yaku: Yaku.Type, _ han: Int? = nil, context: GameContext? = nil) {
+    private func assert<Yaku: YakuProtocol>(_ hand: Hand, shouldNotBe yaku: Yaku.Type, _ fan: Int? = nil, context: GameContext? = nil) {
         let yakuList = searchWinningYaku(yaku, hand: hand, context: context ?? makeContext())
         XCTAssertTrue(yakuList.isEmpty)
-        if han != nil {
-            XCTAssertEqual(yakuList.first!.concealedHan, han)
+        if fan != nil {
+            XCTAssertEqual(yakuList.first!.concealedFan, fan)
         }
     }
     
@@ -38,10 +38,10 @@ final class MeldedFormedYakuTests: XCTestCase {
                                             _ meld2: (Tile, Tile, Tile),
                                             _ meld3: (Tile, Tile, Tile),
                                             shouldBe yaku: Yaku.Type,
-                                            _ han: Int? = nil,
+                                            _ fan: Int? = nil,
                                             context: GameContext? = nil) {
         let hand = makeHand(eye, meld0, meld1, meld2, meld3)
-        assert(hand, shouldBe: yaku, han, context: context)
+        assert(hand, shouldBe: yaku, fan, context: context)
     }
     
     private func assert<Yaku: YakuProtocol>(_ eye: (Tile, Tile),
@@ -50,10 +50,10 @@ final class MeldedFormedYakuTests: XCTestCase {
                                             _ meld2: (Tile, Tile, Tile),
                                             _ meld3: (Tile, Tile, Tile),
                                             shouldNotBe yaku: Yaku.Type,
-                                            _ han: Int? = nil,
+                                            _ fan: Int? = nil,
                                             context: GameContext? = nil) {
         let hand = makeHand(eye, meld0, meld1, meld2, meld3)
-        assert(hand, shouldNotBe: yaku, han, context: context)
+        assert(hand, shouldNotBe: yaku, fan, context: context)
     }
     
     func test断ヤオ() {
@@ -285,13 +285,13 @@ final class SevenPairsFormedYakuTests: XCTestCase {
 final class ThirteenOrphanFormTestCase: XCTestCase {
     private func assert<Yaku: YakuProtocol>(_ hand: Hand,
                                             shouldBe yaku: Yaku.Type,
-                                            _ han: Int) {
+                                            _ fan: Int) {
         let yaku = Yaku.make(with: hand.allTiles,
                              form: .thirteenOrphans,
                              picked: hand.picked,
                              context: makeContext())
         XCTAssertNotNil(yaku)
-        XCTAssertEqual(yaku?.concealedHan, han)
+        XCTAssertEqual(yaku?.concealedFan, fan)
     }
     
     private func assert<Yaku: YakuProtocol>(_ hand: Hand,
