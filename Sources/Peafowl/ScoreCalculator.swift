@@ -6,6 +6,16 @@ private extension Set where Element: YakuProtocol {
     }
 }
 
+private func calculateScore(from miniPoint: Int, and fan: Int, isDealer: Bool) -> Int {
+    let baseScore = Double(miniPoint) * 4 * Double(pow(2, Double(2 + fan)))
+    let multiplier = isDealer ? 1.5 : 1.0
+    return Int(baseScore * multiplier)
+}
+
+private func ceilToNearest(_ base: Int, _ value: Int) -> Int {
+    return Int(ceilf(Float(value) / Float(base)) * Float(base))
+}
+
 public struct CalculationOptions {
     /// 青天井
     var ignoreLimits: Bool
@@ -43,7 +53,7 @@ public struct Score: Comparable {
     var fan: Int
     var miniPoint: Int
     var yaku: Set<AnyYaku>
-    var basicScore: Double
+    var basicScore: Int
     var value: Int {
         return rank?.score ?? Int(basicScore)
     }
@@ -52,7 +62,7 @@ public struct Score: Comparable {
         self.miniPoint = miniPoint
         self.yaku = yaku
         self.fan = yaku.concealedFan
-        self.basicScore = calculateScore(from: miniPoint, and: fan, isDealer: isDealer)
+        self.basicScore = ceilToNearest(100, calculateScore(from: miniPoint, and: fan, isDealer: isDealer))
     }
     
     var rank: Rank? {
@@ -73,17 +83,7 @@ public struct Score: Comparable {
     }
 }
 
-private func calculateScore(from miniPoint: Int, and fan: Int, isDealer: Bool) -> Double {
-    let baseScore = Double(miniPoint) * 4 * Double(pow(2, Double(2 + fan)))
-    let multiplier = isDealer ? 1.5 : 1.0
-    return baseScore * multiplier
-}
-
 internal struct PointCulculator {
-    private func ceilToNearest(_ base: Int, _ value: Int) -> Int {
-        return Int(ceilf(Float(value) / Float(base)) * Float(base))
-    }
-    
     var enableCeiling: Bool
     
     func calculateMiniPoint(_ hand: Hand,
@@ -237,7 +237,7 @@ public class ScoreCalculator {
                                                                    winningForm: winningForm,
                                                                    waitingForm: waitingForm,
                                                                    context: context)
-                return [Score(yaku: winningYaku, miniPoint: miniPoint, isDealer: context.isDealer)]
+                return scores + [Score(yaku: winningYaku, miniPoint: miniPoint, isDealer: context.isDealer)]
             case .sevenPairs:
                 let winningYaku: Set<AnyYaku>
                 if let yaku = 七対子.make(with: hand.allTiles, form: .sevenPairs, picked: hand.picked, context: context) {

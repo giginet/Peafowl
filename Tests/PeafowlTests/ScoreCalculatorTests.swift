@@ -52,6 +52,47 @@ final class ScoreCalculatorTests: XCTestCase {
         XCTAssertEqual(score!.rank!, .yakuman(1))
     }
     
+    func testMultipleTokens() {
+        let hand: Hand = [二萬, 二萬, 三萬, 四萬, 四萬, 五萬, 五萬, 二索, 三索, 四索, 二筒, 三筒, 四筒, 三萬]
+        let context = makeContext()
+        let scores = scoreCalculator.calculateAllAvailableScores(with: hand, context: context)
+        XCTAssertEqual(scores?.count, 2)
+        XCTAssertEqual(scores?.first?.yaku, [AnyYaku(断ヤオ九()),
+                                             AnyYaku(門前清自摸和()),
+                                             AnyYaku(一盃口()),
+                                             AnyYaku(平和())])
+        XCTAssertEqual(scores?.last?.yaku, [AnyYaku(断ヤオ九()),
+                                            AnyYaku(門前清自摸和()),
+                                            AnyYaku(一盃口()),
+                                            AnyYaku(三色同順())])
+        
+        let highestScore = scoreCalculator.calculate(with: hand, context: context)
+        XCTAssertEqual(highestScore?.fan, 4)
+        XCTAssertEqual(highestScore?.miniPoint, 30)
+        XCTAssertEqual(highestScore?.value, 7700)
+        XCTAssertNil(highestScore?.rank)
+    }
+    
+    func testMultipleForms() {
+        let hand: Hand = [五筒, 五筒, 二萬, 三萬, 四萬, 二萬, 三萬, 四萬, 二索, 三索, 四索, 二索, 三索, 四索]
+        let context = makeContext()
+        let scores = scoreCalculator.calculateAllAvailableScores(with: hand, context: context)
+        XCTAssertEqual(scores?.count, 2)
+        XCTAssertEqual(scores?.first?.yaku, [AnyYaku(断ヤオ九()),
+                                             AnyYaku(門前清自摸和()),
+                                             AnyYaku(七対子())])
+        XCTAssertEqual(scores?.last?.yaku, [AnyYaku(断ヤオ九()),
+                                            AnyYaku(門前清自摸和()),
+                                            AnyYaku(二盃口()),
+                                            AnyYaku(平和())])
+        
+        let highestScore = scoreCalculator.calculate(with: hand, context: context)
+        XCTAssertEqual(highestScore?.fan, 6)
+        XCTAssertEqual(highestScore?.miniPoint, 30)
+        XCTAssertEqual(highestScore?.value, 12000)
+        XCTAssertEqual(highestScore?.rank, .haneman)
+    }
+    
     func testSevenPairs() {
         let hand: Hand = [二萬, 二萬, 三索, 三索, 五萬, 五萬, 四筒, 四筒, 六萬, 六萬, 八索, 八索, 七筒, 七筒]
         let score = scoreCalculator.calculate(with: hand, context: context)
@@ -59,6 +100,8 @@ final class ScoreCalculatorTests: XCTestCase {
         XCTAssertEqual(score?.miniPoint, 25)
         XCTAssertEqual(score?.value, 6400)
         XCTAssertNil(score?.rank)
-        XCTAssertEqual(score?.yaku, [AnyYaku(断ヤオ九()), AnyYaku(門前清自摸和()), AnyYaku(七対子())])
+        XCTAssertEqual(score?.yaku, [AnyYaku(断ヤオ九()),
+                                     AnyYaku(門前清自摸和()),
+                                     AnyYaku(七対子())])
     }
 }
