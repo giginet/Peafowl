@@ -232,12 +232,15 @@ public class ScoreCalculator {
             case .melded(let tokens):
                 let winningForm: WinningForm = .melded(tokens)
                 let winningYaku = checkFormedYaku(hand: hand, winningForm: winningForm, picked: hand.picked)
-                let waitingForm = waitingFormDetector.detect(from: winningForm, picked: hand.picked)
-                let miniPoint = pointCalculator.calculateMiniPoint(hand,
-                                                                   winningForm: winningForm,
-                                                                   waitingForm: waitingForm,
-                                                                   context: context)
-                return scores + [Score(yaku: winningYaku, miniPoint: miniPoint, isDealer: context.isDealer)]
+                let waitingForms = waitingFormDetector.detect(from: winningForm, picked: hand.picked)
+                let miniPoints = waitingForms.map { waitingForm in
+                    pointCalculator.calculateMiniPoint(hand,
+                                                       winningForm: winningForm,
+                                                       waitingForm: waitingForm,
+                                                       context: context)
+                }
+                let newScores = miniPoints.map { Score(yaku: winningYaku, miniPoint: $0, isDealer: context.isDealer) }
+                return scores + newScores
             case .sevenPairs:
                 let winningYaku: Set<AnyYaku>
                 if let yaku = 七対子.make(with: hand.allTiles, form: .sevenPairs, picked: hand.picked, context: context) {

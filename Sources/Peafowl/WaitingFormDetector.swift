@@ -14,7 +14,7 @@ public enum WaitingForm {
 }
 
 struct WaitingFormDetector {
-    func detect(from form: WinningForm, picked: Tile) -> WaitingForm {
+    func detect(from form: WinningForm, picked: Tile) -> Set<WaitingForm> {
         switch form {
         case .melded(let tokens):
             let eye = tokens.0
@@ -25,25 +25,20 @@ struct WaitingFormDetector {
             
             switch (containsInEye, containsInAnyMeld) {
             case (true, true):
-                return .eitherOfMelds
+                return [.eitherOfMelds]
             case (true, false):
-                return .singleTile
+                return [.singleTile]
             case (false, true):
-                for meld in melds {
-                    guard let waitingForm = meld.detectWaitingForm(with: picked) else {
-                        continue
-                    }
-                    return waitingForm
-                }
+                return Set(melds.compactMap { (meld) -> WaitingForm? in
+                    return meld.detectWaitingForm(with: picked)
+                })
             case (false, false):
                 fatalError("This condition should not be occured")
             }
-            
-            return .singleTile
         case .sevenPairs:
-            return .singleTile
+            return [.singleTile]
         case .thirteenOrphans:
-            return .singleTile
+            return [.singleTile]
         }
     }
 }
