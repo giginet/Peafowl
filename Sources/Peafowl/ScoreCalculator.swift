@@ -44,7 +44,7 @@ public struct Score: Comparable {
     var miniPoint: Int
     var yaku: Set<AnyYaku>
     var basicScore: Double
-    var score: Int {
+    var value: Int {
         return rank?.score ?? Int(basicScore)
     }
     

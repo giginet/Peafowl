@@ -48,7 +48,7 @@ final class ScoreCalculatorTests: XCTestCase {
                                      AnyYaku(三暗刻())])
         XCTAssertEqual(score?.fan, 14)
         XCTAssertEqual(score?.miniPoint, 50)
-        XCTAssertEqual(score?.score, 32000)
+        XCTAssertEqual(score?.value, 32000)
         XCTAssertEqual(score!.rank!, .yakuman(1))
     }
     
@@ -57,7 +57,7 @@ final class ScoreCalculatorTests: XCTestCase {
         let score = scoreCalculator.calculate(with: hand, context: context)
         XCTAssertEqual(score?.fan, 4)
         XCTAssertEqual(score?.miniPoint, 25)
-        XCTAssertEqual(score?.score, 6400)
+        XCTAssertEqual(score?.value, 6400)
         XCTAssertNil(score?.rank)
         XCTAssertEqual(score?.yaku, [AnyYaku(断ヤオ九()), AnyYaku(門前清自摸和()), AnyYaku(七対子())])
     }
