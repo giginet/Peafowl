@@ -215,6 +215,16 @@ final class meldedFormedYakuTests: XCTestCase {
                shouldBe: 役牌.self, 2,
                context: makeContext(seatWind: 南))
     }
+    
+    func testドラ() {
+        assert((東, 東), (一索, 二索, 三索), (四索, 五索, 六索), (七索, 八索, 九索), (二萬, 二萬, 二萬), shouldNotBe: ドラ.self)
+        assert((東, 東), (一索, 二索, 三索), (四索, 五索, 六索), (七索, 八索, 九索), (二萬, 二萬, 二萬), shouldBe: ドラ.self, 3,
+               context: makeContext(dora: [二萬]))
+        assert((東, 東), (一索, 二索, 三索), (四索, 五索, 六索), (七索, 八索, 九索), (二萬, 二萬, 二萬), shouldBe: ドラ.self, 5,
+               context: makeContext(dora: [東, 二萬]))
+        assert((東, 東), (一索, 二索, 三索), (四索, 五索, 六索), (七索, 八索, 九索), (二萬, 二萬, 二萬), shouldBe: ドラ.self, 9,
+               context: makeContext(dora: [二萬, 二萬, 二萬]))
+    }
 }
 
 final class SevenPairsFormedYakuTests: XCTestCase {
