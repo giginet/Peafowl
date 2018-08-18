@@ -10,7 +10,7 @@ public struct 四暗刻: YakuProtocol {
             return nil
         }
         let melds = self.melds(from: tokens)
-        if melds.countIf({ $0.isTriplets && $0.isClosed }) == 4 {
+        if melds.countIf({ $0.isTriplets && $0.isConcealed }) == 4 {
             return 四暗刻()
         }
         return nil

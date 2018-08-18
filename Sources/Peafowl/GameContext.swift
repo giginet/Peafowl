@@ -28,8 +28,6 @@ public struct GameContext {
     let isOneShot: Bool
     /// 親
     let isDealer: Bool
-    /// 門前
-    let isClosed: Bool
     /// 場風
     let prevalentWind: Tile
     /// 自風

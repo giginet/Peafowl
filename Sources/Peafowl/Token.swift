@@ -113,7 +113,7 @@ public struct MeldToken: Token {
     }
 
     public let tiles: Tiles
-    public var isClosed = true
+    public var isConcealed = true
 
     public typealias Tiles = (Tile, Tile, Tile)
 
@@ -143,6 +143,8 @@ public struct MeldToken: Token {
             return false
         }
     }
+    
+    
 
     public var asArray: [Tile] {
         return [tiles.0, tiles.1, tiles.2].sorted()
