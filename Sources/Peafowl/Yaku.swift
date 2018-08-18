@@ -104,7 +104,7 @@ public struct AnyYaku: YakuProtocol, CustomStringConvertible {
         }
 
         override var yakuClass: Any.Type? {
-            return type(of: internalYaku)
+            return Swift.type(of: internalYaku)
         }
 
         override var concealedHan: Int {
@@ -118,5 +118,9 @@ public struct AnyYaku: YakuProtocol, CustomStringConvertible {
         override var name: String {
             return internalYaku.name
         }
+    }
+    
+    public func type<Yaku: YakuProtocol>(of yakuClass: Yaku.Type) -> Bool {
+        return box.yakuClass == yakuClass
     }
 }

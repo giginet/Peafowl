@@ -1,7 +1,7 @@
 import Foundation
 
 private extension Set where Element: YakuProtocol {
-    var closedHan: Int {
+    var concealedHan: Int {
         return reduce(0) { $0 + $1.concealedHan }
     }
 }
@@ -31,16 +31,16 @@ public struct Score: Comparable {
     }
     
     var han: Int
-    var fu: Int
+    var miniPoint: Int
     var yaku: Set<AnyYaku>
     var basicScore: Double
     var score: Int
     
-    init(yaku: Set<AnyYaku>, fu: Int) {
-        self.fu = fu
+    init(yaku: Set<AnyYaku>, miniPoint: Int) {
+        self.miniPoint = miniPoint
         self.yaku = yaku
-        self.han = yaku.closedHan
-        self.basicScore = calculateScore(from: fu, and: han)
+        self.han = yaku.concealedHan
+        self.basicScore = calculateScore(from: miniPoint, and: han)
         self.score = Int(basicScore) // TODO
     }
     
@@ -120,7 +120,7 @@ internal struct PointCulculator {
     }
 }
 
-private let availableFormedYakuTypes = [
+private let availableYakuTypes = [
     AnyYakuType(海底摸月.self),
     AnyYakuType(清一色.self),
     AnyYakuType(対々和.self),
@@ -168,7 +168,27 @@ public class ScoreCalculator {
     
     private let winningDetector = WinningDetector()
     
-    func calculate(with hand: Hand, context: GameContext) -> [Score]? {
+    public func calculate(with hand: Hand, context: GameContext) -> Score? {
+        return nil
+    }
+    
+    private func canonicalizeScore(_ score: Score) -> Score? {
+        // Score only contains Dora is not allowed
+        if let onlyYaku = score.yaku.first, score.yaku.count == 1 && onlyYaku.type(of: ドラ.self) {
+            return nil
+        }
+        // Reject all other yaku when a score contains Yakuman
+        let containsYakuman = score.yaku.contains { $0.isYakuman }
+        if containsYakuman {
+            let newYaku = score.yaku.filter { $0.isYakuman }
+            let newScore = Score(yaku: newYaku, miniPoint: score.miniPoint)
+            return newScore
+        }
+        // TODO When a hand is opened, Reject all concealed only yaku.
+        return score
+    }
+    
+    internal func calculateAllAvailableScores(with hand: Hand, context: GameContext) -> [Score]? {
         guard hand.allTiles.count == 14 else {
             return nil
         }
@@ -178,7 +198,7 @@ public class ScoreCalculator {
         }
         
         func checkFormedYaku(hand: Hand, winningForm: WinningForm, picked: Tile) -> Set<AnyYaku> {
-            let winningYaku: Set<AnyYaku> = Set(availableFormedYakuTypes.map { type in
+            let winningYaku: Set<AnyYaku> = Set(availableYakuTypes.map { type in
                 return type.make(with: hand.allTiles,
                                  form: winningForm,
                                  picked: picked,
@@ -191,7 +211,7 @@ public class ScoreCalculator {
             switch form {
             case .melded(let winningForm):
                 let winningYaku = checkFormedYaku(hand: hand, winningForm: .melded(winningForm), picked: hand.picked)
-                return [Score(yaku: winningYaku, fu: 0)]
+                return [Score(yaku: winningYaku, miniPoint: 0)]
             case .sevenPairs:
                 let winningYaku: Set<AnyYaku>
                 if let yaku = 七対子.make(with: hand.allTiles, form: .sevenPairs, picked: hand.picked, context: context) {
@@ -200,7 +220,7 @@ public class ScoreCalculator {
                     winningYaku = []
                 }
                 let otherYaku = checkFormedYaku(hand: hand, winningForm: .sevenPairs, picked: hand.picked)
-                return scores + [Score(yaku: winningYaku.union(otherYaku), fu: 25)]
+                return scores + [Score(yaku: winningYaku.union(otherYaku), miniPoint: 25)]
             case .thirteenOrphans:
                 let winningYaku: Set<AnyYaku>
                 if let yaku = 国士無双.make(with: hand.allTiles, form: .thirteenOrphans, picked: hand.picked, context: context) {
@@ -208,7 +228,7 @@ public class ScoreCalculator {
                 } else {
                     winningYaku = []
                 }
-                return scores + [Score(yaku: winningYaku, fu: 25)]
+                return scores + [Score(yaku: winningYaku, miniPoint: 25)]
             }
         }
     }
