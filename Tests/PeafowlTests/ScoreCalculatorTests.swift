@@ -131,7 +131,7 @@ final class ScoreCalculatorTests: XCTestCase {
     }
     
     func testMultipleYakuman() {
-        let hand: Hand = [撥, 撥, 東, 東, 東, 西, 西, 西, 南, 南, 南, 北, 北, 北]
+        let hand: Hand = [發, 發, 東, 東, 東, 西, 西, 西, 南, 南, 南, 北, 北, 北]
         let score = scoreCalculator.calculate(with: hand, context: context)
         XCTAssertEqual(score?.yaku, [
             AnyYaku(四暗刻()),
@@ -156,7 +156,7 @@ final class ScoreCalculatorTests: XCTestCase {
     }
     
     func testThirteenOrphans() {
-        let hand: Hand = [一筒, 九筒, 一索, 九索, 一萬, 九萬, 東, 南, 西, 北, 白, 撥, 中, 中]
+        let hand: Hand = [一筒, 九筒, 一索, 九索, 一萬, 九萬, 東, 南, 西, 北, 白, 發, 中, 中]
         let score = scoreCalculator.calculate(with: hand, context: context)
         XCTAssertEqual(score?.fan, 26)
         XCTAssertEqual(score?.miniPoint, 0)

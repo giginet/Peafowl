@@ -67,7 +67,7 @@ public let 西: Tile = .west
 public let 南: Tile = .south
 public let 北: Tile = .north
 public let 白: Tile = .blank
-public let 撥: Tile = .fortune
+public let 發: Tile = .fortune
 public let 中: Tile = .center
 
 public let MarjongTileCharacterSet = { () -> CharacterSet in

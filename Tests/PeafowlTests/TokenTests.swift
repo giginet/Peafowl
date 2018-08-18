@@ -28,7 +28,7 @@ final class MeldTokenTests: XCTestCase {
     func testInitialize() {
         XCTAssertNil(MeldToken((一萬, 西, 北)))
         XCTAssertNil(MeldToken((一萬, 八萬, 九萬)))
-        XCTAssertNil(MeldToken((白, 撥, 中)))
+        XCTAssertNil(MeldToken((白, 發, 中)))
         XCTAssertNotNil(MeldToken((東, 東, 東)))
         XCTAssertNotNil(MeldToken((四索, 六索, 五索)))
     }

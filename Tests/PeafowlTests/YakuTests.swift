@@ -117,10 +117,10 @@ final class MeldedFormedYakuTests: XCTestCase {
     }
     
     func test小三元() {
-        assert((白, 白), (撥, 撥, 撥), (中, 中, 中), (七索, 八索, 九索), (七筒, 八筒, 九筒), shouldBe: 小三元.self)
-        assert((撥, 撥), (白, 白, 白), (中, 中, 中), (七索, 八索, 九索), (七筒, 八筒, 九筒), shouldBe: 小三元.self)
-        assert((中, 中), (白, 白, 白), (撥, 撥, 撥), (七索, 八索, 九索), (七筒, 八筒, 九筒), shouldBe: 小三元.self)
-        assert((一筒, 一筒), (白, 白, 白), (撥, 撥, 撥), (中, 中, 中), (七筒, 八筒, 九筒), shouldNotBe: 小三元.self)
+        assert((白, 白), (發, 發, 發), (中, 中, 中), (七索, 八索, 九索), (七筒, 八筒, 九筒), shouldBe: 小三元.self)
+        assert((發, 發), (白, 白, 白), (中, 中, 中), (七索, 八索, 九索), (七筒, 八筒, 九筒), shouldBe: 小三元.self)
+        assert((中, 中), (白, 白, 白), (發, 發, 發), (七索, 八索, 九索), (七筒, 八筒, 九筒), shouldBe: 小三元.self)
+        assert((一筒, 一筒), (白, 白, 白), (發, 發, 發), (中, 中, 中), (七筒, 八筒, 九筒), shouldNotBe: 小三元.self)
     }
     
     func test混一色() {
@@ -161,32 +161,32 @@ final class MeldedFormedYakuTests: XCTestCase {
     func test字一色() {
         assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (七索, 八索, 九索), shouldNotBe: 字一色.self)
         assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (九索, 九索, 九索), shouldNotBe: 字一色.self)
-        assert((東, 東), (南, 南, 南), (西, 西, 西), (中, 中, 中), (撥, 撥, 撥), shouldBe: 字一色.self)
+        assert((東, 東), (南, 南, 南), (西, 西, 西), (中, 中, 中), (發, 發, 發), shouldBe: 字一色.self)
     }
     
     func test緑一色() {
         assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (七索, 八索, 九索), shouldNotBe: 緑一色.self)
         assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (九索, 九索, 九索), shouldNotBe: 緑一色.self)
-        assert((撥, 撥), (二索, 三索, 四索), (六索, 六索, 六索), (八索, 八索, 八索), (二索, 三索, 四索), shouldBe: 緑一色.self)
+        assert((發, 發), (二索, 三索, 四索), (六索, 六索, 六索), (八索, 八索, 八索), (二索, 三索, 四索), shouldBe: 緑一色.self)
     }
     
     func test大三元() {
-        assert((白, 白), (撥, 撥, 撥), (中, 中, 中), (七索, 八索, 九索), (七筒, 八筒, 九筒), shouldNotBe: 大三元.self)
-        assert((撥, 撥), (白, 白, 白), (中, 中, 中), (七索, 八索, 九索), (七筒, 八筒, 九筒), shouldNotBe: 大三元.self)
-        assert((中, 中), (白, 白, 白), (撥, 撥, 撥), (七索, 八索, 九索), (七筒, 八筒, 九筒), shouldNotBe: 大三元.self)
-        assert((一筒, 一筒), (白, 白, 白), (撥, 撥, 撥), (中, 中, 中), (七筒, 八筒, 九筒), shouldBe: 大三元.self)
+        assert((白, 白), (發, 發, 發), (中, 中, 中), (七索, 八索, 九索), (七筒, 八筒, 九筒), shouldNotBe: 大三元.self)
+        assert((發, 發), (白, 白, 白), (中, 中, 中), (七索, 八索, 九索), (七筒, 八筒, 九筒), shouldNotBe: 大三元.self)
+        assert((中, 中), (白, 白, 白), (發, 發, 發), (七索, 八索, 九索), (七筒, 八筒, 九筒), shouldNotBe: 大三元.self)
+        assert((一筒, 一筒), (白, 白, 白), (發, 發, 發), (中, 中, 中), (七筒, 八筒, 九筒), shouldBe: 大三元.self)
     }
     
     func test小四喜() {
         assert((一筒, 一筒), (東, 東, 東), (南, 南, 南), (西, 西, 西), (北, 北, 北), shouldNotBe: 小四喜.self)
         assert((東, 東), (一筒, 一筒, 一筒), (南, 南, 南), (西, 西, 西), (北, 北, 北), shouldBe: 小四喜.self)
-        assert((撥, 撥), (一筒, 一筒, 一筒), (南, 南, 南), (西, 西, 西), (北, 北, 北), shouldNotBe: 小四喜.self)
+        assert((發, 發), (一筒, 一筒, 一筒), (南, 南, 南), (西, 西, 西), (北, 北, 北), shouldNotBe: 小四喜.self)
     }
     
     func test大四喜() {
         assert((一筒, 一筒), (東, 東, 東), (南, 南, 南), (西, 西, 西), (北, 北, 北), shouldBe: 大四喜.self)
         assert((東, 東), (一筒, 一筒, 一筒), (南, 南, 南), (西, 西, 西), (北, 北, 北), shouldNotBe: 大四喜.self)
-        assert((撥, 撥), (一筒, 一筒, 一筒), (南, 南, 南), (西, 西, 西), (北, 北, 北), shouldNotBe: 大四喜.self)
+        assert((發, 發), (一筒, 一筒, 一筒), (南, 南, 南), (西, 西, 西), (北, 北, 北), shouldNotBe: 大四喜.self)
     }
     
     func test清老頭() {
@@ -204,7 +204,7 @@ final class MeldedFormedYakuTests: XCTestCase {
     func test平和() {
         // last tile should be picked tile
         assert((八萬, 八萬), (一萬, 一萬, 一萬), (二萬, 三萬, 四萬), (五萬, 六萬, 七萬), (九萬, 九萬, 九萬), shouldNotBe: 平和.self) // Contains triplet meld
-        assert((撥, 撥), (一萬, 二萬, 三萬), (三萬, 四萬, 五萬), (六萬, 七萬, 八萬), (三索, 四索, 五索), shouldNotBe: 平和.self) // Contains valued honors in eye
+        assert((發, 發), (一萬, 二萬, 三萬), (三萬, 四萬, 五萬), (六萬, 七萬, 八萬), (三索, 四索, 五索), shouldNotBe: 平和.self) // Contains valued honors in eye
         assert((九萬, 九萬), (一萬, 二萬, 三萬), (三萬, 四萬, 五萬), (六萬, 七萬, 八萬), (三索, 五索, 四索), shouldNotBe: 平和.self) // Not both sided waiting form
         assert((九萬, 九萬), (一萬, 二萬, 三萬), (三萬, 四萬, 五萬), (六萬, 七萬, 八萬), (三索, 四索, 五索), shouldBe: 平和.self)
     }
@@ -213,9 +213,9 @@ final class MeldedFormedYakuTests: XCTestCase {
         assert((東, 東), (一索, 二索, 三索), (四索, 五索, 六索), (七索, 八索, 九索), (二萬, 二萬, 二萬), shouldNotBe: 役牌.self)
         assert((一筒, 一筒), (一索, 二索, 三索), (四索, 五索, 六索), (七索, 八索, 九索), (東, 東, 東),
                shouldBe: 役牌.self, 2)
-        assert((一筒, 一筒), (一索, 二索, 三索), (四索, 五索, 六索), (七索, 八索, 九索), (撥, 撥, 撥),
+        assert((一筒, 一筒), (一索, 二索, 三索), (四索, 五索, 六索), (七索, 八索, 九索), (發, 發, 發),
                shouldBe: 役牌.self, 1)
-        assert((一筒, 一筒), (一索, 二索, 三索), (四索, 五索, 六索), (白, 白, 白), (撥, 撥, 撥),
+        assert((一筒, 一筒), (一索, 二索, 三索), (四索, 五索, 六索), (白, 白, 白), (發, 發, 發),
                shouldBe: 役牌.self, 2)
         assert((一筒, 一筒), (一索, 二索, 三索), (四索, 五索, 六索), (白, 白, 白), (北, 北, 北),
                shouldBe: 役牌.self, 1)
@@ -273,12 +273,12 @@ final class SevenPairsFormedYakuTests: XCTestCase {
     }
     
     func test七対子() {
-        assert((東, 東), (南, 南), (西, 西), (北, 北), (白, 白), (撥, 撥), (中, 中), shouldBe: 七対子.self)
-        assert((東, 東), (東, 東), (西, 西), (北, 北), (白, 白), (撥, 撥), (中, 中), shouldNotBe: 七対子.self)
+        assert((東, 東), (南, 南), (西, 西), (北, 北), (白, 白), (發, 發), (中, 中), shouldBe: 七対子.self)
+        assert((東, 東), (東, 東), (西, 西), (北, 北), (白, 白), (發, 發), (中, 中), shouldNotBe: 七対子.self)
     }
     
     func test混老頭() {
-        assert((一筒, 一筒), (九索, 九索), (東, 東), (西, 西), (九筒, 九筒), (撥, 撥), (中, 中), shouldBe: 混老頭.self)
+        assert((一筒, 一筒), (九索, 九索), (東, 東), (西, 西), (九筒, 九筒), (發, 發), (中, 中), shouldBe: 混老頭.self)
     }
 }
 
@@ -304,8 +304,8 @@ final class ThirteenOrphanFormTestCase: XCTestCase {
     }
     
     func test国士無双() {
-        assert([一萬, 九萬, 一筒, 九筒, 一索, 九索, 東, 西, 南, 北, 白, 撥, 中, 中], shouldBe: 国士無双.self, 26)
-        assert([一萬, 九萬, 一筒, 九筒, 一索, 九索, 東, 西, 南, 北, 白, 撥, 撥, 中], shouldBe: 国士無双.self, 13)
-        assert([一萬, 九萬, 一筒, 九筒, 一索, 八索, 東, 西, 南, 北, 白, 撥, 撥, 中], shouldNotBe: 国士無双.self)
+        assert([一萬, 九萬, 一筒, 九筒, 一索, 九索, 東, 西, 南, 北, 白, 發, 中, 中], shouldBe: 国士無双.self, 26)
+        assert([一萬, 九萬, 一筒, 九筒, 一索, 九索, 東, 西, 南, 北, 白, 發, 發, 中], shouldBe: 国士無双.self, 13)
+        assert([一萬, 九萬, 一筒, 九筒, 一索, 八索, 東, 西, 南, 北, 白, 發, 發, 中], shouldNotBe: 国士無双.self)
     }
 }

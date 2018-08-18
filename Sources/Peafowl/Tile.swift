@@ -60,7 +60,7 @@ public struct Tile: Equatable, Comparable, Hashable {
         case north
         /// 白
         case blank
-        /// 撥
+        /// 發
         case fortune
         /// 中
         case center
@@ -222,7 +222,7 @@ extension Tile: CustomStringConvertible {
         case .west: return "西"
         case .north: return "北"
         case .blank: return "白"
-        case .fortune: return "撥"
+        case .fortune: return "發"
         case .center: return "中"
         }
     }
