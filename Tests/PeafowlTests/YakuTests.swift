@@ -167,6 +167,18 @@ final class meldedFormedYakuTests: XCTestCase {
         assert((中, 中), (白, 白, 白), (撥, 撥, 撥), (七索, 八索, 九索), (七筒, 八筒, 九筒), shouldNotBe: 大三元.self)
         assert((一筒, 一筒), (白, 白, 白), (撥, 撥, 撥), (中, 中, 中), (七筒, 八筒, 九筒), shouldBe: 大三元.self)
     }
+    
+    func test小四喜() {
+        assert((一筒, 一筒), (東, 東, 東), (南, 南, 南), (西, 西, 西), (北, 北, 北), shouldNotBe: 小四喜.self)
+        assert((東, 東), (一筒, 一筒, 一筒), (南, 南, 南), (西, 西, 西), (北, 北, 北), shouldBe: 小四喜.self)
+        assert((撥, 撥), (一筒, 一筒, 一筒), (南, 南, 南), (西, 西, 西), (北, 北, 北), shouldNotBe: 小四喜.self)
+    }
+    
+    func test大四喜() {
+        assert((一筒, 一筒), (東, 東, 東), (南, 南, 南), (西, 西, 西), (北, 北, 北), shouldBe: 大四喜.self)
+        assert((東, 東), (一筒, 一筒, 一筒), (南, 南, 南), (西, 西, 西), (北, 北, 北), shouldNotBe: 大四喜.self)
+        assert((撥, 撥), (一筒, 一筒, 一筒), (南, 南, 南), (西, 西, 西), (北, 北, 北), shouldNotBe: 大四喜.self)
+    }
 }
 
 final class SevenPairsFormedYakuTests: XCTestCase {
