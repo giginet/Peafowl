@@ -14,9 +14,9 @@ public struct 役牌: YakuProtocol {
         guard case .melded(let tokens) = form else {
             return nil
         }
-        let tripletsMelds = self.melds(from: tokens).filter { $0.isTriplets }
+        let tripletsMelds = TileUtility.melds(from: tokens).filter { $0.isTriplets }
         let valueHonors: Set<Tile> = Set(tripletsMelds.compactMap { (meld) -> Tile? in
-            if isValueHonor(meld.first, context: context) {
+            if TileUtility.isValueHonor(meld.first, by: context) {
                 return meld.first
             }
             return nil

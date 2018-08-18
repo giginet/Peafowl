@@ -61,7 +61,7 @@
 		07F4195D21248FEE00DB09EF /* 混全帯么九.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4195C21248FEE00DB09EF /* 混全帯么九.swift */; };
 		07F4195F2124929500DB09EF /* 純全帯么九.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4195E2124929500DB09EF /* 純全帯么九.swift */; };
 		07F419612125C96200DB09EF /* 一気通貫.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419602125C96200DB09EF /* 一気通貫.swift */; };
-		07F419632125CA3400DB09EF /* Yaku+Utilitiy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419622125CA3400DB09EF /* Yaku+Utilitiy.swift */; };
+		07F419632125CA3400DB09EF /* TileUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419622125CA3400DB09EF /* TileUtility.swift */; };
 		07F419652125CD6000DB09EF /* 小三元.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419642125CD6000DB09EF /* 小三元.swift */; };
 		07F419672125D20700DB09EF /* 混一色.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419662125D20700DB09EF /* 混一色.swift */; };
 		07F419692125D2CA00DB09EF /* 清一色.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419682125D2CA00DB09EF /* 清一色.swift */; };
@@ -139,7 +139,7 @@
 		07F4195C21248FEE00DB09EF /* 混全帯么九.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "混全帯么九.swift"; sourceTree = "<group>"; };
 		07F4195E2124929500DB09EF /* 純全帯么九.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "純全帯么九.swift"; sourceTree = "<group>"; };
 		07F419602125C96200DB09EF /* 一気通貫.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "一気通貫.swift"; sourceTree = "<group>"; };
-		07F419622125CA3400DB09EF /* Yaku+Utilitiy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Yaku+Utilitiy.swift"; sourceTree = "<group>"; };
+		07F419622125CA3400DB09EF /* TileUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileUtility.swift; sourceTree = "<group>"; };
 		07F419642125CD6000DB09EF /* 小三元.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "小三元.swift"; sourceTree = "<group>"; };
 		07F419662125D20700DB09EF /* 混一色.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "混一色.swift"; sourceTree = "<group>"; };
 		07F419682125D2CA00DB09EF /* 清一色.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "清一色.swift"; sourceTree = "<group>"; };
@@ -227,7 +227,6 @@
 				07ED343D2110B6FD00D02AFA /* Sequence+Extensions.swift */,
 				07C6398621120F1000725AFB /* Array+Tiles.swift */,
 				0762D3512116D11500CC66D5 /* Set+Extensions.swift */,
-				07F419622125CA3400DB09EF /* Yaku+Utilitiy.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -258,6 +257,7 @@
 				07ED2F2E20E2AC6D00EF677F /* Info.plist */,
 				07ED2F2D20E2AC6D00EF677F /* Peafowl.h */,
 				079A8E3A20E2ADEE0009EA6D /* Tile.swift */,
+				07F419622125CA3400DB09EF /* TileUtility.swift */,
 				079A8E3E20E2B4F10009EA6D /* Hand.swift */,
 				079A8E4020E2B5960009EA6D /* Yaku.swift */,
 				079A8E4220E2B68C0009EA6D /* Token.swift */,
@@ -432,7 +432,7 @@
 				072DD2BE2127A81F00F86C39 /* 大四喜.swift in Sources */,
 				07315D362125DC7200733FDC /* 河底撈魚.swift in Sources */,
 				07811BF5211F71B40052DCB2 /* GameContext.swift in Sources */,
-				07F419632125CA3400DB09EF /* Yaku+Utilitiy.swift in Sources */,
+				07F419632125CA3400DB09EF /* TileUtility.swift in Sources */,
 				07F4195F2124929500DB09EF /* 純全帯么九.swift in Sources */,
 				07B2BBE021247B1200993F46 /* 三色同順.swift in Sources */,
 				079A8E3B20E2ADEE0009EA6D /* Tile.swift in Sources */,

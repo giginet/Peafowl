@@ -10,7 +10,7 @@ public struct 一気通貫: YakuProtocol {
             return nil
         }
         
-        let melds = self.melds(from: tokens)
+        let melds = TileUtility.melds(from: tokens)
         let firstSequence = melds.first { $0.isSequential && $0.first.number == 1 }
         let secondSequence = melds.first { $0.isSequential && $0.first.number == 4 }
         let thirdSequence = melds.first { $0.isSequential && $0.first.number == 7 }

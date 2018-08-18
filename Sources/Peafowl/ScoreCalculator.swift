@@ -34,6 +34,14 @@ public struct Score: Comparable {
     public static func < (lhs: Score, rhs: Score) -> Bool {
         return lhs.basicScore < rhs.basicScore
     }
+    
+    public enum Rank {
+        case mangan
+        case haneman
+        case baiman
+        case sanbaiman
+        case yakuman(Int)
+    }
 
     var han: Int
     var fu: Int
@@ -67,16 +75,56 @@ public struct Score: Comparable {
     }
 }
 
-public enum Rank {
-    case mangan
-    case haneman
-    case baiman
-    case sanbaiman
-    case yakuman(Int)
-}
-
 private func calculateScore(from fu: Int, and han: Int) -> Double {
     return Double(fu) * Double(pow(2, Double(2 + han)))
+}
+
+internal struct PointCulculator {
+    private func ceilToNearestTen(_ value: Int) -> Int {
+        return Int(ceilf(Float(value) / 10) * 10)
+    }
+    
+    func calculateMiniPoint(_ hand: Hand,
+                            winningForm: WinningForm,
+                            waitingForm: WaitingForm,
+                            context: GameContext) -> Int? {
+        switch winningForm {
+        case .melded(let tokens):
+            let basePoint = 20
+            let triplets = TileUtility.melds(from: tokens).filter { $0.isTriplets }
+            let eye = tokens.0
+            let meldBonusPoints: Int = triplets.reduce(0) { (previousPoint, meld) -> Int in
+                let baseMeldBonusPoint: Int
+                if meld.isConcealed {
+                    baseMeldBonusPoint = 4
+                } else {
+                    baseMeldBonusPoint = 2
+                }
+                if meld.first.isYaochu {
+                    return baseMeldBonusPoint * 2
+                } else {
+                    return baseMeldBonusPoint
+                }
+            }
+            let eyeBonusPoint = TileUtility.isValueHonor(eye.first, by: context) ? 2 : 0
+            let waitingBonusPoint: Int
+            switch waitingForm {
+            case .middleTile, .singleSide, .singleTile:
+                waitingBonusPoint = 2
+            case .bothSides, .eitherOfMelds:
+                waitingBonusPoint = 0
+            }
+            
+            let concealedAndRobbedBonus = TileUtility.isConcealed(winningForm) && context.winningType == .rob ? 10 : 0
+            let selfPickedBonus = context.winningType == .selfPick ? 2 : 0
+            let rawPoint = basePoint + meldBonusPoints + eyeBonusPoint + waitingBonusPoint + concealedAndRobbedBonus + selfPickedBonus
+            return ceilToNearestTen(rawPoint)
+        case .sevenPairs:
+            return 25
+        case .thirteenOrphans:
+            return 0
+        }
+    }
 }
 
 private let availableFormedYakuTypes = [

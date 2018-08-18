@@ -9,7 +9,7 @@ public struct 対々和: YakuProtocol {
         guard case .melded(let tokens) = form else {
             return nil
         }
-        let melds = self.melds(from: tokens)
+        let melds = TileUtility.melds(from: tokens)
         if melds.countIf({ $0.isTriplets }) == 4 {
             return 対々和()
         }

@@ -151,6 +151,10 @@ public struct Tile: Equatable, Comparable, Hashable {
             return false
         }
     }
+    
+    public var isYaochu: Bool {
+        return isTerminal || isHonor
+    }
 
     public var number: Int? {
         switch suit {

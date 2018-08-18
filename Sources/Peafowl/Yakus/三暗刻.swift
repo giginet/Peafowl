@@ -9,7 +9,7 @@ public struct 三暗刻: YakuProtocol {
         guard case .melded(let tokens) = form else {
             return nil
         }
-        let melds = self.melds(from: tokens)
+        let melds = TileUtility.melds(from: tokens)
         if melds.countIf({ $0.isTriplets && $0.isConcealed }) == 3 {
             return 三暗刻()
         }

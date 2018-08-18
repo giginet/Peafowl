@@ -10,7 +10,7 @@ public struct 大三元: YakuProtocol {
             return nil
         }
         
-        let triplets = self.melds(from: tokens).filter { $0.isTriplets }
+        let triplets = TileUtility.melds(from: tokens).filter { $0.isTriplets }
         func contains(_ honorTile: Tile, in melds: [MeldToken]) -> Bool {
             for meld in melds {
                 if meld.isTriplets && meld.allSatisfy { $0 == honorTile } {

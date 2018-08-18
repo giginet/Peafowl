@@ -9,7 +9,7 @@ public struct 九連宝燈: YakuProtocol {
         guard case .melded(let tokens) = form else {
             return nil
         }
-        let melds = self.melds(from: tokens)
+        let melds = TileUtility.melds(from: tokens)
         func isValid(_ conditions: (Tile) -> Bool) -> Bool {
             if tiles.countIf({ conditions($0) && $0.number == 1 }) != 3 {
                 return false

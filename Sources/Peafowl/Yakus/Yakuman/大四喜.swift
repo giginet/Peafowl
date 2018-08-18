@@ -9,7 +9,7 @@ public struct 大四喜: YakuProtocol {
         guard case .melded(let tokens) = form else {
             return nil
         }
-        let melds = self.melds(from: tokens)
+        let melds = TileUtility.melds(from: tokens)
         let winds = Set(melds.compactMap { meld -> Tile? in
             if meld.isTriplets && meld.first.isWind {
                 return meld.first

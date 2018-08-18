@@ -10,11 +10,11 @@ public struct 平和: YakuProtocol {
             return nil
         }
         let eye = tokens.0
-        let melds = self.melds(from: tokens)
+        let melds = TileUtility.melds(from: tokens)
         if melds.contains(where: { $0.isTriplets }) {
             return nil
         }
-        if isValueHonor(eye.first, context: context) {
+        if TileUtility.isValueHonor(eye.first, by: context) {
             return nil
         }
         for meld in melds where meld.first == picked || meld.thrid == picked {

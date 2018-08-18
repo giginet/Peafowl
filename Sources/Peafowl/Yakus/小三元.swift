@@ -18,7 +18,7 @@ public struct 小三元: YakuProtocol {
             return nil
         }
         
-        let triplets = self.melds(from: tokens).filter { $0.isTriplets }
+        let triplets = TileUtility.melds(from: tokens).filter { $0.isTriplets }
         let meldDragons = Set(triplets.compactMap { triplet -> Tile? in
             if triplet.first.isDragon && triplet.first != eyeDragon {
                 return triplet.first

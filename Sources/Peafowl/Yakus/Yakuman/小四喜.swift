@@ -10,7 +10,7 @@ public struct 小四喜: YakuProtocol {
             return nil
         }
         let eye = tokens.0
-        let melds = self.melds(from: tokens)
+        let melds = TileUtility.melds(from: tokens)
         var winds = Set<Tile>()
         for meld in melds where meld.isTriplets && meld.first.isWind {
             winds.insert(meld.first)
