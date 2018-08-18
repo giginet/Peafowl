@@ -21,7 +21,7 @@ public struct AnyYakuType {
 public protocol YakuProtocol: Hashable {
     var name: String { get }
     /// 翻
-    var closedHan: Int { get }
+    var concealedHan: Int { get }
     /// 喰い下がり翻
     var openedHan: Int? { get }
     var isYakuman: Bool { get }
@@ -34,7 +34,7 @@ public extension YakuProtocol {
     }
 
     var isYakuman: Bool {
-        return closedHan >= 13
+        return concealedHan >= 13
     }
 }
 
@@ -58,8 +58,8 @@ public struct AnyYaku: YakuProtocol {
         return box.name
     }
 
-    public var closedHan: Int {
-        return box.closedHan
+    public var concealedHan: Int {
+        return box.concealedHan
     }
 
     private class BaseBox: YakuProtocol {
@@ -71,7 +71,7 @@ public struct AnyYaku: YakuProtocol {
             fatalError("Not implemented")
         }
 
-        var closedHan: Int {
+        var concealedHan: Int {
             fatalError("Not implemented")
         }
 
@@ -103,8 +103,8 @@ public struct AnyYaku: YakuProtocol {
             return type(of: internalYaku)
         }
 
-        override var closedHan: Int {
-            return internalYaku.closedHan
+        override var concealedHan: Int {
+            return internalYaku.concealedHan
         }
 
         override var openedHan: Int? {

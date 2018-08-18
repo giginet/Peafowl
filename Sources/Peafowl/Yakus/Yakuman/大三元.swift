@@ -2,7 +2,7 @@ import Foundation
 
 public struct 大三元: YakuProtocol {
     public let openedHan: Int? = 2
-    public let closedHan: Int = 2
+    public let concealedHan: Int = 2
     
     public let name = "大三元"
     public static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> 大三元? {

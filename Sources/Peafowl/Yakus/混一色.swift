@@ -2,7 +2,7 @@ import Foundation
 
 public struct 混一色: YakuProtocol {
     public let openedHan: Int? = 2
-    public let closedHan: Int = 3
+    public let concealedHan: Int = 3
     
     public let name = "混一色"
     public static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> 混一色? {

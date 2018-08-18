@@ -5,7 +5,7 @@ public struct ドラ: YakuProtocol {
     public var openedHan: Int? {
         return count
     }
-    public var closedHan: Int {
+    public var concealedHan: Int {
         return count
     }
     

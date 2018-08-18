@@ -2,7 +2,7 @@ import Foundation
 
 private extension Set where Element: YakuProtocol {
     var closedHan: Int {
-        return reduce(0) { $0 + $1.closedHan }
+        return reduce(0) { $0 + $1.concealedHan }
     }
 }
 

@@ -20,7 +20,7 @@ final class MeldedFormedYakuTests: XCTestCase {
         let yakuList = searchWinningYaku(yaku, hand: hand, context: context ?? makeContext())
         XCTAssertFalse(yakuList.isEmpty)
         if han != nil {
-            XCTAssertEqual(yakuList.first!.closedHan, han)
+            XCTAssertEqual(yakuList.first!.concealedHan, han)
         }
     }
     
@@ -28,7 +28,7 @@ final class MeldedFormedYakuTests: XCTestCase {
         let yakuList = searchWinningYaku(yaku, hand: hand, context: context ?? makeContext())
         XCTAssertTrue(yakuList.isEmpty)
         if han != nil {
-            XCTAssertEqual(yakuList.first!.closedHan, han)
+            XCTAssertEqual(yakuList.first!.concealedHan, han)
         }
     }
     
@@ -291,7 +291,7 @@ final class ThirteenOrphanFormTestCase: XCTestCase {
                              picked: hand.picked,
                              context: makeContext())
         XCTAssertNotNil(yaku)
-        XCTAssertEqual(yaku?.closedHan, han)
+        XCTAssertEqual(yaku?.concealedHan, han)
     }
     
     private func assert<Yaku: YakuProtocol>(_ hand: Hand,

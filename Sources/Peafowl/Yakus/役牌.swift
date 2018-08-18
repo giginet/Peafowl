@@ -5,7 +5,7 @@ public struct 役牌: YakuProtocol {
     public var openedHan: Int? {
         return count
     }
-    public var closedHan: Int {
+    public var concealedHan: Int {
         return count
     }
     

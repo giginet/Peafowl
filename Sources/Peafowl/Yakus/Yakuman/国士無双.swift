@@ -1,7 +1,7 @@
 import Foundation
 
 public struct 国士無双: YakuProtocol {
-    public var closedHan: Int {
+    public var concealedHan: Int {
         if isWaitingEye {
             return 26
         } else {
