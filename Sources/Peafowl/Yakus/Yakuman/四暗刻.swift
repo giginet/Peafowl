@@ -1,7 +1,7 @@
 import Foundation
 
 public struct 四暗刻: YakuProtocol {
-    public let openedHan: Int? = 13
+    public let openedHan: Int? = nil
     public let closedHan: Int = 13
     
     public let name = "四暗刻"

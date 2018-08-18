@@ -80,7 +80,8 @@ final class meldedFormedYakuTests: XCTestCase {
     }
     
     func test混老頭() {
-        assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (九索, 九索, 九索), shouldBe: 混老頭.self)
+        assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (九索, 九索, 九索), shouldNotBe: 混老頭.self)
+        assert((一筒, 一筒), (一索, 一索, 一索), (東, 東, 東), (一萬, 一萬, 一萬), (九索, 九索, 九索), shouldBe: 混老頭.self)
         assert((二筒, 二筒), (一索, 二索, 三索), (七筒, 八筒, 九筒), (一萬, 二萬, 三萬), (九索, 九索, 九索), shouldNotBe: 混老頭.self)
     }
     
@@ -178,6 +179,12 @@ final class meldedFormedYakuTests: XCTestCase {
         assert((一筒, 一筒), (東, 東, 東), (南, 南, 南), (西, 西, 西), (北, 北, 北), shouldBe: 大四喜.self)
         assert((東, 東), (一筒, 一筒, 一筒), (南, 南, 南), (西, 西, 西), (北, 北, 北), shouldNotBe: 大四喜.self)
         assert((撥, 撥), (一筒, 一筒, 一筒), (南, 南, 南), (西, 西, 西), (北, 北, 北), shouldNotBe: 大四喜.self)
+    }
+    
+    func test清老頭() {
+        assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (九索, 九索, 九索), shouldBe: 清老頭.self)
+        assert((一筒, 一筒), (一索, 一索, 一索), (東, 東, 東), (一萬, 一萬, 一萬), (九索, 九索, 九索), shouldNotBe: 清老頭.self)
+        assert((二筒, 二筒), (一索, 二索, 三索), (七筒, 八筒, 九筒), (一萬, 二萬, 三萬), (九索, 九索, 九索), shouldNotBe: 清老頭.self)
     }
 }
 
