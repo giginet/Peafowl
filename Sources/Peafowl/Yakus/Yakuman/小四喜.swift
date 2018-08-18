@@ -3,7 +3,7 @@ import Foundation
 public struct 小四喜: YakuProtocol {
     public let openedFan: Int? = 13
     public let concealedFan: Int = 13
-    
+
     public let name = "小四喜"
     public static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> 小四喜? {
         guard case .melded(let tokens) = form else {
@@ -23,7 +23,7 @@ public struct 小四喜: YakuProtocol {
                 }
             }
         }
-        
+
         return nil
     }
 }

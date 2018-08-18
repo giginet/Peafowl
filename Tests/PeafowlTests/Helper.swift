@@ -3,10 +3,10 @@ import Foundation
 
 extension Hand: ExpressibleByArrayLiteral {
     public typealias ArrayLiteralElement = Tile
-    
+
     public init(arrayLiteral elements: Hand.ArrayLiteralElement...) {
         let picked = elements.last!
-        self = .init(tiles: Array<Hand.ArrayLiteralElement>(elements.dropLast()), picked: picked)
+        self = .init(tiles: Array(elements.dropLast()), picked: picked)
     }
 }
 
@@ -38,5 +38,5 @@ func makeHand(_ eye: (Tile, Tile),
             meld0.0, meld0.1, meld0.2,
             meld1.0, meld1.1, meld1.2,
             meld2.0, meld2.1, meld2.2,
-            meld3.0, meld3.1, meld3.2]
+            meld3.0, meld3.1, meld3.2,]
 }

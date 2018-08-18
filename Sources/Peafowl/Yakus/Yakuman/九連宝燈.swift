@@ -3,7 +3,7 @@ import Foundation
 public struct 九連宝燈: YakuProtocol {
     public let openedFan: Int? = nil
     public let concealedFan: Int = 13
-    
+
     public let name = "九連宝燈"
     public static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> 九連宝燈? {
         guard case .melded(let tokens) = form else {
@@ -23,7 +23,7 @@ public struct 九連宝燈: YakuProtocol {
                 }
                 return nil
             })
-            
+
             return containsSingles.count == 9
         }
         if isValid({ $0.isCharacter }) || isValid({ $0.isBamboo }) || isValid({ $0.isDots }) {

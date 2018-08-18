@@ -1,5 +1,9 @@
 disabled_rules:
   - identifier_name
   - comma
+  - large_tuple
+  - function_parameter_count
+  - line_length
+  - type_name
 trailing_comma:
   mandatory_comma: true

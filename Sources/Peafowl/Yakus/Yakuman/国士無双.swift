@@ -21,7 +21,7 @@ public struct 国士無双: YakuProtocol {
     internal init(isWaitingEye: Bool) {
         self.isWaitingEye = isWaitingEye
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(isWaitingEye)
     }
@@ -31,7 +31,7 @@ public struct 国士無双: YakuProtocol {
         default:
             return nil
         }
-        
+
         let validTiles: Set<Tile> = Set(tiles.compactMap { ($0.isHonor || $0.isTerminal) ? $0 : nil })
         if validTiles.count == 13 {
             let isWaitingEye = tiles.countIf(picked) == 2

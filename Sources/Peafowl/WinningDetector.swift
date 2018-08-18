@@ -29,7 +29,7 @@ internal struct WinningDetector {
             }
             return nil
         }
-        results = results + meldedForms
+        results += meldedForms
         if results.isEmpty {
             return nil
         }

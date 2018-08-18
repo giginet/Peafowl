@@ -11,7 +11,7 @@ extension Token {
     public func allSatisfy(_ predicate: (Tile) throws -> Bool) rethrows -> Bool {
         return try asArray.allSatisfy(predicate)
     }
-    
+
     public func contains(_ tile: Tile) -> Bool {
         return asArray.contains(tile)
     }
@@ -94,11 +94,11 @@ public struct PairToken: Token {
 
         return nil
     }
-    
+
     internal var first: Tile {
         return asArray[0]
     }
-    
+
     internal var second: Tile {
         return asArray[1]
     }
@@ -124,7 +124,7 @@ public struct MeldToken: Token {
     public init?(_ tiles: Tiles) {
         self.init(tiles, isConcealed: true)
     }
-    
+
     public init?(_ tiles: Tiles, isConcealed: Bool) {
         self.tiles = tiles
         self.isConcealed = isConcealed
@@ -152,7 +152,7 @@ public struct MeldToken: Token {
             return false
         }
     }
-    
+
     public func detectWaitingForm(with picked: Tile) -> WaitingForm? {
         if isTriplets && contains(picked) {
             return .eitherOfMelds
@@ -180,27 +180,27 @@ public struct MeldToken: Token {
             return "順子 (\(tiles.0), \(tiles.1), \(tiles.2)"
         }
     }
-    
+
     internal var isCharacter: Bool {
         return tiles.0.isCharacter && tiles.1.isCharacter && tiles.2.isCharacter
     }
-    
+
     internal var isBamboo: Bool {
         return tiles.0.isBamboo && tiles.1.isBamboo && tiles.2.isBamboo
     }
-    
+
     internal var isDots: Bool {
         return tiles.0.isDots && tiles.1.isDots && tiles.2.isDots
     }
-    
+
     internal var first: Tile {
         return asArray[0]
     }
-    
+
     internal var second: Tile {
         return asArray[1]
     }
-    
+
     internal var third: Tile {
         return asArray[2]
     }

@@ -22,7 +22,7 @@ struct WaitingFormDetector {
             let containsInEye = eye.first == picked
             let containingMeld = melds.first { $0.contains(picked) }
             let containsInAnyMeld = containingMeld != nil
-            
+
             switch (containsInEye, containsInAnyMeld) {
             case (true, true):
                 return [.eitherOfMelds]

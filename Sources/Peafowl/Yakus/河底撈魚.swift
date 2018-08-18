@@ -3,7 +3,7 @@ import Foundation
 public struct 河底撈魚: YakuProtocol {
     public let openedFan: Int? = 1
     public let concealedFan: Int = 1
-    
+
     public let name = "河底撈魚"
     public static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> 河底撈魚? {
         if context.winningType == .rob && context.pickedSource == .lastTile {

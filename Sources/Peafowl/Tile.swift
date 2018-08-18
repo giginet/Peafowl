@@ -140,7 +140,7 @@ public struct Tile: Equatable, Comparable, Hashable {
             return false
         }
     }
-    
+
     public var isGreen: Bool {
         switch suit {
         case .bamboo(let n) where [2, 3, 4, 6, 8].contains { $0 == n }:
@@ -151,7 +151,7 @@ public struct Tile: Equatable, Comparable, Hashable {
             return false
         }
     }
-    
+
     public var isYaochu: Bool {
         return isTerminal || isHonor
     }
@@ -185,21 +185,21 @@ public struct Tile: Equatable, Comparable, Hashable {
     public var previous: Tile? {
         return advanced(by: -1)
     }
-    
+
     public var isCharacter: Bool {
         if case .character = suit {
             return true
         }
         return false
     }
-    
+
     public var isBamboo: Bool {
         if case .bamboo = suit {
             return true
         }
         return false
     }
-    
+
     public var isDots: Bool {
         if case .dots = suit {
             return true

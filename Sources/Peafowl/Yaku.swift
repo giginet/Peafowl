@@ -36,7 +36,7 @@ public extension YakuProtocol {
     var isYakuman: Bool {
         return concealedFan >= 13
     }
-    
+
     var description: String {
         return name
     }
@@ -118,12 +118,12 @@ public struct AnyYaku: YakuProtocol, CustomStringConvertible {
         override var name: String {
             return internalYaku.name
         }
-        
+
         override func hash(into hasher: inout Hasher) {
             internalYaku.hash(into: &hasher)
         }
     }
-    
+
     public func type<Yaku: YakuProtocol>(of yakuClass: Yaku.Type) -> Bool {
         return box.yakuClass == yakuClass
     }

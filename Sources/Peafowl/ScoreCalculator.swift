@@ -19,7 +19,7 @@ private func ceilToNearest(_ base: Int, _ value: Int) -> Int {
 public struct CalculationOptions {
     /// 青天井
     var ignoreLimits: Bool
-    
+
     static let `default`: CalculationOptions = .init(ignoreLimits: false)
 }
 
@@ -27,18 +27,18 @@ public struct Score: Comparable {
     public static func == (lhs: Score, rhs: Score) -> Bool {
         return lhs.yaku == rhs.yaku
     }
-    
+
     public static func < (lhs: Score, rhs: Score) -> Bool {
         return lhs.basicScore < rhs.basicScore
     }
-    
+
     public enum Rank: Equatable {
         case mangan
         case haneman
         case baiman
         case sanbaiman
         case yakuman(Int)
-        
+
         var score: Int {
             switch self {
             case .mangan: return 8000
@@ -49,7 +49,7 @@ public struct Score: Comparable {
             }
         }
     }
-    
+
     var fan: Int
     var miniPoint: Int
     var yaku: Set<AnyYaku>
@@ -57,14 +57,14 @@ public struct Score: Comparable {
     var value: Int {
         return rank?.score ?? Int(basicScore)
     }
-    
+
     init(yaku: Set<AnyYaku>, miniPoint: Int, isDealer: Bool) {
         self.miniPoint = miniPoint
         self.yaku = yaku
         self.fan = yaku.concealedFan
         self.basicScore = ceilToNearest(100, calculateScore(from: miniPoint, and: fan, isDealer: isDealer))
     }
-    
+
     var rank: Rank? {
         switch (fan, basicScore) {
         case (0..<5, 0..<8000):
@@ -85,7 +85,7 @@ public struct Score: Comparable {
 
 internal struct PointCulculator {
     var enableCeiling: Bool
-    
+
     func calculateMiniPoint(_ hand: Hand,
                             winningForm: WinningForm,
                             waitingForm: WaitingForm,
@@ -116,7 +116,7 @@ internal struct PointCulculator {
             case .bothSides, .eitherOfMelds:
                 waitingBonusPoint = 0
             }
-            
+
             let concealedAndRobbedBonus = TileUtility.isConcealed(winningForm) && context.winningType == .rob ? 10 : 0
             let selfPickedBonus = context.winningType == .selfPick ? 2 : 0
             let rawPoint = basePoint + meldBonusPoints + eyeBonusPoint + waitingBonusPoint + concealedAndRobbedBonus + selfPickedBonus
@@ -175,15 +175,15 @@ private let availableYakuTypes = [
 public class ScoreCalculator {
     // TODO Currently not working 😛
     private let calculationOptions: CalculationOptions
-    
+
     init(options: CalculationOptions) {
         calculationOptions = options
     }
-    
+
     private let winningDetector = WinningDetector()
     private let waitingFormDetector = WaitingFormDetector()
     private let pointCalculator = PointCulculator(enableCeiling: true)
-    
+
     public func calculate(with hand: Hand, context: GameContext) -> Score? {
         let scores = calculateAllAvailableScores(with: hand, context: context)
         guard let canonicalizedScores = scores?.compactMap({ canonicalizeScore($0, context: context) }) else {
@@ -191,7 +191,7 @@ public class ScoreCalculator {
         }
         return canonicalizedScores.maxElement()
     }
-    
+
     private func canonicalizeScore(_ score: Score, context: GameContext) -> Score? {
         // A score only contains Dora is not allowed
         if let onlyYaku = score.yaku.first, score.yaku.count == 1 && onlyYaku.type(of: ドラ.self) {
@@ -207,16 +207,16 @@ public class ScoreCalculator {
         // TODO When a hand is opened, Reject all concealed only yaku.
         return score
     }
-    
+
     internal func calculateAllAvailableScores(with hand: Hand, context: GameContext) -> [Score]? {
         guard hand.allTiles.count == 14 else {
             return nil
         }
-        
+
         guard let forms = winningDetector.detectForms(hand.allTiles) else {
             return nil
         }
-        
+
         func checkFormedYaku(hand: Hand, winningForm: WinningForm, picked: Tile) -> Set<AnyYaku> {
             let winningYaku: Set<AnyYaku> = Set(availableYakuTypes.map { type in
                 return type.make(with: hand.allTiles,
@@ -226,7 +226,7 @@ public class ScoreCalculator {
                 }.compactMap { $0 })
             return winningYaku
         }
-        
+
         return forms.reduce([]) { (scores, form) -> [Score] in
             switch form {
             case .melded(let tokens):

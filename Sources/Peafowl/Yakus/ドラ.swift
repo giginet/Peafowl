@@ -8,11 +8,11 @@ public struct ドラ: YakuProtocol {
     public var concealedFan: Int {
         return count
     }
-    
+
     internal init(_ count: Int) {
         self.count = count
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(count)
     }
