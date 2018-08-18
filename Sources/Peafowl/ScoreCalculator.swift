@@ -22,7 +22,7 @@ public struct Score: Comparable {
         return lhs.basicScore < rhs.basicScore
     }
     
-    public enum Rank {
+    public enum Rank: Equatable {
         case mangan
         case haneman
         case baiman
@@ -73,8 +73,8 @@ public struct Score: Comparable {
     }
 }
 
-private func calculateScore(from fu: Int, and han: Int) -> Double {
-    return Double(fu) * Double(pow(2, Double(2 + han)))
+private func calculateScore(from miniPoint: Int, and han: Int) -> Double {
+    return Double(miniPoint) * 4 * Double(pow(2, Double(2 + han)))
 }
 
 internal struct PointCulculator {

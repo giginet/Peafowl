@@ -49,6 +49,7 @@ final class ScoreCalculatorTests: XCTestCase {
         XCTAssertEqual(score?.han, 14)
         XCTAssertEqual(score?.miniPoint, 50)
         XCTAssertEqual(score?.score, 32000)
+        XCTAssertEqual(score!.rank!, Score.Rank.yakuman(1))
     }
     
     func testSevenPairs() {
@@ -57,6 +58,7 @@ final class ScoreCalculatorTests: XCTestCase {
         XCTAssertEqual(score?.han, 4)
         XCTAssertEqual(score?.miniPoint, 25)
         XCTAssertEqual(score?.score, 6400)
+        XCTAssertNil(score?.rank)
         XCTAssertEqual(score?.yaku, [AnyYaku(断ヤオ九()), AnyYaku(門前清自摸和()), AnyYaku(七対子())])
     }
 }
