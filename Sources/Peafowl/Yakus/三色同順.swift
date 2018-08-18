@@ -9,7 +9,8 @@ public struct 三色同順: YakuProtocol {
         guard case .melded(let tokens) = form else {
             return nil
         }
-        let melds = [tokens.1, tokens.2, tokens.3, tokens.4]
+        // TODO バグってる
+        let melds = TileUtility.melds(from: tokens)
         let sequentialMelds = melds.filter { $0.isSequential }
         let character = sequentialMelds.first { $0.isCharacter }
         let bamboo = sequentialMelds.first { $0.isBamboo }

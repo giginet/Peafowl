@@ -257,7 +257,7 @@ public class ScoreCalculator {
                 } else {
                     winningYaku = []
                 }
-                return scores + [Score(yaku: winningYaku, miniPoint: 25, isDealer: context.isDealer)]
+                return scores + [Score(yaku: winningYaku, miniPoint: 0, isDealer: context.isDealer)]
             }
         }
     }

@@ -112,6 +112,37 @@ final class ScoreCalculatorTests: XCTestCase {
         XCTAssertNil(scores?.last?.rank)
     }
     
+    func testYakuman() {
+        let hand: Hand = [二萬, 二萬, 三萬, 三萬, 三萬, 七筒, 七筒, 七筒, 五萬, 五萬, 五萬, 八索, 八索, 八索]
+        let scores = scoreCalculator.calculateAllAvailableScores(with: hand, context: context)
+        XCTAssertEqual(scores?.count, 1)
+        XCTAssertEqual(scores?.first?.yaku, [
+            AnyYaku(四暗刻()),
+            AnyYaku(三色同順()),
+            AnyYaku(門前清自摸和()),
+            AnyYaku(断ヤオ九()),
+            ])
+        
+        let finalScore = scoreCalculator.calculate(with: hand, context: context)
+        XCTAssertEqual(finalScore?.yaku, [AnyYaku(四暗刻())])
+        XCTAssertEqual(finalScore?.fan, 13)
+        XCTAssertEqual(finalScore?.value, 32000)
+        XCTAssertEqual(finalScore?.rank, .yakuman(1))
+    }
+    
+    func testMultipleYakuman() {
+        let hand: Hand = [撥, 撥, 東, 東, 東, 西, 西, 西, 南, 南, 南, 北, 北, 北]
+        let score = scoreCalculator.calculate(with: hand, context: context)
+        XCTAssertEqual(score?.yaku, [
+            AnyYaku(四暗刻()),
+            AnyYaku(大四喜()),
+            AnyYaku(字一色()),
+            ])
+        XCTAssertEqual(score?.fan, 39)
+        XCTAssertEqual(score?.value, 96000)
+        XCTAssertEqual(score?.rank, .yakuman(3))
+    }
+    
     func testSevenPairs() {
         let hand: Hand = [二萬, 二萬, 三索, 三索, 五萬, 五萬, 四筒, 四筒, 六萬, 六萬, 八索, 八索, 七筒, 七筒]
         let score = scoreCalculator.calculate(with: hand, context: context)
@@ -122,5 +153,15 @@ final class ScoreCalculatorTests: XCTestCase {
         XCTAssertEqual(score?.yaku, [AnyYaku(断ヤオ九()),
                                      AnyYaku(門前清自摸和()),
                                      AnyYaku(七対子())])
+    }
+    
+    func testThirteenOrphans() {
+        let hand: Hand = [一筒, 九筒, 一索, 九索, 一萬, 九萬, 東, 南, 西, 北, 白, 撥, 中, 中]
+        let score = scoreCalculator.calculate(with: hand, context: context)
+        XCTAssertEqual(score?.fan, 26)
+        XCTAssertEqual(score?.miniPoint, 0)
+        XCTAssertEqual(score?.value, 64000)
+        XCTAssertEqual(score?.rank, .yakuman(2))
+        XCTAssertEqual(score?.yaku, [AnyYaku(国士無双(isWaitingEye: true))])
     }
 }

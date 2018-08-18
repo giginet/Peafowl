@@ -8,7 +8,13 @@ public struct 国士無双: YakuProtocol {
             return 13
         }
     }
-    public let name = "国士無双"
+    public var name: String {
+        if isWaitingEye {
+            return "国士無双単騎待ち"
+        } else {
+            return "国士無双"
+        }
+    }
     public let openedFan: Int? = nil
     public let isWaitingEye: Bool
 
@@ -17,7 +23,6 @@ public struct 国士無双: YakuProtocol {
     }
     
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(self)
         hasher.combine(isWaitingEye)
     }
     public static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> 国士無双? {
