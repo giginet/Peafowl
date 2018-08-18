@@ -66,16 +66,16 @@ public struct Score: Comparable {
     }
     
     var rank: Rank? {
-        switch fan {
-        case 0..<5:
+        switch (fan, basicScore) {
+        case (0..<5, 0..<8000):
             return nil
-        case 5:
+        case (_, 8000..<12000):
             return .mangan
-        case 6...7:
+        case (6...7, _):
             return .haneman
-        case 8...10:
+        case (8...10, _):
             return .baiman
-        case 10...12:
+        case (10...12, _):
             return .sanbaiman
         default:
             return .yakuman(Int(floorf(Float(fan) / 13.0)))

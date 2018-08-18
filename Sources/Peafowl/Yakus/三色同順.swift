@@ -2,7 +2,7 @@ import Foundation
 
 public struct 三色同順: YakuProtocol {
     public let openedFan: Int? = nil
-    public let concealedFan: Int = 1
+    public let concealedFan: Int = 2
     
     public let name = "三色同順"
     public static func make(with tiles: [Tile], form: WinningForm, picked: Tile, context: GameContext) -> 三色同順? {
