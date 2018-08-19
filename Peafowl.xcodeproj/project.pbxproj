@@ -20,6 +20,69 @@
 		072DD2CD2127CB9E00F86C39 /* 地和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2CC2127CB9E00F86C39 /* 地和.swift */; };
 		072DD2D02127CEA300F86C39 /* 平和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2CF2127CEA300F86C39 /* 平和.swift */; };
 		072DD2D421282F8300F86C39 /* WaitingFormDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2D321282F8300F86C39 /* WaitingFormDetector.swift */; };
+		072DD2E32129205800F86C39 /* Peafowl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072DD2DA2129205700F86C39 /* Peafowl.framework */; };
+		072DD2F12129207500F86C39 /* Int+Tiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3C20E2AE9A0009EA6D /* Int+Tiles.swift */; };
+		072DD2F22129207500F86C39 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C6398321120CB900725AFB /* Array+Extensions.swift */; };
+		072DD2F32129207500F86C39 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED343D2110B6FD00D02AFA /* Sequence+Extensions.swift */; };
+		072DD2F42129207500F86C39 /* Array+Tiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C6398621120F1000725AFB /* Array+Tiles.swift */; };
+		072DD2F52129207500F86C39 /* Set+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762D3512116D11500CC66D5 /* Set+Extensions.swift */; };
+		072DD2F62129207B00F86C39 /* 国士無双.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4920E2BEE90009EA6D /* 国士無双.swift */; };
+		072DD2F72129207B00F86C39 /* 四暗刻.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4196D2125D6C400DB09EF /* 四暗刻.swift */; };
+		072DD2F82129207B00F86C39 /* 字一色.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D392125E05100733FDC /* 字一色.swift */; };
+		072DD2F92129207B00F86C39 /* 緑一色.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D3B2125E0A000733FDC /* 緑一色.swift */; };
+		072DD2FA2129207B00F86C39 /* 大三元.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D3D2125E50B00733FDC /* 大三元.swift */; };
+		072DD2FB2129207B00F86C39 /* 小四喜.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2BB2127A80900F86C39 /* 小四喜.swift */; };
+		072DD2FC2129207B00F86C39 /* 大四喜.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2BD2127A81F00F86C39 /* 大四喜.swift */; };
+		072DD2FD2129207B00F86C39 /* 清老頭.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2BF2127B5AC00F86C39 /* 清老頭.swift */; };
+		072DD2FE2129207B00F86C39 /* 九連宝燈.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2C22127B71700F86C39 /* 九連宝燈.swift */; };
+		072DD2FF2129207B00F86C39 /* 天和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2CA2127CB6000F86C39 /* 天和.swift */; };
+		072DD3002129207B00F86C39 /* 地和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2CC2127CB9E00F86C39 /* 地和.swift */; };
+		072DD3012129207B00F86C39 /* 断ヤオ九.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4520E2BB470009EA6D /* 断ヤオ九.swift */; };
+		072DD3022129207B00F86C39 /* 七対子.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4720E2BE110009EA6D /* 七対子.swift */; };
+		072DD3032129207B00F86C39 /* 立直.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B64756212088C900216DE5 /* 立直.swift */; };
+		072DD3042129207B00F86C39 /* ダブル立直.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2C82127CACB00F86C39 /* ダブル立直.swift */; };
+		072DD3052129207B00F86C39 /* 一発.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419712125D8B700DB09EF /* 一発.swift */; };
+		072DD3062129207B00F86C39 /* 門前清自摸和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D2F2125DB1E00733FDC /* 門前清自摸和.swift */; };
+		072DD3072129207B00F86C39 /* 嶺上開花.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D312125DB9D00733FDC /* 嶺上開花.swift */; };
+		072DD3082129207B00F86C39 /* 海底摸月.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D332125DC0900733FDC /* 海底摸月.swift */; };
+		072DD3092129207B00F86C39 /* 河底撈魚.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D352125DC7200733FDC /* 河底撈魚.swift */; };
+		072DD30A2129207B00F86C39 /* 一盃口.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B6475821208EE500216DE5 /* 一盃口.swift */; };
+		072DD30B2129207B00F86C39 /* 二盃口.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B6475A212090F800216DE5 /* 二盃口.swift */; };
+		072DD30C2129207B00F86C39 /* 三色同順.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2BBDF21247B1200993F46 /* 三色同順.swift */; };
+		072DD30D2129207B00F86C39 /* 三色同刻.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2BBE1212481E800993F46 /* 三色同刻.swift */; };
+		072DD30E2129207B00F86C39 /* 混老頭.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4195A21248F1000DB09EF /* 混老頭.swift */; };
+		072DD30F2129207B00F86C39 /* 混全帯么九.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4195C21248FEE00DB09EF /* 混全帯么九.swift */; };
+		072DD3102129207B00F86C39 /* 純全帯么九.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4195E2124929500DB09EF /* 純全帯么九.swift */; };
+		072DD3112129207B00F86C39 /* 一気通貫.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419602125C96200DB09EF /* 一気通貫.swift */; };
+		072DD3122129207B00F86C39 /* 小三元.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419642125CD6000DB09EF /* 小三元.swift */; };
+		072DD3132129207B00F86C39 /* 混一色.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419662125D20700DB09EF /* 混一色.swift */; };
+		072DD3142129207B00F86C39 /* 清一色.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419682125D2CA00DB09EF /* 清一色.swift */; };
+		072DD3152129207B00F86C39 /* 三暗刻.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4196A2125D56C00DB09EF /* 三暗刻.swift */; };
+		072DD3162129207B00F86C39 /* 対々和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4196F2125D6FD00DB09EF /* 対々和.swift */; };
+		072DD3172129207B00F86C39 /* 役牌.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2C42127C09300F86C39 /* 役牌.swift */; };
+		072DD3182129207B00F86C39 /* ドラ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2C62127C77B00F86C39 /* ドラ.swift */; };
+		072DD3192129207B00F86C39 /* 平和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2CF2127CEA300F86C39 /* 平和.swift */; };
+		072DD31A2129208000F86C39 /* Peafowl.h in Headers */ = {isa = PBXBuildFile; fileRef = 07ED2F2D20E2AC6D00EF677F /* Peafowl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		072DD31B2129208000F86C39 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3A20E2ADEE0009EA6D /* Tile.swift */; };
+		072DD31C2129208000F86C39 /* TileUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419622125CA3400DB09EF /* TileUtility.swift */; };
+		072DD31D2129208000F86C39 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3E20E2B4F10009EA6D /* Hand.swift */; };
+		072DD31E2129208000F86C39 /* Yaku.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4020E2B5960009EA6D /* Yaku.swift */; };
+		072DD31F2129208000F86C39 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4220E2B68C0009EA6D /* Token.swift */; };
+		072DD3202129208000F86C39 /* ScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0778DC4A2118AD0200B8B841 /* ScoreCalculator.swift */; };
+		072DD3212129208000F86C39 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07212FA8210F6B10003F4E75 /* Tokenizer.swift */; };
+		072DD3222129208000F86C39 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07212FAA210F7586003F4E75 /* Form.swift */; };
+		072DD3232129208000F86C39 /* Tile+Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED34412110C1E300D02AFA /* Tile+Aliases.swift */; };
+		072DD3242129208000F86C39 /* WinningDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07811BEE211F432A0052DCB2 /* WinningDetector.swift */; };
+		072DD3252129208000F86C39 /* GameContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07811BF4211F71B40052DCB2 /* GameContext.swift */; };
+		072DD3262129208000F86C39 /* TileCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B64754212080FE00216DE5 /* TileCollection.swift */; };
+		072DD3272129208000F86C39 /* WaitingFormDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2D321282F8300F86C39 /* WaitingFormDetector.swift */; };
+		072DD3282129208500F86C39 /* TileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074FC54E21076CA9007DADDE /* TileTests.swift */; };
+		072DD3292129208500F86C39 /* TokenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A22F802113BC720098F546 /* TokenTests.swift */; };
+		072DD32A2129208500F86C39 /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762D34F2115F07000CC66D5 /* TokenizerTests.swift */; };
+		072DD32B2129208500F86C39 /* AnyYakuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0778DC4F2118B45900B8B841 /* AnyYakuTests.swift */; };
+		072DD32C2129208500F86C39 /* ScoreCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07811BF0211F6D980052DCB2 /* ScoreCalculatorTests.swift */; };
+		072DD32D2129208500F86C39 /* YakuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07811BF2211F70F90052DCB2 /* YakuTests.swift */; };
+		072DD32E2129208500F86C39 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B6475221207D3400216DE5 /* Helper.swift */; };
 		07315D302125DB1E00733FDC /* 門前清自摸和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D2F2125DB1E00733FDC /* 門前清自摸和.swift */; };
 		07315D322125DB9D00733FDC /* 嶺上開花.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D312125DB9D00733FDC /* 嶺上開花.swift */; };
 		07315D342125DC0900733FDC /* 海底摸月.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D332125DC0900733FDC /* 海底摸月.swift */; };
@@ -73,6 +136,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		072DD2E42129205800F86C39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07ED2F0A20E2AC0F00EF677F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 072DD2D92129205700F86C39;
+			remoteInfo = "Peafowl-macOS";
+		};
 		07ED2F1E20E2AC0F00EF677F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 07ED2F0A20E2AC0F00EF677F /* Project object */;
@@ -96,6 +166,8 @@
 		072DD2CC2127CB9E00F86C39 /* 地和.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "地和.swift"; sourceTree = "<group>"; };
 		072DD2CF2127CEA300F86C39 /* 平和.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "平和.swift"; sourceTree = "<group>"; };
 		072DD2D321282F8300F86C39 /* WaitingFormDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingFormDetector.swift; sourceTree = "<group>"; };
+		072DD2DA2129205700F86C39 /* Peafowl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peafowl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		072DD2E22129205800F86C39 /* PeafowlTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PeafowlTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07315D2F2125DB1E00733FDC /* 門前清自摸和.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "門前清自摸和.swift"; sourceTree = "<group>"; };
 		07315D312125DB9D00733FDC /* 嶺上開花.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "嶺上開花.swift"; sourceTree = "<group>"; };
 		07315D332125DC0900733FDC /* 海底摸月.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "海底摸月.swift"; sourceTree = "<group>"; };
@@ -131,7 +203,7 @@
 		07C6398321120CB900725AFB /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		07C6398621120F1000725AFB /* Array+Tiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Tiles.swift"; sourceTree = "<group>"; };
 		07ED2F1320E2AC0F00EF677F /* Peafowl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peafowl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		07ED2F1C20E2AC0F00EF677F /* PeafowlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeafowlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07ED2F1C20E2AC0F00EF677F /* PeafowlTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PeafowlTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07ED2F2D20E2AC6D00EF677F /* Peafowl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Peafowl.h; path = Sources/Peafowl/Peafowl.h; sourceTree = SOURCE_ROOT; };
 		07ED2F2E20E2AC6D00EF677F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Peafowl/Info.plist; sourceTree = SOURCE_ROOT; };
 		07ED2F3220E2AC7C00EF677F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/PeafowlTests/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -152,6 +224,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		072DD2D72129205700F86C39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		072DD2DF2129205800F86C39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				072DD2E32129205800F86C39 /* Peafowl.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07ED2F1020E2AC0F00EF677F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -246,7 +333,9 @@
 			isa = PBXGroup;
 			children = (
 				07ED2F1320E2AC0F00EF677F /* Peafowl.framework */,
-				07ED2F1C20E2AC0F00EF677F /* PeafowlTests.xctest */,
+				07ED2F1C20E2AC0F00EF677F /* PeafowlTests-iOS.xctest */,
+				072DD2DA2129205700F86C39 /* Peafowl.framework */,
+				072DD2E22129205800F86C39 /* PeafowlTests-macOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -295,6 +384,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		072DD2D52129205700F86C39 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				072DD31A2129208000F86C39 /* Peafowl.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07ED2F0E20E2AC0F00EF677F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -306,9 +403,45 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		07ED2F1220E2AC0F00EF677F /* Peafowl */ = {
+		072DD2D92129205700F86C39 /* Peafowl-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07ED2F2720E2AC1000EF677F /* Build configuration list for PBXNativeTarget "Peafowl" */;
+			buildConfigurationList = 072DD2EB2129205800F86C39 /* Build configuration list for PBXNativeTarget "Peafowl-macOS" */;
+			buildPhases = (
+				072DD2D52129205700F86C39 /* Headers */,
+				072DD2D62129205700F86C39 /* Sources */,
+				072DD2D72129205700F86C39 /* Frameworks */,
+				072DD2D82129205700F86C39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Peafowl-macOS";
+			productName = "Peafowl-macOS";
+			productReference = 072DD2DA2129205700F86C39 /* Peafowl.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		072DD2E12129205800F86C39 /* PeafowlTests-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 072DD2EE2129205800F86C39 /* Build configuration list for PBXNativeTarget "PeafowlTests-macOS" */;
+			buildPhases = (
+				072DD2DE2129205800F86C39 /* Sources */,
+				072DD2DF2129205800F86C39 /* Frameworks */,
+				072DD2E02129205800F86C39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				072DD2E52129205800F86C39 /* PBXTargetDependency */,
+			);
+			name = "PeafowlTests-macOS";
+			productName = "Peafowl-macOSTests";
+			productReference = 072DD2E22129205800F86C39 /* PeafowlTests-macOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		07ED2F1220E2AC0F00EF677F /* Peafowl-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07ED2F2720E2AC1000EF677F /* Build configuration list for PBXNativeTarget "Peafowl-iOS" */;
 			buildPhases = (
 				07ED2F0E20E2AC0F00EF677F /* Headers */,
 				07ED2F0F20E2AC0F00EF677F /* Sources */,
@@ -319,14 +452,14 @@
 			);
 			dependencies = (
 			);
-			name = Peafowl;
+			name = "Peafowl-iOS";
 			productName = Peafowl;
 			productReference = 07ED2F1320E2AC0F00EF677F /* Peafowl.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		07ED2F1B20E2AC0F00EF677F /* PeafowlTests */ = {
+		07ED2F1B20E2AC0F00EF677F /* PeafowlTests-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07ED2F2A20E2AC1000EF677F /* Build configuration list for PBXNativeTarget "PeafowlTests" */;
+			buildConfigurationList = 07ED2F2A20E2AC1000EF677F /* Build configuration list for PBXNativeTarget "PeafowlTests-iOS" */;
 			buildPhases = (
 				07ED2F1820E2AC0F00EF677F /* Sources */,
 				07ED2F1920E2AC0F00EF677F /* Frameworks */,
@@ -337,9 +470,9 @@
 			dependencies = (
 				07ED2F1F20E2AC0F00EF677F /* PBXTargetDependency */,
 			);
-			name = PeafowlTests;
+			name = "PeafowlTests-iOS";
 			productName = PeafowlTests;
-			productReference = 07ED2F1C20E2AC0F00EF677F /* PeafowlTests.xctest */;
+			productReference = 07ED2F1C20E2AC0F00EF677F /* PeafowlTests-iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -352,6 +485,12 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = giginet;
 				TargetAttributes = {
+					072DD2D92129205700F86C39 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					072DD2E12129205800F86C39 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					07ED2F1220E2AC0F00EF677F = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1000;
@@ -373,13 +512,29 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				07ED2F1220E2AC0F00EF677F /* Peafowl */,
-				07ED2F1B20E2AC0F00EF677F /* PeafowlTests */,
+				07ED2F1220E2AC0F00EF677F /* Peafowl-iOS */,
+				072DD2D92129205700F86C39 /* Peafowl-macOS */,
+				07ED2F1B20E2AC0F00EF677F /* PeafowlTests-iOS */,
+				072DD2E12129205800F86C39 /* PeafowlTests-macOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		072DD2D82129205700F86C39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		072DD2E02129205800F86C39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07ED2F1120E2AC0F00EF677F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -397,6 +552,81 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		072DD2D62129205700F86C39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				072DD3042129207B00F86C39 /* ダブル立直.swift in Sources */,
+				072DD2F92129207B00F86C39 /* 緑一色.swift in Sources */,
+				072DD3112129207B00F86C39 /* 一気通貫.swift in Sources */,
+				072DD31B2129208000F86C39 /* Tile.swift in Sources */,
+				072DD2F32129207500F86C39 /* Sequence+Extensions.swift in Sources */,
+				072DD3092129207B00F86C39 /* 河底撈魚.swift in Sources */,
+				072DD3122129207B00F86C39 /* 小三元.swift in Sources */,
+				072DD3242129208000F86C39 /* WinningDetector.swift in Sources */,
+				072DD3032129207B00F86C39 /* 立直.swift in Sources */,
+				072DD3142129207B00F86C39 /* 清一色.swift in Sources */,
+				072DD3132129207B00F86C39 /* 混一色.swift in Sources */,
+				072DD30F2129207B00F86C39 /* 混全帯么九.swift in Sources */,
+				072DD31E2129208000F86C39 /* Yaku.swift in Sources */,
+				072DD3222129208000F86C39 /* Form.swift in Sources */,
+				072DD3152129207B00F86C39 /* 三暗刻.swift in Sources */,
+				072DD2F12129207500F86C39 /* Int+Tiles.swift in Sources */,
+				072DD3192129207B00F86C39 /* 平和.swift in Sources */,
+				072DD2F22129207500F86C39 /* Array+Extensions.swift in Sources */,
+				072DD2F72129207B00F86C39 /* 四暗刻.swift in Sources */,
+				072DD3262129208000F86C39 /* TileCollection.swift in Sources */,
+				072DD2F52129207500F86C39 /* Set+Extensions.swift in Sources */,
+				072DD2F82129207B00F86C39 /* 字一色.swift in Sources */,
+				072DD31F2129208000F86C39 /* Token.swift in Sources */,
+				072DD3082129207B00F86C39 /* 海底摸月.swift in Sources */,
+				072DD3232129208000F86C39 /* Tile+Aliases.swift in Sources */,
+				072DD31C2129208000F86C39 /* TileUtility.swift in Sources */,
+				072DD2FF2129207B00F86C39 /* 天和.swift in Sources */,
+				072DD2FB2129207B00F86C39 /* 小四喜.swift in Sources */,
+				072DD3252129208000F86C39 /* GameContext.swift in Sources */,
+				072DD3202129208000F86C39 /* ScoreCalculator.swift in Sources */,
+				072DD2FE2129207B00F86C39 /* 九連宝燈.swift in Sources */,
+				072DD3272129208000F86C39 /* WaitingFormDetector.swift in Sources */,
+				072DD2FA2129207B00F86C39 /* 大三元.swift in Sources */,
+				072DD3012129207B00F86C39 /* 断ヤオ九.swift in Sources */,
+				072DD30D2129207B00F86C39 /* 三色同刻.swift in Sources */,
+				072DD2FD2129207B00F86C39 /* 清老頭.swift in Sources */,
+				072DD3022129207B00F86C39 /* 七対子.swift in Sources */,
+				072DD30E2129207B00F86C39 /* 混老頭.swift in Sources */,
+				072DD30C2129207B00F86C39 /* 三色同順.swift in Sources */,
+				072DD3102129207B00F86C39 /* 純全帯么九.swift in Sources */,
+				072DD3072129207B00F86C39 /* 嶺上開花.swift in Sources */,
+				072DD3162129207B00F86C39 /* 対々和.swift in Sources */,
+				072DD3182129207B00F86C39 /* ドラ.swift in Sources */,
+				072DD3212129208000F86C39 /* Tokenizer.swift in Sources */,
+				072DD2F62129207B00F86C39 /* 国士無双.swift in Sources */,
+				072DD30A2129207B00F86C39 /* 一盃口.swift in Sources */,
+				072DD31D2129208000F86C39 /* Hand.swift in Sources */,
+				072DD3062129207B00F86C39 /* 門前清自摸和.swift in Sources */,
+				072DD2FC2129207B00F86C39 /* 大四喜.swift in Sources */,
+				072DD3052129207B00F86C39 /* 一発.swift in Sources */,
+				072DD2F42129207500F86C39 /* Array+Tiles.swift in Sources */,
+				072DD30B2129207B00F86C39 /* 二盃口.swift in Sources */,
+				072DD3002129207B00F86C39 /* 地和.swift in Sources */,
+				072DD3172129207B00F86C39 /* 役牌.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		072DD2DE2129205800F86C39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				072DD32A2129208500F86C39 /* TokenizerTests.swift in Sources */,
+				072DD32E2129208500F86C39 /* Helper.swift in Sources */,
+				072DD32D2129208500F86C39 /* YakuTests.swift in Sources */,
+				072DD3282129208500F86C39 /* TileTests.swift in Sources */,
+				072DD32C2129208500F86C39 /* ScoreCalculatorTests.swift in Sources */,
+				072DD32B2129208500F86C39 /* AnyYakuTests.swift in Sources */,
+				072DD3292129208500F86C39 /* TokenTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07ED2F0F20E2AC0F00EF677F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -475,14 +705,125 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		072DD2E52129205800F86C39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 072DD2D92129205700F86C39 /* Peafowl-macOS */;
+			targetProxy = 072DD2E42129205800F86C39 /* PBXContainerItemProxy */;
+		};
 		07ED2F1F20E2AC0F00EF677F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 07ED2F1220E2AC0F00EF677F /* Peafowl */;
+			target = 07ED2F1220E2AC0F00EF677F /* Peafowl-iOS */;
 			targetProxy = 07ED2F1E20E2AC0F00EF677F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		072DD2EC2129205800F86C39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2AWR7Z4WYE;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Sources/Peafowl/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.Peafowl;
+				PRODUCT_MODULE_NAME = Peafowl;
+				PRODUCT_NAME = Peafowl;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		072DD2ED2129205800F86C39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2AWR7Z4WYE;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Sources/Peafowl/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.Peafowl;
+				PRODUCT_MODULE_NAME = Peafowl;
+				PRODUCT_NAME = Peafowl;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		072DD2EF2129205800F86C39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2AWR7Z4WYE;
+				INFOPLIST_FILE = Tests/PeafowlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.giginet.Peafowl-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		072DD2F02129205800F86C39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2AWR7Z4WYE;
+				INFOPLIST_FILE = Tests/PeafowlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.giginet.Peafowl-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 		07ED2F2520E2AC1000EF677F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -622,7 +963,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.Peafowl;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Peafowl;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -649,7 +990,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.Peafowl;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Peafowl;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -697,6 +1038,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		072DD2EB2129205800F86C39 /* Build configuration list for PBXNativeTarget "Peafowl-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				072DD2EC2129205800F86C39 /* Debug */,
+				072DD2ED2129205800F86C39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		072DD2EE2129205800F86C39 /* Build configuration list for PBXNativeTarget "PeafowlTests-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				072DD2EF2129205800F86C39 /* Debug */,
+				072DD2F02129205800F86C39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		07ED2F0D20E2AC0F00EF677F /* Build configuration list for PBXProject "Peafowl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -706,7 +1065,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07ED2F2720E2AC1000EF677F /* Build configuration list for PBXNativeTarget "Peafowl" */ = {
+		07ED2F2720E2AC1000EF677F /* Build configuration list for PBXNativeTarget "Peafowl-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07ED2F2820E2AC1000EF677F /* Debug */,
@@ -715,7 +1074,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07ED2F2A20E2AC1000EF677F /* Build configuration list for PBXNativeTarget "PeafowlTests" */ = {
+		07ED2F2A20E2AC1000EF677F /* Build configuration list for PBXNativeTarget "PeafowlTests-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07ED2F2B20E2AC1000EF677F /* Debug */,

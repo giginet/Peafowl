@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "07ED2F1220E2AC0F00EF677F"
+               BlueprintIdentifier = "072DD2D92129205700F86C39"
                BuildableName = "Peafowl.framework"
-               BlueprintName = "Peafowl"
+               BlueprintName = "Peafowl-macOS"
                ReferencedContainer = "container:Peafowl.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,13 +29,12 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO"
-            testExecutionOrdering = "random">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "07ED2F1B20E2AC0F00EF677F"
-               BuildableName = "PeafowlTests.xctest"
-               BlueprintName = "PeafowlTests"
+               BlueprintIdentifier = "072DD2E12129205800F86C39"
+               BuildableName = "PeafowlTests-macOS.xctest"
+               BlueprintName = "PeafowlTests-macOS"
                ReferencedContainer = "container:Peafowl.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "07ED2F1220E2AC0F00EF677F"
+            BlueprintIdentifier = "072DD2D92129205700F86C39"
             BuildableName = "Peafowl.framework"
-            BlueprintName = "Peafowl"
+            BlueprintName = "Peafowl-macOS"
             ReferencedContainer = "container:Peafowl.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "07ED2F1220E2AC0F00EF677F"
+            BlueprintIdentifier = "072DD2D92129205700F86C39"
             BuildableName = "Peafowl.framework"
-            BlueprintName = "Peafowl"
+            BlueprintName = "Peafowl-macOS"
             ReferencedContainer = "container:Peafowl.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -83,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "07ED2F1220E2AC0F00EF677F"
+            BlueprintIdentifier = "072DD2D92129205700F86C39"
             BuildableName = "Peafowl.framework"
-            BlueprintName = "Peafowl"
+            BlueprintName = "Peafowl-macOS"
             ReferencedContainer = "container:Peafowl.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

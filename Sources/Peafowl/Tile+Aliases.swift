@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 public let 🀇 = 1.萬!
 public let 🀈 = 2.萬!
