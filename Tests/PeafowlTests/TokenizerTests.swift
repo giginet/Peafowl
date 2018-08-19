@@ -12,6 +12,9 @@ final class TokenizerTests: XCTestCase {
 
         let hand2 = [二萬, 二萬, 三萬, 三萬, 四萬, 四萬, 五萬, 五萬, 二索, 三索, 四索, 二筒, 三筒, 四筒]
         XCTAssertEqual(Tokenizer().tokenize(from: hand2).count, 2)
+        
+        let hand3 = [二筒, 二筒, 三筒, 三筒, 三筒, 四筒, 四筒, 四筒, 五筒, 五筒, 五筒, 六筒, 六筒, 六筒]
+        XCTAssertEqual(Tokenizer().tokenize(from: hand3).count, 4)
     }
 
     func testFindEyesTests() {

@@ -2,32 +2,46 @@ import Foundation
 
 internal typealias TokenizedResult = (PairToken, [MeldToken])
 
+private func consistsOfSameElements<Element: Equatable>(between lhs: [Element], and rhs: [Element]) -> Bool {
+    var mutable = rhs
+    for element in lhs {
+        let removed = mutable.removeFirst(element)
+        if removed == nil {
+            return false
+        }
+    }
+    return true
+}
+
+private func contains<Element: Equatable>(_ element: [Element], in collection: [[Element]]) -> Bool {
+    return collection.contains { consistsOfSameElements(between: element, and: $0) }
+}
+
 internal struct Tokenizer {
     func tokenize(from tiles: [Tile]) -> [TokenizedResult] {
         let eyes = Set(Tokenizer.findEyes(from: tiles))
-        let forms: [TokenizedResult] = eyes.map { eye in
+        let forms: [TokenizedResult] = eyes.reduce(into: []) { results, eye in
             let currentTiles = tiles.removed(eye)
             let searchedMelds = searchMelds(remainingTiles: currentTiles)
             for melds in searchedMelds where melds.count == 4 {
-                return (eye, melds)
+                results.append((eye, melds))
             }
-            return nil
             }.compactMap { $0 }
         return forms
     }
 
     private func searchMelds(remainingTiles: [Tile],
-                             context: [MeldToken] = [],
+                             stack: [MeldToken] = [],
                              searchedMelds: Set<[MeldToken]> = Set()) -> Set<[MeldToken]> {
         let melds = Tokenizer.findMelds(from: remainingTiles)
-        return melds.reduce(into: Set<[MeldToken]>()) { searchedMelds, meld in
+        return melds.reduce(into: searchedMelds) { searchedMelds, meld in
             let newRemainingTiles = remainingTiles.removed(meld)
-            let newContext = context + [meld]
-            if newContext.count == 4 {
-                searchedMelds.insert(newContext)
+            let newStack = stack + [meld]
+            if newStack.count == 4 && !contains(newStack, in: Array(searchedMelds)) {
+                searchedMelds.insert(newStack)
             } else {
                 let recursiveSearchedMelds = searchMelds(remainingTiles: newRemainingTiles,
-                                                         context: newContext ,
+                                                         stack: newStack ,
                                                          searchedMelds: searchedMelds)
                 searchedMelds.formUnion(recursiveSearchedMelds)
             }
