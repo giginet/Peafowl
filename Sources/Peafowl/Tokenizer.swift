@@ -3,14 +3,10 @@ import Foundation
 internal typealias TokenizedResult = (PairToken, [MeldToken])
 
 private func consistsOfSameElements<Element: Equatable>(between lhs: [Element], and rhs: [Element]) -> Bool {
-    var mutable = rhs
-    for element in lhs {
-        let removed = mutable.removeFirst(element)
-        if removed == nil {
-            return false
-        }
+    let contained = lhs.compactMap { element in
+        return rhs.contains(element) ? element : nil
     }
-    return true
+    return contained == lhs
 }
 
 private func contains<Element: Equatable>(_ element: [Element], in collection: [[Element]]) -> Bool {
