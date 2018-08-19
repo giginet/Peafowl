@@ -1,5 +1,6 @@
 # Peafowl
 
+[![Build Status](https://travis-ci.com/giginet/Peafowl.svg?branch=master)](https://travis-ci.com/giginet/Peafowl)
 [![Language](https://img.shields.io/badge/language-Swift%204.2-orange.svg)](https://swift.org)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform iOS|macOS](https://img.shields.io/badge/platform-iOS|macOS-lightgray.svg)](https://github.com/giginet/Peafowl)
