@@ -51,6 +51,20 @@ final class ScoreCalculatorTests: XCTestCase {
         XCTAssertEqual(score?.value, 32000)
         XCTAssertEqual(score!.rank!, .yakuman(1))
     }
+    
+    func testWithoutAnyYaku() {
+        let hand: Hand = [南, 南, 一萬, 二萬, 三萬, 七筒, 八筒, 九筒, 北, 北, 北, 三索, 五索, 四索]
+        let context = makeContext(winningType: .rob)
+        let score = scoreCalculator.calculate(with: hand, context: context)
+        XCTAssertNil(score)
+    }
+    
+    func testOnlyDora() {
+        let hand: Hand = [南, 南, 一萬, 二萬, 三萬, 七筒, 八筒, 九筒, 北, 北, 北, 三索, 五索, 四索]
+        let context = makeContext(winningType: .rob, dora: [北])
+        let score = scoreCalculator.calculate(with: hand, context: context)
+        XCTAssertNil(score)
+    }
 
     func testMultipleTokens() {
         let hand: Hand = [二萬, 二萬, 三萬, 四萬, 四萬, 五萬, 五萬, 二索, 三索, 四索, 二筒, 三筒, 四筒, 三萬]

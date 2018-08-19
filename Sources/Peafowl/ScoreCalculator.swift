@@ -193,6 +193,9 @@ public class ScoreCalculator {
     }
 
     private func canonicalizeScore(_ score: Score, context: GameContext) -> Score? {
+        if score.yaku.isEmpty {
+            return nil
+        }
         // A score only contains Dora is not allowed
         if let onlyYaku = score.yaku.first, score.yaku.count == 1 && onlyYaku.type(of: ドラ.self) {
             return nil
