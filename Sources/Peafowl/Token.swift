@@ -175,9 +175,9 @@ public struct MeldToken: Token {
 
     public var description: String {
         if isTriplets {
-            return "刻子 (\(tiles.0), \(tiles.1), \(tiles.2)"
+            return "刻子 (\(tiles.0), \(tiles.1), \(tiles.2))"
         } else {
-            return "順子 (\(tiles.0), \(tiles.1), \(tiles.2)"
+            return "順子 (\(tiles.0), \(tiles.1), \(tiles.2))"
         }
     }
 
