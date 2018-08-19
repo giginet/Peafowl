@@ -1,10 +1,7 @@
-import UIKit
+import Cocoa
 import Peafowl
 
 var str = "Hello, playground"
-let a = 1.萬!
-let b = Tile.blank
-let c = 6.筒!
+Tile(.east)
 
-let sorted = [a, b, c].sorted { $0 < $1 }
-sorted
+[二萬, 二萬, 三萬, 四萬, 四萬, 五萬, 五萬, 二索, 三索, 四索, 二筒, 三筒, 四筒, 三萬]

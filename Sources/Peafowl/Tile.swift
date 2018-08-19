@@ -81,7 +81,7 @@ public struct Tile: Equatable, Comparable, Hashable {
         return lhs.index < rhs.index
     }
 
-    private var index: Int {
+    internal var index: Int {
         switch suit {
         case .character(let n): return n + 9 * 0
         case .bamboo(let n): return n + 9 * 1
