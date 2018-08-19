@@ -31,7 +31,7 @@ public struct Score: Comparable {
     public static func < (lhs: Score, rhs: Score) -> Bool {
         return lhs.basicScore < rhs.basicScore
     }
-
+    
     public enum Rank: Equatable, CustomStringConvertible {
         case mangan
         case haneman
@@ -82,6 +82,8 @@ public struct Score: Comparable {
 
     public var rank: Rank? {
         switch (fan, basicScore) {
+        case (_, _) where fan >= 13:
+            return .yakuman(Int(floorf(Float(fan) / 13.0)))
         case (_, 0..<8000):
             return nil
         case (_, 8000..<12000), (5, _):
@@ -93,7 +95,7 @@ public struct Score: Comparable {
         case (10...12, _):
             return .sanbaiman
         default:
-            return .yakuman(Int(floorf(Float(fan) / 13.0)))
+            return nil
         }
     }
 }
