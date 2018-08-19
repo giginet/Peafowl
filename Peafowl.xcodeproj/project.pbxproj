@@ -62,7 +62,6 @@
 		072DD3172129207B00F86C39 /* 役牌.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2C42127C09300F86C39 /* 役牌.swift */; };
 		072DD3182129207B00F86C39 /* ドラ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2C62127C77B00F86C39 /* ドラ.swift */; };
 		072DD3192129207B00F86C39 /* 平和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2CF2127CEA300F86C39 /* 平和.swift */; };
-		072DD31A2129208000F86C39 /* Peafowl.h in Headers */ = {isa = PBXBuildFile; fileRef = 07ED2F2D20E2AC6D00EF677F /* Peafowl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		072DD31B2129208000F86C39 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3A20E2ADEE0009EA6D /* Tile.swift */; };
 		072DD31C2129208000F86C39 /* TileUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419622125CA3400DB09EF /* TileUtility.swift */; };
 		072DD31D2129208000F86C39 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3E20E2B4F10009EA6D /* Hand.swift */; };
@@ -118,7 +117,6 @@
 		07C6398421120CB900725AFB /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C6398321120CB900725AFB /* Array+Extensions.swift */; };
 		07C6398721120F1000725AFB /* Array+Tiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C6398621120F1000725AFB /* Array+Tiles.swift */; };
 		07ED2F1D20E2AC0F00EF677F /* Peafowl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07ED2F1320E2AC0F00EF677F /* Peafowl.framework */; };
-		07ED2F2F20E2AC6D00EF677F /* Peafowl.h in Headers */ = {isa = PBXBuildFile; fileRef = 07ED2F2D20E2AC6D00EF677F /* Peafowl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07ED343E2110B6FD00D02AFA /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED343D2110B6FD00D02AFA /* Sequence+Extensions.swift */; };
 		07ED34422110C1E300D02AFA /* Tile+Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED34412110C1E300D02AFA /* Tile+Aliases.swift */; };
 		07F4195B21248F1000DB09EF /* 混老頭.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4195A21248F1000DB09EF /* 混老頭.swift */; };
@@ -204,7 +202,6 @@
 		07C6398621120F1000725AFB /* Array+Tiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Tiles.swift"; sourceTree = "<group>"; };
 		07ED2F1320E2AC0F00EF677F /* Peafowl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peafowl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07ED2F1C20E2AC0F00EF677F /* PeafowlTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PeafowlTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		07ED2F2D20E2AC6D00EF677F /* Peafowl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Peafowl.h; path = Sources/Peafowl/Peafowl.h; sourceTree = SOURCE_ROOT; };
 		07ED2F2E20E2AC6D00EF677F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Peafowl/Info.plist; sourceTree = SOURCE_ROOT; };
 		07ED2F3220E2AC7C00EF677F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/PeafowlTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		07ED343D2110B6FD00D02AFA /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
@@ -346,7 +343,6 @@
 				07C6398521120EEE00725AFB /* Extensions */,
 				079A8E4420E2BB370009EA6D /* Yakus */,
 				07ED2F2E20E2AC6D00EF677F /* Info.plist */,
-				07ED2F2D20E2AC6D00EF677F /* Peafowl.h */,
 				079A8E3A20E2ADEE0009EA6D /* Tile.swift */,
 				07F419622125CA3400DB09EF /* TileUtility.swift */,
 				079A8E3E20E2B4F10009EA6D /* Hand.swift */,
@@ -388,7 +384,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				072DD31A2129208000F86C39 /* Peafowl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,7 +391,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07ED2F2F20E2AC6D00EF677F /* Peafowl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
