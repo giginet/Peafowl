@@ -9,15 +9,15 @@ public struct 三色同順: YakuProtocol {
         guard case .melded(let tokens) = form else {
             return nil
         }
-        // TODO バグってる
         let melds = TileUtility.melds(from: tokens)
         let sequentialMelds = melds.filter { $0.isSequential }
-        let character = sequentialMelds.first { $0.isCharacter }
-        let bamboo = sequentialMelds.first { $0.isBamboo }
-        let dots = sequentialMelds.first { $0.isDots }
-        if character?.asArray.first?.number == bamboo?.asArray.first?.number
-            && dots?.asArray.first?.number == bamboo?.asArray.first?.number {
-            return 三色同順()
+        
+        for meld in sequentialMelds {
+            if sequentialMelds.contains(where: { $0.first.number == meld.first.number && $0.isCharacter })
+            && sequentialMelds.contains(where: { $0.first.number == meld.first.number && $0.isBamboo })
+                && sequentialMelds.contains(where: { $0.first.number == meld.first.number && $0.isDots }) {
+                return 三色同順()
+            }
         }
         return nil
     }

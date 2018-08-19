@@ -132,7 +132,6 @@ final class ScoreCalculatorTests: XCTestCase {
         XCTAssertEqual(scores?.count, 1)
         XCTAssertEqual(scores?.first?.yaku, [
             AnyYaku(四暗刻()),
-            AnyYaku(三色同順()),
             AnyYaku(門前清自摸和()),
             AnyYaku(断ヤオ九()),
             ])

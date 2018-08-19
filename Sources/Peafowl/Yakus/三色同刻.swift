@@ -9,14 +9,15 @@ public struct 三色同刻: YakuProtocol {
         guard case .melded(let tokens) = form else {
             return nil
         }
-        let melds = [tokens.1, tokens.2, tokens.3, tokens.4]
+        let melds = TileUtility.melds(from: tokens)
         let tripletsMelds = melds.filter { $0.isTriplets }
-        guard let character = tripletsMelds.first(where: { $0.isCharacter }) else { return nil }
-        guard let bamboo = tripletsMelds.first(where: { $0.isBamboo }) else { return nil }
-        guard let dots = tripletsMelds.first(where: { $0.isDots }) else { return nil }
-        if character.asArray.first?.number == bamboo.asArray.first?.number
-            && dots.asArray.first?.number == bamboo.asArray.first?.number {
-            return 三色同刻()
+        
+        for meld in tripletsMelds {
+            if tripletsMelds.contains(where: { $0.first.number == meld.first.number && $0.isCharacter })
+                && tripletsMelds.contains(where: { $0.first.number == meld.first.number && $0.isBamboo })
+                && tripletsMelds.contains(where: { $0.first.number == meld.first.number && $0.isDots }) {
+                return 三色同刻()
+            }
         }
         return nil
     }
