@@ -68,6 +68,12 @@ You can try Peafowl on Xcode Playground.
 github "giginet/Peafowl"
 ```
 
+## Known limitation
+
+- [ ] Pung and Chow are partially supported
+- [ ] Not support Kong system
+    - [ ] Related yaku (e.g. 槍槓、三槓子, 四槓子）
+
 ## Acknowledgement
 
 Tile images are provided from [here](http://majandofu.com/mahjong-images).
