@@ -92,6 +92,8 @@
 		074FC55121076DBB007DADDE /* TileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074FC54E21076CA9007DADDE /* TileTests.swift */; };
 		0762D3502115F07000CC66D5 /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762D34F2115F07000CC66D5 /* TokenizerTests.swift */; };
 		0762D3522116D11500CC66D5 /* Set+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762D3512116D11500CC66D5 /* Set+Extensions.swift */; };
+		076DB0CE212A304400A10DBB /* TileUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076DB0CD212A304400A10DBB /* TileUtilityTests.swift */; };
+		076DB0CF212A304400A10DBB /* TileUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076DB0CD212A304400A10DBB /* TileUtilityTests.swift */; };
 		0778DC4B2118AD0200B8B841 /* ScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0778DC4A2118AD0200B8B841 /* ScoreCalculator.swift */; };
 		0778DC502118B45900B8B841 /* AnyYakuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0778DC4F2118B45900B8B841 /* AnyYakuTests.swift */; };
 		07811BEF211F432A0052DCB2 /* WinningDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07811BEE211F432A0052DCB2 /* WinningDetector.swift */; };
@@ -247,6 +249,7 @@
 		074FC54E21076CA9007DADDE /* TileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileTests.swift; sourceTree = "<group>"; };
 		0762D34F2115F07000CC66D5 /* TokenizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerTests.swift; sourceTree = "<group>"; };
 		0762D3512116D11500CC66D5 /* Set+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Extensions.swift"; sourceTree = "<group>"; };
+		076DB0CD212A304400A10DBB /* TileUtilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileUtilityTests.swift; sourceTree = "<group>"; };
 		0778DC4A2118AD0200B8B841 /* ScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCalculator.swift; sourceTree = "<group>"; };
 		0778DC4F2118B45900B8B841 /* AnyYakuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyYakuTests.swift; sourceTree = "<group>"; };
 		07811BEE211F432A0052DCB2 /* WinningDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningDetector.swift; sourceTree = "<group>"; };
@@ -539,6 +542,7 @@
 				07811BF0211F6D980052DCB2 /* ScoreCalculatorTests.swift */,
 				07811BF2211F70F90052DCB2 /* YakuTests.swift */,
 				07B6475221207D3400216DE5 /* Helper.swift */,
+				076DB0CD212A304400A10DBB /* TileUtilityTests.swift */,
 			);
 			name = PeafowlTests;
 			path = Tests/PeafowlTests;
@@ -854,6 +858,7 @@
 				072DD3282129208500F86C39 /* TileTests.swift in Sources */,
 				072DD32C2129208500F86C39 /* ScoreCalculatorTests.swift in Sources */,
 				072DD32B2129208500F86C39 /* AnyYakuTests.swift in Sources */,
+				076DB0CF212A304400A10DBB /* TileUtilityTests.swift in Sources */,
 				072DD3292129208500F86C39 /* TokenTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -930,6 +935,7 @@
 				0778DC502118B45900B8B841 /* AnyYakuTests.swift in Sources */,
 				07811BF1211F6D980052DCB2 /* ScoreCalculatorTests.swift in Sources */,
 				0762D3502115F07000CC66D5 /* TokenizerTests.swift in Sources */,
+				076DB0CE212A304400A10DBB /* TileUtilityTests.swift in Sources */,
 				074FC55121076DBB007DADDE /* TileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

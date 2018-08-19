@@ -9,7 +9,7 @@ final class MeldedFormedYakuTests: XCTestCase {
         let tokenizedResults = tokenizer.tokenize(from: hand.allTiles)
         let yakuList = tokenizedResults.map { tokenizedResult in
             return Yaku.make(with: hand.allTiles,
-                             form: .melded(Tokenizer.convertToWinningForm(from: tokenizedResult)!),
+                             form: .melded(TileUtility.convertToWinningForm(from: tokenizedResult)!),
                              picked: hand.picked,
                              context: context)
             }.compactMap { $0 }

@@ -24,7 +24,7 @@ internal struct WinningDetector {
         let tokenizer = Tokenizer()
         let tokenizedResults = tokenizer.tokenize(from: tiles)
         let meldedForms = tokenizedResults.compactMap { (tokenizedResult) -> WinningForm? in
-            if let meldedWinningForm = Tokenizer.convertToWinningForm(from: tokenizedResult) {
+            if let meldedWinningForm = TileUtility.convertToWinningForm(from: tokenizedResult) {
                 return .melded(meldedWinningForm)
             }
             return nil
@@ -37,12 +37,12 @@ internal struct WinningDetector {
     }
 
     private func isSevenPairsWinningForm(_ tiles: [Tile]) -> Bool {
-        let eyes = Tokenizer.findEyes(from: tiles)
+        let eyes = TileUtility.findEyes(from: tiles)
         return eyes.count == 7
     }
 
     private func isThirteenOrphansForm(_ tiles: [Tile]) -> Bool {
-        let eyes = Tokenizer.findEyes(from: tiles)
+        let eyes = TileUtility.findEyes(from: tiles)
         return eyes.count == 1 && Set(tiles).count == 13
     }
 }
