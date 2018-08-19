@@ -106,6 +106,8 @@
 		079A8E4620E2BB470009EA6D /* 断ヤオ九.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4520E2BB470009EA6D /* 断ヤオ九.swift */; };
 		079A8E4820E2BE110009EA6D /* 七対子.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4720E2BE110009EA6D /* 七対子.swift */; };
 		079A8E4A20E2BEE90009EA6D /* 国士無双.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4920E2BEE90009EA6D /* 国士無双.swift */; };
+		07A0B7F221298C5900BF976E /* ScoreDescriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A0B7F121298C5900BF976E /* ScoreDescriber.swift */; };
+		07A0B7F321298C5900BF976E /* ScoreDescriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A0B7F121298C5900BF976E /* ScoreDescriber.swift */; };
 		07A22F812113BC720098F546 /* TokenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A22F802113BC720098F546 /* TokenTests.swift */; };
 		07B2BBE021247B1200993F46 /* 三色同順.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2BBDF21247B1200993F46 /* 三色同順.swift */; };
 		07B2BBE2212481E800993F46 /* 三色同刻.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2BBE1212481E800993F46 /* 三色同刻.swift */; };
@@ -259,6 +261,7 @@
 		079A8E4520E2BB470009EA6D /* 断ヤオ九.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "断ヤオ九.swift"; sourceTree = "<group>"; };
 		079A8E4720E2BE110009EA6D /* 七対子.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "七対子.swift"; sourceTree = "<group>"; };
 		079A8E4920E2BEE90009EA6D /* 国士無双.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "国士無双.swift"; sourceTree = "<group>"; };
+		07A0B7F121298C5900BF976E /* ScoreDescriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreDescriber.swift; sourceTree = "<group>"; };
 		07A22F802113BC720098F546 /* TokenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenTests.swift; sourceTree = "<group>"; };
 		07B2BBDF21247B1200993F46 /* 三色同順.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "三色同順.swift"; sourceTree = "<group>"; };
 		07B2BBE1212481E800993F46 /* 三色同刻.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "三色同刻.swift"; sourceTree = "<group>"; };
@@ -519,6 +522,7 @@
 				07811BF4211F71B40052DCB2 /* GameContext.swift */,
 				07B64754212080FE00216DE5 /* TileCollection.swift */,
 				072DD2D321282F8300F86C39 /* WaitingFormDetector.swift */,
+				07A0B7F121298C5900BF976E /* ScoreDescriber.swift */,
 			);
 			name = Peafowl;
 			path = Sources/Peafowl;
@@ -803,6 +807,7 @@
 				072DD3262129208000F86C39 /* TileCollection.swift in Sources */,
 				072DD2F52129207500F86C39 /* Set+Extensions.swift in Sources */,
 				072DD2F82129207B00F86C39 /* 字一色.swift in Sources */,
+				07A0B7F321298C5900BF976E /* ScoreDescriber.swift in Sources */,
 				072DD31F2129208000F86C39 /* Token.swift in Sources */,
 				072DD3082129207B00F86C39 /* 海底摸月.swift in Sources */,
 				072DD3232129208000F86C39 /* Tile+Aliases.swift in Sources */,
@@ -883,6 +888,7 @@
 				072DD2CD2127CB9E00F86C39 /* 地和.swift in Sources */,
 				07F419612125C96200DB09EF /* 一気通貫.swift in Sources */,
 				07B64755212080FE00216DE5 /* TileCollection.swift in Sources */,
+				07A0B7F221298C5900BF976E /* ScoreDescriber.swift in Sources */,
 				07315D3A2125E05100733FDC /* 字一色.swift in Sources */,
 				07C6398721120F1000725AFB /* Array+Tiles.swift in Sources */,
 				07315D342125DC0900733FDC /* 海底摸月.swift in Sources */,

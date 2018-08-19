@@ -32,7 +32,7 @@ public struct Score: Comparable {
         return lhs.basicScore < rhs.basicScore
     }
 
-    public enum Rank: Equatable {
+    public enum Rank: Equatable, CustomStringConvertible {
         case mangan
         case haneman
         case baiman
@@ -46,6 +46,21 @@ public struct Score: Comparable {
             case .baiman: return 16000
             case .sanbaiman: return 24000
             case .yakuman(let n): return 32000 * n
+            }
+        }
+        
+        public var description: String {
+            switch self {
+            case .mangan:
+                return "満貫"
+            case .haneman:
+                return "跳満"
+            case .baiman:
+                return "倍満"
+            case .sanbaiman:
+                return "三倍満"
+            case .yakuman(_):
+                return "役満"
             }
         }
     }
@@ -67,9 +82,9 @@ public struct Score: Comparable {
 
     public var rank: Rank? {
         switch (fan, basicScore) {
-        case (0..<5, 0..<8000):
+        case (_, 0..<8000):
             return nil
-        case (_, 8000..<12000):
+        case (_, 8000..<12000), (5, _):
             return .mangan
         case (6...7, _):
             return .haneman

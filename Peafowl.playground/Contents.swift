@@ -11,5 +11,5 @@ let scoreCalculator = ScoreCalculator(options: .default)
 
 let context = GameContext()
 let score = scoreCalculator.calculate(with: hand, context: context)
-let yakuNames = score?.yaku.map { String(describing: $0) }
-print(yakuNames)
+let describer = ScoreDescriber()
+describer.describe(score!)

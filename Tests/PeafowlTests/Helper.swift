@@ -15,7 +15,7 @@ func makeContext(winningType: GameContext.WinningType = .selfPick,
                        riichiStyle: riichiStyle,
                        isOneShot: isOneShot,
                        isDealer: isDealer,
-                       prevalentWind: prevalantWind,
+                       prevalantWind: prevalantWind,
                        seatWind: seatWind,
                        dora: dora)
 }
