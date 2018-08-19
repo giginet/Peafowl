@@ -11,7 +11,7 @@ public struct 三色同順: YakuProtocol {
         }
         let melds = TileUtility.melds(from: tokens)
         let sequentialMelds = melds.filter { $0.isSequential }
-        
+
         for meld in sequentialMelds {
             if sequentialMelds.contains(where: { $0.first.number == meld.first.number && $0.isCharacter })
             && sequentialMelds.contains(where: { $0.first.number == meld.first.number && $0.isBamboo })

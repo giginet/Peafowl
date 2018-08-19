@@ -11,7 +11,7 @@ public struct 三色同刻: YakuProtocol {
         }
         let melds = TileUtility.melds(from: tokens)
         let tripletsMelds = melds.filter { $0.isTriplets }
-        
+
         for meld in tripletsMelds {
             if tripletsMelds.contains(where: { $0.first.number == meld.first.number && $0.isCharacter })
                 && tripletsMelds.contains(where: { $0.first.number == meld.first.number && $0.isBamboo })

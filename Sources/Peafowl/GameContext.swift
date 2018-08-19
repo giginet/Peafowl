@@ -34,7 +34,7 @@ public struct GameContext {
     public var seatWind: Tile
     /// ドラ
     public var dora: [Tile]
-    
+
     public init(winningType: GameContext.WinningType = .selfPick,
                 pickedSource: GameContext.PickedSource = .wall,
                 riichiStyle: GameContext.RiichiStyle? = nil,

@@ -2,7 +2,7 @@ import Foundation
 
 public struct ScoreDescriber {
     public init() { }
-    
+
     public func describe(_ score: Score) -> String {
         let yakuList = score.yaku.map { "\($0.name) \($0.concealedFan)" }
         let footer: String

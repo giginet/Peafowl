@@ -31,7 +31,7 @@ public struct Score: Comparable {
     public static func < (lhs: Score, rhs: Score) -> Bool {
         return lhs.basicScore < rhs.basicScore
     }
-    
+
     public enum Rank: Equatable, CustomStringConvertible {
         case mangan
         case haneman
@@ -48,7 +48,7 @@ public struct Score: Comparable {
             case .yakuman(let n): return 32000 * n
             }
         }
-        
+
         public var description: String {
             switch self {
             case .mangan:
@@ -59,7 +59,7 @@ public struct Score: Comparable {
                 return "倍満"
             case .sanbaiman:
                 return "三倍満"
-            case .yakuman(_):
+            case .yakuman:
                 return "役満"
             }
         }
