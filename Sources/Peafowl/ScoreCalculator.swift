@@ -18,9 +18,9 @@ private func ceilToNearest(_ base: Int, _ value: Int) -> Int {
 
 public struct CalculationOptions {
     /// 青天井
-    var ignoreLimits: Bool
+    public var ignoreLimits: Bool
 
-    static let `default`: CalculationOptions = .init(ignoreLimits: false)
+    public static let `default`: CalculationOptions = .init(ignoreLimits: false)
 }
 
 public struct Score: Comparable {
@@ -50,22 +50,22 @@ public struct Score: Comparable {
         }
     }
 
-    var fan: Int
-    var miniPoint: Int
-    var yaku: Set<AnyYaku>
-    var basicScore: Int
-    var value: Int {
+    public var fan: Int
+    public var miniPoint: Int
+    public var yaku: Set<AnyYaku>
+    public var basicScore: Int
+    public var value: Int {
         return rank?.score ?? Int(basicScore)
     }
 
-    init(yaku: Set<AnyYaku>, miniPoint: Int, isDealer: Bool) {
+    internal init(yaku: Set<AnyYaku>, miniPoint: Int, isDealer: Bool) {
         self.miniPoint = miniPoint
         self.yaku = yaku
         self.fan = yaku.concealedFan
         self.basicScore = ceilToNearest(100, calculateScore(from: miniPoint, and: fan, isDealer: isDealer))
     }
 
-    var rank: Rank? {
+    public var rank: Rank? {
         switch (fan, basicScore) {
         case (0..<5, 0..<8000):
             return nil
@@ -176,7 +176,7 @@ public class ScoreCalculator {
     // TODO Currently not working 😛
     private let calculationOptions: CalculationOptions
 
-    init(options: CalculationOptions) {
+    public init(options: CalculationOptions) {
         calculationOptions = options
     }
 

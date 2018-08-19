@@ -15,26 +15,31 @@ private extension Tile {
 
 extension Tile: CustomPlaygroundDisplayConvertible {
     public var playgroundDescription: Any {
-        return image as Any
+        return image
     }
 }
 
 private let tileImageSize = CGSize(width: 32, height: 45)
 
-private func createTilesImage(of tiles: [Tile], lastTileOffset: CGFloat = 0) -> NSImage {
+private func createTilesImage(of tiles: [Tile], lastTileOffset: CGFloat = 0) -> NSImage? {
+    if tiles.isEmpty {
+        return nil
+    }
     let tileCount = tiles.count
     let imageSize = CGSize(width: tileImageSize.width * CGFloat(tileCount) + lastTileOffset, height: tileImageSize.height)
-    let offscreenRep = NSBitmapImageRep(bitmapDataPlanes: nil,
-                                        pixelsWide: Int(imageSize.width),
-                                        pixelsHigh: Int(imageSize.height),
-                                        bitsPerSample: 8,
-                                        samplesPerPixel: 4,
-                                        hasAlpha: true,
-                                        isPlanar: false,
-                                        colorSpaceName: .deviceRGB,
-                                        bitmapFormat: .alphaFirst,
-                                        bytesPerRow: 0,
-                                        bitsPerPixel: 0)!
+    guard let offscreenRep = NSBitmapImageRep(bitmapDataPlanes: nil,
+                                              pixelsWide: Int(imageSize.width),
+                                              pixelsHigh: Int(imageSize.height),
+                                              bitsPerSample: 8,
+                                              samplesPerPixel: 4,
+                                              hasAlpha: true,
+                                              isPlanar: false,
+                                              colorSpaceName: .deviceRGB,
+                                              bitmapFormat: .alphaFirst,
+                                              bytesPerRow: 0,
+                                              bitsPerPixel: 0) else {
+                                                return NSImage(size: imageSize)
+    }
     let context = NSGraphicsContext(bitmapImageRep: offscreenRep)
     for (i, tile) in tiles.enumerated() {
         let image = tile.image
@@ -53,17 +58,20 @@ private func createTilesImage(of tiles: [Tile], lastTileOffset: CGFloat = 0) -> 
                                    height: size.height)
         context?.cgContext.draw(cgImage, in: drawiningRect)
     }
-    return NSImage(cgImage: context!.cgContext.makeImage()!, size: imageSize)
+    guard let unwrappedContext = context, let cgImage = unwrappedContext.cgContext.makeImage() else {
+        return NSImage(size: imageSize)
+    }
+    return NSImage(cgImage: cgImage, size: imageSize)
 }
 
 extension Array: CustomPlaygroundDisplayConvertible where Element == Tile {
     public var playgroundDescription: Any {
-        return createTilesImage(of: self)
+        return createTilesImage(of: self) as Any
     }
 }
 
 extension Hand: CustomPlaygroundDisplayConvertible {
     public var playgroundDescription: Any {
-        return createTilesImage(of: allTiles, lastTileOffset: 10)
+        return createTilesImage(of: allTiles, lastTileOffset: 10) as Any
     }
 }
