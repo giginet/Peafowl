@@ -18,7 +18,9 @@ extension Hand: ExpressibleByArrayLiteral {
     public typealias ArrayLiteralElement = Tile
 
     public init(arrayLiteral elements: Hand.ArrayLiteralElement...) {
-        let picked = elements.last!
+        guard let picked = elements.last else {
+            fatalError("Could not make Hand from empty Array.")
+        }
         self = .init(tiles: Array(elements.dropLast()), picked: picked)
     }
 }

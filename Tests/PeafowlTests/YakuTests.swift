@@ -158,7 +158,14 @@ final class MeldedFormedYakuTests: XCTestCase {
 
     func test対々和() {
         assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (七索, 八索, 九索), shouldNotBe: 対々和.self)
-        //assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (九索, 九索, 九索), shouldBe: 対々和.self)
+        assert((一筒, 一筒), (一索, 一索, 一索), (九筒, 九筒, 九筒), (一萬, 一萬, 一萬), (九索, 九索, 九索), shouldNotBe: 対々和.self)
+        let hand: Hand = [一筒, 一筒, 一索, 一索, 一索, 九筒, 九筒, 九筒, 一萬, 一萬, 一萬, 九索, 九索, 九索]
+        let form: WinningForm = .melded((PairToken((一筒, 一筒))!,
+                                         MeldToken((一索, 一索, 一索))!,
+                                         MeldToken((九筒, 九筒, 九筒), isConcealed: false)!,
+                                         MeldToken((一萬, 一萬, 一萬))!,
+                                         MeldToken((九索, 九索, 九索))!))
+        XCTAssertNotNil(対々和.make(with: hand.allTiles, form: form, picked: 九索, context: makeContext()))
     }
 
     func test字一色() {
