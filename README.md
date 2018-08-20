@@ -6,7 +6,7 @@
 [![Platform iOS|macOS](https://img.shields.io/badge/platform-iOS|macOS-lightgray.svg)](https://github.com/giginet/Peafowl)
 [![License](https://cocoapod-badges.herokuapp.com/l/RxSpriteKit/badge.svg)](https://github.com/cookpad/RxSpriteKit/blob/master/LICENSE)
 
-:mahjong: *Peafowl* is a score calculation library to play Japanese Mahjong!
+:mahjong: **Peafowl** is a score calculation library to play Japanese Mahjong!
 
 ## Usage
 
