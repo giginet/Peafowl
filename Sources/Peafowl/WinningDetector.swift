@@ -1,9 +1,16 @@
 import Foundation
 
+/// 通常和了形
+public typealias MeldedWinningForm = (PairToken, MeldToken, MeldToken, MeldToken, MeldToken)
+/// 七対子系
+public typealias SevenPairsForm = (PairToken, PairToken, PairToken, PairToken, PairToken, PairToken, PairToken)
+/// 国士無双系
+public typealias ThirteenOrphansForm = (PairToken, Tile, Tile, Tile, Tile, Tile, Tile, Tile, Tile, Tile, Tile, Tile, Tile)
+
 public enum WinningForm {
     case melded(MeldedWinningForm)
-    case sevenPairs
-    case thirteenOrphans
+    case sevenPairs(SevenPairsForm)
+    case thirteenOrphans(ThirteenOrphansForm)
 }
 
 internal struct WinningDetector {
@@ -12,13 +19,13 @@ internal struct WinningDetector {
             return nil
         }
 
-        if isThirteenOrphansForm(tiles) {
-            return [.thirteenOrphans]
+        if let form = detectThirteenOrphansForm(tiles) {
+            return [.thirteenOrphans(form)]
         }
 
         var results: [WinningForm] = []
-        if isSevenPairsWinningForm(tiles) {
-            results.append(.sevenPairs)
+        if let form = detectSevenPairsForm(tiles) {
+            results.append(.sevenPairs(form))
         }
 
         let tokenizer = Tokenizer()
@@ -36,13 +43,26 @@ internal struct WinningDetector {
         return results
     }
 
-    private func isSevenPairsWinningForm(_ tiles: [Tile]) -> Bool {
+    private func detectSevenPairsForm(_ tiles: [Tile]) -> SevenPairsForm? {
         let eyes = TileUtility.findEyes(from: tiles)
-        return eyes.count == 7
+        if eyes.count == 7 {
+            return (eyes[0], eyes[1], eyes[2], eyes[3], eyes[4], eyes[5], eyes[6])
+        }
+        return nil
     }
 
-    private func isThirteenOrphansForm(_ tiles: [Tile]) -> Bool {
+    private func detectThirteenOrphansForm(_ tiles: [Tile]) -> ThirteenOrphansForm? {
         let eyes = TileUtility.findEyes(from: tiles)
-        return eyes.count == 1 && Set(tiles).count == 13
+        guard let eye = eyes.first else {
+            return nil
+        }
+        let remainingTiles = tiles.unique().removed(eye)
+        if eyes.count == 1 && remainingTiles.count == 12 {
+            return (eye, remainingTiles[0], remainingTiles[1], remainingTiles[2],
+                    remainingTiles[3], remainingTiles[4], remainingTiles[5],
+                    remainingTiles[6], remainingTiles[7], remainingTiles[8],
+                    remainingTiles[9], remainingTiles[10], remainingTiles[11])
+        }
+        return nil
     }
 }

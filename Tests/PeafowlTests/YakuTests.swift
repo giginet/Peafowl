@@ -239,6 +239,8 @@ final class MeldedFormedYakuTests: XCTestCase {
 }
 
 final class SevenPairsFormedYakuTests: XCTestCase {
+    private let winningDetector = WinningDetector()
+
     private func assert<Yaku: YakuProtocol>(_ pair0: (Tile, Tile),
                                             _ pair1: (Tile, Tile),
                                             _ pair2: (Tile, Tile),
@@ -250,8 +252,9 @@ final class SevenPairsFormedYakuTests: XCTestCase {
                                             context: GameContext? = nil) {
         let hand: Hand = [pair0.0, pair0.1, pair1.0, pair1.1, pair2.0, pair2.1, pair3.0, pair3.1,
                           pair4.0, pair4.1, pair5.0, pair5.1, pair6.0, pair6.1,]
+        let form = winningDetector.detectForms(hand.allTiles)!.first!
         let yaku = Yaku.make(with: hand.allTiles,
-                             form: .sevenPairs,
+                             form: form,
                              picked: hand.picked,
                              context: makeContext())
         XCTAssertNotNil(yaku)
@@ -268,8 +271,9 @@ final class SevenPairsFormedYakuTests: XCTestCase {
                                             context: GameContext? = nil) {
         let hand: Hand = [pair0.0, pair0.1, pair1.0, pair1.1, pair2.0, pair2.1, pair3.0, pair3.1,
                           pair4.0, pair4.1, pair5.0, pair5.1, pair6.0, pair6.1,]
+        let form = winningDetector.detectForms(hand.allTiles)!.first!
         let yaku = Yaku.make(with: hand.allTiles,
-                             form: .sevenPairs,
+                             form: form,
                              picked: hand.picked,
                              context: makeContext())
         XCTAssertNil(yaku)
@@ -286,11 +290,14 @@ final class SevenPairsFormedYakuTests: XCTestCase {
 }
 
 final class ThirteenOrphanFormTestCase: XCTestCase {
+    private let winningDetector = WinningDetector()
+
     private func assert<Yaku: YakuProtocol>(_ hand: Hand,
                                             shouldBe yaku: Yaku.Type,
                                             _ fan: Int) {
+        let form = winningDetector.detectForms(hand.allTiles)!.first!
         let yaku = Yaku.make(with: hand.allTiles,
-                             form: .thirteenOrphans,
+                             form: form,
                              picked: hand.picked,
                              context: makeContext())
         XCTAssertNotNil(yaku)
@@ -299,8 +306,9 @@ final class ThirteenOrphanFormTestCase: XCTestCase {
 
     private func assert<Yaku: YakuProtocol>(_ hand: Hand,
                                             shouldNotBe yaku: Yaku.Type) {
+        let form = winningDetector.detectForms(hand.allTiles)!.first!
         let yaku = Yaku.make(with: hand.allTiles,
-                             form: .thirteenOrphans,
+                             form: form,
                              picked: hand.picked,
                              context: makeContext())
         XCTAssertNil(yaku)

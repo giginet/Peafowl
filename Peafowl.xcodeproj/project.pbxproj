@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		07212FA9210F6B10003F4E75 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07212FA8210F6B10003F4E75 /* Tokenizer.swift */; };
-		07212FAB210F7586003F4E75 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07212FAA210F7586003F4E75 /* Form.swift */; };
 		072DD2BC2127A80900F86C39 /* 小四喜.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2BB2127A80900F86C39 /* 小四喜.swift */; };
 		072DD2BE2127A81F00F86C39 /* 大四喜.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2BD2127A81F00F86C39 /* 大四喜.swift */; };
 		072DD2C02127B5AC00F86C39 /* 清老頭.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2BF2127B5AC00F86C39 /* 清老頭.swift */; };
@@ -69,7 +68,6 @@
 		072DD31F2129208000F86C39 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4220E2B68C0009EA6D /* Token.swift */; };
 		072DD3202129208000F86C39 /* ScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0778DC4A2118AD0200B8B841 /* ScoreCalculator.swift */; };
 		072DD3212129208000F86C39 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07212FA8210F6B10003F4E75 /* Tokenizer.swift */; };
-		072DD3222129208000F86C39 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07212FAA210F7586003F4E75 /* Form.swift */; };
 		072DD3232129208000F86C39 /* Tile+Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED34412110C1E300D02AFA /* Tile+Aliases.swift */; };
 		072DD3242129208000F86C39 /* WinningDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07811BEE211F432A0052DCB2 /* WinningDetector.swift */; };
 		072DD3252129208000F86C39 /* GameContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07811BF4211F71B40052DCB2 /* GameContext.swift */; };
@@ -227,7 +225,6 @@
 
 /* Begin PBXFileReference section */
 		07212FA8210F6B10003F4E75 /* Tokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
-		07212FAA210F7586003F4E75 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 		072DD2BB2127A80900F86C39 /* 小四喜.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "小四喜.swift"; sourceTree = "<group>"; };
 		072DD2BD2127A81F00F86C39 /* 大四喜.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "大四喜.swift"; sourceTree = "<group>"; };
 		072DD2BF2127B5AC00F86C39 /* 清老頭.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "清老頭.swift"; sourceTree = "<group>"; };
@@ -522,7 +519,6 @@
 				079A8E4220E2B68C0009EA6D /* Token.swift */,
 				0778DC4A2118AD0200B8B841 /* ScoreCalculator.swift */,
 				07212FA8210F6B10003F4E75 /* Tokenizer.swift */,
-				07212FAA210F7586003F4E75 /* Form.swift */,
 				07ED34412110C1E300D02AFA /* Tile+Aliases.swift */,
 				07811BEE211F432A0052DCB2 /* WinningDetector.swift */,
 				07811BF4211F71B40052DCB2 /* GameContext.swift */,
@@ -806,7 +802,6 @@
 				072DD3132129207B00F86C39 /* 混一色.swift in Sources */,
 				072DD30F2129207B00F86C39 /* 混全帯么九.swift in Sources */,
 				072DD31E2129208000F86C39 /* Yaku.swift in Sources */,
-				072DD3222129208000F86C39 /* Form.swift in Sources */,
 				072DD3152129207B00F86C39 /* 三暗刻.swift in Sources */,
 				072DD2F12129207500F86C39 /* Int+Tiles.swift in Sources */,
 				072DD3192129207B00F86C39 /* 平和.swift in Sources */,
@@ -915,7 +910,6 @@
 				079A8E3F20E2B4F10009EA6D /* Hand.swift in Sources */,
 				07F4195D21248FEE00DB09EF /* 混全帯么九.swift in Sources */,
 				07C6398421120CB900725AFB /* Array+Extensions.swift in Sources */,
-				07212FAB210F7586003F4E75 /* Form.swift in Sources */,
 				07315D3E2125E50B00733FDC /* 大三元.swift in Sources */,
 				07315D302125DB1E00733FDC /* 門前清自摸和.swift in Sources */,
 				07F419692125D2CA00DB09EF /* 清一色.swift in Sources */,

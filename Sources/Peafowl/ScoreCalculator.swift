@@ -261,18 +261,18 @@ public class ScoreCalculator {
                 }
                 let newScores = miniPoints.map { Score(yaku: winningYaku, miniPoint: $0, isDealer: context.isDealer) }
                 return scores + newScores
-            case .sevenPairs:
+            case .sevenPairs(let tokens):
                 let winningYaku: Set<AnyYaku>
-                if let yaku = 七対子.make(with: hand.allTiles, form: .sevenPairs, picked: hand.picked, context: context) {
+                if let yaku = 七対子.make(with: hand.allTiles, form: .sevenPairs(tokens), picked: hand.picked, context: context) {
                     winningYaku = [AnyYaku(yaku)]
                 } else {
                     winningYaku = []
                 }
-                let otherYaku = checkFormedYaku(hand: hand, winningForm: .sevenPairs, picked: hand.picked)
+                let otherYaku = checkFormedYaku(hand: hand, winningForm: .sevenPairs(tokens), picked: hand.picked)
                 return scores + [Score(yaku: winningYaku.union(otherYaku), miniPoint: 25, isDealer: context.isDealer)]
-            case .thirteenOrphans:
+            case .thirteenOrphans(let tokens):
                 let winningYaku: Set<AnyYaku>
-                if let yaku = 国士無双.make(with: hand.allTiles, form: .thirteenOrphans, picked: hand.picked, context: context) {
+                if let yaku = 国士無双.make(with: hand.allTiles, form: .thirteenOrphans(tokens), picked: hand.picked, context: context) {
                     winningYaku = [AnyYaku(yaku)]
                 } else {
                     winningYaku = []
