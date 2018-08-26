@@ -108,6 +108,94 @@
 		079A8E4620E2BB470009EA6D /* 断ヤオ九.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4520E2BB470009EA6D /* 断ヤオ九.swift */; };
 		079A8E4820E2BE110009EA6D /* 七対子.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4720E2BE110009EA6D /* 七対子.swift */; };
 		079A8E4A20E2BEE90009EA6D /* 国士無双.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4920E2BEE90009EA6D /* 国士無双.swift */; };
+		079C681C2132BEF30081F1F2 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93AC21295F5E00808AC9 /* 1.png */; };
+		079C681D2132BEF30081F1F2 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE939E21295F5D00808AC9 /* 2.png */; };
+		079C681E2132BEF30081F1F2 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93A021295F5D00808AC9 /* 3.png */; };
+		079C681F2132BEF30081F1F2 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93A221295F5D00808AC9 /* 4.png */; };
+		079C68202132BEF30081F1F2 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93A721295F5E00808AC9 /* 5.png */; };
+		079C68212132BEF30081F1F2 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE939D21295F5D00808AC9 /* 6.png */; };
+		079C68222132BEF30081F1F2 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE939A21295F5D00808AC9 /* 7.png */; };
+		079C68232132BEF30081F1F2 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93A321295F5D00808AC9 /* 8.png */; };
+		079C68242132BEF30081F1F2 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93AB21295F5E00808AC9 /* 9.png */; };
+		079C68252132BEF30081F1F2 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93B321295F5E00808AC9 /* 10.png */; };
+		079C68262132BEF30081F1F2 /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93B021295F5E00808AC9 /* 11.png */; };
+		079C68272132BEF30081F1F2 /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93B921295F5F00808AC9 /* 12.png */; };
+		079C68282132BEF30081F1F2 /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93A521295F5E00808AC9 /* 13.png */; };
+		079C68292132BEF30081F1F2 /* 14.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93BA21295F5F00808AC9 /* 14.png */; };
+		079C682A2132BEF30081F1F2 /* 15.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93BB21295F5F00808AC9 /* 15.png */; };
+		079C682B2132BEF30081F1F2 /* 16.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93A821295F5E00808AC9 /* 16.png */; };
+		079C682C2132BEF30081F1F2 /* 17.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93AE21295F5E00808AC9 /* 17.png */; };
+		079C682D2132BEF30081F1F2 /* 18.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE939F21295F5D00808AC9 /* 18.png */; };
+		079C682E2132BEF30081F1F2 /* 19.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93AD21295F5E00808AC9 /* 19.png */; };
+		079C682F2132BEF30081F1F2 /* 20.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93B221295F5E00808AC9 /* 20.png */; };
+		079C68302132BEF30081F1F2 /* 21.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93B821295F5F00808AC9 /* 21.png */; };
+		079C68312132BEF30081F1F2 /* 22.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93B521295F5E00808AC9 /* 22.png */; };
+		079C68322132BEF30081F1F2 /* 23.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93A421295F5D00808AC9 /* 23.png */; };
+		079C68332132BEF30081F1F2 /* 24.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93B421295F5E00808AC9 /* 24.png */; };
+		079C68342132BEF30081F1F2 /* 25.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93AF21295F5E00808AC9 /* 25.png */; };
+		079C68352132BEF30081F1F2 /* 26.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93B121295F5E00808AC9 /* 26.png */; };
+		079C68362132BEF30081F1F2 /* 27.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE939B21295F5D00808AC9 /* 27.png */; };
+		079C68372132BEF30081F1F2 /* 28.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93A921295F5E00808AC9 /* 28.png */; };
+		079C68382132BEF30081F1F2 /* 29.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93B621295F5F00808AC9 /* 29.png */; };
+		079C68392132BEF30081F1F2 /* 30.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE939C21295F5D00808AC9 /* 30.png */; };
+		079C683A2132BEF30081F1F2 /* 31.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93A621295F5E00808AC9 /* 31.png */; };
+		079C683B2132BEF30081F1F2 /* 32.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93A121295F5D00808AC9 /* 32.png */; };
+		079C683C2132BEF30081F1F2 /* 33.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93AA21295F5E00808AC9 /* 33.png */; };
+		079C683D2132BEF30081F1F2 /* 34.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DE93B721295F5F00808AC9 /* 34.png */; };
+		079C683E2132BEF80081F1F2 /* Int+Tiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3C20E2AE9A0009EA6D /* Int+Tiles.swift */; };
+		079C683F2132BEF80081F1F2 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C6398321120CB900725AFB /* Array+Extensions.swift */; };
+		079C68402132BEF80081F1F2 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED343D2110B6FD00D02AFA /* Sequence+Extensions.swift */; };
+		079C68412132BEF80081F1F2 /* Array+Tiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C6398621120F1000725AFB /* Array+Tiles.swift */; };
+		079C68422132BEF80081F1F2 /* Set+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762D3512116D11500CC66D5 /* Set+Extensions.swift */; };
+		079C68432132BEFE0081F1F2 /* 国士無双.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4920E2BEE90009EA6D /* 国士無双.swift */; };
+		079C68442132BEFE0081F1F2 /* 四暗刻.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4196D2125D6C400DB09EF /* 四暗刻.swift */; };
+		079C68452132BEFE0081F1F2 /* 字一色.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D392125E05100733FDC /* 字一色.swift */; };
+		079C68462132BEFE0081F1F2 /* 緑一色.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D3B2125E0A000733FDC /* 緑一色.swift */; };
+		079C68472132BEFE0081F1F2 /* 大三元.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D3D2125E50B00733FDC /* 大三元.swift */; };
+		079C68482132BEFE0081F1F2 /* 小四喜.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2BB2127A80900F86C39 /* 小四喜.swift */; };
+		079C68492132BEFE0081F1F2 /* 大四喜.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2BD2127A81F00F86C39 /* 大四喜.swift */; };
+		079C684A2132BEFE0081F1F2 /* 清老頭.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2BF2127B5AC00F86C39 /* 清老頭.swift */; };
+		079C684B2132BEFE0081F1F2 /* 九連宝燈.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2C22127B71700F86C39 /* 九連宝燈.swift */; };
+		079C684C2132BEFE0081F1F2 /* 天和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2CA2127CB6000F86C39 /* 天和.swift */; };
+		079C684D2132BEFE0081F1F2 /* 地和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2CC2127CB9E00F86C39 /* 地和.swift */; };
+		079C684E2132BEFE0081F1F2 /* 断ヤオ九.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4520E2BB470009EA6D /* 断ヤオ九.swift */; };
+		079C684F2132BEFE0081F1F2 /* 七対子.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4720E2BE110009EA6D /* 七対子.swift */; };
+		079C68502132BEFE0081F1F2 /* 立直.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B64756212088C900216DE5 /* 立直.swift */; };
+		079C68512132BEFE0081F1F2 /* ダブル立直.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2C82127CACB00F86C39 /* ダブル立直.swift */; };
+		079C68522132BEFE0081F1F2 /* 一発.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419712125D8B700DB09EF /* 一発.swift */; };
+		079C68532132BEFE0081F1F2 /* 門前清自摸和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D2F2125DB1E00733FDC /* 門前清自摸和.swift */; };
+		079C68542132BEFE0081F1F2 /* 嶺上開花.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D312125DB9D00733FDC /* 嶺上開花.swift */; };
+		079C68552132BEFE0081F1F2 /* 海底摸月.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D332125DC0900733FDC /* 海底摸月.swift */; };
+		079C68562132BEFE0081F1F2 /* 河底撈魚.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07315D352125DC7200733FDC /* 河底撈魚.swift */; };
+		079C68572132BEFE0081F1F2 /* 一盃口.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B6475821208EE500216DE5 /* 一盃口.swift */; };
+		079C68582132BEFE0081F1F2 /* 二盃口.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B6475A212090F800216DE5 /* 二盃口.swift */; };
+		079C68592132BEFE0081F1F2 /* 三色同順.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2BBDF21247B1200993F46 /* 三色同順.swift */; };
+		079C685A2132BEFE0081F1F2 /* 三色同刻.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2BBE1212481E800993F46 /* 三色同刻.swift */; };
+		079C685B2132BEFE0081F1F2 /* 混老頭.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4195A21248F1000DB09EF /* 混老頭.swift */; };
+		079C685C2132BEFE0081F1F2 /* 混全帯么九.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4195C21248FEE00DB09EF /* 混全帯么九.swift */; };
+		079C685D2132BEFE0081F1F2 /* 純全帯么九.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4195E2124929500DB09EF /* 純全帯么九.swift */; };
+		079C685E2132BEFE0081F1F2 /* 一気通貫.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419602125C96200DB09EF /* 一気通貫.swift */; };
+		079C685F2132BEFE0081F1F2 /* 小三元.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419642125CD6000DB09EF /* 小三元.swift */; };
+		079C68602132BEFE0081F1F2 /* 混一色.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419662125D20700DB09EF /* 混一色.swift */; };
+		079C68612132BEFE0081F1F2 /* 清一色.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419682125D2CA00DB09EF /* 清一色.swift */; };
+		079C68622132BEFE0081F1F2 /* 三暗刻.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4196A2125D56C00DB09EF /* 三暗刻.swift */; };
+		079C68632132BEFE0081F1F2 /* 対々和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4196F2125D6FD00DB09EF /* 対々和.swift */; };
+		079C68642132BEFE0081F1F2 /* 役牌.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2C42127C09300F86C39 /* 役牌.swift */; };
+		079C68652132BEFE0081F1F2 /* ドラ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2C62127C77B00F86C39 /* ドラ.swift */; };
+		079C68662132BEFE0081F1F2 /* 平和.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2CF2127CEA300F86C39 /* 平和.swift */; };
+		079C68672132BF030081F1F2 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3A20E2ADEE0009EA6D /* Tile.swift */; };
+		079C68682132BF030081F1F2 /* TileUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F419622125CA3400DB09EF /* TileUtility.swift */; };
+		079C68692132BF030081F1F2 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E3E20E2B4F10009EA6D /* Hand.swift */; };
+		079C686A2132BF030081F1F2 /* Yaku.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4020E2B5960009EA6D /* Yaku.swift */; };
+		079C686B2132BF030081F1F2 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A8E4220E2B68C0009EA6D /* Token.swift */; };
+		079C686C2132BF030081F1F2 /* ScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0778DC4A2118AD0200B8B841 /* ScoreCalculator.swift */; };
+		079C686D2132BF030081F1F2 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07212FA8210F6B10003F4E75 /* Tokenizer.swift */; };
+		079C686E2132BF030081F1F2 /* Tile+Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED34412110C1E300D02AFA /* Tile+Aliases.swift */; };
+		079C686F2132BF030081F1F2 /* WinningDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07811BEE211F432A0052DCB2 /* WinningDetector.swift */; };
+		079C68702132BF030081F1F2 /* GameContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07811BF4211F71B40052DCB2 /* GameContext.swift */; };
+		079C68712132BF030081F1F2 /* TileCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B64754212080FE00216DE5 /* TileCollection.swift */; };
+		079C68722132BF030081F1F2 /* WaitingFormDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072DD2D321282F8300F86C39 /* WaitingFormDetector.swift */; };
+		079C68732132BF030081F1F2 /* ScoreDescriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A0B7F121298C5900BF976E /* ScoreDescriber.swift */; };
 		07A0B7F221298C5900BF976E /* ScoreDescriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A0B7F121298C5900BF976E /* ScoreDescriber.swift */; };
 		07A0B7F321298C5900BF976E /* ScoreDescriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A0B7F121298C5900BF976E /* ScoreDescriber.swift */; };
 		07A22F812113BC720098F546 /* TokenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A22F802113BC720098F546 /* TokenTests.swift */; };
@@ -264,6 +352,7 @@
 		079A8E4520E2BB470009EA6D /* 断ヤオ九.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "断ヤオ九.swift"; sourceTree = "<group>"; };
 		079A8E4720E2BE110009EA6D /* 七対子.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "七対子.swift"; sourceTree = "<group>"; };
 		079A8E4920E2BEE90009EA6D /* 国士無双.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "国士無双.swift"; sourceTree = "<group>"; };
+		079C68142132BE810081F1F2 /* Peafowl_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peafowl_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A0B7F121298C5900BF976E /* ScoreDescriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreDescriber.swift; sourceTree = "<group>"; };
 		07A22F802113BC720098F546 /* TokenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenTests.swift; sourceTree = "<group>"; };
 		07B2BBDF21247B1200993F46 /* 三色同順.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "三色同順.swift"; sourceTree = "<group>"; };
@@ -343,6 +432,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				072DD2E32129205800F86C39 /* Peafowl.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		079C68112132BE810081F1F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +596,7 @@
 				07ED2F1C20E2AC0F00EF677F /* PeafowlTests-iOS.xctest */,
 				072DD2DA2129205700F86C39 /* Peafowl.framework */,
 				072DD2E22129205800F86C39 /* PeafowlTests-macOS.xctest */,
+				079C68142132BE810081F1F2 /* Peafowl_watchOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -558,6 +655,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		079C680F2132BE810081F1F2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07ED2F0E20E2AC0F00EF677F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -603,6 +707,24 @@
 			productName = "Peafowl-macOSTests";
 			productReference = 072DD2E22129205800F86C39 /* PeafowlTests-macOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		079C68132132BE810081F1F2 /* Peafowl-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 079C68192132BE810081F1F2 /* Build configuration list for PBXNativeTarget "Peafowl-watchOS" */;
+			buildPhases = (
+				079C680F2132BE810081F1F2 /* Headers */,
+				079C68102132BE810081F1F2 /* Sources */,
+				079C68112132BE810081F1F2 /* Frameworks */,
+				079C68122132BE810081F1F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Peafowl-watchOS";
+			productName = Peafowl;
+			productReference = 079C68142132BE810081F1F2 /* Peafowl_watchOS.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 		07ED2F1220E2AC0F00EF677F /* Peafowl-iOS */ = {
 			isa = PBXNativeTarget;
@@ -656,6 +778,9 @@
 					072DD2E12129205800F86C39 = {
 						CreatedOnToolsVersion = 10.0;
 					};
+					079C68132132BE810081F1F2 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					07ED2F1220E2AC0F00EF677F = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1000;
@@ -679,6 +804,7 @@
 			targets = (
 				07ED2F1220E2AC0F00EF677F /* Peafowl-iOS */,
 				072DD2D92129205700F86C39 /* Peafowl-macOS */,
+				079C68132132BE810081F1F2 /* Peafowl-watchOS */,
 				07ED2F1B20E2AC0F00EF677F /* PeafowlTests-iOS */,
 				072DD2E12129205800F86C39 /* PeafowlTests-macOS */,
 			);
@@ -731,6 +857,47 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		079C68122132BE810081F1F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				079C682B2132BEF30081F1F2 /* 16.png in Resources */,
+				079C682A2132BEF30081F1F2 /* 15.png in Resources */,
+				079C68282132BEF30081F1F2 /* 13.png in Resources */,
+				079C68272132BEF30081F1F2 /* 12.png in Resources */,
+				079C68262132BEF30081F1F2 /* 11.png in Resources */,
+				079C68342132BEF30081F1F2 /* 25.png in Resources */,
+				079C68322132BEF30081F1F2 /* 23.png in Resources */,
+				079C68252132BEF30081F1F2 /* 10.png in Resources */,
+				079C682D2132BEF30081F1F2 /* 18.png in Resources */,
+				079C68312132BEF30081F1F2 /* 22.png in Resources */,
+				079C68392132BEF30081F1F2 /* 30.png in Resources */,
+				079C68232132BEF30081F1F2 /* 8.png in Resources */,
+				079C68372132BEF30081F1F2 /* 28.png in Resources */,
+				079C68362132BEF30081F1F2 /* 27.png in Resources */,
+				079C68212132BEF30081F1F2 /* 6.png in Resources */,
+				079C682C2132BEF30081F1F2 /* 17.png in Resources */,
+				079C68352132BEF30081F1F2 /* 26.png in Resources */,
+				079C68382132BEF30081F1F2 /* 29.png in Resources */,
+				079C681F2132BEF30081F1F2 /* 4.png in Resources */,
+				079C68302132BEF30081F1F2 /* 21.png in Resources */,
+				079C68242132BEF30081F1F2 /* 9.png in Resources */,
+				079C683A2132BEF30081F1F2 /* 31.png in Resources */,
+				079C682E2132BEF30081F1F2 /* 19.png in Resources */,
+				079C68202132BEF30081F1F2 /* 5.png in Resources */,
+				079C68222132BEF30081F1F2 /* 7.png in Resources */,
+				079C683C2132BEF30081F1F2 /* 33.png in Resources */,
+				079C682F2132BEF30081F1F2 /* 20.png in Resources */,
+				079C68292132BEF30081F1F2 /* 14.png in Resources */,
+				079C683D2132BEF30081F1F2 /* 34.png in Resources */,
+				079C681E2132BEF30081F1F2 /* 3.png in Resources */,
+				079C681D2132BEF30081F1F2 /* 2.png in Resources */,
+				079C681C2132BEF30081F1F2 /* 1.png in Resources */,
+				079C683B2132BEF30081F1F2 /* 32.png in Resources */,
+				079C68332132BEF30081F1F2 /* 24.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -860,6 +1027,67 @@
 				076DB0CF212A304400A10DBB /* TileUtilityTests.swift in Sources */,
 				072DD3292129208500F86C39 /* TokenTests.swift in Sources */,
 				076DB0D2212A31FF00A10DBB /* WaitingFormDetectorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		079C68102132BE810081F1F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				079C68512132BEFE0081F1F2 /* ダブル立直.swift in Sources */,
+				079C68462132BEFE0081F1F2 /* 緑一色.swift in Sources */,
+				079C685E2132BEFE0081F1F2 /* 一気通貫.swift in Sources */,
+				079C68672132BF030081F1F2 /* Tile.swift in Sources */,
+				079C68402132BEF80081F1F2 /* Sequence+Extensions.swift in Sources */,
+				079C68562132BEFE0081F1F2 /* 河底撈魚.swift in Sources */,
+				079C685F2132BEFE0081F1F2 /* 小三元.swift in Sources */,
+				079C68502132BEFE0081F1F2 /* 立直.swift in Sources */,
+				079C686E2132BF030081F1F2 /* Tile+Aliases.swift in Sources */,
+				079C68712132BF030081F1F2 /* TileCollection.swift in Sources */,
+				079C68612132BEFE0081F1F2 /* 清一色.swift in Sources */,
+				079C686F2132BF030081F1F2 /* WinningDetector.swift in Sources */,
+				079C68602132BEFE0081F1F2 /* 混一色.swift in Sources */,
+				079C68722132BF030081F1F2 /* WaitingFormDetector.swift in Sources */,
+				079C685C2132BEFE0081F1F2 /* 混全帯么九.swift in Sources */,
+				079C686A2132BF030081F1F2 /* Yaku.swift in Sources */,
+				079C68622132BEFE0081F1F2 /* 三暗刻.swift in Sources */,
+				079C683E2132BEF80081F1F2 /* Int+Tiles.swift in Sources */,
+				079C68662132BEFE0081F1F2 /* 平和.swift in Sources */,
+				079C683F2132BEF80081F1F2 /* Array+Extensions.swift in Sources */,
+				079C68442132BEFE0081F1F2 /* 四暗刻.swift in Sources */,
+				079C68422132BEF80081F1F2 /* Set+Extensions.swift in Sources */,
+				079C68452132BEFE0081F1F2 /* 字一色.swift in Sources */,
+				079C686B2132BF030081F1F2 /* Token.swift in Sources */,
+				079C68552132BEFE0081F1F2 /* 海底摸月.swift in Sources */,
+				079C68682132BF030081F1F2 /* TileUtility.swift in Sources */,
+				079C684C2132BEFE0081F1F2 /* 天和.swift in Sources */,
+				079C68482132BEFE0081F1F2 /* 小四喜.swift in Sources */,
+				079C686C2132BF030081F1F2 /* ScoreCalculator.swift in Sources */,
+				079C684B2132BEFE0081F1F2 /* 九連宝燈.swift in Sources */,
+				079C68472132BEFE0081F1F2 /* 大三元.swift in Sources */,
+				079C684E2132BEFE0081F1F2 /* 断ヤオ九.swift in Sources */,
+				079C685A2132BEFE0081F1F2 /* 三色同刻.swift in Sources */,
+				079C684A2132BEFE0081F1F2 /* 清老頭.swift in Sources */,
+				079C684F2132BEFE0081F1F2 /* 七対子.swift in Sources */,
+				079C685B2132BEFE0081F1F2 /* 混老頭.swift in Sources */,
+				079C68592132BEFE0081F1F2 /* 三色同順.swift in Sources */,
+				079C685D2132BEFE0081F1F2 /* 純全帯么九.swift in Sources */,
+				079C68732132BF030081F1F2 /* ScoreDescriber.swift in Sources */,
+				079C68542132BEFE0081F1F2 /* 嶺上開花.swift in Sources */,
+				079C68632132BEFE0081F1F2 /* 対々和.swift in Sources */,
+				079C68652132BEFE0081F1F2 /* ドラ.swift in Sources */,
+				079C686D2132BF030081F1F2 /* Tokenizer.swift in Sources */,
+				079C68432132BEFE0081F1F2 /* 国士無双.swift in Sources */,
+				079C68572132BEFE0081F1F2 /* 一盃口.swift in Sources */,
+				079C68692132BF030081F1F2 /* Hand.swift in Sources */,
+				079C68532132BEFE0081F1F2 /* 門前清自摸和.swift in Sources */,
+				079C68492132BEFE0081F1F2 /* 大四喜.swift in Sources */,
+				079C68522132BEFE0081F1F2 /* 一発.swift in Sources */,
+				079C68412132BEF80081F1F2 /* Array+Tiles.swift in Sources */,
+				079C68582132BEFE0081F1F2 /* 二盃口.swift in Sources */,
+				079C684D2132BEFE0081F1F2 /* 地和.swift in Sources */,
+				079C68642132BEFE0081F1F2 /* 役牌.swift in Sources */,
+				079C68702132BF030081F1F2 /* GameContext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1063,6 +1291,64 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		079C681A2132BE810081F1F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2AWR7Z4WYE;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Peafowl/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.Peafowl;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		079C681B2132BE810081F1F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2AWR7Z4WYE;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Peafowl/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.Peafowl;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
 		};
@@ -1294,6 +1580,15 @@
 			buildConfigurations = (
 				072DD2EF2129205800F86C39 /* Debug */,
 				072DD2F02129205800F86C39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		079C68192132BE810081F1F2 /* Build configuration list for PBXNativeTarget "Peafowl-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				079C681A2132BE810081F1F2 /* Debug */,
+				079C681B2132BE810081F1F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
