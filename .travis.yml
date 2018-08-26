@@ -7,5 +7,6 @@ matrix:
   include:
     - env: NAME=iOS DESTINATION="platform=iOS Simulator,name=iPhone 8"
     - env: NAME=macOS DESTINATION="platform=macOS"
+    - env: NAME=watchOS ACTION=build DESTINATION="platform=watchOS Simulator,OS=5.0,name=Apple Watch Series 2 - 42mm"
 script:
-  - xcodebuild test -workspace Peafowl.xcworkspace -scheme Peafowl-${NAME} -destination "${DESTINATION}"
+  - xcodebuild ${ACTION:-test} -workspace Peafowl.xcworkspace -scheme Peafowl-${NAME} -destination "${DESTINATION}"
