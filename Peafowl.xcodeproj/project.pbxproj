@@ -352,7 +352,7 @@
 		079A8E4520E2BB470009EA6D /* 断ヤオ九.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "断ヤオ九.swift"; sourceTree = "<group>"; };
 		079A8E4720E2BE110009EA6D /* 七対子.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "七対子.swift"; sourceTree = "<group>"; };
 		079A8E4920E2BEE90009EA6D /* 国士無双.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "国士無双.swift"; sourceTree = "<group>"; };
-		079C68142132BE810081F1F2 /* Peafowl_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peafowl_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		079C68142132BE810081F1F2 /* Peafowl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Peafowl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A0B7F121298C5900BF976E /* ScoreDescriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreDescriber.swift; sourceTree = "<group>"; };
 		07A22F802113BC720098F546 /* TokenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenTests.swift; sourceTree = "<group>"; };
 		07B2BBDF21247B1200993F46 /* 三色同順.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "三色同順.swift"; sourceTree = "<group>"; };
@@ -596,7 +596,7 @@
 				07ED2F1C20E2AC0F00EF677F /* PeafowlTests-iOS.xctest */,
 				072DD2DA2129205700F86C39 /* Peafowl.framework */,
 				072DD2E22129205800F86C39 /* PeafowlTests-macOS.xctest */,
-				079C68142132BE810081F1F2 /* Peafowl_watchOS.framework */,
+				079C68142132BE810081F1F2 /* Peafowl.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -723,7 +723,7 @@
 			);
 			name = "Peafowl-watchOS";
 			productName = Peafowl;
-			productReference = 079C68142132BE810081F1F2 /* Peafowl_watchOS.framework */;
+			productReference = 079C68142132BE810081F1F2 /* Peafowl.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		07ED2F1220E2AC0F00EF677F /* Peafowl-iOS */ = {
@@ -1314,7 +1314,7 @@
 				);
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.Peafowl;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Peafowl;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -1343,7 +1343,7 @@
 				);
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.giginet.Peafowl;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Peafowl;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
